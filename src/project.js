@@ -1,6 +1,16 @@
 // Project Detail Page Logic
 const BASE = import.meta.env.BASE_URL;
 
+function resolveUrl(url) {
+  if (!url) return '';
+  if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
+    return url;
+  }
+  // If it starts with a leading slash, remove it and prepend BASE
+  const cleanUrl = url.startsWith('/') ? url.slice(1) : url;
+  return `${BASE}${cleanUrl}`;
+}
+
 async function init() {
   const params = new URLSearchParams(window.location.search);
   const projectId = params.get('id');
@@ -13,6 +23,19 @@ async function init() {
   const res = await fetch(`${BASE}projects.json`);
   if (!res.ok) return;
   const projects = await res.json();
+
+  // Resolve all project asset URLs dynamically relative to BASE
+  projects.forEach(p => {
+    if (p.image) p.image = resolveUrl(p.image);
+    if (p.video && !p.video.includes('<iframe') && !p.video.includes('youtube.com') && !p.video.includes('youtu.be')) {
+      p.video = resolveUrl(p.video);
+    }
+    if (p.gallery) p.gallery = p.gallery.map(resolveUrl);
+    if (p.galleryDocs) p.galleryDocs = p.galleryDocs.map(resolveUrl);
+    if (p.galleryRealisation) p.galleryRealisation = p.galleryRealisation.map(resolveUrl);
+    if (p.galleryBefore) p.galleryBefore = p.galleryBefore.map(resolveUrl);
+    if (p.galleryAfter) p.galleryAfter = p.galleryAfter.map(resolveUrl);
+  });
 
   const currentIndex = projects.findIndex(p => p.id === projectId);
   if (currentIndex === -1) {

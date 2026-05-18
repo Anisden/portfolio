@@ -1,3 +1,5 @@
+const BASE = import.meta.env.BASE_URL;
+
 // ===== Toast =====
 function toast(msg, duration = 3000) {
   const t = document.getElementById('toast');
@@ -145,7 +147,7 @@ let projects = [];
 
 async function initProjects() {
   try {
-    const res = await fetch('/projects.json');
+    const res = await fetch(`${BASE}projects.json`);
     if (res.ok) projects = await res.json();
     renderProjectList();
   } catch (e) { console.error(e); }
@@ -368,7 +370,7 @@ let generalContent = {};
 
 async function initContent() {
   try {
-    const res = await fetch('/content.json');
+    const res = await fetch(`${BASE}content.json`);
     if (res.ok) {
       generalContent = await res.json();
       document.getElementById('c-heroSubtitle').value = generalContent.heroSubtitle || '';

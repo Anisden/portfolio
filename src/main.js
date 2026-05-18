@@ -1,5 +1,18 @@
+import heroImg from './assets/hero.png';
+
 // Base path for GitHub Pages compatibility
 const BASE = import.meta.env.BASE_URL;
+
+function resolveUrl(url) {
+  if (!url) return '';
+  if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
+    return url;
+  }
+  // If it starts with a leading slash, remove it and prepend BASE
+  const cleanUrl = url.startsWith('/') ? url.slice(1) : url;
+  return `${BASE}${cleanUrl}`;
+}
+
 
 // Year in footer
 const yearEl = document.getElementById('year');
@@ -180,6 +193,20 @@ async function loadProjects() {
     const res = await fetch(`${BASE}projects.json`);
     if (!res.ok) return;
     const projects = await res.json();
+    
+    // Resolve all project asset URLs dynamically relative to BASE
+    projects.forEach(p => {
+      if (p.image) p.image = resolveUrl(p.image);
+      if (p.video && !p.video.includes('<iframe') && !p.video.includes('youtube.com') && !p.video.includes('youtu.be')) {
+        p.video = resolveUrl(p.video);
+      }
+      if (p.gallery) p.gallery = p.gallery.map(resolveUrl);
+      if (p.galleryDocs) p.galleryDocs = p.galleryDocs.map(resolveUrl);
+      if (p.galleryRealisation) p.galleryRealisation = p.galleryRealisation.map(resolveUrl);
+      if (p.galleryBefore) p.galleryBefore = p.galleryBefore.map(resolveUrl);
+      if (p.galleryAfter) p.galleryAfter = p.galleryAfter.map(resolveUrl);
+    });
+
     const tnGrid = document.getElementById('tunisia-projects');
     const qcGrid = document.getElementById('quebec-projects');
     const concGrid = document.getElementById('concours-projects');
@@ -216,7 +243,7 @@ async function loadProjects() {
     if (projectImages.length > 0) {
       initHeroSlider(projectImages);
     } else {
-      initHeroSlider([`${BASE}hero.png`]); // fallback
+      initHeroSlider([heroImg]); // fallback
     }
     
     initAnimations();
@@ -229,6 +256,18 @@ async function loadContent() {
     const res = await fetch(`${BASE}content.json`);
     if (!res.ok) return;
     const c = await res.json();
+
+    // Resolve CV link and distinctions asset URLs dynamically relative to BASE
+    if (c.cvLink) c.cvLink = resolveUrl(c.cvLink);
+    if (c.distinctions) {
+      c.distinctions.forEach(d => {
+        if (d.image) d.image = resolveUrl(d.image);
+        if (d.video && !d.video.includes('<iframe') && !d.video.includes('youtube.com') && !d.video.includes('youtu.be')) {
+          d.video = resolveUrl(d.video);
+        }
+        if (d.gallery) d.gallery = d.gallery.map(resolveUrl);
+      });
+    }
 
     const set = (id, val, isHtml = false) => {
       const el = document.getElementById(id);
