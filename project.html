@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Projet | Anis BOUDEN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css" />
+  <link rel="stylesheet" href="/src/project-page.css" />
+</head>
+<body>
+  <nav class="navbar scrolled">
+    <div class="nav-container">
+      <a href="./" class="logo">A<span>BOUDEN</span></a>
+      <a href="./#projects" class="btn btn-secondary btn-sm" style="margin-left:auto">← Retour</a>
+    </div>
+  </nav>
+
+  <section class="project-hero" id="project-hero">
+    <div class="project-hero-bg" id="hero-bg">
+      <div class="project-hero-overlay"></div>
+    </div>
+    <div class="project-hero-content">
+      <h1 class="project-title" id="project-title">Chargement...</h1>
+    </div>
+  </section>
+
+  <!-- Banner Info -->
+  <div class="project-info-banner">
+    <div class="container">
+      <div class="info-grid">
+        <div class="info-item">
+          <span class="info-label">Région</span>
+          <strong class="info-value" id="info-region">--</strong>
+        </div>
+        <div class="info-item">
+          <span class="info-label">Dates / Catégorie</span>
+          <strong class="info-value" id="info-meta">--</strong>
+        </div>
+        <div class="info-item" id="budget-container" style="display:none">
+          <span class="info-label">Budget</span>
+          <strong class="info-value accent-color" id="info-budget">--</strong>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <section class="project-detail section">
+    <div class="container">
+      <div class="project-intro-layout">
+        <div class="project-desc">
+          <h2>Le projet</h2>
+          <p id="project-long-desc"></p>
+        </div>
+        <div class="project-tasks" id="tasks-container" style="display:none">
+          <h3>Responsabilités</h3>
+          <ul id="tasks-list"></ul>
+        </div>
+      </div>
+
+      <!-- Video Section -->
+      <div class="project-video-section" id="project-video-section" style="display:none; margin-bottom: 4rem;">
+        <h2 style="margin-bottom: 1rem;">Vidéo</h2>
+        <div class="video-container" id="video-container"></div>
+      </div>
+
+      <!-- Gallery -->
+      <div class="project-gallery-section" id="project-gallery">
+        <h2 style="margin-bottom: 1rem;">Galerie</h2>
+        <div class="gallery-grid" id="gallery-grid">
+          <!-- Dynamically loaded -->
+        </div>
+      </div>
+
+      <!-- Navigation Prev / Next -->
+      <div class="project-navigation" id="project-navigation">
+        <a href="#" class="nav-prev" id="nav-prev">
+          <span class="nav-arrow">&larr;</span>
+          <span class="nav-label">Précédent</span>
+          <span class="nav-title" id="prev-title"></span>
+        </a>
+        <a href="#" class="nav-next" id="nav-next">
+          <span class="nav-label">Suivant</span>
+          <span class="nav-arrow">&rarr;</span>
+          <span class="nav-title" id="next-title"></span>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; <span id="year"></span> Anis Bouden. Conçu avec passion & propulsé par des outils IA.</p>
+    </div>
+  </footer>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.min.js"></script>
+  <script>
+    pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.16.105/pdf.worker.min.js';
+  </script>
+  <script type="module" src="/src/project.js"></script>
+</body>
+</html>

@@ -1,0 +1,685 @@
+[
+  {
+    "id": "piscine-colline-saguenay",
+    "title": "Piscine de la Colline - Chicoutimi",
+    "region": "quebec",
+    "meta": "Réfection de la piscine et agrandissement de l'aréna | Ville de Saguenay (2025)",
+    "description": "Nouveau bassin aquatique extérieur et agrandissement de l'aréna existant.",
+    "longDescription": "Projet de démolition et de construction d'un nouveau bassin aquatique extérieur pour la Ville de Saguenay, couplé à l'agrandissement de l'aréna existant pour l'ajout de vestiaires sportifs modernes.\nConception 2023\nExécution 2025",
+    "image": "/uploads/1779107488696_2023-690_VS_piscine_perspective_2_19-03-25.png",
+    "video": "",
+    "budget": "5 777 000",
+    "currency": "CAD",
+    "tasks": [
+      "Mise en plan",
+      "Modélisation",
+      "Rendu réaliste 3D"
+    ],
+    "gallery": [
+      "/uploads/1779109149788_19_4_-_Photo_Pshop.png",
+      "/uploads/1779109149788_29_7_-_Photo_pshop.png",
+      "/uploads/1779109177301_14-12-2023_13_-_Photo_-_Modifié.jpg",
+      "/uploads/1779109177301_14-12-2023_15_-_Photo.jpg",
+      "/uploads/1779109177302_20_2_-_Photo-2.jpg",
+      "/uploads/1779109202604_2_1_-_Photo_Modifiée.jpg",
+      "/uploads/1779109202605_2_4_-_Photo_modifiée.jpg",
+      "/uploads/1779109202605_2_8_-_Photo_Modifiée.jpg",
+      "/uploads/1779109202605_2_10_-_Photo.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "pavillon-duchesnay",
+    "title": "Pavillon d'accueil Station Duchesnay",
+    "region": "quebec",
+    "meta": "Réfection Majeure | SEPAQ (2025)",
+    "description": "Réfection majeure et réaménagement complet du pavillon principal d'accueil.",
+    "longDescription": "Mandat de réfection majeure et de réaménagement complet du pavillon principal d'accueil de la prestigieuse Station touristique Duchesnay gérée par la SEPAQ, visant à améliorer l'expérience client.",
+    "image": "/uploads/1779110460960_1_Photo_1_-_Day_time.jpg",
+    "video": "",
+    "budget": "3 500 000",
+    "currency": "CAD",
+    "tasks": [
+      "Relevés",
+      "Mise en plan",
+      "Conception",
+      "Modélisation",
+      "Coordination",
+      "Plans préliminaires"
+    ],
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/1779112237783_DUC_Pavillon_l'Horizon_Présentation_préliminaires_40%_17-04-2025.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "ecole-pointe-levy",
+    "region": "quebec",
+    "title": "École Pointe-Lévy & Palestre",
+    "meta": "Agrandissement | CSSDN et Ville de Lévis (2024)",
+    "description": "Ajout d'espaces à l'école Pointe-Lévy et construction d'une palestre de gymnastique.",
+    "longDescription": "Étude de faisabilité pour l'ajout d'espaces à l'école Pointe-Lévy et la construction d'une palestre de gymnastique majeure, en partenariat entre le CSSDN et la Ville de Lévis.",
+    "image": "",
+    "video": "",
+    "gallery": [],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "budget": "29 400 000",
+    "currency": "CAD",
+    "tasks": [
+      "Conception",
+      "Coordination",
+      "Mise en plan",
+      "Modélisation et rendu réaliste 3D"
+    ]
+  },
+  {
+    "id": "complexe-huronne-wendat",
+    "title": "Complexe Récréatif Huronne-Wendat",
+    "region": "quebec",
+    "meta": "Nouvelle Construction | Nation Huronne-Wendat (2024)",
+    "description": "Centre communautaire multiservices, complexe récréatif et patinoire couverte.",
+    "longDescription": "Projet de nouvelle construction d'envergure pour la Nation Huronne-Wendat, comprenant un centre communautaire multiservices, un complexe récréatif de pointe et une patinoire couverte.",
+    "image": "/uploads/1779112358914_Ext_13_-_Photo.jpg",
+    "video": "",
+    "budget": "20 760 000",
+    "currency": "CAD",
+    "tasks": [
+      "Conception",
+      "Modélisation et rendu réaliste 3D",
+      "Coordination",
+      "Plans préliminaires"
+    ],
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/1779112449272_Wendat_bâtiment_et_patinoire_couverte_Présentation_préliminaires_66.pdf"
+    ],
+    "galleryRealisation": [
+      "/uploads/1779112499618_1_1_-_Préau_et_bâtiment_arrivé_stationnement_école.jpg",
+      "/uploads/1779112499618_1_2_-_Préau_et_bâtiment_entrée_CROL.jpg",
+      "/uploads/1779112499618_1_3_-_Préau_vue_espace_vert.jpg",
+      "/uploads/1779112499619_1_4_-_Bâtiment_Maison_de_la_famill.jpg",
+      "/uploads/1779112499619_1_7_-_Préau_patinoire.jpg",
+      "/uploads/1779112499619_1_9_-Intérieur_Maison_famille_3.jpg",
+      "/uploads/1779112499620_1_10_-_Bâtiment_arrivée.jpg",
+      "/uploads/1779112499620_1_15_-_Intérieur_Maison_famille_1.jpg",
+      "/uploads/1779112499620_1_19_-_Intérieur_Maison_famille_2.jpg"
+    ],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "centre-raymond-blais",
+    "region": "quebec",
+    "title": "Centre Communautaire Raymond-Blais",
+    "meta": "Réfection Majeure | Ville de Lévis (2023)",
+    "description": "Programme fonctionnel pour la réfection majeure du centre et ajout d'une palestre de gymnastique.",
+    "longDescription": "Programme fonctionnel et technique pour la réfection majeure du Centre Raymond-Blais de la Ville de Lévis, incluant un agrandissement stratégique pour accueillir une nouvelle palestre de gymnastique moderne.",
+    "image": "",
+    "video": "",
+    "gallery": [],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "budget": "26 681 000",
+    "currency": "CAD",
+    "tasks": [
+      "Concepteur",
+      "Étude d'aménagement",
+      "Production des plans"
+    ]
+  },
+  {
+    "id": "arena-saint-anselme",
+    "region": "quebec",
+    "title": "Aréna & Hôtel de Ville de Saint-Anselme",
+    "meta": "Agrandissement | Ville de Saint-Anselme (2023)",
+    "description": "Agrandissement de l'aréna municipal et ajout d'un nouvel hôtel de ville.",
+    "longDescription": "Étude d'implantation et de faisabilité complexe pour l'agrandissement de l'aréna municipal de Saint-Anselme combiné à la construction d'un nouvel hôtel de ville, optimisant les services municipaux et sportifs.",
+    "image": "",
+    "video": "",
+    "gallery": [],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "budget": "22 755 000",
+    "currency": "CAD",
+    "tasks": [
+      "Conception",
+      "Coordination",
+      "Mise en plan",
+      "Modélisation et rendu 3D",
+      "Rédaction de l'étude"
+    ]
+  },
+  {
+    "id": "patinoires-quebec",
+    "title": "Patinoires Réfrigérées Couvertes",
+    "region": "quebec",
+    "meta": "Pavillons de Services | Ville de Québec (2023)",
+    "description": "Implantation de patinoires couvertes et conception d'un pavillon de services type pour six parcs.",
+    "longDescription": "Étude de faisabilité et programme fonctionnel et technique pour l'implantation de patinoires réfrigérées couvertes réparties dans six (6) parcs de la Ville de Québec, incluant la conception architecturale d'un pavillon de services type.",
+    "image": "/uploads/1779112613712_15-06-2023Hiver_7_-_Int_préau_3.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Conception",
+      "Coordination",
+      "Mise en plan",
+      "Modélisation et rendu 3D"
+    ],
+    "gallery": [
+      "/uploads/1779112641443_13-06-2023_1_-_Extérieur1.jpg",
+      "/uploads/1779112641444_13-06-2023_5_-_Intérieur1.jpg",
+      "/uploads/1779112641444_13-06-2023_13_-_Ext_pavillon_2.jpg",
+      "/uploads/1779112641444_13-06-2023_14_-_Int_pavillon_1.jpg",
+      "/uploads/1779112641445_13-06-2023_16_-_ext_pavillon_1.jpg",
+      "/uploads/1779112641445_15-06-2023ÉTÉ_10_-_Int_préau_2.jpg",
+      "/uploads/1779112641445_15-06-2023Hiver_7_-_Int_préau_3.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/1779113499785_Étude_de_faisabilité_6_parcs_Remise_90%.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "centre-ferland",
+    "region": "quebec",
+    "title": "Centre Communautaire Ferland",
+    "meta": "Réfection Majeure | Ville de Québec (2022)",
+    "description": "Étude de faisabilité pour la réfection majeure du centre communautaire, du bassin aquatique et des vestiaires.",
+    "longDescription": "Étude de faisabilité complète visant la réfection et la modernisation du Centre Communautaire Ferland à Québec, intégrant la mise aux normes du bassin aquatique et la restructuration des vestiaires.",
+    "image": "",
+    "video": "",
+    "gallery": [],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "budget": "21 400 000",
+    "currency": "CAD",
+    "tasks": [
+      "Concepteur",
+      "Étude d'aménagement",
+      "Production des plans"
+    ]
+  },
+  {
+    "id": "cegep-shawinigan",
+    "region": "quebec",
+    "title": "Centre Sportif du Cégep de Shawinigan",
+    "meta": "Réfection en 3 phases | Cégep de Shawinigan (2022)",
+    "description": "Réfection du Centre sportif: gymnase, centre d'entrainement et zone commune.",
+    "longDescription": "Étude de faisabilité stratégique pour la réfection du Centre sportif du Cégep de Shawinigan, divisée en trois phases distinctes : modernisation du gymnase, création d'un centre d'entraînement et réaménagement des zones communes.",
+    "image": "",
+    "video": "",
+    "gallery": [],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "budget": "9 311 000",
+    "currency": "CAD",
+    "tasks": [
+      "Concepteur",
+      "Étude d'aménagement",
+      "Production des plans"
+    ]
+  },
+  {
+    "id": "maracana",
+    "title": "Maracana Expo",
+    "region": "tunisia",
+    "meta": "Aménagement d'un bâtiment existant en un centre d'exposition (Projet non réalisé).",
+    "description": "Conception d'un espace d'exposition haut de gamme et aménagement événementiel.",
+    "longDescription": "Conception complète des espaces d'exposition, intégrant le design d'éclairage, la signalétique et les parcours visiteurs pour une expérience immersive.",
+    "image": "/uploads/1779022587635_5.jpg",
+    "video": "<iframe width=\"1920\" height=\"1080\" src=\"https://www.youtube.com/embed/HIy05PKwSYg?si=ZsmZe-R1852B87pv\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "budget": "1 400 000",
+    "currency": "EUR",
+    "tasks": [
+      "Conception scénographique",
+      "Aménagement événementiel",
+      "Design d'éclairage",
+      "Signalétique"
+    ],
+    "gallery": [
+      "/uploads/1779021407337_9.jpg",
+      "/uploads/1779021407338_11.jpg",
+      "/uploads/1779021407338_14.jpg",
+      "/uploads/1779021407339_15.jpg",
+      "/uploads/1779021407339_16.jpg",
+      "/uploads/1779021459913_int21.jpg",
+      "/uploads/1779021459913_int22bis.jpg",
+      "/uploads/1779021459913_int25.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [
+      "/uploads/1779021278338_7.PNG"
+    ],
+    "galleryAfter": [
+      "/uploads/1779021363864_int23.jpg"
+    ],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "issat",
+    "title": "Institut Supérieur des Sciences Appliquées (ISSAT)",
+    "region": "concours",
+    "meta": "Concours National - Projet Lauréat (1er Prix) | Réalisation: 2016-2019",
+    "description": "Prix des JAC 2019 (Journées Architecturales de Carthage) : Meilleur projet, catégorie bâtiments civils.",
+    "longDescription": "Projet lauréat d'un concours national d'architecture en janvier 2014. Conception complète et suivi d'exécution d'un institut d'enseignement supérieur. Récompensé par le Prix des Journées Architecturales de Carthage (JAC) 2019 dans la catégorie « Meilleur projet – Bâtiments civils ». Le projet intègre des principes bioclimatiques, une gestion optimale des flux étudiants et des espaces pédagogiques modernes.",
+    "image": "/uploads/1779016238476_IMG_20181025_115601_bisbis.jpg",
+    "video": "",
+    "budget": "17 190 000",
+    "currency": "EUR",
+    "tasks": [
+      "Architecte, membre du groupement participant au concours",
+      "Conception architecturale (concours)",
+      "Études techniques",
+      "Coordination des lots",
+      "Suivi d'exécution",
+      "Réception des travaux"
+    ],
+    "gallery": [
+      "/uploads/1779016324606_afpnu-djjb5.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/1779019491308_Planche_3D.pdf",
+      "/uploads/1779019491309_Planche_ELEVATIONS.pdf",
+      "/uploads/1779019491309_Planche_plan_ETAGE.pdf",
+      "/uploads/1779019491310_Planche_plan_RDC.pdf"
+    ],
+    "galleryRealisation": [
+      "/uploads/1779016324606_afpnu-djjb5.jpg",
+      "/uploads/1779016324607_amphi_300.jpg",
+      "/uploads/1779016324607_DSCN6281.JPG",
+      "/uploads/1779016324607_DSCN6289.jpg",
+      "/uploads/1779016324607_DSCN6304bis.jpg",
+      "/uploads/1779016324608_DSCN6318.jpg",
+      "/uploads/1779016324608_IMG_20190502_103805bis.jpg",
+      "/uploads/1779016324608_IMG_20190502_104718.jpg",
+      "/uploads/1779016324608_IMG_20191009_132232.jpg",
+      "/uploads/1779016324611_IMG_20191009_132304_BURST002.jpg",
+      "/uploads/1779016324613_IMG_20191009_132311bis.jpg",
+      "/uploads/1779016324614_IMG_20191009_132320.jpg",
+      "/uploads/1779016324614_IMG_20191009_132339.jpg",
+      "/uploads/1779016324614_IMG_20191009_132510.jpg",
+      "/uploads/1779016324614_IMG_20191009_132619bis.jpg",
+      "/uploads/1779016324615_IMG_20191009_132743bis.jpg"
+    ],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": true
+  },
+  {
+    "id": "residence",
+    "title": "Résidence balnéaire familiale",
+    "region": "tunisia",
+    "meta": "Multi-résidentiel.",
+    "description": "Résidence balnéaire familiale privée.\n",
+    "longDescription": "Conception de 5 maisons sur un terrain en front de mer. (Projet non réalisé)",
+    "image": "/residence.png",
+    "video": "<iframe width=\"1920\" height=\"1080\" src=\"https://www.youtube.com/embed/LKrNnfumLS4?si=qkmr2nx7FPY3FKB1\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "budget": "8 000 000 ",
+    "currency": "EUR",
+    "tasks": [
+      "Architecte en chef du projet.",
+      "Relevé du terrain et des constructions existantes.",
+      "Analyse réglementaire.",
+      "Propositions d'aménagement.",
+      "Avant-projet et estimation sommaire."
+    ],
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/1779025633875_Résidence_balnéaire_privée.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "coke-studio",
+    "title": "Coke Studio Algeria",
+    "region": "tunisia",
+    "meta": "Design d'Espace & Aménagement",
+    "description": "Aménagement professionnel et design d'intérieur pour le projet Coke Studio.",
+    "longDescription": "Design et aménagement d'un espace dédié au tournage de l'émission télé Coke Studio Algeria. \nCréation d'un environnement de tournage professionnel alliant une esthétique contemporaine inspirée du patrimoine algérien et fonctionnalités techniques pour les besoins de production audiovisuelle.",
+    "image": "/uploads/1779023682571_DIA-COCA-STUDIO.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Design d'intérieur",
+      "Aménagement technique",
+      "Coordination des intervenants",
+      "Suivi de réalisation"
+    ],
+    "gallery": [
+      "/uploads/1779023922977_2_(2).jpg",
+      "/uploads/1779023922978_4_(2).jpg",
+      "/uploads/1779023922978_4.jpg",
+      "/uploads/1779023922978_5.jpg",
+      "/uploads/1779023922978_6_(2).jpg",
+      "/uploads/1779023922979_6.jpg",
+      "/uploads/1779023922979_7.jpg",
+      "/uploads/1779023922979_8_(2).jpg",
+      "/uploads/1779023922979_18297096_1675260239443195_1994295655_o.jpg",
+      "/uploads/1779023922980_22860065_1911463495842571_243453468462677590_o.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [
+      "/uploads/1779023799276_IMG_20170413_122927.jpg"
+    ],
+    "galleryAfter": [
+      "/uploads/1779023843645_4.jpg"
+    ],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "hopital-mareth",
+    "title": "Hôpital Régional de Mareth",
+    "region": "concours",
+    "meta": "Concours National d'Architecture | 2015 (non réalisé)",
+    "description": "Projet de complexe hospitalier régional de 100 lits avec conception bioclimatique.",
+    "longDescription": "Proposition élaborée pour le Concours National de l'Hôpital Régional de Mareth. Conception d'une infrastructure médicale moderne de 100 lits dotée d'une ergonomie poussée pour optimiser le travail du personnel soignant et garantir le confort thermique des patients via des principes bioclimatiques.",
+    "image": "/uploads/1779028815058_r1.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Architecte, membre du groupement participant au concours",
+      "Conception bioclimatique intégrée",
+      "Modélisation et recherche volumétrique 3D",
+      "Mise en page des planches de concours",
+      "Rédaction du rapport de présentation technique"
+    ],
+    "gallery": [
+      "/uploads/1779028825819_big_one.jpg",
+      "/uploads/1779028825820_r1.jpg",
+      "/uploads/1779028825820_r2.jpg",
+      "/uploads/1779028825820_r3.jpg",
+      "/uploads/1779028825820_r4.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/PLANCHE_001_MARETH.pdf",
+      "/uploads/PLANCHE_002_MARETH.pdf",
+      "/uploads/Rapport_Mareth.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "hotel-finances-gabes",
+    "title": "Hôtel des Finances de Gabès",
+    "region": "concours",
+    "meta": "Concours National d'Architecture | 2015 (non réalisé)",
+    "description": "Conception d'un édifice administratif public alliant sécurité élevée et accueil convivial.",
+    "longDescription": "Conception architecturale pour le concours national de l'Hôtel des Finances de Gabès. Le projet intègre des exigences de sécurité poussées (gestion des valeurs) tout en proposant un hall d'accueil majestueux et baigné de lumière naturelle pour les contribuables, couronné par une double peau perforée en GRC.",
+    "image": "/uploads/1779028652163_02.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Architecte, membre du groupement participant au concours",
+      "Conception de l'enveloppe architecturale perforée",
+      "Organisation des zones sécurisées et publiques",
+      "Modélisation 3D et rendus réalistes (Vray)",
+      "Mise en plan d'exécution"
+    ],
+    "gallery": [
+      "/uploads/1779028663591_01.jpg",
+      "/uploads/1779028663592_02.jpg",
+      "/uploads/1779028663592_03.jpg",
+      "/uploads/1779028663592_04.jpg",
+      "/uploads/1779028663593_05.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/1779028727506_PLANCHE_1_HOTEL_DES_FINANCES_DE_GABES.pdf",
+      "/uploads/1779028727506_PLANCHE_2_HOTEL_DES_FINANCES_DE_GABES.pdf",
+      "/uploads/1779028727507_Rapport_HOTEL_DES_FINANCES_DE_GABES.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "hopital-sbeitla",
+    "title": "Hôpital Régional de Sbeitla",
+    "region": "concours",
+    "meta": "Concours National d'Architecture | 2014",
+    "description": "Conception d'un complexe hospitalier régional majeur de 120 lits à Sbeitla.",
+    "longDescription": "Proposition pour le concours national de l'Hôpital Régional de Sbeitla. Le projet s'organise autour d'un axe central de distribution distribuant les services d'urgence, de consultation externe, d'imagerie, les blocs opératoires et les unités d'hospitalisation de 120 lits, tout en séparant rigoureusement les circuits propres et sales.",
+    "image": "/uploads/1779028891643_FACADE_1.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Architecte, membre du groupement participant au concours",
+      "Conception architecturale et volumétrique",
+      "Programmation fonctionnelle et organisation des flux complexes",
+      "Élaboration des planches de rendu",
+      "Rédaction du rapport de présentation technique"
+    ],
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/PLANCHE_1_SBEITLA.pdf",
+      "/uploads/PLANCHE_2_SBEITLA.pdf",
+      "/uploads/PLANCHE_3_SBEITLA.pdf",
+      "/uploads/Rapport_Sbeitla.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "restaurant-universitaire-sabra",
+    "title": "Restaurant Universitaire Sabra",
+    "region": "concours",
+    "meta": "Concours National d'Architecture | 2013",
+    "description": "Édifice de restauration collective pour 800 étudiants à Kairouan.",
+    "longDescription": "Projet conçu pour le Concours National du Restaurant Universitaire Sabra à Kairouan. Le bâtiment intègre une double hauteur majestueuse pour la salle à manger de 800 places, une cuisine de type industriel avec circuits d'approvisionnement en flux tendu séparés, et des circulations fluides adaptées à une forte affluence estudiantine.",
+    "image": "",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Architecte, membre du groupement participant au concours",
+      "Conception de la cuisine industrielle aux normes HACCP",
+      "Gestion des flux d'approvisionnement et des usagers",
+      "Modélisation SketchUp et intégration volumétrique",
+      "Mise en plan de concours"
+    ],
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/PLANCHE_1_SABRA.pdf",
+      "/uploads/PLANCHE_2_SABRA.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "maison-culture-el-battan",
+    "title": "Maison de Culture d'El Battan",
+    "region": "concours",
+    "meta": "Concours National d'Architecture (non réalisé)",
+    "description": "Espace culturel polyvalent avec salle de spectacle de 300 places et ateliers artistiques.",
+    "longDescription": "Projet de concours pour la Maison de Culture d'El Battan. Un édifice contemporain inspiré du patrimoine vernaculaire, comprenant une salle de spectacle de 300 places, des loges, des ateliers d'apprentissage artistique et un espace d'exposition modulaire.",
+    "image": "/uploads/1779028491907_44.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Architecte, membre du groupement participant au concours",
+      "Conception de la salle de spectacle et acoustique",
+      "Conception des façades traditionnelles réinterprétées",
+      "Modélisation 3D et insertion paysagère",
+      "Mise en page des planches de rendu"
+    ],
+    "gallery": [
+      "/uploads/1779028558123_1.jpg",
+      "/uploads/1779028558124_2.jpg",
+      "/uploads/1779028558124_22.jpg",
+      "/uploads/1779028558124_44.jpg",
+      "/uploads/1779028558125_55.jpg",
+      "/uploads/1779028558125_FACADE_1_NB.jpg",
+      "/uploads/1779028558125_FACADE_22_NB.jpg",
+      "/uploads/1779028558125_Vue_générale.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/PLANCHE_2_EL_BATTAN.pdf",
+      "/uploads/1779028573316_PLANCHE_1_EL_BATTAN.pdf",
+      "/uploads/1779028573317_PLANCHE_2_EL_BATTAN.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "maison-culture-sidi-bouzid-est",
+    "title": "Maison de Culture Sidi Bouzid Est",
+    "region": "concours",
+    "meta": "Concours National d'Architecture (non réalisé)",
+    "description": "Conception d'un pôle d'apprentissage et de diffusion culturelle à Sidi Bouzid.",
+    "longDescription": "Proposition élaborée pour le concours de la Maison de Culture Sidi Bouzid Est. Un pôle d'attraction culturel conçu pour stimuler la créativité locale grâce à des ateliers polyvalents de musique et de peinture, une bibliothèque, et une salle polyvalente de représentation.",
+    "image": "/uploads/sidi_bouzid_planche1.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Architecte, membre du groupement participant au concours",
+      "Programmation fonctionnelle et distribution spatiale",
+      "Conception technique et structurelle",
+      "Modélisation 3D et rendu des planches",
+      "Calcul des surfaces et estimations budgétaires"
+    ],
+    "gallery": [
+      "/uploads/sidi_bouzid_planche1.jpg",
+      "/uploads/sidi_bouzid_planche2.jpg",
+      "/uploads/1779028462216_PLANCHE_1_FINALE-page-001.jpg",
+      "/uploads/1779028462217_PLANCHE_2_FINALE-page-001.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/PLANCHE_1_SIDI_BOUZID.pdf",
+      "/uploads/PLANCHE_2_SIDI_BOUZID.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "complexe-thermal-zriba",
+    "title": "Complexe Thermal de Zriba",
+    "region": "concours",
+    "meta": "Concours de Maîtrise d'Œuvre | 2013",
+    "description": "Conception d'un centre thermal et de soins (SPA) moderne à Zriba, Zaghouan.",
+    "longDescription": "Proposition d'esquisse pour le Concours de Maîtrise d'Œuvre du Complexe Thermal et de Soins (SPA) de Zriba, Zaghouan. Le projet s'organise autour d'un grand bassin central, de hammams traditionnels réinterprétés et de locaux de physiothérapie, le tout magnifiquement intégré au site montagneux.",
+    "image": "/uploads/1779029532664_coupe.jpg",
+    "video": "/uploads/zriba_spa.mp4",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Architecte, membre du groupement participant au concours",
+      "Conception architecturale et volumétrique d'un SPA moderne",
+      "Modélisation et rendu 3D des espaces de soins",
+      "Rédaction du dossier de présentation technique",
+      "Montage de la vidéo de présentation 3D"
+    ],
+    "gallery": [
+      "/uploads/zriba_coupe.jpg",
+      "/uploads/zriba_masse.jpg",
+      "/uploads/1779029669922_2.bmp",
+      "/uploads/1779029669923_4.bmp",
+      "/uploads/1779029669923_5.bmp",
+      "/uploads/1779029669923_6.bmp",
+      "/uploads/1779029669924_7.bmp",
+      "/uploads/1779029669924_8.bmp",
+      "/uploads/1779029669924_9.bmp",
+      "/uploads/1779029669924_10.bmp",
+      "/uploads/1779029669925_11.bmp",
+      "/uploads/1779029669925_12.bmp",
+      "/uploads/1779029669925_13.bmp",
+      "/uploads/1779029669925_A_(2).jpg",
+      "/uploads/1779029669926_COUPE01.jpg",
+      "/uploads/1779029669926_COUPE02.jpg",
+      "/uploads/1779029669926_D_(2).jpg",
+      "/uploads/1779029669927_Façade_1.bmp"
+    ],
+    "galleryDocs": [
+      "/uploads/1779029683162_Présentation_Concours_Zriba_Spa.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "foyer-borj-cedria",
+    "title": "Foyer Universitaire Borj Cedria",
+    "region": "concours",
+    "meta": "Concours National d'Architecture",
+    "description": "Conception d'un hébergement collectif étudiant innovant et bioclimatique.",
+    "longDescription": "Proposition d'esquisse pour le Foyer Universitaire de Borj Cedria. Conception d'une tour d'allogements collectifs et de structures circulaires favorisant la convivialité estudiantine et l'apport thermique naturel.",
+    "image": "",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Architecte, membre du groupement participant au concours",
+      "Étude de typologie d'hébergement étudiant",
+      "Conception de structures circulaires innovantes",
+      "Modélisation 3D",
+      "Mise en plan"
+    ],
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/foyer_essai_1.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "village-langues-mahdia",
+    "title": "Village des Langues de Mahdia",
+    "region": "concours",
+    "meta": "Concours National d'Architecture | 2011",
+    "description": "Complexe éducatif et résidentiel d'apprentissage linguistique côtier.",
+    "longDescription": "Conception d'un complexe éducatif d'apprentissage linguistique intensif pour le concours national du Village des Langues de Mahdia. Intègre des locaux d'enseignement, une résidence étudiante et des espaces de loisirs adaptés au climat maritime.",
+    "image": "",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Architecte, membre du groupement participant au concours",
+      "Planification d'un campus mixte (éducation/résidence)",
+      "Intégration architecturale côtière",
+      "Rédaction du rapport de présentation technique"
+    ],
+    "gallery": [],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  }
+]

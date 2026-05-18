@@ -1,0 +1,41 @@
+{
+  "heroSubtitle": "Diplômé en Architecture, technicien",
+  "heroTitleHtml": "Anis BOUDEN",
+  "heroDescription": "Plus de 16 ans d'expérience en conception architecturale et maîtrise d'œuvre, dont 6 ans au Québec. \nDisponible à la relocalisation.",
+  "aboutText": "Diplômé en architecture et technicien avec une expertise reconnue dans la production de plans, la modélisation 3D et la coordination multidisciplinaire. \nMon parcours couvre des projets institutionnels majeurs (écoles, hôpitaux, bâtiments publics) au Québec et en Tunisie. \nRigoureux, méthodique, autonome, avec un fort esprit d'équipe et la maîtrise des outils de dessin numérique en architecture. Bilingue français-arabe, connaissance professionnelle de l'anglais. Disponible à la relocalisation.",
+  "contactEmail": "boudenanis@gmail.com",
+  "contactPhone": "+1 581 980 9131",
+  "contactLinkedin": "linkedin.com/in/anis-bouden",
+  "contactAddress": "Québec. Disponible à la relocalisation.",
+  "cvLink": "/cv_anis_bouden.pdf",
+  "heroImages": [],
+  "distinctions": [
+    {
+      "year": "2019",
+      "title": "Prix des Journées Architecturales de Carthage (JAC)",
+      "description": "Meilleur projet — Catégorie Bâtiments Civils. Projet : Institut Supérieur des Sciences Appliquées et de la Technologie (ISSAT).",
+      "type": "award"
+    },
+    {
+      "year": "2014",
+      "title": "Lauréat du Concours National d'Architecture",
+      "description": "Conception de l'Institut ISSAT — sélectionné parmi toutes les candidatures nationales en janvier 2014. Réalisation du projet de 2016 à 2019.",
+      "type": "competition"
+    },
+    {
+      "year": "2015–2018",
+      "title": "Partenariat Médias — DARI DECO (TV)",
+      "description": "Architecte partenaire de l'émission de décoration télévisée DARI DECO (Saison 3). Réaménagements réalisés en 7 jours présentés à l'antenne.",
+      "type": "media"
+    },
+    {
+      "year": "2018",
+      "type": "media",
+      "title": "Édifices & Mémoires — Radio Culturelle",
+      "description": "L'association @Édifices & Mémoires représentée par Anis Bouden et @L'ordre des architectes de Tunisie représenté par son président Mohamed Marzouk sur les ondes de \"Radio culturelle\" pour exposer les dangers et les limites du projet de loi sur les immeubles menaçant ruine proposé par Monsieur le ministre de l'équipement.\nhttps://edifices-et-memoires.com/",
+      "image": "",
+      "video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/nrzwkrfXAPE?si=Mx8gkmNTTe6lylOc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+      "gallery": []
+    }
+  ]
+}

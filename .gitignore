@@ -1,0 +1,51 @@
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
+
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+# ===== GROS FICHIERS (exclus pour GitHub) =====
+# Dossier CONCOURS (22 GB — archives projets, pas utilisé par le site)
+public/CONCOURS/
+
+# Fichiers BMP (trop volumineux, pas utilisés par le site)
+*.bmp
+
+# Vidéos volumineuses (> 100 MB)
+public/uploads/zriba_spa.mp4
+public/Podcast radio culturelle.mp4
+
+# Fichiers temporaires / tests échoués (9 bytes)
+public/test.jpg
+public/test.mp4
+public/test_cookie.jpg
+public/test_simple.jpg
+public/issat.mp4
+public/cookies.txt
+
+# Scripts utilitaires locaux (pas nécessaires pour le site)
+download.ps1
+download_media.bat
+update_tasks.ps1
+sort_projects.cjs
+update_quebec.cjs
+Lancer_Portfolio.bat

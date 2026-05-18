@@ -1,0 +1,383 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Admin | Anis BOUDEN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="/src/style.css"/>
+  <style>
+    body { background: #080808; min-height: 100vh; }
+    .admin-wrap { max-width: 960px; margin: 0 auto; padding: 2rem; padding-top: 5rem; }
+    .admin-topbar { display: flex; justify-content: space-between; align-items: center; margin-bottom: 2.5rem; }
+    .admin-topbar h1 { font-size: 1.8rem; }
+    .tabs { display: flex; gap: .6rem; margin-bottom: 2rem; flex-wrap: wrap; }
+    .tab-btn { padding: .65rem 1.3rem; background: rgba(255,255,255,.04); border: 1px solid rgba(255,255,255,.1); color: #888; border-radius: 8px; cursor: pointer; font-weight: 600; font-family: 'Outfit', sans-serif; font-size: .9rem; transition: all .3s; }
+    .tab-btn.active { background: var(--accent); color: #000; border-color: var(--accent); }
+    .tab-btn:hover:not(.active) { border-color: var(--accent); color: var(--accent); }
+    .tab-content { display: none; }
+    .tab-content.active { display: block; }
+    .form-card { background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.08); border-radius: 16px; padding: 2rem; margin-bottom: 2rem; }
+    .form-card h3 { font-size: 1.1rem; color: var(--accent); margin-bottom: 1.5rem; padding-bottom: .8rem; border-bottom: 1px solid rgba(255,255,255,.07); }
+    .form-grid { display: grid; gap: 1.2rem; }
+    .form-grid-2 { grid-template-columns: 1fr 1fr; }
+    .form-group { display: flex; flex-direction: column; gap: .5rem; }
+    label { font-size: .82rem; font-weight: 600; color: var(--accent); text-transform: uppercase; letter-spacing: .8px; }
+    input, select, textarea { background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.1); padding: .75rem 1rem; border-radius: 8px; color: #f0f0f0; font-family: 'Inter', sans-serif; font-size: .9rem; transition: border-color .3s; width: 100%; }
+    input:focus, select:focus, textarea:focus { outline: none; border-color: var(--accent); background: rgba(255,255,255,.07); }
+    .hint { font-size: .78rem; color: #666; margin-top: .3rem; }
+    .form-actions { display: flex; gap: 1rem; margin-top: 1.5rem; flex-wrap: wrap; }
+    /* Image upload */
+    .upload-area { border: 2px dashed rgba(255,255,255,.15); border-radius: 10px; padding: 1.5rem; text-align: center; cursor: pointer; transition: all .3s; position: relative; }
+    .upload-area:hover { border-color: var(--accent); background: rgba(212,175,55,.04); }
+    .upload-area input[type=file] { position: absolute; inset: 0; opacity: 0; cursor: pointer; width: 100%; height: 100%; }
+    .upload-label { font-size: .9rem; color: #666; }
+    .upload-label strong { color: var(--accent); }
+    .img-preview { width: 100%; max-height: 160px; object-fit: cover; border-radius: 8px; margin-top: .8rem; display: none; }
+    /* Gallery preview */
+    .gallery-preview { display: flex; flex-wrap: wrap; gap: .5rem; margin-top: .8rem; }
+    .gallery-thumb { position: relative; width: 80px; height: 60px; border-radius: 6px; overflow: hidden; border: 1px solid rgba(255,255,255,.1); }
+    .gallery-thumb img { width: 100%; height: 100%; object-fit: cover; }
+    .gallery-thumb .remove-thumb { position: absolute; top: 2px; right: 2px; background: rgba(255,0,0,.8); color: #fff; border: none; border-radius: 50%; width: 18px; height: 18px; font-size: .65rem; cursor: pointer; display: flex; align-items: center; justify-content: center; font-family: monospace; }
+    /* Project list */
+    .project-list { display: flex; flex-direction: column; gap: .8rem; }
+    .project-list-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 10px; transition: all .3s; }
+    .project-list-item:hover { border-color: rgba(212,175,55,.2); }
+    .project-list-item .item-info strong { font-size: .95rem; }
+    .project-list-item .item-info small { color: #666; font-size: .8rem; margin-left: .5rem; }
+    .item-actions { display: flex; gap: .6rem; }
+    .btn-sm { padding: .4rem .9rem; font-size: .82rem; border-radius: 6px; }
+    .btn-danger { background: rgba(255,60,60,.15); color: #ff6b6b; border: 1px solid rgba(255,60,60,.3); font-family: 'Outfit', sans-serif; cursor: pointer; transition: all .3s; }
+    .btn-danger:hover { background: rgba(255,60,60,.25); }
+    .btn-edit { background: rgba(255,255,255,.07); color: #ccc; border: 1px solid rgba(255,255,255,.12); font-family: 'Outfit', sans-serif; cursor: pointer; transition: all .3s; }
+    .btn-edit:hover { border-color: var(--accent); color: var(--accent); }
+    /* Distinctions admin */
+    .distinction-list { display: flex; flex-direction: column; gap: .8rem; }
+    .distinction-item { display: flex; justify-content: space-between; align-items: center; padding: 1rem 1.5rem; background: rgba(255,255,255,.03); border: 1px solid rgba(255,255,255,.07); border-radius: 10px; }
+    .distinction-item .item-year { color: var(--accent); font-weight: 700; font-size: .8rem; margin-right: .8rem; }
+    /* Save bar */
+    .save-bar { background: rgba(212,175,55,.08); border: 1px solid rgba(212,175,55,.2); border-radius: 12px; padding: 1.2rem 2rem; text-align: center; margin-top: 2rem; }
+    .save-bar p { color: #888; font-size: .85rem; margin-top: .8rem; }
+    .toast { position: fixed; bottom: 2rem; right: 2rem; background: #1a1a1a; border: 1px solid rgba(212,175,55,.4); color: #f0f0f0; padding: 1rem 1.5rem; border-radius: 10px; font-size: .9rem; z-index: 9999; transform: translateY(100px); opacity: 0; transition: all .4s; }
+    .toast.show { transform: translateY(0); opacity: 1; }
+    @media(max-width:680px) { .form-grid-2 { grid-template-columns: 1fr; } .admin-topbar { flex-direction: column; gap: 1rem; align-items: flex-start; } }
+  </style>
+</head>
+<body>
+  <nav class="navbar scrolled">
+    <div class="nav-container">
+      <a href="/" class="logo">A<span>BOUDEN</span></a>
+      <a href="/" class="btn btn-secondary btn-sm">← Retour au site</a>
+    </div>
+  </nav>
+
+  <div class="admin-wrap">
+    <div class="admin-topbar">
+      <h1>⚙️ Administration</h1>
+    </div>
+
+    <div class="tabs">
+      <button class="tab-btn active" data-tab="projects">📁 Projets</button>
+      <button class="tab-btn" data-tab="content">✏️ Contenu & CV</button>
+      <button class="tab-btn" data-tab="distinctions">🏆 Distinctions</button>
+    </div>
+
+    <!-- ===== PROJECTS TAB ===== -->
+    <div id="tab-projects" class="tab-content active">
+      <div class="form-card">
+        <h3 id="form-title">➕ Ajouter un projet</h3>
+        <input type="hidden" id="project-id">
+        <div class="form-grid">
+          <div class="form-grid form-grid-2">
+            <div class="form-group">
+              <label for="title">Titre du projet</label>
+              <input type="text" id="title" placeholder="Ex: Institut ISSAT">
+            </div>
+            <div class="form-group">
+              <label for="region">Région</label>
+              <select id="region">
+                <option value="tunisia">Tunisie (Projets) 🇹🇳</option>
+                <option value="quebec">Québec 🇨🇦</option>
+                <option value="concours">Concours d'Architecture 🏆</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="meta">Méta (dates, lieu, prix)</label>
+            <input type="text" id="meta" placeholder="Ex: Réalisation: 2016–2019">
+          </div>
+
+          <div class="form-group">
+            <label>Image de couverture (Principale)</label>
+            <div class="upload-area" id="image-upload-area">
+              <input type="file" id="image-file" accept="image/*">
+              <p class="upload-label">🖼️ <strong>Cliquer</strong> ou glisser l'image principale ici<br><small>Recommandé: 1920x1080px</small></p>
+              <img id="image-preview" class="img-preview" alt="Aperçu">
+            </div>
+            <input type="text" id="image" placeholder="URL de l'image (auto-rempli après upload)" style="margin-top:.5rem">
+          </div>
+
+          <div class="form-group">
+            <label for="video">Code d'intégration Vidéo (HTML iframe) ou URL</label>
+            <textarea id="video" rows="2" placeholder="Copiez ici le code 'Intégrer' (iframe) de YouTube/Vimeo ou une URL directe"></textarea>
+            <div id="video-preview" style="margin-top:.5rem;display:none">
+              <div id="video-preview-container" class="video-container" style="max-width: 320px; aspect-ratio: 16/9; margin-bottom: 0.5rem;"></div>
+              <img id="video-thumb" style="width:120px;height:68px;border-radius:6px;object-fit:cover; display:none;" alt="Miniature vidéo">
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="description">Description courte (carte)</label>
+            <textarea id="description" rows="3" placeholder="Description courte..."></textarea>
+          </div>
+
+          <div class="form-group">
+            <label for="longDescription">Description détaillée (page projet)</label>
+            <textarea id="longDescription" rows="5" placeholder="Contexte, défis, réalisations..."></textarea>
+          </div>
+
+          <div class="form-grid form-grid-2">
+            <div class="form-group">
+              <label for="budget">Budget (optionnel)</label>
+              <input type="text" id="budget" placeholder="Ex: 5 000 000 €">
+            </div>
+            <div class="form-group">
+              <label for="tasks">Responsabilités (une par ligne)</label>
+              <textarea id="tasks" rows="4" placeholder="Conception architecturale&#10;Modélisation&#10;Coordination"></textarea>
+            </div>
+          </div>
+
+          <div class="form-group">
+            <label for="gallery">Galerie photos (Drag & Drop ou URLs)</label>
+            <div class="upload-area" id="gallery-upload-area" style="margin-bottom: 1rem;">
+              <input type="file" id="gallery-file" accept="image/*" multiple>
+              <p class="upload-label">📸 <strong>Glisser plusieurs photos ici</strong> pour les ajouter à la galerie</p>
+            </div>
+            <textarea id="gallery" rows="3" placeholder="/photo1.jpg&#10;/photo2.jpg"></textarea>
+            <div class="gallery-preview" id="gallery-preview"></div>
+          </div>
+          <!-- Special Rubrics Card -->
+          <div class="form-card" id="special-rubrics-card" style="margin-top: 2rem; background: rgba(212,175,55,0.03); border: 1px dashed rgba(212,175,55,0.2); display: none;">
+            <h3>✨ Rubriques Spéciales</h3>
+            <p class="hint" style="margin-bottom:1.5rem">Options de mise en page premium activées pour ce projet.</p>
+            
+            <!-- ISSAT Specific Group -->
+            <div id="group-issat" style="display: none;">
+              <div class="form-group">
+                <label for="showDistinctionBtn">🏆 Lier aux Prix & Distinctions</label>
+                <div style="display:flex; align-items:center; gap: 0.5rem;">
+                  <input type="checkbox" id="showDistinctionBtn" style="width:auto;">
+                  <span class="hint">Afficher un bouton premium pointant vers les distinctions sur la page d'accueil</span>
+                </div>
+              </div>
+              
+              <div class="form-grid form-grid-2">
+                <div class="form-group">
+                  <label for="galleryDocs">📂 Documents du projet (Plans / Concours / PDF / Images)</label>
+                  <div class="upload-area" id="galleryDocs-upload-area" style="margin-bottom: 0.5rem; padding: 1rem;">
+                    <input type="file" id="galleryDocs-file" accept="image/*,application/pdf" multiple>
+                    <p class="upload-label" style="font-size:0.8rem;">📸 Glisser les documents ici</p>
+                  </div>
+                  <textarea id="galleryDocs" rows="2" placeholder="/doc1.pdf&#10;/doc2.jpg"></textarea>
+                  <div class="gallery-preview" id="galleryDocs-preview"></div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="galleryRealisation">🏗️ Photos de la Réalisation</label>
+                  <div class="upload-area" id="galleryRealisation-upload-area" style="margin-bottom: 0.5rem; padding: 1rem;">
+                    <input type="file" id="galleryRealisation-file" accept="image/*" multiple>
+                    <p class="upload-label" style="font-size:0.8rem;">📸 Glisser les photos ici</p>
+                  </div>
+                  <textarea id="galleryRealisation" rows="2" placeholder="/real1.jpg&#10;/real2.jpg"></textarea>
+                  <div class="gallery-preview" id="galleryRealisation-preview"></div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Before/After Specific Group -->
+            <div id="group-before-after" style="display: none;">
+              <div class="form-grid form-grid-2">
+                <div class="form-group">
+                  <label for="galleryBefore">🏚️ Avant (Bâtiment existant)</label>
+                  <div class="upload-area" id="galleryBefore-upload-area" style="margin-bottom: 0.5rem; padding: 1rem;">
+                    <input type="file" id="galleryBefore-file" accept="image/*" multiple>
+                    <p class="upload-label" style="font-size:0.8rem;">📸 Glisser les photos existantes</p>
+                  </div>
+                  <textarea id="galleryBefore" rows="2" placeholder="/avant1.jpg&#10;/avant2.jpg"></textarea>
+                  <div class="gallery-preview" id="galleryBefore-preview"></div>
+                </div>
+                
+                <div class="form-group">
+                  <label for="galleryAfter">✨ Après (Aménagement proposé)</label>
+                  <div class="upload-area" id="galleryAfter-upload-area" style="margin-bottom: 0.5rem; padding: 1rem;">
+                    <input type="file" id="galleryAfter-file" accept="image/*" multiple>
+                    <p class="upload-label" style="font-size:0.8rem;">📸 Glisser les propositions d'aménagement</p>
+                  </div>
+                  <textarea id="galleryAfter" rows="2" placeholder="/apres1.jpg&#10;/apres2.jpg"></textarea>
+                  <div class="gallery-preview" id="galleryAfter-preview"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="form-actions">
+          <button id="add-btn" class="btn btn-primary">➕ Ajouter à la liste</button>
+          <button id="new-btn" class="btn btn-secondary">🔄 Nouveau projet</button>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom:1rem;font-size:1.1rem;">Liste des projets</h3>
+      <div id="admin-project-list" class="project-list"></div>
+
+      <div class="save-bar">
+        <button id="export-btn" class="btn btn-primary">💾 Sauvegarder les projets</button>
+        <p>La sauvegarde automatique est tentée via le serveur. Si elle échoue, un fichier <code>projects.json</code> sera téléchargé.</p>
+      </div>
+    </div>
+
+    <!-- ===== CONTENT TAB ===== -->
+    <div id="tab-content" class="tab-content">
+      <div class="form-card">
+        <h3>🦸 Textes de la page d'accueil</h3>
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="c-logoText">Texte du Logo (En haut à gauche)</label>
+            <input type="text" id="c-logoText" placeholder="Ex: Anis BOUDEN">
+            <small style="color: #888;">Laissez vide pour cacher le logo.</small>
+          </div>
+          <div class="form-group">
+            <label for="c-heroSubtitle">Sous-titre héro</label>
+            <input type="text" id="c-heroSubtitle" placeholder="Technicien | Dessinateur en Architecture">
+          </div>
+          <div class="form-group">
+            <label for="c-heroTitleHtml">Titre principal (HTML autorisé)</label>
+            <input type="text" id="c-heroTitleHtml" placeholder="Ex: Anis BOUDEN">
+          </div>
+          <div class="form-group">
+            <label for="c-heroDescription">Description héro</label>
+            <textarea id="c-heroDescription" rows="3"></textarea>
+          </div>
+          <div class="form-group">
+            <label for="c-aboutText">Texte "À Propos"</label>
+            <textarea id="c-aboutText" rows="5"></textarea>
+          </div>
+        </div>
+      </div>
+      
+      <div class="form-card">
+        <h3>📞 Contact & CV</h3>
+        <div class="form-grid form-grid-2">
+          <div class="form-group">
+            <label for="c-contactEmail">Email</label>
+            <input type="text" id="c-contactEmail">
+          </div>
+          <div class="form-group">
+            <label for="c-contactPhone">Téléphone / WhatsApp</label>
+            <input type="text" id="c-contactPhone">
+          </div>
+          <div class="form-group">
+            <label for="c-contactLinkedin">LinkedIn (URL complète ou sans https://)</label>
+            <input type="text" id="c-contactLinkedin">
+          </div>
+          <div class="form-group">
+            <label for="c-contactAddress">Adresse / Localisation</label>
+            <input type="text" id="c-contactAddress">
+          </div>
+        </div>
+        <div class="form-group" style="margin-top:1.2rem">
+          <label>Fichier CV (PDF)</label>
+          <div class="upload-area">
+            <input type="file" id="cv-file-input" accept="application/pdf">
+            <p class="upload-label">📄 <strong>Cliquer</strong> pour uploader un nouveau CV PDF<br><small>Ou entrer le lien ci-dessous</small></p>
+          </div>
+          <input type="text" id="c-cvLink" placeholder="/cv_anis_bouden.pdf ou https://..." style="margin-top:.5rem">
+          <p class="hint" id="cv-upload-status"></p>
+        </div>
+      </div>
+
+      <div class="form-actions" style="margin-bottom:2rem">
+        <button id="save-content-btn" class="btn btn-primary">💾 Sauvegarder le contenu</button>
+        <button id="export-content-btn" class="btn btn-secondary">⬇️ Télécharger content.json</button>
+      </div>
+    </div>
+
+    <!-- ===== DISTINCTIONS TAB ===== -->
+    <div id="tab-distinctions" class="tab-content">
+      <div class="form-card">
+        <h3 id="dist-form-title">➕ Ajouter une distinction</h3>
+        <input type="hidden" id="dist-id">
+        <div class="form-grid">
+          <div class="form-grid form-grid-2">
+            <div class="form-group">
+              <label for="dist-year">Année</label>
+              <input type="text" id="dist-year" placeholder="2019">
+            </div>
+            <div class="form-group">
+              <label for="dist-type">Type</label>
+              <select id="dist-type">
+                <option value="award">🏆 Prix</option>
+                <option value="competition">🥇 Concours</option>
+                <option value="media">📺 Médias / Presse</option>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dist-title">Titre</label>
+            <input type="text" id="dist-title" placeholder="Ex: Prix JAC 2019 — Meilleur bâtiment civil">
+          </div>
+          <div class="form-group">
+            <label for="dist-desc">Description</label>
+            <textarea id="dist-desc" rows="3" placeholder="Contexte, projet concerné..."></textarea>
+          </div>
+          <div class="form-grid form-grid-2">
+            <div class="form-group">
+              <label>Image (Principale)</label>
+              <div class="upload-area" id="dist-image-upload-area">
+                <input type="file" id="dist-image-file" accept="image/*">
+                <p class="upload-label">🖼️ <strong>Cliquer/Glisser</strong> l'image ici</p>
+                <img id="dist-image-preview" class="img-preview" alt="Aperçu">
+              </div>
+              <input type="text" id="dist-image" placeholder="URL de l'image" style="margin-top:.5rem">
+            </div>
+            <div class="form-group">
+              <label for="dist-video">Code vidéo ou URL</label>
+              <textarea id="dist-video" rows="2" placeholder="<iframe> ou URL YouTube/MP4"></textarea>
+              <div id="dist-video-preview" style="margin-top:.5rem;display:none">
+                <div id="dist-video-preview-container" class="video-container" style="max-width: 200px; aspect-ratio: 16/9;"></div>
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label for="dist-gallery">Galerie (Plusieurs photos)</label>
+            <div class="upload-area" id="dist-gallery-upload-area" style="margin-bottom: 1rem;">
+              <input type="file" id="dist-gallery-file" accept="image/*" multiple>
+              <p class="upload-label">📸 <strong>Glisser plusieurs photos</strong> ici</p>
+            </div>
+            <textarea id="dist-gallery" rows="2" placeholder="/photo1.jpg&#10;/photo2.jpg"></textarea>
+            <div class="gallery-preview" id="dist-gallery-preview"></div>
+          </div>
+        </div>
+        <div class="form-actions">
+          <button id="dist-add-btn" class="btn btn-primary">✅ Enregistrer</button>
+          <button id="dist-new-btn" class="btn btn-secondary">🔄 Nouvelle distinction</button>
+        </div>
+      </div>
+
+      <h3 style="margin-bottom:1rem;font-size:1.1rem;">Distinctions enregistrées</h3>
+      <div id="distinctions-admin-list" class="distinction-list"></div>
+
+      <div class="save-bar" style="margin-top:1.5rem">
+        <button id="save-distinctions-btn" class="btn btn-primary">💾 Sauvegarder les distinctions</button>
+        <p>Les distinctions sont sauvegardées dans <code>content.json</code>.</p>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast"></div>
+  <script type="module" src="/src/admin.js"></script>
+</body>
+</html>
