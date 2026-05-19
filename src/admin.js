@@ -589,14 +589,78 @@ function setupGalleryUpload(idPrefix = '') {
   }
 }
 
-// ===== Init =====
-async function init() {
+// ===== Security & Authentication =====
+const AUTH_KEY = 'portfolio_admin_auth';
+const CORRECT_HASH = '3c6b2a3f5c08024e078b0176e2a369342e806a9005b0aa0335b63c5dedd72e5d'; // Hash for Kaki0762*
+
+async function hashPassword(passwd) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(passwd);
+  const hashBuffer = await crypto.subtle.digest('SHA-256', data);
+  const hashArray = Array.from(new Uint8Array(hashBuffer));
+  return hashArray.map(b => b.toString(16).padStart(2, '0')).join('');
+}
+
+async function verifyAndUnlock() {
+  const passwordInput = document.getElementById('admin-password');
+  const errorEl = document.getElementById('lockscreen-error');
+  if (!passwordInput) return;
+  
+  const passwd = passwordInput.value;
+  const hashed = await hashPassword(passwd);
+  
+  if (hashed === CORRECT_HASH) {
+    localStorage.setItem(AUTH_KEY, hashed);
+    document.body.classList.remove('locked');
+    const lockScreen = document.getElementById('lockscreen');
+    if (lockScreen) lockScreen.style.display = 'none';
+    
+    // Complete page initialization after successful unlock
+    await completeInit();
+  } else {
+    if (errorEl) errorEl.style.display = 'block';
+    passwordInput.value = '';
+    passwordInput.focus();
+  }
+}
+
+async function completeInit() {
   await initContent();
   await initProjects();
   distinctions = generalContent.distinctions || [];
   renderDistinctionsList();
+}
+
+// ===== Init =====
+async function init() {
+  // Bind lockscreen button and Enter key
+  const unlockBtn = document.getElementById('unlock-btn');
+  const passwordInput = document.getElementById('admin-password');
   
-  // Projects
+  unlockBtn?.addEventListener('click', verifyAndUnlock);
+  passwordInput?.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') verifyAndUnlock();
+  });
+  
+  // Bind logout button
+  document.getElementById('logout-btn')?.addEventListener('click', () => {
+    localStorage.removeItem(AUTH_KEY);
+    window.location.reload();
+  });
+
+  // Check stored auth session
+  const storedHash = localStorage.getItem(AUTH_KEY);
+  if (storedHash === CORRECT_HASH) {
+    document.body.classList.remove('locked');
+    const lockScreen = document.getElementById('lockscreen');
+    if (lockScreen) lockScreen.style.display = 'none';
+    await completeInit();
+  } else {
+    // If not unlocked, focus on password field
+    setTimeout(() => passwordInput?.focus(), 100);
+  }
+
+  // Setup Projects UI elements
   setupImagePreview('image-file', 'image-preview', 'image');
   setupGalleryUpload();
   setupGalleryUpload('galleryDocs');
