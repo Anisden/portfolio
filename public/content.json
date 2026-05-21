@@ -11,20 +11,20 @@
   "heroImages": [],
   "experiences": [
     {
-      "company": "CSSDN",
+      "company": "CSSDN - Centre de Services Scolaires des Navigateurs",
       "region": "quebec",
       "location": "🇨🇦 Québec",
       "date": "2025 — maintenant",
-      "role": "Technicien en bâtiment — Plans de Mesures d'Urgence",
-      "description": "Numérisation des bâtiments scolaires via e-Cobalt. Création d'outils collaboratifs (Power Apps) pour la centralisation des données de sécurité et la conformité réglementaire."
+      "role": "Diplômé en architecture - Technicien en bâtiment - Services des Ressources Matérielles",
+      "description": "Les Services des Ressources Matérielles gérent le parc immobilier (78 établissements scolaires et administratifs) du CSSDN: entretien, maintien d'actifs et développement stratégique.\n\nResponsable du développement et de la mise à jour continue des plans de mesures d’urgence (PMU) pour l’ensemble des établissements scolaires, incluant les plans d’évacuation en CAO, les procédures de sécurité incendie, l’accessibilité et les mesures de gestion des risques.\n\nResponsable de projets de réaménagement et/ou agrandissement dans les établissements scolaires: relevés, mise en plans, coordinnation des projets avec les directions d'écoles, les architectes, les ingénieurs et les entrepreneurs.\n\nCréation d'outils collaboratifs (Power Apps IA) pour la centralisation des données: mise à jour de la base de données de plans, suivi de la conformité et coordination multidisciplinaire."
     },
     {
-      "company": "Larochelle et Desmeules, Architectes",
+      "company": "LDA - Larochelle et Desmeules, architectes",
       "region": "quebec",
       "location": "🇨🇦 Québec",
       "date": "2021–2025",
-      "role": "Technicien / Diplômé en Architecture",
-      "description": "Relevés terrain, modélisation (Revit), coordination multidisciplinaire et production de documents d'appel d'offres pour des projets institutionnels (écoles, cégeps, piscines municipales, arénas)."
+      "role": "M.Arch. Diplômé en Architecture",
+      "description": "LDA est une firme d'architecture reconnue, dans la province de Québec, dans les secteurs loisir, commercial et institutionnel, axée sur l'intégrité et la création de milieux de vie fonctionnels.\n\nEn étroite collaboration avec le chargé de projet, je participe activement à toutes les phases des mandats institutionnels (écoles, cégeps, complexes aquatiques et arénas). \nMon rôle englobe l'ensemble du cycle de projet : des relevés de terrain initiaux jusqu'au suivi de chantier, en passant par la modélisation 3D, la coordination multidisciplinaire et la production rigoureuse des documents d'exécution et d'appel d'offres.\n\nDans la section projet, les tâches qui m'ont été confiées sont indiquées pour chaque projet."
     },
     {
       "company": "B.D Architectes / BAK",
@@ -56,6 +56,34 @@
       "eventLink": "https://www.mramma.tn/actualites/projets-laur%C3%A9ats-lors-des-journ%C3%A9es-architecturales-de-carthage"
     },
     {
+      "year": "2018",
+      "type": "media",
+      "title": "Édifices & Mémoires — Radio Culturelle",
+      "description": "L'association @Édifices & Mémoires représentée par Anis Bouden et @L'ordre des architectes de Tunisie représenté par son président Mohamed Marzouk sur les ondes de \"Radio culturelle\" pour exposer les dangers et les limites du projet de loi sur les immeubles menaçant ruine proposé par Monsieur le ministre de l'équipement.\nhttps://edifices-et-memoires.com/",
+      "image": "",
+      "video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/nrzwkrfXAPE?si=Mx8gkmNTTe6lylOc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+      "gallery": []
+    },
+    {
+      "year": "2017",
+      "type": "media",
+      "title": "Partenariat Médias — DARI DECO (TV)",
+      "description": "Architecte partenaire de l'émission de décoration télévisée DARI DECO (Saison 3). Réaménagements réalisés en 7 jours présentés à l'antenne.",
+      "image": "",
+      "video": "",
+      "gallery": [],
+      "eventPhoto": "",
+      "eventLink": ""
+    },
+    {
+      "year": "2016",
+      "type": "press",
+      "title": "Architecture Méditerranéenne (2016)",
+      "description": "Revue Internationale d'Architecture.",
+      "image": "",
+      "pdfLink": "/architecture_mediterraneenne.pdf"
+    },
+    {
       "year": "2014",
       "title": "Lauréat du Concours National d'Architecture",
       "description": "Conception de l'Institut ISSAT — sélectionné parmi toutes les candidatures nationales en janvier 2014. Réalisation du projet de 2016 à 2019.",
@@ -68,29 +96,6 @@
       "description": "Revue maghrébine d'aménagement de l'espace et de la construction.",
       "image": "",
       "pdfLink": "/article_archibat.pdf"
-    },
-    {
-      "year": "2016",
-      "type": "press",
-      "title": "Architecture Méditerranéenne (2016)",
-      "description": "Revue Internationale d'Architecture.",
-      "image": "",
-      "pdfLink": "/architecture_mediterraneenne.pdf"
-    },
-    {
-      "year": "2015–2018",
-      "title": "Partenariat Médias — DARI DECO (TV)",
-      "description": "Architecte partenaire de l'émission de décoration télévisée DARI DECO (Saison 3). Réaménagements réalisés en 7 jours présentés à l'antenne.",
-      "type": "media"
-    },
-    {
-      "year": "2018",
-      "type": "media",
-      "title": "Édifices & Mémoires — Radio Culturelle",
-      "description": "L'association @Édifices & Mémoires représentée par Anis Bouden et @L'ordre des architectes de Tunisie représenté par son président Mohamed Marzouk sur les ondes de \"Radio culturelle\" pour exposer les dangers et les limites du projet de loi sur les immeubles menaçant ruine proposé par Monsieur le ministre de l'équipement.\nhttps://edifices-et-memoires.com/",
-      "image": "",
-      "video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/nrzwkrfXAPE?si=Mx8gkmNTTe6lylOc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
-      "gallery": []
     }
   ],
   "logoText": ""
