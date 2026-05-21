@@ -866,6 +866,63 @@ ul {
   font-weight: 500;
 }
 
+/* Vertical Date Rectangle — Central Timeline Axis */
+.timeline-date-rect {
+  position: absolute;
+  top: 42px;
+  width: 28px;
+  min-height: 110px;
+  background: var(--bg);
+  border: 2px solid var(--accent);
+  border-radius: var(--r-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 6;
+  transition: var(--tr);
+  padding: 6px 3px;
+}
+
+.timeline-item:nth-child(odd) .timeline-date-rect {
+  right: -14px;
+}
+
+.timeline-item:nth-child(even) .timeline-date-rect {
+  left: -14px;
+}
+
+.timeline-date-rect span {
+  writing-mode: vertical-rl;
+  text-orientation: mixed;
+  transform: rotate(180deg);
+  font-family: var(--font-h);
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: var(--accent);
+  letter-spacing: 1.5px;
+  text-transform: uppercase;
+  white-space: nowrap;
+  line-height: 1;
+}
+
+.timeline-date-rect.quebec-rect {
+  border-color: var(--accent-sec);
+}
+
+.timeline-date-rect.quebec-rect span {
+  color: var(--accent-sec);
+}
+
+.timeline-item:hover .timeline-date-rect {
+  background: rgba(212, 175, 55, 0.06);
+  box-shadow: 0 0 12px rgba(212, 175, 55, 0.18);
+}
+
+.timeline-item:hover .timeline-date-rect.quebec-rect {
+  background: rgba(226, 165, 60, 0.06);
+  box-shadow: 0 0 12px rgba(226, 165, 60, 0.18);
+}
+
 /* Distinctions */
 .distinctions {
   background: var(--bg);
@@ -1322,6 +1379,7 @@ footer {
   .timeline::before { left: 30px; }
   .timeline-item { width: 100%; padding-left: 80px!important; padding-right: 0!important; left: 0!important; }
   .timeline-marker { left: 23px!important; right: auto!important; }
+  .timeline-date-rect { left: 17px !important; right: auto !important; top: 52px; }
 }
 
 @media (max-width: 768px) {

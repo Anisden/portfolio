@@ -129,6 +129,38 @@ function renderDistinctions(distinctions) {
   grid.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 }
 
+// Load Experiences (Parcours)
+function renderExperiences(experiences) {
+  const container = document.getElementById('timeline-container');
+  if (!container || !experiences?.length) return;
+
+  container.innerHTML = experiences.map((exp, idx) => {
+    const isEven = idx % 2 === 1;
+    const markerClass = exp.region === 'quebec' ? 'quebec-marker' : 'tunisia-marker';
+    const rectClass = exp.region === 'quebec' ? 'quebec-rect' : 'tunisia-rect';
+    const delayClass = isEven ? 'delay-1' : '';
+
+    return `
+      <div class="timeline-item fade-up ${delayClass}">
+        <div class="timeline-marker ${markerClass}"></div>
+        <div class="timeline-date-rect ${rectClass}">
+          <span>${exp.date}</span>
+        </div>
+        <div class="timeline-content glass-alt">
+          <div class="timeline-header">
+            <h3>${exp.company}</h3>
+            <span class="location">${exp.location}</span>
+          </div>
+          <p class="timeline-role">${exp.role}</p>
+          <p>${exp.description}</p>
+        </div>
+      </div>
+    `;
+  }).join('');
+
+  container.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+}
+
 window.openLightbox = (src) => {
   const lb = document.createElement('div');
   lb.style.cssText = "position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); display: flex; align-items: center; justify-content: center; z-index: 9999; opacity: 0; transition: opacity 0.3s ease;";
@@ -384,6 +416,7 @@ async function loadContent() {
       });
     }
     if (c.distinctions) renderDistinctions(c.distinctions);
+    if (c.experiences) renderExperiences(c.experiences);
   } catch (e) { console.error('Content load error', e); }
 }
 

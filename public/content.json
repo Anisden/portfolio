@@ -9,6 +9,40 @@
   "contactAddress": "Québec. Disponible à la relocalisation.",
   "cvLink": "/cv_anis_bouden.pdf",
   "heroImages": [],
+  "experiences": [
+    {
+      "company": "CSSDN",
+      "region": "quebec",
+      "location": "🇨🇦 Québec",
+      "date": "2025 — maintenant",
+      "role": "Technicien en bâtiment — Plans de Mesures d'Urgence",
+      "description": "Numérisation des bâtiments scolaires via e-Cobalt. Création d'outils collaboratifs (Power Apps) pour la centralisation des données de sécurité et la conformité réglementaire."
+    },
+    {
+      "company": "Larochelle et Desmeules, Architectes",
+      "region": "quebec",
+      "location": "🇨🇦 Québec",
+      "date": "2021–2025",
+      "role": "Technicien / Diplômé en Architecture",
+      "description": "Relevés terrain, modélisation (Revit), coordination multidisciplinaire et production de documents d'appel d'offres pour des projets institutionnels (écoles, cégeps, piscines municipales, arénas)."
+    },
+    {
+      "company": "B.D Architectes / BAK",
+      "region": "tunisie",
+      "location": "🇹🇳 Tunisie",
+      "date": "2010–2020",
+      "role": "Cofondateur & Architecte",
+      "description": "Conception et gestion de projets publics et privés majeurs (hôpitaux, instituts, bâtiments administratifs). Collaboration internationale avec des bureaux français. Partenariat avec l'émission télévisée DARI DECO."
+    },
+    {
+      "company": "TBM International",
+      "region": "tunisie",
+      "location": "🇹🇳 Tunisie",
+      "date": "2008–2010",
+      "role": "Architecte Coordinateur",
+      "description": "Coordination technique et gestion de concours internationaux (Mauritanie, Algérie) pour des quartiers d'affaires et sièges sociaux."
+    }
+  ],
   "distinctions": [
     {
       "year": "2019",

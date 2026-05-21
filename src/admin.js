@@ -403,6 +403,90 @@ document.getElementById('export-content-btn')?.addEventListener('click', () => {
   toast('📥 content.json téléchargé. Copiez-le dans /public/.');
 });
 
+// ===== Experiences (Parcours) =====
+let experiences = [];
+
+function renderExperiencesList() {
+  const el = document.getElementById('experiences-admin-list');
+  if (!el) return;
+  if (!experiences.length) {
+    el.innerHTML = '<p style="color:#666;padding:1rem">Aucune étape de parcours.</p>';
+    return;
+  }
+  const regionIcons = { quebec: '🇨🇦', tunisie: '🇹🇳', international: '🌍' };
+  el.innerHTML = experiences.map((exp, i) => `
+    <div class="distinction-item">
+      <div style="flex:1; min-width:0;">
+        <span class="item-year">${regionIcons[exp.region] || '📍'} ${exp.date}</span>
+        <strong style="display:block; margin-top:.2rem; font-size:.95rem;">${exp.company}</strong>
+        <small style="color:#666; font-size:.8rem;">${exp.role}</small>
+      </div>
+      <div class="item-actions">
+        <button class="btn-sm btn-edit" onclick="editExperience(${i})">✏️ Modifier</button>
+        <button class="btn-sm btn-danger" onclick="deleteExperience(${i})">🗑</button>
+      </div>
+    </div>`).join('');
+}
+
+window.editExperience = (i) => {
+  const exp = experiences[i];
+  document.getElementById('exp-id').value = i;
+  document.getElementById('exp-company').value = exp.company || '';
+  document.getElementById('exp-region').value = exp.region || 'quebec';
+  document.getElementById('exp-location').value = exp.location || '';
+  document.getElementById('exp-date').value = exp.date || '';
+  document.getElementById('exp-role').value = exp.role || '';
+  document.getElementById('exp-desc').value = exp.description || '';
+  document.getElementById('exp-form-title').textContent = '✏️ Modifier l\'étape';
+  document.querySelector('[data-tab="experiences"]').click();
+  document.getElementById('exp-company').scrollIntoView({ behavior: 'smooth' });
+};
+
+window.deleteExperience = (i) => {
+  if (confirm(`Supprimer l'étape "${experiences[i].company}" ?`)) {
+    experiences.splice(i, 1);
+    renderExperiencesList();
+    generalContent.experiences = experiences;
+    saveContentToServer();
+    toast('Étape supprimée.');
+  }
+};
+
+function resetExperienceForm() {
+  ['exp-id', 'exp-company', 'exp-location', 'exp-date', 'exp-role', 'exp-desc'].forEach(id => {
+    const el = document.getElementById(id);
+    if (el) el.value = '';
+  });
+  document.getElementById('exp-region').value = 'quebec';
+  document.getElementById('exp-form-title').textContent = '➕ Ajouter une étape';
+}
+
+document.getElementById('exp-add-btn')?.addEventListener('click', async () => {
+  const company = document.getElementById('exp-company').value.trim();
+  if (!company) { alert('Le nom de l\'entreprise est requis.'); return; }
+  const id = document.getElementById('exp-id').value;
+  const exp = {
+    company,
+    region: document.getElementById('exp-region').value,
+    location: document.getElementById('exp-location').value.trim(),
+    date: document.getElementById('exp-date').value.trim(),
+    role: document.getElementById('exp-role').value.trim(),
+    description: document.getElementById('exp-desc').value.trim()
+  };
+  if (id !== '') experiences[parseInt(id)] = exp;
+  else experiences.push(exp);
+  renderExperiencesList();
+  generalContent.experiences = experiences;
+  await saveContentToServer();
+  resetExperienceForm();
+});
+
+document.getElementById('exp-new-btn')?.addEventListener('click', resetExperienceForm);
+document.getElementById('save-experiences-btn')?.addEventListener('click', () => {
+  generalContent.experiences = experiences;
+  saveContentToServer();
+});
+
 // ===== Distinctions =====
 let distinctions = [];
 
@@ -644,6 +728,8 @@ async function completeInit() {
   await initProjects();
   distinctions = generalContent.distinctions || [];
   renderDistinctionsList();
+  experiences = generalContent.experiences || [];
+  renderExperiencesList();
 }
 
 // ===== Init =====
