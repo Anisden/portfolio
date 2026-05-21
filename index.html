@@ -4,8 +4,8 @@
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Anis BOUDEN | Technicien & Dessinateur en Architecture</title>
-  <meta name="description" content="Anis BOUDEN — Architecte diplômé, Technicien. 16 ans d'expérience en conception architecturale, maîtrise de Revit, AutoCAD, ArchiCAD. Disponible à la relocalisation." />
+  <title>Anis Bouden | Architecte | Chef de projet CAO & Visualisation 3D</title>
+  <meta name="description" content="Anis Bouden | Architecte | Chef de projet CAO & Visualisation 3D. 16 ans d'expérience combinant design architectural et rigueur d'exécution technique. Expert AutoCAD, SketchUp et Lumion. Relocalisation disponible." />
 
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -16,6 +16,9 @@
   <link rel="stylesheet" href="./src/style.css" />
 </head>
 <body>
+  <!-- CAD Blueprint Background Canvas -->
+  <canvas id="blueprint-canvas"></canvas>
+
   <!-- Navigation -->
   <nav class="navbar" id="navbar">
     <div class="nav-container">
@@ -35,8 +38,11 @@
 
   <!-- Hero Section -->
   <section class="hero" id="hero">
-    <div class="hero-background" id="hero-slider">
-      <!-- Images will be dynamically injected here by main.js -->
+    <!-- Cinematic Infinite Marquee Ribbon -->
+    <div class="hero-marquee-container fade-up delay-4">
+      <div class="marquee-track" id="marquee-track">
+        <!-- Les projets seront injectés dynamiquement ici par main.js -->
+      </div>
     </div>
     <div class="hero-content">
       <h2 class="subtitle fade-up delay-1" id="hero-subtitle"></h2>
@@ -88,7 +94,7 @@
       <h2 class="section-title fade-up">À Propos</h2>
       <div class="about-grid">
         <div class="about-text fade-up">
-          <p id="about-text">Architecte diplômé et technicien avec une expertise reconnue dans la production de plans, la modélisation 3D et la coordination multidisciplinaire. Mon parcours couvre des projets institutionnels majeurs (écoles, hôpitaux, bâtiments publics) au Québec et en Tunisie. Rigoureux, méthodique, autonome, avec un fort esprit d'équipe et la maîtrise des outils de dessin numérique en architecture. Bilingue français-arabe, connaissance professionnelle de l'anglais. Disponible à la relocalisation.</p>
+          <p id="about-text">Fort d'une trajectoire professionnelle de 16 ans combinant le design architectural et la rigueur de l'exécution technique, j'apporte aux bureaux d'architecture une double expertise. Mon parcours se structure autour de deux piliers complémentaires : 10 ans de pratique en Tunisie comme architecte (phases d'esquisse, design et gestion de projet) et 6 ans d'expertise technique au Québec (production de plans d'exécution, détails constructifs et respect rigoureux des codes du bâtiment). Expert sur AutoCAD, SketchUp et Lumion, je maîtrise l'ensemble de la chaîne de production, de la précision technique au rendu 3D haut de gamme. Actuellement basé au Canada, je suis disponible pour une relocalisation.</p>
 
           <h3 class="subsection-title mt-4">Formation Académique</h3>
           <ul class="info-list">
@@ -113,56 +119,46 @@
         </div>
 
         <div class="about-skills fade-up delay-1">
-          <div class="skill-card glass">
-            <h3>⚙️ Logiciels maîtrisés</h3>
+          <!-- CARD 1: NIVEAU EXPERT -->
+          <div class="skill-card glass expert-card">
+            <h3>🏆 Niveau Expert</h3>
             <div class="skill-tags">
-              <span class="tag tag-primary">Revit (Level 2 Adv.)</span>
               <span class="tag tag-primary">AutoCAD</span>
-              <span class="tag tag-primary">ArchiCAD</span>
-              <span class="tag">Allplan</span>
-              <span class="tag">SketchUp &amp; Vray</span>
-              <span class="tag">Lumion</span>
-              <span class="tag">3ds Max</span>
-              <span class="tag">Adobe Photoshop</span>
-              <span class="tag">Adobe Illustrator</span>
-              <span class="tag">MS Project</span>
-              <span class="tag">Power Apps</span>
-              <span class="tag">e-Cobalt</span>
+              <span class="tag tag-primary">SketchUp</span>
+              <span class="tag tag-primary">Lumion</span>
             </div>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-top: 1rem; line-height: 1.5;">Production de plans techniques de haute précision, modélisation volumétrique 3D et rendus photoréalistes de calibre international.</p>
           </div>
 
-          <div class="skill-card glass mt-4">
+          <!-- CARD 2: MAÎTRISE TECHNOLOGIQUE -->
+          <div class="skill-card glass mt-4 tech-card">
+            <h3>⚙️ Maîtrise technologique</h3>
+            <div class="skill-tags">
+              <span class="tag">ArchiCAD</span>
+              <span class="tag">Revit</span>
+            </div>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-top: 1rem; line-height: 1.5;">Compétences avancées en modélisation BIM, production de plans d'exécution complexes et coordination multidisciplinaire de projets.</p>
+          </div>
+
+          <!-- CARD 3: LANGUES -->
+          <div class="skill-card glass mt-4 languages-card">
             <h3>🌍 Langues</h3>
             <div class="languages-list">
               <div class="lang-item">
                 <span class="lang-name">Français</span>
                 <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
-                <span class="lang-level">Bilingue</span>
-              </div>
-              <div class="lang-item">
-                <span class="lang-name">Arabe</span>
-                <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
-                <span class="lang-level">Bilingue</span>
+                <span class="lang-level">Langue maternelle</span>
               </div>
               <div class="lang-item">
                 <span class="lang-name">Anglais</span>
                 <div class="lang-bar"><div class="lang-fill lang-fill-mid" style="width:75%"></div></div>
                 <span class="lang-level">Professionnel</span>
               </div>
-            </div>
-          </div>
-
-          <div class="skill-card glass mt-4">
-            <h3>🏗️ Compétences clés</h3>
-            <div class="skill-tags">
-              <span class="tag tag-primary">Modélisation</span>
-              <span class="tag">Plans d'exécution</span>
-              <span class="tag">Relevés terrain</span>
-              <span class="tag">Métrés</span>
-              <span class="tag">Coordination multidisciplinaire</span>
-              <span class="tag">Dossiers d'appel d'offres</span>
-              <span class="tag">Suivi de chantier</span>
-              <span class="tag">Maîtrise d'œuvre</span>
+              <div class="lang-item">
+                <span class="lang-name">Arabe</span>
+                <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
+                <span class="lang-level">Langue maternelle</span>
+              </div>
             </div>
           </div>
         </div>
@@ -245,29 +241,24 @@
   <!-- Projects Section -->
   <section class="projects section dark-section" id="projects">
     <div class="container">
-      <h2 class="section-title fade-up">Projets Sélectionnés</h2>
+      <h2 class="section-title text-center fade-up">Projets Sélectionnés</h2>
 
-      <!-- Quebec Projects -->
-      <div class="project-region fade-up">
-        <h3 class="region-title region-quebec"><span class="region-icon">🇨🇦</span> Projets au Québec</h3>
-        <div class="projects-grid projects-quebec" id="quebec-projects">
-          <!-- Dynamically loaded -->
+      <!-- CAD Sliding Filter Navigation -->
+      <div class="filter-nav fade-up delay-1">
+        <div class="filter-tabs" id="project-filters">
+          <div class="filter-slider" id="filter-slider"></div>
+          <button class="filter-tab active" data-filter="all">Tous</button>
+          <button class="filter-tab" data-filter="quebec">Québec</button>
+          <button class="filter-tab" data-filter="tunisie">Tunisie</button>
+          <button class="filter-tab" data-filter="concours">Concours</button>
+          <button class="filter-tab" data-filter="sous-traitance">Sous-traitance</button>
         </div>
       </div>
 
-      <!-- Tunisia Projects -->
-      <div class="project-region mt-5 fade-up">
-        <h3 class="region-title"><span class="region-icon">🇹🇳</span> Projets & Réalisations (Tunisie)</h3>
-        <div class="projects-grid" id="tunisia-projects">
-          <!-- Dynamically loaded -->
-        </div>
-      </div>
-
-      <!-- Concours Projects -->
-      <div class="project-region mt-5 fade-up">
-        <h3 class="region-title" style="border-left-color: #d4af37;"><span class="region-icon">🏆</span> Concours d'Architecture</h3>
-        <div class="projects-grid" id="concours-projects">
-          <!-- Dynamically loaded -->
+      <!-- Unified Projects Grid -->
+      <div class="projects-grid-container fade-up delay-2">
+        <div class="projects-grid" id="projects-grid">
+          <!-- Dynamically loaded and filtered -->
         </div>
       </div>
 
@@ -279,7 +270,7 @@
     <div class="container">
       <div class="contact-card glass-alt fade-up">
         <h2 class="section-title text-center">Contact</h2>
-        <p class="text-center contact-intro">Disponible pour un poste de Dessinateur / Technicien.<br>N'hésitez pas à me contacter pour tout échange.</p>
+        <p class="text-center contact-intro">Disponible pour un poste d'Architecte / Chef de projet CAO & Visualisation 3D.<br>N'hésitez pas à me contacter pour tout échange.</p>
 
         <div class="contact-info">
           <a href="mailto:boudenanis@gmail.com" class="contact-item" id="contact-email-link">

@@ -1,8 +1,8 @@
 {
-  "heroSubtitle": "Diplômé en Architecture, technicien",
+  "heroSubtitle": "Architecte",
   "heroTitleHtml": "Anis BOUDEN",
   "heroDescription": "Plus de 16 ans d'expérience en conception architecturale et maîtrise d'œuvre, dont 6 ans au Québec. \nDisponible à la relocalisation.",
-  "aboutText": "Diplômé en architecture et technicien avec une expertise reconnue dans la production de plans, la modélisation 3D et la coordination multidisciplinaire. \nMon parcours couvre des projets institutionnels majeurs (écoles, hôpitaux, bâtiments publics) au Québec et en Tunisie. \nRigoureux, méthodique, autonome, avec un fort esprit d'équipe et la maîtrise des outils de dessin numérique en architecture. Bilingue français-arabe, connaissance professionnelle de l'anglais. Disponible à la relocalisation.",
+  "aboutText": "Fort d'une trajectoire professionnelle de 16 ans combinant le design architectural et la rigueur de l'exécution technique, j'apporte aux bureaux d'architecture une double expertise. Mon parcours se structure autour de deux piliers complémentaires : 10 ans de pratique en Tunisie comme architecte (phases d'esquisse, design et gestion de projet) et 6 ans d'expertise technique au Québec (production de plans d'exécution, détails constructifs et respect rigoureux des codes du bâtiment). Expert sur AutoCAD, SketchUp et Lumion, je maîtrise l'ensemble de la chaîne de production, de la précision technique au rendu 3D haut de gamme. Actuellement basé au Canada, je suis disponible pour une relocalisation.",
   "contactEmail": "boudenanis@gmail.com",
   "contactPhone": "+1 581 980 9131",
   "contactLinkedin": "linkedin.com/in/anis-bouden",
@@ -12,15 +12,36 @@
   "distinctions": [
     {
       "year": "2019",
+      "type": "award",
       "title": "Prix des Journées Architecturales de Carthage (JAC)",
-      "description": "Meilleur projet — Catégorie Bâtiments Civils. Projet : Institut Supérieur des Sciences Appliquées et de la Technologie (ISSAT).",
-      "type": "award"
+      "description": "Prix du meilleur projet, catégorie: Bâtiment civil / institutionnel\nProjet lauréat: Institut Supérieur des Sciences Appliquées et de la Technologie",
+      "image": "/uploads/1779328823971_1779325741728_1779116561582_bouden_et_jalel.avif",
+      "video": "<iframe width=\"1920\" height=\"1080\" src=\"https://www.youtube.com/embed/bgxNFEVG6Ds?si=L1D4I4mB6wrCANYy\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+      "gallery": [],
+      "eventPhoto": "/uploads/1779329723141_1779160227193_75446727_1378021255709514_25495716873182.avif",
+      "eventLink": "https://www.mramma.tn/actualites/projets-laur%C3%A9ats-lors-des-journ%C3%A9es-architecturales-de-carthage"
     },
     {
       "year": "2014",
       "title": "Lauréat du Concours National d'Architecture",
       "description": "Conception de l'Institut ISSAT — sélectionné parmi toutes les candidatures nationales en janvier 2014. Réalisation du projet de 2016 à 2019.",
       "type": "competition"
+    },
+    {
+      "year": "2011",
+      "type": "press",
+      "title": "Archibat (Juin 2011)",
+      "description": "Revue maghrébine d'aménagement de l'espace et de la construction.",
+      "image": "",
+      "pdfLink": "/article_archibat.pdf"
+    },
+    {
+      "year": "2016",
+      "type": "press",
+      "title": "Architecture Méditerranéenne (2016)",
+      "description": "Revue Internationale d'Architecture.",
+      "image": "",
+      "pdfLink": "/architecture_mediterraneenne.pdf"
     },
     {
       "year": "2015–2018",
@@ -37,5 +58,6 @@
       "video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/nrzwkrfXAPE?si=Mx8gkmNTTe6lylOc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
       "gallery": []
     }
-  ]
+  ],
+  "logoText": ""
 }

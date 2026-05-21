@@ -8,10 +8,12 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url));
 export default defineConfig({
   base: '/portfolio/',
   build: {
+    emptyOutDir: false,
     rollupOptions: {
       input: {
         main: path.resolve(__dirname, 'index.html'),
         project: path.resolve(__dirname, 'project.html'),
+        distinction: path.resolve(__dirname, 'distinction.html'),
         admin: path.resolve(__dirname, 'admin.html'),
       }
     }

@@ -365,12 +365,24 @@
           <div class="form-grid form-grid-2">
             <div class="form-group">
               <label>Image (Principale)</label>
-              <div class="upload-area" id="dist-image-upload-area">
-                <input type="file" id="dist-image-file" accept="image/*">
-                <p class="upload-label">🖼️ <strong>Cliquer/Glisser</strong> l'image ici</p>
-                <img id="dist-image-preview" class="img-preview" alt="Aperçu">
-              </div>
-              <input type="text" id="dist-image" placeholder="URL de l'image" style="margin-top:.5rem">
+               <div class="upload-area" id="dist-image-upload-area">
+                 <input type="file" id="dist-image-file" accept="image/*">
+                 <p class="upload-label">🖼️ <strong>Cliquer/Glisser</strong> l'image ici</p>
+                 <img id="dist-image-preview" class="img-preview" alt="Aperçu">
+               </div>
+               <input type="text" id="dist-image" placeholder="URL de l'image" style="margin-top:.5rem">
+               <!-- Event photo for JAC prize -->
+               <div class="upload-area" id="dist-event-photo-upload-area" style="margin-top:0.8rem;">
+                 <input type="file" id="dist-event-photo-file" accept="image/*">
+                 <p class="upload-label">📅 <strong>Photo de l'événement</strong> (optionnel)</p>
+                 <img id="dist-event-photo-preview" class="img-preview" alt="Aperçu" style="display:none;">
+               </div>
+               <input type="text" id="dist-event-photo" placeholder="URL de la photo de l'événement" style="margin-top:.5rem;">
+               <div class="form-group" style="margin-top:.8rem;">
+                 <label for="dist-event-link">🔗 Lien de l'événement (URL externe)</label>
+                 <input type="text" id="dist-event-link" placeholder="https://... lien vers l'article ou la page de l'événement">
+                 <p class="hint">Ce lien sera affiché dans la section « À propos de l'événement »</p>
+               </div>
             </div>
             <div class="form-group">
               <label for="dist-video">Code vidéo ou URL</label>

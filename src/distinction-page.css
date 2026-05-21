@@ -1,0 +1,833 @@
+/* ==========================================================================
+   Distinctions Page — Technical Monochrome (CAD / Blueprint Edition)
+   Anis Bouden - Architecture Portfolio
+   ========================================================================== */
+
+/* Page Header */
+.dist-page-header {
+  padding: 11rem 0 5rem;
+  text-align: center;
+  position: relative;
+  background: radial-gradient(circle at top, rgba(212, 175, 55, 0.05) 0%, var(--bg) 70%);
+  border-bottom: 1px solid var(--border);
+  overflow: hidden;
+  z-index: 3;                 /* Stack above blueprint canvas to protect headers */
+}
+
+.dist-header-deco {
+  position: absolute;
+  inset: 0;
+  opacity: 0.03;
+  background-image:
+    repeating-linear-gradient(45deg, transparent, transparent 40px, var(--accent) 40px, var(--accent) 41px);
+}
+
+.dist-page-label {
+  font-family: var(--font-h);
+  font-size: 0.8rem;
+  letter-spacing: 6px;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-weight: 600;
+}
+
+.dist-page-title {
+  font-family: var(--font-h);
+  font-size: clamp(2.5rem, 6vw, 4.2rem);
+  font-weight: 800;
+  color: #fff;
+  letter-spacing: -1px;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+}
+
+.dist-page-divider {
+  width: 80px;
+  height: 2px;
+  background: var(--accent);
+  margin: 0 auto;
+  border-radius: 1px;
+}
+
+/* Page Body */
+.dist-page-body {
+  background: var(--bg);
+  padding: 6rem 0;
+}
+
+/* Sections */
+.dist-section {
+  margin-bottom: 6rem;
+}
+
+.dist-section:last-child {
+  margin-bottom: 0;
+}
+
+.dist-section-title {
+  font-family: var(--font-h);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  color: var(--accent);
+  margin-bottom: 4rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-muted);
+  text-transform: uppercase;
+  letter-spacing: 2px;
+}
+
+/* Single Distinction Block */
+.dist-block {
+  margin-bottom: 5rem;
+  padding-bottom: 5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+.dist-block:last-child {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* Block Header */
+.dist-block-header {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.dist-block-icon {
+  width: 58px;
+  height: 58px;
+  border-radius: var(--r-sm);
+  background: rgba(212, 175, 55, 0.05);
+  border: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  flex-shrink: 0;
+}
+
+.dist-block-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+.dist-block-type {
+  font-family: var(--font-h);
+  font-size: 0.75rem;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.dist-block-year {
+  font-family: var(--font-h);
+  font-size: 0.85rem;
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+/* Block Title */
+.dist-block-title {
+  font-family: var(--font-h);
+  font-size: clamp(1.8rem, 4vw, 2.6rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 3rem;
+  letter-spacing: -0.5px;
+  max-width: 900px;
+}
+
+/* Grid Layout: Wide story layout */
+.dist-alt-row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.dist-block-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+  .dist-alt-row,
+  .dist-block-grid {
+    grid-template-columns: 4.5fr 5.5fr;
+    align-items: start;
+  }
+  .dist-alt-row {
+    align-items: center;
+  }
+}
+
+/* Info Side */
+.dist-info-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+  background: rgba(12, 12, 14, 1.0) !important; /* Solid opaque charcoal to block grid lines under texts */
+  border: 1px solid var(--border);
+  padding: 2.5rem;
+  border-radius: var(--r-md);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
+  position: relative;
+  z-index: 3;
+}
+
+/* Spec Table (Key-value design) */
+.dist-spec-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  background: rgba(5, 5, 5, 0.4) !important; /* Dark nested inset */
+  border: 1px solid var(--border-muted);
+  padding: 1.5rem;
+  border-radius: var(--r-sm);
+  position: relative;
+  z-index: 3;                 /* Layer above blueprint canvas grid */
+}
+
+.dist-spec-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  border-bottom: 1px solid var(--border-muted);
+  padding-bottom: 1rem;
+}
+
+.dist-spec-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.dist-spec-label {
+  font-family: var(--font-h);
+  font-size: 0.75rem;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  color: var(--accent);
+  font-weight: 600;
+}
+
+.dist-spec-value {
+  font-family: var(--font-h);
+  font-size: 1.05rem;
+  color: #fff;
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.dist-spec-value a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Paragraph Description */
+.dist-block-paragraph {
+  font-size: 1.1rem;
+  line-height: 1.9;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.dist-block-paragraph a {
+  color: var(--accent);
+  text-decoration: underline;
+}
+
+/* Custom Wix-Matching Press Section (Sleek Dark Blueprint Theme) */
+.press-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+  .press-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.press-custom-block {
+  background: var(--bg-surface) !important;
+  opacity: 1 !important;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 2.5rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.press-custom-block:hover {
+  border-color: var(--accent);
+  box-shadow: 0 16px 45px rgba(212, 175, 55, 0.08);
+}
+
+.press-item-header {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+.press-title-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.press-main-title {
+  font-family: var(--font-h);
+  font-size: clamp(1.4rem, 3vw, 1.8rem);
+  font-weight: 700;
+  color: #fff;
+}
+
+.press-year-tag {
+  font-family: var(--font-h);
+  font-size: 0.85rem;
+  font-weight: 600;
+  border: 1px solid var(--accent);
+  background: rgba(212, 175, 55, 0.08);
+  color: var(--accent);
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--r-sm);
+  letter-spacing: 0.5px;
+}
+
+.press-subtitle {
+  font-size: 1.05rem;
+  line-height: 1.6;
+  color: var(--muted);
+}
+
+.press-pdf-container {
+  position: relative;
+  width: 100%;
+  height: 750px;
+  background: #000;
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.8);
+}
+
+@media (max-width: 768px) {
+  .press-pdf-container {
+    height: 550px;
+  }
+}
+
+.press-iframe {
+  width: 100%;
+  height: 100%;
+  border: none !important;
+  background: #ffffff;
+}
+
+/* Media Side (Large and prominent) */
+.dist-media-pane {
+  display: flex;
+  flex-direction: column;
+  gap: 2.5rem;
+}
+
+/* PDF Card Button */
+.dist-pdf-card {
+  display: flex;
+  justify-content: flex-start;
+}
+
+.dist-pdf-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: rgba(212, 175, 55, 0.1);
+  color: var(--accent);
+  border: 1px solid var(--accent);
+  padding: 1.2rem 2.5rem;
+  font-family: var(--font-h);
+  font-size: 1.1rem;
+  font-weight: 600;
+  border-radius: var(--r-sm);
+  text-decoration: none;
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  backdrop-filter: blur(5px);
+  position: relative;
+  z-index: 4;
+}
+
+.dist-pdf-btn:hover {
+  background: var(--accent);
+  color: #000;
+  transform: translateY(-3px);
+  box-shadow: 0 10px 25px rgba(212, 175, 55, 0.2);
+}
+
+.pdf-icon {
+  font-size: 1.5rem;
+}
+
+/* Video Frame / Image Frame */
+.dist-media-card {
+  background: rgba(12, 12, 14, 1.0) !important; /* Solid opaque charcoal to block grid lines under media & captions */
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.5);
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+  position: relative;
+  z-index: 3;                 /* Layer above blueprint canvas grid */
+}
+
+.dist-media-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 20px 45px rgba(212, 175, 55, 0.08);
+}
+
+.dist-video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+}
+
+.dist-video-wrapper iframe,
+.dist-video-wrapper video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Image Wrapper */
+.dist-image-wrapper {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.dist-image-wrapper img {
+  width: 100%;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.dist-image-wrapper:hover img {
+  transform: scale(1.03);
+}
+
+/* Specific formatting for Alternating Rows (JAC photos) */
+.dist-alt-row .dist-media-card {
+  background: transparent !important;
+  border: none !important;
+  box-shadow: none !important;
+}
+
+.dist-alt-row .dist-image-wrapper {
+  display: flex;
+  justify-content: center;
+}
+
+.dist-alt-row .dist-image-wrapper img {
+  width: auto;
+  max-width: 100%;
+  max-height: 480px;
+  object-fit: contain;
+  border-radius: var(--r-md);
+  box-shadow: 0 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+.dist-alt-row .dist-image-wrapper:hover img {
+  transform: scale(1.02) translateY(-4px);
+  box-shadow: 0 20px 45px rgba(212, 175, 55, 0.15);
+}
+
+/* Caption / Legend */
+.dist-media-caption {
+  font-family: var(--font-h);
+  font-size: 0.85rem;
+  color: var(--muted);
+  padding: 1.2rem 1.8rem;
+  border-top: 1px solid var(--border-muted);
+  background: rgba(255, 255, 255, 0.01);
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.dist-media-caption::before {
+  content: '';
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--accent);
+  display: inline-block;
+}
+
+/* Gallery Section */
+.dist-gallery-section {
+  margin-top: 3.5rem;
+}
+
+.dist-gallery-title {
+  font-family: var(--font-h);
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  color: var(--accent);
+  margin-bottom: 1.5rem;
+  font-weight: 600;
+}
+
+.dist-gallery-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+  gap: 1.2rem;
+}
+
+.dist-gallery-thumb {
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  aspect-ratio: 4 / 3;
+  border: 1px solid var(--border-muted);
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+  transition: transform 0.3s ease, border-color 0.3s ease;
+}
+
+.dist-gallery-thumb:hover {
+  transform: translateY(-4px);
+  border-color: var(--accent);
+}
+
+.dist-gallery-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.dist-gallery-thumb:hover img {
+  transform: scale(1.06);
+}
+
+/* Lightbox overlay */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  background: rgba(5, 5, 5, 0.98);
+  z-index: 9999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  opacity: 0;
+  visibility: hidden;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(15px);
+}
+.lightbox.active {
+  opacity: 1;
+  visibility: visible;
+}
+.lightbox img {
+  max-width: 90%;
+  max-height: 90vh;
+  object-fit: contain;
+  border-radius: var(--r-sm);
+  border: 1px solid var(--border);
+  box-shadow: 0 20px 50px rgba(0,0,0,0.6);
+}
+.lightbox-close {
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
+  color: var(--accent);
+  font-size: 2.5rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .dist-page-header {
+    padding: 8rem 0 3.5rem;
+  }
+  .dist-page-title {
+    font-size: 2.2rem;
+  }
+  .dist-block {
+    margin-bottom: 5rem;
+    padding-bottom: 4rem;
+  }
+  .dist-block-title {
+    font-size: 1.5rem;
+    margin-bottom: 2rem;
+  }
+  .dist-spec-list {
+    padding: 1.5rem;
+  }
+  .dist-spec-value {
+    font-size: 0.95rem;
+  }
+  .dist-gallery-grid {
+  }
+}
+
+/* ==========================================================================
+   JAC 2019 Custom Layout (Wix Replicated & Dark CAD Optimized)
+   ========================================================================== */
+
+.jac-custom-block {
+  background: transparent !important;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+  margin-bottom: 6rem;
+  padding-bottom: 6rem;
+}
+
+.jac-header-container {
+  margin-bottom: 3.5rem;
+}
+
+.jac-header-title-box {
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border);
+  border-left: 4px solid var(--accent);
+  padding: 2rem 2.5rem;
+  border-radius: var(--r-md);
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.5);
+  display: inline-block;
+  min-width: 320px;
+  max-width: 100%;
+}
+
+.jac-main-title {
+  font-family: var(--font-h);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800;
+  color: #fff;
+  line-height: 1.2;
+  margin-bottom: 0.5rem;
+  text-transform: uppercase;
+}
+
+.jac-main-title .highlight {
+  color: var(--accent);
+  text-shadow: 0 0 15px rgba(212, 175, 55, 0.2);
+}
+
+.jac-subtitle {
+  font-family: var(--font-h);
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  color: var(--muted);
+  font-weight: 500;
+  letter-spacing: 1px;
+}
+
+.jac-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 3.5rem;
+}
+
+@media (min-width: 1024px) {
+  .jac-grid {
+    grid-template-columns: 6fr 4fr; /* Left col wider for group photo and content, right col for poster */
+    align-items: stretch;
+  }
+}
+
+.jac-card {
+  background: var(--bg-surface) !important;
+  opacity: 1 !important;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  overflow: hidden;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: border-color 0.4s ease, box-shadow 0.4s ease;
+}
+
+.jac-card:hover {
+  border-color: var(--accent);
+  box-shadow: 0 16px 45px rgba(212, 175, 55, 0.08);
+}
+
+.jac-image-container {
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+}
+
+.group-card .jac-image-container {
+  aspect-ratio: 16 / 9;
+}
+
+.poster-card .jac-image-container {
+  aspect-ratio: 4 / 5.6; /* Matches standard architectural posters */
+}
+
+.jac-photo {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+.jac-card:hover .jac-photo {
+  transform: scale(1.025);
+}
+
+.poster-photo {
+  object-fit: contain;
+  background: #000;
+}
+
+.jac-poster-link-wrapper {
+  display: block;
+  width: 100%;
+  height: 100%;
+  cursor: zoom-in;
+}
+
+.jac-card-content {
+  padding: 2.5rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+  flex-grow: 1;
+}
+
+.jac-card-title {
+  font-family: var(--font-h);
+  font-size: clamp(1.3rem, 2.5vw, 1.6rem);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1.3;
+  border-bottom: 1px solid var(--border-muted);
+  padding-bottom: 1rem;
+}
+
+.jac-card-text {
+  font-size: 1.08rem;
+  line-height: 1.7;
+}
+
+.jac-card-text.groupment {
+  color: var(--muted);
+  font-family: var(--font-h);
+  font-weight: 500;
+  letter-spacing: 0.2px;
+}
+
+.jac-card-text.laureat {
+  color: #fff;
+  border-left: 2px solid var(--accent);
+  padding-left: 1rem;
+}
+
+.jac-video-section {
+  margin-top: 5rem;
+  background: var(--bg-surface) !important;
+  border: 1px solid var(--border);
+  border-radius: var(--r-md);
+  padding: 2.5rem;
+  box-shadow: 0 12px 40px rgba(0, 0, 0, 0.65);
+}
+
+.jac-video-title {
+  font-family: var(--font-h);
+  font-size: clamp(1.2rem, 2.5vw, 1.5rem);
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 2rem;
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.video-play-icon {
+  width: 28px;
+  height: 28px;
+  background: rgba(212, 175, 55, 0.1);
+  border: 1px solid var(--accent);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.video-play-icon::after {
+  content: '';
+  border-left: 6px solid var(--accent);
+  border-top: 4px solid transparent;
+  border-bottom: 4px solid transparent;
+  margin-left: 2px;
+}
+
+.jac-video-wrapper {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #000;
+  border-radius: var(--r-sm);
+  overflow: hidden;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.8);
+}
+
+.jac-video-wrapper iframe,
+.jac-video-wrapper video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Event Link (JAC "À propos de l'événement") */
+.jac-event-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  color: var(--accent);
+  font-family: var(--font-h);
+  font-size: 0.95rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 0.7rem 1.4rem;
+  background: rgba(212, 175, 55, 0.06);
+  border: 1px solid rgba(212, 175, 55, 0.25);
+  border-radius: var(--r-sm);
+  transition: all 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  letter-spacing: 0.3px;
+}
+
+.jac-event-link:hover {
+  background: rgba(212, 175, 55, 0.15);
+  border-color: var(--accent);
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(212, 175, 55, 0.12);
+}

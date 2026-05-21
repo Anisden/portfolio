@@ -30,7 +30,8 @@
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": true
   },
   {
     "id": "pavillon-duchesnay",
@@ -58,7 +59,8 @@
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": true
   },
   {
     "id": "ecole-pointe-levy",
@@ -79,7 +81,8 @@
       "Coordination",
       "Mise en plan",
       "Modélisation et rendu réaliste 3D"
-    ]
+    ],
+    "subcontract": true
   },
   {
     "id": "complexe-huronne-wendat",
@@ -115,7 +118,8 @@
     ],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": true
   },
   {
     "id": "centre-raymond-blais",
@@ -135,7 +139,8 @@
       "Concepteur",
       "Étude d'aménagement",
       "Production des plans"
-    ]
+    ],
+    "subcontract": false
   },
   {
     "id": "arena-saint-anselme",
@@ -157,7 +162,8 @@
       "Mise en plan",
       "Modélisation et rendu 3D",
       "Rédaction de l'étude"
-    ]
+    ],
+    "subcontract": false
   },
   {
     "id": "patinoires-quebec",
@@ -191,7 +197,8 @@
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": true
   },
   {
     "id": "centre-ferland",
@@ -211,7 +218,8 @@
       "Concepteur",
       "Étude d'aménagement",
       "Production des plans"
-    ]
+    ],
+    "subcontract": false
   },
   {
     "id": "cegep-shawinigan",
@@ -231,7 +239,8 @@
       "Concepteur",
       "Étude d'aménagement",
       "Production des plans"
-    ]
+    ],
+    "subcontract": true
   },
   {
     "id": "maracana",
@@ -268,7 +277,8 @@
     "galleryAfter": [
       "/uploads/1779021363864_int23.jpg"
     ],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": false
   },
   {
     "id": "issat",
@@ -318,7 +328,8 @@
     ],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": true
+    "showDistinctionBtn": true,
+    "subcontract": false
   },
   {
     "id": "residence",
@@ -345,7 +356,8 @@
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": false
   },
   {
     "id": "coke-studio",
@@ -384,7 +396,8 @@
     "galleryAfter": [
       "/uploads/1779023843645_4.jpg"
     ],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": false
   },
   {
     "id": "hopital-mareth",
@@ -419,7 +432,8 @@
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": false
   },
   {
     "id": "hotel-finances-gabes",
@@ -454,7 +468,8 @@
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": false
   },
   {
     "id": "hopital-sbeitla",
@@ -484,7 +499,8 @@
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": false
   },
   {
     "id": "restaurant-universitaire-sabra",
@@ -512,7 +528,8 @@
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": false
   },
   {
     "id": "maison-culture-el-battan",
@@ -550,7 +567,8 @@
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": false
   },
   {
     "id": "maison-culture-sidi-bouzid-est",
@@ -583,7 +601,8 @@
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": false
   },
   {
     "id": "complexe-thermal-zriba",
@@ -629,7 +648,8 @@
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": false
   },
   {
     "id": "foyer-borj-cedria",
@@ -656,7 +676,8 @@
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
-    "showDistinctionBtn": false
+    "showDistinctionBtn": false,
+    "subcontract": false
   },
   {
     "id": "village-langues-mahdia",
@@ -675,6 +696,26 @@
       "Intégration architecturale côtière",
       "Rédaction du rapport de présentation technique"
     ],
+    "gallery": [],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": false
+  },
+  {
+    "id": "h-tel-spa-yakouren-alg-rie",
+    "title": "Hôtel Spa à Yakouren. Algérie",
+    "region": "tunisia",
+    "meta": "2017",
+    "description": "",
+    "longDescription": "",
+    "image": "",
+    "video": "",
+    "budget": "",
+    "currency": "TND",
+    "tasks": [],
     "gallery": [],
     "galleryDocs": [],
     "galleryRealisation": [],

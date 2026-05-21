@@ -1,4 +1,5 @@
 // Project Detail Page Logic
+import { initBlueprintCanvas } from './blueprint.js';
 const BASE = import.meta.env.BASE_URL;
 
 function resolveUrl(url) {
@@ -12,6 +13,7 @@ function resolveUrl(url) {
 }
 
 async function init() {
+  initBlueprintCanvas();
   const params = new URLSearchParams(window.location.search);
   const projectId = params.get('id');
 
@@ -185,9 +187,18 @@ async function init() {
               <h4 style="color: var(--accent); margin-bottom: 1.2rem; font-family: var(--font-heading); font-size: 1.25rem; display: flex; align-items: center; gap: 0.6rem; font-weight: 600;">
                 📄 Document : ${filename}
               </h4>
-              <div class="secure-pdf-canvas-viewer" id="pdf-viewer-${idx}" style="position: relative; width: 100%; max-height: 85vh; overflow-y: auto; background: #151515; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.5); padding: 2rem 0; display: flex; flex-direction: column; align-items: center; gap: 2rem; user-select: none; -webkit-user-select: none;" oncontextmenu="return false;">
-                <div class="pdf-loading" style="color: #888; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; padding: 3rem 0;">
-                  Chargement sécurisé du document...
+              <div class="secure-pdf-viewer-wrapper" id="pdf-wrapper-${idx}" oncontextmenu="return false;">
+                <div class="cad-toolbar">
+                  <button class="cad-btn" data-action="zoom-in" title="Zoom avant">➕</button>
+                  <button class="cad-btn" data-action="zoom-out" title="Zoom arrière">➖</button>
+                  <button class="cad-btn" data-action="zoom-reset" title="Taille réelle">🔍</button>
+                  <button class="cad-btn" data-action="toggle-grid" title="Grille CAO">📐</button>
+                  <button class="cad-btn" data-action="fullscreen" title="Plein écran">🖥️</button>
+                </div>
+                <div class="secure-pdf-canvas-viewer" id="pdf-viewer-${idx}" style="position: relative; width: 100%; max-height: 85vh; overflow-y: auto; background: #090c12; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.5); padding: 5rem 0 2rem 0; display: flex; flex-direction: column; align-items: center; gap: 2rem; user-select: none; -webkit-user-select: none;">
+                  <div class="pdf-loading" style="color: #888; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; padding: 3rem 0;">
+                    Chargement sécurisé du document...
+                  </div>
                 </div>
               </div>
             </div>
@@ -198,6 +209,7 @@ async function init() {
           // Encode URI to avoid 404 for files with accents
           const encodedUrl = encodeURI(pdfSrc);
           renderPdfSecurely(encodedUrl, `pdf-viewer-${idx}`);
+          setupCadToolbarHandlers(idx);
         });
       }
       
@@ -493,6 +505,11 @@ function renderPdfSecurely(pdfUrl, containerId) {
       const canvas = document.createElement('canvas');
       canvas.style.cssText = "display: block; width: 100%; height: auto; pointer-events: none; margin: 0 auto;";
       pageWrapper.appendChild(canvas);
+
+      const gridOverlay = document.createElement('div');
+      gridOverlay.className = 'pdf-grid-overlay';
+      pageWrapper.appendChild(gridOverlay);
+      
       container.appendChild(pageWrapper);
 
       pdf.getPage(pageNum).then(page => {
@@ -513,6 +530,70 @@ function renderPdfSecurely(pdfUrl, containerId) {
     console.error('Error rendering secure PDF:', err);
     container.innerHTML = `<p style="padding: 3rem 0; color: #ff5555; font-size: 0.95rem; font-family: var(--font-heading); text-align: center;">⚠️ Impossible d'afficher le document de manière sécurisée.</p>`;
   });
+}
+
+function setupCadToolbarHandlers(idx) {
+  const wrapper = document.getElementById(`pdf-wrapper-${idx}`);
+  if (!wrapper) return;
+
+  const viewer = wrapper.querySelector('.secure-pdf-canvas-viewer');
+  const toolbar = wrapper.querySelector('.cad-toolbar');
+  if (!toolbar || !viewer) return;
+
+  let zoomLevel = 1.0;
+  let isGridVisible = false;
+
+  toolbar.addEventListener('click', (e) => {
+    const btn = e.target.closest('.cad-btn');
+    if (!btn) return;
+
+    const action = btn.dataset.action;
+    if (action === 'zoom-in') {
+      zoomLevel = Math.min(2.0, zoomLevel + 0.15);
+      applyZoom();
+    } else if (action === 'zoom-out') {
+      zoomLevel = Math.max(0.5, zoomLevel - 0.15);
+      applyZoom();
+    } else if (action === 'zoom-reset') {
+      zoomLevel = 1.0;
+      applyZoom();
+    } else if (action === 'toggle-grid') {
+      isGridVisible = !isGridVisible;
+      btn.classList.toggle('active', isGridVisible);
+      const grids = viewer.querySelectorAll('.pdf-grid-overlay');
+      grids.forEach(g => g.classList.toggle('visible', isGridVisible));
+    } else if (action === 'fullscreen') {
+      if (!document.fullscreenElement) {
+        wrapper.requestFullscreen().then(() => {
+          btn.classList.add('active');
+        }).catch(err => {
+          console.error('Error attempting to enable fullscreen:', err);
+        });
+      } else {
+        document.exitFullscreen();
+      }
+    }
+  });
+
+  // Handle exiting fullscreen via Esc key or other native controls
+  document.addEventListener('fullscreenchange', () => {
+    const fsBtn = toolbar.querySelector('[data-action="fullscreen"]');
+    if (fsBtn) {
+      if (document.fullscreenElement === wrapper) {
+        fsBtn.classList.add('active');
+      } else {
+        fsBtn.classList.remove('active');
+      }
+    }
+  });
+
+  function applyZoom() {
+    const pages = viewer.querySelectorAll('.pdf-page-wrapper');
+    pages.forEach(page => {
+      page.style.width = (95 * zoomLevel) + '%';
+      page.style.maxWidth = (1000 * zoomLevel) + 'px';
+    });
+  }
 }
 
 init();

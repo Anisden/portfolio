@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Presse & Distinctions | Anis BOUDEN</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="./src/style.css" />
+  <link class="page-css" rel="stylesheet" href="./src/distinction-page.css" />
+</head>
+<body>
+  <!-- CAD Blueprint Background Canvas -->
+  <canvas id="blueprint-canvas"></canvas>
+
+  <!-- Navigation (Exactly identical to homepage navbar) -->
+  <nav class="navbar scrolled" id="navbar">
+    <div class="nav-container">
+      <a href="./" class="logo" id="site-logo">A<span>BOUDEN</span></a>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="./#about">À Propos</a></li>
+        <li><a href="./#experience">Parcours</a></li>
+        <li><a href="./#distinctions">Distinctions</a></li>
+        <li><a href="./#projects">Projets</a></li>
+        <li><a href="./#contact">Contact</a></li>
+      </ul>
+      <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
+        <span></span><span></span><span></span>
+      </button>
+    </div>
+  </nav>
+
+  <!-- Page Header -->
+  <header class="dist-page-header">
+    <div class="dist-header-deco"></div>
+    <div class="container">
+      <p class="dist-page-label">Portfolio</p>
+      <h1 class="dist-page-title">Presse & Distinctions</h1>
+      <div class="dist-page-divider"></div>
+    </div>
+  </header>
+
+  <!-- All Distinctions -->
+  <main class="dist-page-body">
+    <div class="container" id="distinctions-container">
+      <section id="awards-section" class="dist-section">
+        <h2 class="dist-section-title">Prix & Concours</h2>
+        <div class="dist-section-grid" id="awards-grid"></div>
+      </section>
+      
+      <section id="press-section" class="dist-section">
+        <h2 class="dist-section-title">La presse parle de moi</h2>
+        <div class="dist-section-grid press-grid" id="press-grid"></div>
+      </section>
+
+      <section id="media-section" class="dist-section">
+        <h2 class="dist-section-title">Interventions Médias</h2>
+        <div class="dist-section-grid media-grid" id="media-grid"></div>
+      </section>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container footer-inner">
+      <p class="footer-copy">&copy; <span id="year"></span> Anis Bouden. Conçu avec passion & propulsé par des outils IA.</p>
+    </div>
+  </footer>
+
+  <script type="module" src="./src/distinction.js"></script>
+</body>
+</html>

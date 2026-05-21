@@ -435,6 +435,17 @@ window.editDistinction = (i) => {
   document.getElementById('dist-video').value = d.video || '';
   document.getElementById('dist-gallery').value = (d.gallery || []).join('\n');
   
+  // Event photo & link fields
+  const eventPhotoInput = document.getElementById('dist-event-photo');
+  if (eventPhotoInput) eventPhotoInput.value = d.eventPhoto || '';
+  const eventLinkInput = document.getElementById('dist-event-link');
+  if (eventLinkInput) eventLinkInput.value = d.eventLink || '';
+  const eventPhotoPreview = document.getElementById('dist-event-photo-preview');
+  if (eventPhotoPreview) {
+    if (d.eventPhoto) { eventPhotoPreview.src = d.eventPhoto; eventPhotoPreview.style.display = 'block'; }
+    else { eventPhotoPreview.style.display = 'none'; }
+  }
+  
   const preview = document.getElementById('dist-image-preview');
   if (d.image) { preview.src = d.image; preview.style.display = 'block'; }
   else { preview.style.display = 'none'; }
@@ -456,10 +467,12 @@ window.deleteDistinction = (i) => {
 };
 
 function resetDistinctionForm() {
-  ['dist-id','dist-year','dist-title','dist-desc','dist-image','dist-video','dist-gallery'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
+  ['dist-id','dist-year','dist-title','dist-desc','dist-image','dist-video','dist-gallery','dist-event-photo','dist-event-link'].forEach(id => { const el = document.getElementById(id); if (el) el.value = ''; });
   document.getElementById('dist-type').value = 'award';
   const preview = document.getElementById('dist-image-preview');
   if (preview) { preview.src = ''; preview.style.display = 'none'; }
+  const eventPhotoPreview = document.getElementById('dist-event-photo-preview');
+  if (eventPhotoPreview) { eventPhotoPreview.src = ''; eventPhotoPreview.style.display = 'none'; }
   const galleryPreview = document.getElementById('dist-gallery-preview');
   if (galleryPreview) galleryPreview.innerHTML = '';
   const videoPreview = document.getElementById('dist-video-preview');
@@ -478,7 +491,9 @@ document.getElementById('dist-add-btn')?.addEventListener('click', async () => {
     description: document.getElementById('dist-desc').value,
     image: document.getElementById('dist-image').value,
     video: document.getElementById('dist-video').value,
-    gallery: document.getElementById('dist-gallery').value.split('\n').map(s => s.trim()).filter(Boolean)
+    gallery: document.getElementById('dist-gallery').value.split('\n').map(s => s.trim()).filter(Boolean),
+    eventPhoto: (document.getElementById('dist-event-photo')?.value || '').trim(),
+    eventLink: (document.getElementById('dist-event-link')?.value || '').trim()
   };
   if (id !== '') distinctions[parseInt(id)] = d;
   else distinctions.push(d);
@@ -676,6 +691,7 @@ async function init() {
   
   // Distinctions
   setupImagePreview('dist-image-file', 'dist-image-preview', 'dist-image');
+  setupImagePreview('dist-event-photo-file', 'dist-event-photo-preview', 'dist-event-photo');
   setupGalleryUpload('dist');
   
   // Hero Images Carousel Upload

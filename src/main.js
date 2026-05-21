@@ -1,4 +1,5 @@
 import heroImg from './assets/hero.png';
+import { initBlueprintCanvas } from './blueprint.js';
 
 // Base path for GitHub Pages compatibility
 const BASE = import.meta.env.BASE_URL;
@@ -86,7 +87,7 @@ function renderDistinctions(distinctions) {
   const icons = { award: '🏆', competition: '🥇', media: '📺' };
   const typeLabel = { award: 'Prix', competition: 'Concours', media: 'Médias' };
 
-  grid.innerHTML = distinctions.map(d => {
+  grid.innerHTML = distinctions.map((d, idx) => {
     let mediaHtml = '';
     if (d.video) {
       if (d.video.startsWith('<iframe') || d.video.startsWith('<div')) {
@@ -100,33 +101,30 @@ function renderDistinctions(distinctions) {
         }
       }
     } else if (d.image) {
-      mediaHtml = `<div class="dist-img-wrap" style="cursor: pointer;" onclick="openLightbox('${d.image}')"><img src="${d.image}" alt="${d.title}" loading="lazy"></div>`;
-    }
-
-    let galleryHtml = '';
-    if (d.gallery && d.gallery.length > 0) {
-      galleryHtml = `
-        <div class="dist-gallery-grid" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(70px, 1fr)); gap: 0.5rem; margin-top: 1.2rem; margin-bottom: 0.5rem;">
-          ${d.gallery.map(imgSrc => `
-            <div class="dist-gallery-thumb" style="aspect-ratio: 1; border-radius: 6px; overflow: hidden; border: 1px solid rgba(255,255,255,0.08); cursor: pointer;" onclick="openLightbox('${imgSrc}')">
-              <img src="${imgSrc}" style="width: 100%; height: 100%; object-fit: cover; transition: transform 0.3s;" onmouseover="this.style.transform='scale(1.1)'" onmouseout="this.style.transform='scale(1)'">
-            </div>
-          `).join('')}
-        </div>
-      `;
+      mediaHtml = `<div class="dist-img-wrap"><img src="${d.image}" alt="${d.title}" loading="lazy"></div>`;
     }
 
     return `
-      <div class="distinction-card fade-up ${d.type === 'media' ? 'distinction-type-media' : ''}" style="display: flex; flex-direction: column;">
+      <div class="distinction-card fade-up ${d.type === 'media' ? 'distinction-type-media' : ''}" data-dist-index="${idx}" style="display: flex; flex-direction: column; cursor: pointer;">
         <p class="distinction-year">${typeLabel[d.type] || ''} · ${d.year}</p>
         <div class="distinction-icon">${icons[d.type] || '⭐'}</div>
         ${mediaHtml}
         <h3 class="distinction-title">${d.title}</h3>
         <p class="distinction-desc" style="flex-grow: 1;">${d.description}</p>
-        ${galleryHtml}
+        <span class="distinction-link">Voir la distinction →</span>
       </div>
     `;
   }).join('');
+
+  // Make cards clickable
+  grid.querySelectorAll('.distinction-card').forEach(card => {
+    apply3DTilt(card);
+    card.addEventListener('click', (e) => {
+      if (e.target.tagName === 'IFRAME') return;
+      const idx = card.dataset.distIndex;
+      window.location.href = `${BASE}distinction.html?i=${idx}`;
+    });
+  });
 
   grid.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 }
@@ -163,7 +161,34 @@ window.openLightbox = (src) => {
   });
 };
 
+// 3D Tilt Micro-interactions
+function apply3DTilt(card) {
+  card.addEventListener('mousemove', (e) => {
+    const rect = card.getBoundingClientRect();
+    const x = e.clientX - rect.left;
+    const y = e.clientY - rect.top;
+    const xc = rect.width / 2;
+    const yc = rect.height / 2;
+    const dx = x - xc;
+    const dy = y - yc;
+    const tiltX = -(dy / yc) * 8; // Max 8 degrees for premium subtlety
+    const tiltY = (dx / xc) * 8;
+    
+    card.style.transition = 'transform 0.1s ease, box-shadow 0.1s ease, border-color 0.1s ease';
+    card.style.transform = `rotateX(${tiltX}deg) rotateY(${tiltY}deg) scale3d(1.02, 1.02, 1.02)`;
+  });
+
+  card.addEventListener('mouseleave', () => {
+    card.style.transition = 'transform 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), box-shadow 0.5s cubic-bezier(0.25, 0.8, 0.25, 1), border-color 0.5s cubic-bezier(0.25, 0.8, 0.25, 1)';
+    card.style.transform = 'rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+  });
+}
+
+// initBlueprintCanvas imported from blueprint.js
+
 // Load Projects
+let allProjects = [];
+
 function createProjectCard(project) {
   const div = document.createElement('div');
   div.className = 'project-card fade-up';
@@ -192,10 +217,10 @@ async function loadProjects() {
   try {
     const res = await fetch(`${BASE}projects.json`);
     if (!res.ok) return;
-    const projects = await res.json();
+    allProjects = await res.json();
     
     // Resolve all project asset URLs dynamically relative to BASE
-    projects.forEach(p => {
+    allProjects.forEach(p => {
       if (p.image) p.image = resolveUrl(p.image);
       if (p.video && !p.video.includes('<iframe') && !p.video.includes('youtube.com') && !p.video.includes('youtu.be')) {
         p.video = resolveUrl(p.video);
@@ -207,47 +232,95 @@ async function loadProjects() {
       if (p.galleryAfter) p.galleryAfter = p.galleryAfter.map(resolveUrl);
     });
 
-    const tnGrid = document.getElementById('tunisia-projects');
-    const qcGrid = document.getElementById('quebec-projects');
-    const concGrid = document.getElementById('concours-projects');
-    if (!tnGrid || !qcGrid || !concGrid) return;
+    // Render initially
+    renderFilteredProjects('all');
+    setupFilters();
 
-    tnGrid.innerHTML = '';
-    qcGrid.innerHTML = '';
-    concGrid.innerHTML = '';
-    let qcCount = 0;
-
-    projects.forEach(p => {
-      const card = createProjectCard(p);
-      if (p.region === 'quebec') { 
-        qcGrid.appendChild(card); 
-        qcCount++; 
-      } else if (p.region === 'concours') { 
-        concGrid.appendChild(card); 
-      } else { 
-        tnGrid.appendChild(card); 
-      }
-    });
-
-    if (qcCount === 0) {
-      qcGrid.innerHTML = `
-        <div class="project-card fade-up">
-          <div class="project-image"><div class="placeholder-img"><div class="overlay-soon">Mise à jour imminente</div></div></div>
-          <div class="project-info"><h4>Projets Nord-Américains</h4><p class="project-meta">2021–2025</p>
-          <p>La documentation visuelle de mes réalisations au Québec sera disponible prochainement.</p></div>
-        </div>`;
-    }
-    
-    // Init Hero Slider with project images
-    const projectImages = projects.map(p => p.image).filter(Boolean);
-    if (projectImages.length > 0) {
-      initHeroSlider(projectImages);
-    } else {
-      initHeroSlider([heroImg]); // fallback
-    }
+    // Init Infinite Marquee with projects
+    initProjectMarquee(allProjects);
     
     initAnimations();
   } catch (e) { console.error('Projects load error', e); }
+}
+
+function renderFilteredProjects(filter) {
+  const grid = document.getElementById('projects-grid');
+  if (!grid) return;
+
+  grid.style.opacity = '0';
+
+  setTimeout(() => {
+    grid.innerHTML = '';
+    
+    let filtered = [];
+    if (filter === 'all') {
+      filtered = allProjects;
+    } else if (filter === 'quebec') {
+      filtered = allProjects.filter(p => p.region === 'quebec');
+    } else if (filter === 'tunisie') {
+      filtered = allProjects.filter(p => p.region !== 'quebec' && p.region !== 'concours');
+    } else if (filter === 'concours') {
+      filtered = allProjects.filter(p => p.region === 'concours');
+    } else if (filter === 'sous-traitance') {
+      filtered = allProjects.filter(p => p.subcontract === true);
+    }
+
+    if (filtered.length === 0) {
+      grid.innerHTML = `
+        <div class="project-card fade-up" style="grid-column: 1 / -1; cursor: default;">
+          <div class="placeholder-img" style="min-height: 200px;">
+            <div class="overlay-soon">Mise à jour imminente</div>
+          </div>
+        </div>`;
+    } else {
+      filtered.forEach(p => {
+        const card = createProjectCard(p);
+        grid.appendChild(card);
+        apply3DTilt(card);
+      });
+    }
+
+    grid.style.opacity = '1';
+    grid.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
+  }, 200);
+}
+
+function setupFilters() {
+  const filterTabs = document.getElementById('project-filters');
+  if (!filterTabs) return;
+
+  const tabs = filterTabs.querySelectorAll('.filter-tab');
+  const slider = document.getElementById('filter-slider');
+
+  function updateSlider(tab) {
+    if (!slider) return;
+    slider.style.left = `${tab.offsetLeft}px`;
+    slider.style.width = `${tab.offsetWidth}px`;
+  }
+
+  // Set initial slider position on the active tab
+  const activeTab = filterTabs.querySelector('.filter-tab.active');
+  if (activeTab) {
+    // Wait a tiny bit for rendering/styles to apply
+    setTimeout(() => updateSlider(activeTab), 150);
+  }
+
+  tabs.forEach(tab => {
+    tab.addEventListener('click', () => {
+      tabs.forEach(t => t.classList.remove('active'));
+      tab.classList.add('active');
+      updateSlider(tab);
+      
+      const filter = tab.dataset.filter;
+      renderFilteredProjects(filter);
+    });
+  });
+
+  // Handle window resizing to keep slider aligned
+  window.addEventListener('resize', () => {
+    const currentActive = filterTabs.querySelector('.filter-tab.active');
+    if (currentActive) updateSlider(currentActive);
+  });
 }
 
 // Load General Content
@@ -314,29 +387,31 @@ async function loadContent() {
   } catch (e) { console.error('Content load error', e); }
 }
 
-function initHeroSlider(images) {
-  const slider = document.getElementById('hero-slider');
-  if (!slider || !images.length) return;
-  
-  images.forEach((src, i) => {
-    const img = document.createElement('img');
-    img.src = src;
-    img.className = 'hero-slide' + (i === 0 ? ' active' : '');
-    slider.appendChild(img);
-  });
-  
-  if (images.length > 1) {
-    let current = 0;
-    setInterval(() => {
-      const slides = slider.querySelectorAll('.hero-slide');
-      slides[current].classList.remove('active');
-      current = (current + 1) % slides.length;
-      slides[current].classList.add('active');
-    }, 7000); // 7s interval
-  }
+function initProjectMarquee(projects) {
+  const track = document.getElementById('marquee-track');
+  if (!track || !projects?.length) return;
+
+  // Filter projects with valid cover images
+  const validProjects = projects.filter(p => p.image);
+  if (!validProjects.length) return;
+
+  // Clone projects list to ensure a seamless infinite scroll loop
+  const marqueeItems = [...validProjects, ...validProjects];
+
+  track.innerHTML = marqueeItems.map(p => {
+    return `
+      <a href="${BASE}project.html?id=${p.id}" class="marquee-item" aria-label="Projet ${p.title}">
+        <img src="${p.image}" alt="${p.title}" loading="lazy">
+        <div class="marquee-item-overlay">
+          <span class="marquee-item-title">${p.title}</span>
+        </div>
+      </a>
+    `;
+  }).join('');
 }
 
 document.addEventListener('DOMContentLoaded', () => {
+  initBlueprintCanvas();
   loadContent();
   loadProjects();
   initAnimations();
