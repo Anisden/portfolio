@@ -139,6 +139,8 @@ function renderExperiences(experiences) {
     const markerClass = exp.region === 'quebec' ? 'quebec-marker' : 'tunisia-marker';
     const rectClass = exp.region === 'quebec' ? 'quebec-rect' : 'tunisia-rect';
     const delayClass = isEven ? 'delay-1' : '';
+    const isLong = exp.description && exp.description.length > 180;
+    const descClass = isLong ? 'timeline-desc line-clamp' : 'timeline-desc';
 
     return `
       <div class="timeline-item fade-up ${delayClass}">
@@ -152,11 +154,33 @@ function renderExperiences(experiences) {
             <span class="location">${exp.location}</span>
           </div>
           <p class="timeline-role">${exp.role}</p>
-          <p>${exp.description}</p>
+          <p class="${descClass}">${exp.description}</p>
+          ${isLong ? `<button class="read-more-btn">Lire la suite...</button>` : ''}
         </div>
       </div>
     `;
   }).join('');
+
+  // Add click events for toggle buttons
+  container.querySelectorAll('.timeline-content').forEach(content => {
+    const btn = content.querySelector('.read-more-btn');
+    const desc = content.querySelector('.timeline-desc');
+    if (btn && desc) {
+      btn.addEventListener('click', () => {
+        const isExpanded = desc.classList.contains('expanded');
+        if (isExpanded) {
+          desc.classList.remove('expanded');
+          desc.classList.add('line-clamp');
+          btn.textContent = 'Lire la suite...';
+          content.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+        } else {
+          desc.classList.add('expanded');
+          desc.classList.remove('line-clamp');
+          btn.textContent = 'Réduire';
+        }
+      });
+    }
+  });
 
   container.querySelectorAll('.fade-up').forEach(el => observer.observe(el));
 }
