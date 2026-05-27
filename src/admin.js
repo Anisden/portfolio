@@ -126,9 +126,29 @@ function updateGalleryPreview(idPrefix = '') {
   previewEl.innerHTML = urls.map((url, i) => `
     <div class="gallery-thumb">
       <img src="${url}" alt="Photo ${i+1}" onerror="this.parentElement.style.display='none'">
-      <button class="remove-thumb" onclick="removeGalleryItem(${i}, '${idPrefix}')">✕</button>
+      <div class="thumb-controls">
+        <button class="thumb-btn btn-move" onclick="moveGalleryItem(${i}, -1, '${idPrefix}')" title="Reculer" ${i === 0 ? 'disabled style="opacity:0.3;cursor:default;"' : ''}>◀</button>
+        <button class="thumb-btn btn-move" onclick="moveGalleryItem(${i}, 1, '${idPrefix}')" title="Avancer" ${i === urls.length - 1 ? 'disabled style="opacity:0.3;cursor:default;"' : ''}>▶</button>
+        <button class="thumb-btn btn-remove" onclick="removeGalleryItem(${i}, '${idPrefix}')" title="Supprimer">✕</button>
+      </div>
     </div>`).join('');
 }
+
+window.moveGalleryItem = (index, direction, idPrefix = '') => {
+  let el = document.getElementById(idPrefix ? `${idPrefix}-gallery` : 'gallery');
+  if (idPrefix && !el) {
+    el = document.getElementById(idPrefix);
+  }
+  if (!el) return;
+  const lines = el.value.split('\n').map(s => s.trim()).filter(Boolean);
+  const targetIndex = index + direction;
+  if (targetIndex < 0 || targetIndex >= lines.length) return;
+  const temp = lines[index];
+  lines[index] = lines[targetIndex];
+  lines[targetIndex] = temp;
+  el.value = lines.join('\n');
+  updateGalleryPreview(idPrefix);
+};
 
 window.removeGalleryItem = (index, idPrefix = '') => {
   let el = document.getElementById(idPrefix ? `${idPrefix}-gallery` : 'gallery');
@@ -179,6 +199,7 @@ window.editProject = (i) => {
   document.getElementById('title').value = p.title || '';
   document.getElementById('region').value = p.region || 'tunisia';
   document.getElementById('meta').value = p.meta || '';
+  document.getElementById('project-year').value = p.year || '';
   document.getElementById('image').value = p.image || '';
   document.getElementById('video').value = p.video || '';
   document.getElementById('description').value = p.description || '';
@@ -230,7 +251,7 @@ window.deleteProject = (i) => {
 };
 
 function resetProjectForm() {
-  ['project-id','title','meta','image','video','description','longDescription','budget','tasks','gallery','galleryDocs','galleryRealisation','galleryBefore','galleryAfter'].forEach(id => {
+  ['project-id','title','meta','project-year','image','video','description','longDescription','budget','tasks','gallery','galleryDocs','galleryRealisation','galleryBefore','galleryAfter'].forEach(id => {
     const el = document.getElementById(id);
     if (el) el.value = '';
   });
@@ -272,6 +293,7 @@ document.getElementById('add-btn')?.addEventListener('click', () => {
   const galleryBefore = document.getElementById('galleryBefore').value.split('\n').map(s => s.trim()).filter(Boolean);
   const galleryAfter = document.getElementById('galleryAfter').value.split('\n').map(s => s.trim()).filter(Boolean);
   const showDistinctionBtn = document.getElementById('showDistinctionBtn').checked;
+  const year = parseInt(document.getElementById('project-year').value) || 2010;
 
   const region = document.getElementById('region').value;
   // If editing, preserve currency if not changing region, otherwise set default
@@ -282,6 +304,7 @@ document.getElementById('add-btn')?.addEventListener('click', () => {
   const proj = {
     id: id !== '' ? projects[parseInt(id)].id : title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-+$/, ''),
     title, region,
+    year,
     meta: document.getElementById('meta').value,
     description: document.getElementById('description').value,
     longDescription: document.getElementById('longDescription').value,
@@ -291,8 +314,13 @@ document.getElementById('add-btn')?.addEventListener('click', () => {
     currency, tasks, gallery,
     galleryDocs, galleryRealisation, galleryBefore, galleryAfter, showDistinctionBtn
   };
+  
   if (id !== '') projects[parseInt(id)] = proj;
   else projects.push(proj);
+
+  // Sort projects chronologically descending (newest first)
+  projects.sort((a, b) => (b.year || 0) - (a.year || 0));
+
   renderProjectList();
   saveProjectsToServer(); // Auto-save
   resetProjectForm();

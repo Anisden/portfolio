@@ -31,7 +31,8 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": true
+    "subcontract": true,
+    "year": 2025
   },
   {
     "id": "pavillon-duchesnay",
@@ -60,29 +61,43 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": true
+    "subcontract": true,
+    "year": 2025
   },
   {
     "id": "ecole-pointe-levy",
+    "title": "Palestre et gymnase à l'école Pointe-Lévy",
     "region": "quebec",
-    "title": "École Pointe-Lévy & Palestre",
     "meta": "Agrandissement | CSSDN et Ville de Lévis (2024)",
-    "description": "Ajout d'espaces à l'école Pointe-Lévy et construction d'une palestre de gymnastique.",
-    "longDescription": "Étude de faisabilité pour l'ajout d'espaces à l'école Pointe-Lévy et la construction d'une palestre de gymnastique majeure, en partenariat entre le CSSDN et la Ville de Lévis.",
-    "image": "",
+    "description": "Réaménagement de l'école existante Pointe-Lévy et construction d'une palestre de gymnastique et d'un gymnase double.",
+    "longDescription": "Étude de faisabilité pour l'ajout d'espaces à l'école Pointe-Lévy et la construction d'une palestre de gymnastique majeure, en partenariat entre le centre de services scolaires et la Ville de Lévis.",
+    "image": "/uploads/1779765247085_1_38_-_Photo.jpg",
     "video": "",
-    "gallery": [],
-    "galleryDocs": [],
-    "galleryRealisation": [],
     "budget": "29 400 000",
     "currency": "CAD",
     "tasks": [
+      "Relevés",
       "Conception",
       "Coordination",
       "Mise en plan",
       "Modélisation et rendu réaliste 3D"
     ],
-    "subcontract": true
+    "gallery": [
+      "/uploads/1779765275354_1_5_-_Photo.jpg",
+      "/uploads/1779765275354_1_6_-_Photo.jpg",
+      "/uploads/1779765275354_1_8_-_Photo.jpg",
+      "/uploads/1779765275355_1_10_-_Photo.jpg",
+      "/uploads/1779765275355_1_12_-_Photo.jpg",
+      "/uploads/1779765275355_1_22_-_Photo.jpg",
+      "/uploads/1779765275355_1_23_-_Photo.jpg",
+      "/uploads/1779765275356_1_38_-_Photo.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2024
   },
   {
     "id": "complexe-huronne-wendat",
@@ -119,41 +134,58 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": true
+    "subcontract": true,
+    "year": 2024
   },
   {
     "id": "centre-raymond-blais",
-    "region": "quebec",
     "title": "Centre Communautaire Raymond-Blais",
+    "region": "quebec",
     "meta": "Réfection Majeure | Ville de Lévis (2023)",
-    "description": "Programme fonctionnel pour la réfection majeure du centre et ajout d'une palestre de gymnastique.",
-    "longDescription": "Programme fonctionnel et technique pour la réfection majeure du Centre Raymond-Blais de la Ville de Lévis, incluant un agrandissement stratégique pour accueillir une nouvelle palestre de gymnastique moderne.",
-    "image": "",
+    "description": "La rénovation du Centre Raymond-Blais et de la bibliothèque Saint-David a permis de moderniser et de dynamiser ces lieux centraux pour la communauté de Lévis.",
+    "longDescription": "Réfection complète de l’enveloppe extérieure et de la toiture.\nAgrandissement avec hall d’entrée et ascenseur favorisant l’accessibilité universelle.\nReconfiguration des circulations intérieures pour une meilleure fluidité.\nMise à neuf des salles multifonctionnelles, de la bibliothèque et du centre d’archives.\nAjout d’un mobilier contemporain et d’espaces adaptés aux tout-petits dans la bibliothèque.\nCe réaménagement offre désormais des espaces lumineux, accueillants et polyvalents, propices aux loisirs, à la culture et au bien-être de la collectivité.",
+    "image": "/uploads/1779765405613_1_10_-_Photo_(pour_affiche_VL)_1408x628_px.jpg",
     "video": "",
-    "gallery": [],
-    "galleryDocs": [],
-    "galleryRealisation": [],
-    "budget": "26 681 000",
+    "budget": "4 340 000",
     "currency": "CAD",
     "tasks": [
       "Concepteur",
       "Étude d'aménagement",
-      "Production des plans"
+      "Production des plans",
+      "Modélisation et rendu 3D",
+      "Suivi de chantier"
     ],
-    "subcontract": false
+    "gallery": [
+      "/uploads/1779765742149_21.jpg",
+      "/uploads/1779765742150_1_1_-_Photo.jpg",
+      "/uploads/1779765742150_1_9_-_Photo.jpg",
+      "/uploads/1779765742151_1_10_-_Photo.jpg",
+      "/uploads/1779765742151_1_11_-_Photo.jpg",
+      "/uploads/1779765742152_2_13_-_Photo.jpg",
+      "/uploads/1779765742152_2_15_-_Photo.jpg",
+      "/uploads/1779767269629_20250904_105947-scaled.jpg",
+      "/uploads/1779767269630_20250904_110226-scaled.jpg",
+      "/uploads/1779767269630_20250904_110646-scaled.jpg",
+      "/uploads/1779767269630_IMG_2966_F.jpg",
+      "/uploads/1779767269631_IMG_2980-F.jpg",
+      "/uploads/1779767269631_IMG_3015-F.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2023
   },
   {
     "id": "arena-saint-anselme",
-    "region": "quebec",
     "title": "Aréna & Hôtel de Ville de Saint-Anselme",
+    "region": "quebec",
     "meta": "Agrandissement | Ville de Saint-Anselme (2023)",
     "description": "Agrandissement de l'aréna municipal et ajout d'un nouvel hôtel de ville.",
     "longDescription": "Étude d'implantation et de faisabilité complexe pour l'agrandissement de l'aréna municipal de Saint-Anselme combiné à la construction d'un nouvel hôtel de ville, optimisant les services municipaux et sportifs.",
-    "image": "",
+    "image": "/uploads/1779766162404_Façade_arèna.jpg",
     "video": "",
-    "gallery": [],
-    "galleryDocs": [],
-    "galleryRealisation": [],
     "budget": "22 755 000",
     "currency": "CAD",
     "tasks": [
@@ -163,7 +195,16 @@
       "Modélisation et rendu 3D",
       "Rédaction de l'étude"
     ],
-    "subcontract": false
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/1779766366918_Annexe_1A-Cahier_des_plans.pdf",
+      "/uploads/1779766366919_Annexe_1B-vues_3D.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2023
   },
   {
     "id": "patinoires-quebec",
@@ -198,7 +239,8 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": true
+    "subcontract": true,
+    "year": 2023
   },
   {
     "id": "centre-ferland",
@@ -219,28 +261,67 @@
       "Étude d'aménagement",
       "Production des plans"
     ],
-    "subcontract": false
+    "subcontract": false,
+    "year": 2022
   },
   {
     "id": "cegep-shawinigan",
-    "region": "quebec",
     "title": "Centre Sportif du Cégep de Shawinigan",
+    "region": "quebec",
     "meta": "Réfection en 3 phases | Cégep de Shawinigan (2022)",
-    "description": "Réfection du Centre sportif: gymnase, centre d'entrainement et zone commune.",
-    "longDescription": "Étude de faisabilité stratégique pour la réfection du Centre sportif du Cégep de Shawinigan, divisée en trois phases distinctes : modernisation du gymnase, création d'un centre d'entraînement et réaménagement des zones communes.",
-    "image": "",
+    "description": "",
+    "longDescription": "Construit en 1972, le Cégep de Shawinigan a entrepris en 2009 une réfection des vestiaires de la piscine. De plus, dans l’optique de recevoir les Jeux du Québec de 2012, des travaux sur les drains de fond de piscine ont été réalisé. Malgré ces travaux, la piscine et ses équipements connexes étaient en fin de vie utile. Le Cégep de Shawinigan souhaitait profiter des travaux prévus pour bonifier l’expérience des usagers en effectuant la mise aux normes du bassin, la réfection des gradins et des vestiaires et en rendant l’installation plus accessible aux familles et à la population vieillissante.\n\nL’accessibilité universelle était au cœur de la conception. La piscine répond aux standards d’accessibilité universelle et les élèvent en agrandissant la partie peu profonde du bassin pour accueillir un plus grand nombre d’enfants. De plus, les vestiaires peuvent devenir mixte en cas de compétitions où les membres d’une même équipe devraient être regroupés. En plus d’être ouvert au public, le nouveau bassin permet de tenir des cours de natation pour la relève ainsi que des compétitions de niveau régionale et provinciale.",
+    "image": "/uploads/1779767424890_6-1.jpg",
     "video": "",
-    "gallery": [],
-    "galleryDocs": [],
-    "galleryRealisation": [],
-    "budget": "9 311 000",
+    "budget": "5 042 000",
     "currency": "CAD",
     "tasks": [
       "Concepteur",
       "Étude d'aménagement",
       "Production des plans"
     ],
-    "subcontract": true
+    "gallery": [
+      "/uploads/1779767432692_1.jpg",
+      "/uploads/1779767432693_5-2.jpg",
+      "/uploads/1779767432693_6-1.jpg",
+      "/uploads/1779767432693_7-2.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2022
+  },
+  {
+    "id": "le-chamonix-rep-re-locatif",
+    "title": "Le Chamonix - Repère locatif",
+    "region": "quebec",
+    "meta": "Chalet Lac Beauport, Québec (2022)",
+    "description": "",
+    "longDescription": "La construction du mini chalet le Chamonix, située sur la montagne du Mont Tourbillon au Lac-Beauport, est complétée. L’objectif principal était d’optimiser la vue sur les magnifiques paysages qui l’entoure et que ses occupants profitent au maximum des espaces extérieurs. C’est pourquoi les aires de vie ont été aménagées à l’étage et les chambres au rez-de-chaussée.\n\nInspiré des chalets traditionnels présents dans les Alpes, tel que désiré par le client, le Chamonix a été conçu autour de 2 cheminées de pierres et il a été recouvert de bois. L’ajout de quelques éléments métalliques de couleur noir apportent une touche contemporaine au projet d’inspiration rustique.",
+    "image": "/uploads/1779766722495_19-rendu.jpg",
+    "video": "",
+    "budget": "-",
+    "currency": "CAD",
+    "tasks": [],
+    "gallery": [
+      "/uploads/1779766782529_11-rendu.jpg",
+      "/uploads/1779766782530_12-rendu.jpg",
+      "/uploads/1779766782530_14-rendu.jpg",
+      "/uploads/1779766782530_19-rendu.jpg",
+      "/uploads/1779766782531_20-rendu.jpg",
+      "/uploads/1779766782531_22-rendu.jpg",
+      "/uploads/1779767093772_Drone-1.jpg",
+      "/uploads/1779767093772_Drone-2-1.jpg",
+      "/uploads/1779767093773_image.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2022
   },
   {
     "id": "maracana",
@@ -278,7 +359,8 @@
       "/uploads/1779021363864_int23.jpg"
     ],
     "showDistinctionBtn": false,
-    "subcontract": false
+    "subcontract": false,
+    "year": 2019
   },
   {
     "id": "issat",
@@ -329,7 +411,8 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": true,
-    "subcontract": false
+    "subcontract": false,
+    "year": 2019
   },
   {
     "id": "residence",
@@ -357,7 +440,8 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": false
+    "subcontract": false,
+    "year": 2018
   },
   {
     "id": "coke-studio",
@@ -397,7 +481,28 @@
       "/uploads/1779023843645_4.jpg"
     ],
     "showDistinctionBtn": false,
-    "subcontract": false
+    "subcontract": false,
+    "year": 2017
+  },
+  {
+    "id": "h-tel-spa-yakouren-alg-rie",
+    "title": "Hôtel Spa à Yakouren. Algérie",
+    "region": "tunisia",
+    "meta": "2017",
+    "description": "",
+    "longDescription": "",
+    "image": "",
+    "video": "",
+    "budget": "",
+    "currency": "TND",
+    "tasks": [],
+    "gallery": [],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2017
   },
   {
     "id": "hopital-mareth",
@@ -433,7 +538,8 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": false
+    "subcontract": false,
+    "year": 2015
   },
   {
     "id": "hotel-finances-gabes",
@@ -469,7 +575,8 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": false
+    "subcontract": false,
+    "year": 2015
   },
   {
     "id": "hopital-sbeitla",
@@ -500,7 +607,8 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": false
+    "subcontract": false,
+    "year": 2014
   },
   {
     "id": "restaurant-universitaire-sabra",
@@ -529,7 +637,8 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": false
+    "subcontract": false,
+    "year": 2014
   },
   {
     "id": "maison-culture-el-battan",
@@ -568,7 +677,8 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": false
+    "subcontract": false,
+    "year": 2013
   },
   {
     "id": "maison-culture-sidi-bouzid-est",
@@ -602,7 +712,8 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": false
+    "subcontract": false,
+    "year": 2013
   },
   {
     "id": "complexe-thermal-zriba",
@@ -649,7 +760,8 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": false
+    "subcontract": false,
+    "year": 2013
   },
   {
     "id": "foyer-borj-cedria",
@@ -677,7 +789,8 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": false
+    "subcontract": false,
+    "year": 2012
   },
   {
     "id": "village-langues-mahdia",
@@ -702,25 +815,7 @@
     "galleryBefore": [],
     "galleryAfter": [],
     "showDistinctionBtn": false,
-    "subcontract": false
-  },
-  {
-    "id": "h-tel-spa-yakouren-alg-rie",
-    "title": "Hôtel Spa à Yakouren. Algérie",
-    "region": "tunisia",
-    "meta": "2017",
-    "description": "",
-    "longDescription": "",
-    "image": "",
-    "video": "",
-    "budget": "",
-    "currency": "TND",
-    "tasks": [],
-    "gallery": [],
-    "galleryDocs": [],
-    "galleryRealisation": [],
-    "galleryBefore": [],
-    "galleryAfter": [],
-    "showDistinctionBtn": false
+    "subcontract": false,
+    "year": 2011
   }
 ]
