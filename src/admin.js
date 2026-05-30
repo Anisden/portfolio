@@ -1,4 +1,5 @@
 const BASE = import.meta.env.BASE_URL;
+let editingLang = 'fr';
 
 // ===== Toast =====
 function toast(msg, duration = 3000) {
@@ -167,8 +168,14 @@ let projects = [];
 
 async function initProjects() {
   try {
-    const res = await fetch(`${BASE}projects.json`);
-    if (res.ok) projects = await res.json();
+    const filename = editingLang === 'fr' ? 'projects.json' : `projects_${editingLang}.json`;
+    const res = await fetch(`${BASE}${filename}`);
+    if (res.ok) {
+      projects = await res.json();
+    } else {
+      const fallbackRes = await fetch(`${BASE}projects.json`);
+      if (fallbackRes.ok) projects = await fallbackRes.json();
+    }
     renderProjectList();
   } catch (e) { console.error(e); }
 }
@@ -332,7 +339,11 @@ document.getElementById('new-btn')?.addEventListener('click', resetProjectForm);
 async function saveProjectsToServer() {
   const data = JSON.stringify(projects, null, 2);
   try {
-    const res = await fetch('/api/save-projects', { method: 'POST', body: data });
+    const res = await fetch('/api/save-projects', {
+      method: 'POST',
+      headers: { 'x-lang': editingLang },
+      body: data
+    });
     if (res.ok) { 
       toast('✅ Projets enregistrés et sauvegardés !'); 
       return true;
@@ -342,7 +353,8 @@ async function saveProjectsToServer() {
   // Fallback if API fails
   const a = document.createElement('a');
   a.href = 'data:application/json;charset=utf-8,' + encodeURIComponent(data);
-  a.download = 'projects.json';
+  const suffix = editingLang && editingLang !== 'fr' ? `_${editingLang}` : '';
+  a.download = `projects${suffix}.json`;
   a.click();
   toast('📥 Serveur indisponible. Fichier téléchargé, remplacez-le dans /public/.');
   return false;
@@ -367,7 +379,11 @@ async function saveContentToServer() {
 
   const data = JSON.stringify(generalContent, null, 2);
   try {
-    const res = await fetch('/api/save-content', { method: 'POST', body: data });
+    const res = await fetch('/api/save-content', {
+      method: 'POST',
+      headers: { 'x-lang': editingLang },
+      body: data
+    });
     if (res.ok) { 
       toast('✅ Contenu enregistré et sauvegardé !'); 
       return true;
@@ -377,7 +393,8 @@ async function saveContentToServer() {
   // Fallback
   const a = document.createElement('a');
   a.href = 'data:application/json;charset=utf-8,' + encodeURIComponent(data);
-  a.download = 'content.json';
+  const suffix = editingLang && editingLang !== 'fr' ? `_${editingLang}` : '';
+  a.download = `content${suffix}.json`;
   a.click();
   toast('📥 Serveur indisponible. Fichier téléchargé, remplacez-le dans /public/.');
   return false;
@@ -398,23 +415,27 @@ let generalContent = {};
 
 async function initContent() {
   try {
-    const res = await fetch(`${BASE}content.json`);
+    const filename = editingLang === 'fr' ? 'content.json' : `content_${editingLang}.json`;
+    const res = await fetch(`${BASE}${filename}`);
     if (res.ok) {
       generalContent = await res.json();
-      document.getElementById('c-heroSubtitle').value = generalContent.heroSubtitle || '';
-      document.getElementById('c-heroTitleHtml').value = generalContent.heroTitleHtml || '';
-      document.getElementById('c-heroDescription').value = generalContent.heroDescription || '';
-      document.getElementById('c-aboutText').value = generalContent.aboutText || '';
-      document.getElementById('c-contactEmail').value = generalContent.contactEmail || '';
-      document.getElementById('c-contactPhone').value = generalContent.contactPhone || '';
-      document.getElementById('c-contactLinkedin').value = generalContent.contactLinkedin || '';
-      document.getElementById('c-contactAddress').value = generalContent.contactAddress || '';
-      document.getElementById('c-cvLink').value = generalContent.cvLink || '';
-      
-      
-      const logoEl = document.getElementById('c-logoText');
-      if (logoEl) logoEl.value = generalContent.logoText || '';
+    } else {
+      const fallbackRes = await fetch(`${BASE}content.json`);
+      if (fallbackRes.ok) generalContent = await fallbackRes.json();
     }
+    
+    document.getElementById('c-heroSubtitle').value = generalContent.heroSubtitle || '';
+    document.getElementById('c-heroTitleHtml').value = generalContent.heroTitleHtml || '';
+    document.getElementById('c-heroDescription').value = generalContent.heroDescription || '';
+    document.getElementById('c-aboutText').value = generalContent.aboutText || '';
+    document.getElementById('c-contactEmail').value = generalContent.contactEmail || '';
+    document.getElementById('c-contactPhone').value = generalContent.contactPhone || '';
+    document.getElementById('c-contactLinkedin').value = generalContent.contactLinkedin || '';
+    document.getElementById('c-contactAddress').value = generalContent.contactAddress || '';
+    document.getElementById('c-cvLink').value = generalContent.cvLink || '';
+    
+    const logoEl = document.getElementById('c-logoText');
+    if (logoEl) logoEl.value = generalContent.logoText || '';
   } catch (e) { console.error(e); }
 }
 
@@ -758,6 +779,9 @@ async function completeInit() {
   renderDistinctionsList();
   experiences = generalContent.experiences || [];
   renderExperiencesList();
+  resetProjectForm();
+  resetExperienceForm();
+  resetDistinctionForm();
 }
 
 // ===== Init =====
@@ -770,6 +794,16 @@ async function init() {
   passwordInput?.addEventListener('keydown', (e) => {
     if (e.key === 'Enter') verifyAndUnlock();
   });
+
+  // Bind language selector
+  const langSelect = document.getElementById('admin-lang-select');
+  if (langSelect) {
+    langSelect.addEventListener('change', async () => {
+      editingLang = langSelect.value;
+      toast(`🌐 Passage à la langue d'édition : ${editingLang.toUpperCase()}`);
+      await completeInit();
+    });
+  }
   
   // Bind logout button
   document.getElementById('logout-btn')?.addEventListener('click', () => {

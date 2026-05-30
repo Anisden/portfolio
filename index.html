@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
@@ -10,7 +10,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
 
   <!-- Styles -->
   <link rel="stylesheet" href="./src/style.css" />
@@ -24,12 +24,27 @@
     <div class="nav-container">
       <a href="#" class="logo" id="site-logo"></a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#about">À Propos</a></li>
-        <li><a href="#experience">Parcours</a></li>
-        <li><a href="#projects">Projets</a></li>
-        <li><a href="#distinctions">Distinctions</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li><a href="#about" data-i18n="navAbout">À Propos</a></li>
+        <li><a href="#experience" data-i18n="navExperience">Parcours</a></li>
+        <li><a href="#projects" data-i18n="navProjects">Projets</a></li>
+        <li><a href="#distinctions" data-i18n="navDistinctions">Distinctions</a></li>
+        <li><a href="#contact" data-i18n="navContact">Contact</a></li>
       </ul>
+      
+      <!-- Language Selector -->
+      <div class="lang-selector">
+        <button class="lang-btn" id="lang-btn" aria-label="Select Language">
+          <span>🌐</span>
+          <span id="current-lang">FR</span>
+          <span>▼</span>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown">
+          <button class="lang-opt active" data-lang="fr">FR</button>
+          <button class="lang-opt" data-lang="en">EN</button>
+          <button class="lang-opt" data-lang="ar">AR</button>
+        </div>
+      </div>
+
       <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -49,9 +64,9 @@
       <h1 class="title fade-up delay-2" id="hero-title"></h1>
       <p class="description fade-up delay-3" id="hero-description"></p>
       <div class="hero-actions fade-up delay-4">
-        <a href="#projects" class="btn btn-primary">Découvrir les projets</a>
-        <a href="#contact" class="btn btn-secondary">Me contacter</a>
-        <a href="./cv_anis_bouden.pdf" target="_blank" class="btn btn-outline" id="cv-link">Télécharger le CV</a>
+        <a href="#projects" class="btn btn-primary" data-i18n="btnDiscover">Découvrir les projets</a>
+        <a href="#contact" class="btn btn-secondary" data-i18n="btnContact">Me contacter</a>
+        <a href="./cv_anis_bouden.pdf" target="_blank" class="btn btn-outline" id="cv-link" data-i18n="btnDownloadCV">Télécharger le CV</a>
       </div>
     </div>
     <!-- Scroll indicator -->
@@ -67,22 +82,22 @@
         <div class="stat-item fade-up">
           <span class="stat-number" data-target="16">0</span>
           <span class="stat-plus">+</span>
-          <p class="stat-label">Années d'expérience</p>
+          <p class="stat-label" data-i18n="yearsExp">Années d'expérience</p>
         </div>
         <div class="stat-item fade-up delay-1">
           <span class="stat-number" data-target="20">0</span>
           <span class="stat-plus">+</span>
-          <p class="stat-label">Projets réalisés</p>
+          <p class="stat-label" data-i18n="projectsCompleted">Projets réalisés</p>
         </div>
         <div class="stat-item fade-up delay-2">
           <span class="stat-number" data-target="3">0</span>
           <span class="stat-plus"></span>
-          <p class="stat-label">Pays d'exercice</p>
+          <p class="stat-label" data-i18n="countries">Pays d'exercice</p>
         </div>
         <div class="stat-item fade-up delay-3">
           <span class="stat-number" data-target="2">0</span>
           <span class="stat-plus"></span>
-          <p class="stat-label">Prix & Distinctions</p>
+          <p class="stat-label" data-i18n="awardsLabel">Prix & Distinctions</p>
         </div>
       </div>
     </div>
@@ -91,26 +106,26 @@
   <!-- About Section -->
   <section class="about section" id="about">
     <div class="container">
-      <h2 class="section-title fade-up">À Propos</h2>
+      <h2 class="section-title fade-up" data-i18n="aboutTitle">À Propos</h2>
       <div class="about-grid">
         <div class="about-text fade-up">
           <p id="about-text">Fort d'une trajectoire professionnelle de 16 ans combinant le design architectural et la rigueur de l'exécution technique, j'apporte aux bureaux d'architecture une double expertise. Mon parcours se structure autour de deux piliers complémentaires : 10 ans de pratique en Tunisie comme architecte (phases d'esquisse, design et gestion de projet) et 6 ans d'expertise technique au Québec (production de plans d'exécution, détails constructifs et respect rigoureux des codes du bâtiment). Expert sur AutoCAD, SketchUp et Lumion, je maîtrise l'ensemble de la chaîne de production, de la précision technique au rendu 3D haut de gamme. Actuellement basé au Canada, je suis disponible pour une relocalisation.</p>
 
-          <h3 class="subsection-title mt-4">Formation Académique</h3>
-          <ul class="info-list">
+          <h3 class="subsection-title mt-4" data-i18n="academicTitle">Formation Académique</h3>
+          <ul class="info-list" id="academic-list" data-i18n-html="academicListHtml">
             <li><strong>Diplôme National d'Architecte (2009)</strong><br>ENAU Tunisie — École Nationale d'Architecture et d'Urbanisme.<br><small>Bac+6 (Baccalauréat + Maîtrise en architecture — Équivalence reconnue au Québec par le MIFI).</small></li>
             <li><strong>Repère scolaire au Québec (2020)</strong><br>Équivalence officielle : Baccalauréat et maîtrise en architecture.<br><small>MIFI — Ministère de l'Immigration, de la Francisation et de l'Intégration.</small></li>
           </ul>
 
-          <h3 class="subsection-title mt-4">Formations Continues</h3>
-          <ul class="info-list">
+          <h3 class="subsection-title mt-4" data-i18n="continuingEducation">Formations Continues</h3>
+          <ul class="info-list" id="continuing-list" data-i18n-html="continuingEducationListHtml">
             <li><strong>Nouveau Code de l'énergie (2021)</strong><br>Application générale et impact sur l'enveloppe — OAQ (Québec).</li>
             <li><strong>Carte ASP Construction (2020)</strong><br>Santé et sécurité générale sur les chantiers de construction.</li>
             <li><strong>Autodesk Revit — Level 2 Advanced (certifié, 2014)</strong></li>
           </ul>
 
-          <h3 class="subsection-title mt-4">Implications & Associations</h3>
-          <ul class="info-list">
+          <h3 class="subsection-title mt-4" data-i18n="implicationsTitle">Implications & Associations</h3>
+          <ul class="info-list" id="implications-list" data-i18n-html="implicationsListHtml">
             <li>Bénévole pour la Francisation Communautaire (Québec).</li>
             <li>Membre de l'Ordre des Architectes de Tunisie (depuis 2010).</li>
             <li>Membre fondateur de l'Association Tunisienne des Architectes (ATA).</li>
@@ -121,43 +136,43 @@
         <div class="about-skills fade-up delay-1">
           <!-- CARD 1: NIVEAU EXPERT -->
           <div class="skill-card glass expert-card">
-            <h3>🏆 Niveau Expert</h3>
+            <h3 data-i18n="expertLevel">🏆 Niveau Expert</h3>
             <div class="skill-tags">
               <span class="tag tag-primary">AutoCAD</span>
               <span class="tag tag-primary">SketchUp</span>
               <span class="tag tag-primary">Lumion</span>
             </div>
-            <p style="font-size: 0.85rem; color: var(--muted); margin-top: 1rem; line-height: 1.5;">Production de plans techniques de haute précision, modélisation volumétrique 3D et rendus photoréalistes de calibre international.</p>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-top: 1rem; line-height: 1.5;" data-i18n="expertLevelDesc">Production de plans techniques de haute précision, modélisation volumétrique 3D et rendus photoréalistes de calibre international.</p>
           </div>
 
           <!-- CARD 2: MAÎTRISE TECHNOLOGIQUE -->
           <div class="skill-card glass mt-4 tech-card">
-            <h3>⚙️ Maîtrise technologique</h3>
+            <h3 data-i18n="techMastery">⚙️ Maîtrise technologique</h3>
             <div class="skill-tags">
               <span class="tag">ArchiCAD</span>
               <span class="tag">Revit</span>
             </div>
-            <p style="font-size: 0.85rem; color: var(--muted); margin-top: 1rem; line-height: 1.5;">Compétences avancées en modélisation BIM, production de plans d'exécution complexes et coordination multidisciplinaire de projets.</p>
+            <p style="font-size: 0.85rem; color: var(--muted); margin-top: 1rem; line-height: 1.5;" data-i18n="techMasteryDesc">Compétences avancées en modélisation BIM, production de plans d'exécution complexes et coordination multidisciplinaire de projets.</p>
           </div>
 
           <!-- CARD 3: LANGUES -->
           <div class="skill-card glass mt-4 languages-card">
-            <h3>🌍 Langues</h3>
+            <h3 data-i18n="languagesTitle">🌍 Langues</h3>
             <div class="languages-list">
               <div class="lang-item">
-                <span class="lang-name">Français</span>
+                <span class="lang-name" data-i18n="langFrench">Français</span>
                 <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
-                <span class="lang-level">Langue maternelle</span>
+                <span class="lang-level" data-i18n="langNative">Langue maternelle</span>
               </div>
               <div class="lang-item">
-                <span class="lang-name">Anglais</span>
+                <span class="lang-name" data-i18n="langEnglish">Anglais</span>
                 <div class="lang-bar"><div class="lang-fill lang-fill-mid" style="width:75%"></div></div>
-                <span class="lang-level">Professionnel</span>
+                <span class="lang-level" data-i18n="langProfessional">Professionnel</span>
               </div>
               <div class="lang-item">
-                <span class="lang-name">Arabe</span>
+                <span class="lang-name" data-i18n="langArabic">Arabe</span>
                 <div class="lang-bar"><div class="lang-fill" style="width:100%"></div></div>
-                <span class="lang-level">Langue maternelle</span>
+                <span class="lang-level" data-i18n="langNative">Langue maternelle</span>
               </div>
             </div>
           </div>
@@ -169,7 +184,7 @@
   <!-- Experience / Parcours Section -->
   <section class="experience section dark-section" id="experience">
     <div class="container">
-      <h2 class="section-title text-center fade-up">Parcours International</h2>
+      <h2 class="section-title text-center fade-up" data-i18n="experienceTitle">Parcours International</h2>
       <div class="timeline" id="timeline-container">
         <!-- Dynamically loaded from content.json -->
       </div>
@@ -179,17 +194,17 @@
   <!-- Projects Section -->
   <section class="projects section" id="projects">
     <div class="container">
-      <h2 class="section-title text-center fade-up">Projets Sélectionnés</h2>
+      <h2 class="section-title text-center fade-up" data-i18n="projectsTitle">Projets Sélectionnés</h2>
 
       <!-- CAD Sliding Filter Navigation -->
       <div class="filter-nav fade-up delay-1">
         <div class="filter-tabs" id="project-filters">
           <div class="filter-slider" id="filter-slider"></div>
-          <button class="filter-tab active" data-filter="all">Tous</button>
-          <button class="filter-tab" data-filter="quebec">Québec</button>
-          <button class="filter-tab" data-filter="tunisie">Tunisie</button>
-          <button class="filter-tab" data-filter="concours">Concours</button>
-          <button class="filter-tab" data-filter="sous-traitance">Sous-traitance</button>
+          <button class="filter-tab active" data-filter="all" data-i18n="filterAll">Tous</button>
+          <button class="filter-tab" data-filter="quebec" data-i18n="filterQuebec">Québec</button>
+          <button class="filter-tab" data-filter="tunisie" data-i18n="filterTunisia">Tunisie</button>
+          <button class="filter-tab" data-filter="concours" data-i18n="filterCompetition">Concours</button>
+          <button class="filter-tab" data-filter="sous-traitance" data-i18n="filterSubcontract">Sous-traitance</button>
         </div>
       </div>
 
@@ -206,8 +221,8 @@
   <!-- Distinctions Section -->
   <section class="distinctions section dark-section" id="distinctions">
     <div class="container">
-      <h2 class="section-title fade-up">Prix &amp; Distinctions</h2>
-      <p class="section-subtitle fade-up delay-1">Reconnaissances professionnelles et présence médiatique</p>
+      <h2 class="section-title fade-up" data-i18n="distinctionsTitle">Prix &amp; Distinctions</h2>
+      <p class="section-subtitle fade-up delay-1" data-i18n="distinctionsSubtitle">Reconnaissances professionnelles et présence médiatique</p>
       <div class="distinctions-grid" id="distinctions-grid">
         <!-- Dynamically loaded from content.json -->
       </div>
@@ -218,8 +233,8 @@
   <section class="contact section" id="contact">
     <div class="container">
       <div class="contact-card glass-alt fade-up">
-        <h2 class="section-title text-center">Contact</h2>
-        <p class="text-center contact-intro">Disponible pour un poste d'Architecte / Chef de projet CAO & Visualisation 3D.<br>N'hésitez pas à me contacter pour tout échange.</p>
+        <h2 class="section-title text-center" data-i18n="navContact">Contact</h2>
+        <p class="text-center contact-intro" data-i18n="contactIntro">Disponible pour un poste d'Architecte / Chef de projet CAO & Visualisation 3D.<br>N'hésitez pas à me contacter pour tout échange.</p>
 
         <div class="contact-info">
           <a href="mailto:boudenanis@gmail.com" class="contact-item" id="contact-email-link">
@@ -264,7 +279,7 @@
         </div>
 
         <div class="text-center mt-4">
-          <a href="./cv_anis_bouden.pdf" target="_blank" class="btn btn-primary btn-large" id="cv-link-contact">📄 Télécharger le CV (PDF)</a>
+          <a href="./cv_anis_bouden.pdf" target="_blank" class="btn btn-primary btn-large" id="cv-link-contact" data-i18n="btnDownloadCV">📄 Télécharger le CV (PDF)</a>
         </div>
       </div>
     </div>
@@ -272,7 +287,7 @@
 
   <footer>
     <div class="container footer-inner">
-      <p class="footer-copy">&copy; <span id="year"></span> Anis Bouden. Conçu avec passion & propulsé par des outils IA.</p>
+      <p class="footer-copy">&copy; <span id="year"></span> <span data-i18n="footerText">Anis Bouden. Conçu avec passion & propulsé par des outils IA.</span></p>
       <a href="admin.html" class="admin-link" aria-label="Admin">⚙</a>
     </div>
   </footer>

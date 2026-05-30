@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="fr">
+<html lang="fr" dir="ltr">
 <head>
   <meta charset="UTF-8" />
   <link rel="icon" type="image/svg+xml" href="./favicon.svg" />
@@ -7,7 +7,7 @@
   <title>Presse & Distinctions | Anis BOUDEN</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@300;400;600;700&family=Outfit:wght@300;400;600;800&family=Inter:wght@300;400;500&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="./src/style.css" />
   <link class="page-css" rel="stylesheet" href="./src/distinction-page.css" />
 </head>
@@ -20,12 +20,27 @@
     <div class="nav-container">
       <a href="./" class="logo" id="site-logo">A<span>BOUDEN</span></a>
       <ul class="nav-links" id="nav-links">
-        <li><a href="./#about">À Propos</a></li>
-        <li><a href="./#experience">Parcours</a></li>
-        <li><a href="./#distinctions">Distinctions</a></li>
-        <li><a href="./#projects">Projets</a></li>
-        <li><a href="./#contact">Contact</a></li>
+        <li><a href="./#about" data-i18n="navAbout">À Propos</a></li>
+        <li><a href="./#experience" data-i18n="navExperience">Parcours</a></li>
+        <li><a href="./#distinctions" data-i18n="navDistinctions">Distinctions</a></li>
+        <li><a href="./#projects" data-i18n="navProjects">Projets</a></li>
+        <li><a href="./#contact" data-i18n="navContact">Contact</a></li>
       </ul>
+      
+      <!-- Language Selector -->
+      <div class="lang-selector">
+        <button class="lang-btn" id="lang-btn" aria-label="Select Language">
+          <span>🌐</span>
+          <span id="current-lang">FR</span>
+          <span>▼</span>
+        </button>
+        <div class="lang-dropdown" id="lang-dropdown">
+          <button class="lang-opt active" data-lang="fr">FR</button>
+          <button class="lang-opt" data-lang="en">EN</button>
+          <button class="lang-opt" data-lang="ar">AR</button>
+        </div>
+      </div>
+
       <button class="mobile-menu-btn" id="mobile-menu-btn" aria-label="Menu">
         <span></span><span></span><span></span>
       </button>
@@ -36,8 +51,8 @@
   <header class="dist-page-header">
     <div class="dist-header-deco"></div>
     <div class="container">
-      <p class="dist-page-label">Portfolio</p>
-      <h1 class="dist-page-title">Presse & Distinctions</h1>
+      <p class="dist-page-label" data-i18n="navProjects">Portfolio</p>
+      <h1 class="dist-page-title" data-i18n="awardsLabel">Presse & Distinctions</h1>
       <div class="dist-page-divider"></div>
     </div>
   </header>
@@ -46,17 +61,17 @@
   <main class="dist-page-body">
     <div class="container" id="distinctions-container">
       <section id="awards-section" class="dist-section">
-        <h2 class="dist-section-title">Prix & Concours</h2>
+        <h2 class="dist-section-title" data-i18n="distinctionsTitle">Prix & Concours</h2>
         <div class="dist-section-grid" id="awards-grid"></div>
       </section>
       
       <section id="press-section" class="dist-section">
-        <h2 class="dist-section-title">La presse parle de moi</h2>
+        <h2 class="dist-section-title" data-i18n="pressSectionTitle">La presse parle de moi</h2>
         <div class="dist-section-grid press-grid" id="press-grid"></div>
       </section>
 
       <section id="media-section" class="dist-section">
-        <h2 class="dist-section-title">Interventions Médias</h2>
+        <h2 class="dist-section-title" data-i18n="mediaSectionTitle">Interventions Médias</h2>
         <div class="dist-section-grid media-grid" id="media-grid"></div>
       </section>
     </div>
@@ -64,7 +79,7 @@
 
   <footer>
     <div class="container footer-inner">
-      <p class="footer-copy">&copy; <span id="year"></span> Anis Bouden. Conçu avec passion & propulsé par des outils IA.</p>
+      <p class="footer-copy">&copy; <span id="year"></span> <span data-i18n="footerText">Anis Bouden. Conçu avec passion & propulsé par des outils IA.</span></p>
     </div>
   </footer>
 

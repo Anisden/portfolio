@@ -2,6 +2,13 @@
 import { initBlueprintCanvas } from './blueprint.js';
 const BASE = import.meta.env.BASE_URL;
 
+// Language handling
+const SUPPORTED_LANGS = ['fr', 'en', 'ar'];
+let currentLang = localStorage.getItem('portfolio_lang') || 'fr';
+if (!SUPPORTED_LANGS.includes(currentLang)) currentLang = 'fr';
+
+let uiTranslations = {};
+
 function resolveUrl(url) {
   if (!url) return '';
   if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
@@ -16,15 +23,79 @@ function resolveUrl(url) {
 }
 
 const ICONS = { award: '🏆', competition: '🥇', media: '📺', press: '📰' };
-const LABELS = { award: 'Prix', competition: 'Concours', media: 'Médias', press: 'Presse' };
+
+async function initLanguageSelector() {
+  const langBtn = document.getElementById('lang-btn');
+  const langDropdown = document.getElementById('lang-dropdown');
+  
+  if (langBtn && langDropdown) {
+    // Prevent duplicated listener bindings
+    const newBtn = langBtn.cloneNode(true);
+    langBtn.parentNode.replaceChild(newBtn, langBtn);
+    
+    newBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('active');
+    });
+    
+    document.addEventListener('click', () => {
+      langDropdown.classList.remove('active');
+    });
+    
+    langDropdown.querySelectorAll('.lang-opt').forEach(opt => {
+      opt.addEventListener('click', () => {
+        const lang = opt.dataset.lang;
+        localStorage.setItem('portfolio_lang', lang);
+        // Refresh to reload distinctions in the chosen language
+        window.location.reload();
+      });
+    });
+  }
+  
+  // Set properties on documentElement
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  
+  // Load UI translations
+  try {
+    const res = await fetch(`${BASE}ui_translations.json`);
+    if (res.ok) {
+      uiTranslations = await res.json();
+      translateUI();
+    }
+  } catch (e) { console.error('UI translation load error', e); }
+
+  // Update navbar indicator
+  const langIndicator = document.getElementById('current-lang');
+  if (langIndicator) langIndicator.textContent = currentLang.toUpperCase();
+  
+  document.querySelectorAll('.lang-opt').forEach(opt => {
+    opt.classList.toggle('active', opt.dataset.lang === currentLang);
+  });
+}
+
+function translateUI() {
+  const dict = uiTranslations[currentLang];
+  if (!dict) return;
+  
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (dict[key]) {
+      el.textContent = dict[key];
+    }
+  });
+}
 
 async function init() {
   initBlueprintCanvas();
+  await initLanguageSelector();
+
   // Year
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  const res = await fetch(`${BASE}content.json`);
+  let res = await fetch(`${BASE}content_${currentLang}.json`);
+  if (!res.ok) res = await fetch(`${BASE}content.json`);
   if (!res.ok) return;
   const content = await res.json();
 
@@ -35,8 +106,14 @@ async function init() {
   }
 
   const distinctions = content.distinctions || [];
-
   if (!distinctions.length) return;
+
+  const LABELS = {
+    award: currentLang === 'ar' ? 'جائزة رفيعة' : (currentLang === 'en' ? 'Award' : 'Prix'),
+    competition: currentLang === 'ar' ? 'مسابقة معمارية' : (currentLang === 'en' ? 'Competition' : 'Concours'),
+    media: currentLang === 'ar' ? 'تغطية إعلامية' : (currentLang === 'en' ? 'Media' : 'Médias'),
+    press: currentLang === 'ar' ? 'مقال صحفي' : (currentLang === 'en' ? 'Press' : 'Presse')
+  };
 
   // Resolve URLs
   distinctions.forEach(d => {
@@ -65,7 +142,7 @@ async function init() {
     const block = document.createElement('div');
     block.id = `distinction-${idx}`;
 
-    if (d.title.includes('JAC') || d.title.includes('Carthage')) {
+    if (d.title.includes('JAC') || d.title.includes('Carthage') || d.title.includes('قرطاج')) {
       // 1. Wix Custom Layout for JAC 2019
       const groupPhoto = d.gallery.find(src => src.includes('bouden_et_jalel')) || d.gallery[1] || d.image;
       const otherPhoto = d.gallery.find(src => !src.includes('bouden_et_jalel')) || d.gallery[0];
@@ -85,12 +162,22 @@ async function init() {
         }
       }
 
+      const jacTitle = currentLang === 'ar' ? 'جائزة أيام قرطاج المعمارية 2019' : (currentLang === 'en' ? 'Carthage Architectural Days Award' : 'Prix des JAC 2019');
+      const jacSubtitleText = currentLang === 'ar' ? 'الدورة الأولى للمعرض مع تتويج المشاريع الكبرى' : (currentLang === 'en' ? 'Journées Architecturales de Carthage' : 'Journées Architecturales de Carthage');
+      const bestProjectLabel = currentLang === 'ar' ? 'جائزة أفضل مشروع للمباني المدنية والمؤسسية' : (currentLang === 'en' ? 'Best Civil & Public Building Award' : 'Prix du meilleur projet de Bâtiment civil');
+      const groupmentLabel = currentLang === 'ar' ? 'الائتلاف المعماري الفائز: م. جلال صكلي وم. محمد علي بن عافية وم. أنيس بودن' : (currentLang === 'en' ? 'Architectural Consortium: Mr. Jalel Sakli, Mr. Mohamed Ali Ben Afia, Mr. Anis Bouden' : "Groupement d'Architectes: M. JALEL SAKLI & M. MOHAMED ALI BEN AFIA & M. ANIS BOUDEN");
+      const laureatLabel = currentLang === 'ar' ? 'المشروع الفائز: المعهد العالي للعلوم التطبيقية والتكنولوجيا' : (currentLang === 'en' ? 'Winning Project: Higher Institute of Applied Sciences and Technology' : 'Projet lauréat: Institut Supérieur des Sciences Appliquées et de la Technologie');
+      const aboutEventLabel = currentLang === 'ar' ? 'حول الفعالية المعمارية' : (currentLang === 'en' ? 'About the Event' : "A propos de l'événement");
+      const viewEventLabel = currentLang === 'ar' ? '🔗 زيارة الصفحة الرسمية للفعالية' : (currentLang === 'en' ? '🔗 View Official Event Page' : "🔗 Voir la page de l'événement");
+      const videoTitle = currentLang === 'ar' ? 'فيديو عرض المشروع التوضيحي أمام لجنة التحكيم' : (currentLang === 'en' ? 'Project presentation video to the jury' : 'Vidéo de présentation du projet au jury');
+      const galleryTitleText = currentLang === 'ar' ? 'معرض الصور' : (currentLang === 'en' ? 'Photo Gallery' : 'Galerie photos');
+
       block.className = 'dist-block jac-custom-block';
       block.innerHTML = `
         <div class="jac-header-container">
           <div class="jac-header-title-box">
-            <h2 class="jac-main-title">Prix des <span class="highlight">JAC 2019</span></h2>
-            <p class="jac-subtitle">Journées Architecturales de Carthage</p>
+            <h2 class="jac-main-title">${jacTitle}</h2>
+            <p class="jac-subtitle">${jacSubtitleText}</p>
           </div>
         </div>
         
@@ -99,12 +186,12 @@ async function init() {
           <div class="jac-col jac-col-left">
             <div class="jac-card group-card">
               <div class="jac-image-container dist-image-wrapper" data-src="${groupPhoto}">
-                <img src="${groupPhoto}" alt="Prix du meilleur projet de Bâtiment civil" class="jac-photo" loading="lazy">
+                <img src="${groupPhoto}" alt="${bestProjectLabel}" class="jac-photo" loading="lazy">
               </div>
               <div class="jac-card-content">
-                <h3 class="jac-card-title">Prix du meilleur projet de Bâtiment civil</h3>
-                <p class="jac-card-text groupment">Groupement d'Architectes: M. JALEL SAKLI & M. MOHAMED ALI BEN AFIA & M. ANIS BOUDEN</p>
-                <p class="jac-card-text laureat">Projet lauréat: Institut Supérieur des Sciences Appliquées et de la Technologie</p>
+                <h3 class="jac-card-title">${bestProjectLabel}</h3>
+                <p class="jac-card-text groupment">${groupmentLabel}</p>
+                <p class="jac-card-text laureat">${laureatLabel}</p>
               </div>
             </div>
           </div>
@@ -114,15 +201,15 @@ async function init() {
             <div class="jac-card poster-card">
               <div class="jac-image-container poster-image-wrap">
                 ${d.eventPhoto
-                  ? `<div class="dist-image-wrapper" data-src="${d.eventPhoto}"><img src="${d.eventPhoto}" alt="Photo de l'événement JAC" class="jac-photo poster-photo" loading="lazy"></div>`
+                  ? `<div class="dist-image-wrapper" data-src="${d.eventPhoto}"><img src="${d.eventPhoto}" alt="Photo de l'événement" class="jac-photo poster-photo" loading="lazy"></div>`
                   : `<a href="${d.image}" target="_blank" rel="noopener" class="jac-poster-link-wrapper">
-                      <img src="${d.image}" alt="Poster des Journées Architecturales de Carthage" class="jac-photo poster-photo" loading="lazy">
+                      <img src="${d.image}" alt="Poster" class="jac-photo poster-photo" loading="lazy">
                     </a>`
                 }
               </div>
               <div class="jac-card-content">
-                <h3 class="jac-card-title">A propos de l'événement</h3>
-                ${d.eventLink ? `<a href="${d.eventLink}" target="_blank" rel="noopener" class="jac-event-link">🔗 Voir la page de l'événement</a>` : ''}
+                <h3 class="jac-card-title">${aboutEventLabel}</h3>
+                ${d.eventLink ? `<a href="${d.eventLink}" target="_blank" rel="noopener" class="jac-event-link">${viewEventLabel}</a>` : ''}
               </div>
             </div>
           </div>
@@ -132,7 +219,7 @@ async function init() {
         ${frameHtml ? `
         <div class="jac-video-section">
           <h3 class="jac-video-title">
-            <span class="video-play-icon"></span> Vidéo de présentation du projet au jury
+            <span class="video-play-icon"></span> ${videoTitle}
           </h3>
           <div class="jac-video-wrapper">
             ${frameHtml}
@@ -143,16 +230,16 @@ async function init() {
         <!-- Small photo gallery if there are extra photos -->
         ${otherPhoto ? `
         <div class="dist-gallery-section" style="margin-top: 3.5rem;">
-          <h4 class="dist-gallery-title">Galerie photos</h4>
+          <h4 class="dist-gallery-title">${galleryTitleText}</h4>
           <div class="dist-gallery-grid">
             <div class="dist-gallery-thumb" data-src="${otherPhoto}">
-              <img src="${otherPhoto}" alt="Visuel ISSAT Kairouan" loading="lazy">
+              <img src="${otherPhoto}" alt="Visuel" loading="lazy">
             </div>
             <div class="dist-gallery-thumb" data-src="${groupPhoto}">
-              <img src="${groupPhoto}" alt="Cérémonie de remise de prix" loading="lazy">
+              <img src="${groupPhoto}" alt="Visuel" loading="lazy">
             </div>
             <div class="dist-gallery-thumb" data-src="${d.image}">
-              <img src="${d.image}" alt="Visuel Affiche JAC" loading="lazy">
+              <img src="${d.image}" alt="Visuel" loading="lazy">
             </div>
           </div>
         </div>
@@ -251,22 +338,24 @@ async function init() {
           frameHtml = `<video src="${vVal}" controls></video>`;
         }
 
+        const presentationVideoLabel = currentLang === 'ar' ? 'فيديو عرض تقديمي للمشروع' : (currentLang === 'en' ? 'Project presentation video' : 'Vidéo de présentation du projet');
         videoCardHtml = `
           <div class="dist-media-card">
             <div class="dist-video-wrapper">
               ${frameHtml}
             </div>
-            <div class="dist-media-caption">Vidéo de présentation du projet</div>
+            <div class="dist-media-caption">${presentationVideoLabel}</div>
           </div>
         `;
       }
 
       let imageCardHtml = '';
       if (d.image) {
+        const zoomImageLabel = currentLang === 'ar' ? 'رؤية معمارية للمشروع - اضغط للتكبير' : (currentLang === 'en' ? 'Project rendering - Click to enlarge' : 'Visuel du projet - Cliquer pour agrandir');
         imageCardHtml = `
           <div class="dist-media-card dist-image-wrapper" data-src="${d.image}">
             <img src="${d.image}" alt="${d.title}" loading="lazy">
-            <div class="dist-media-caption">Visuel du projet - Cliquer pour agrandir</div>
+            <div class="dist-media-caption">${zoomImageLabel}</div>
           </div>
         `;
       }
@@ -281,10 +370,11 @@ async function init() {
       }
 
       let galleryHtml = '';
+      const galleryTitleText = currentLang === 'ar' ? 'معرض الصور' : (currentLang === 'en' ? 'Photo Gallery' : 'Galerie photos');
       if (d.gallery && d.gallery.length > 0) {
         galleryHtml = `
           <div class="dist-gallery-section">
-            <h3 class="dist-gallery-title">Galerie photos</h3>
+            <h3 class="dist-gallery-title">${galleryTitleText}</h3>
             <div class="dist-gallery-grid">
               ${d.gallery.map(src => `
                 <div class="dist-gallery-thumb" data-src="${src}">

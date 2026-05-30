@@ -107,7 +107,17 @@
   <div class="admin-wrap">
     <div class="admin-topbar">
       <h1>⚙️ Administration</h1>
-      <button class="btn btn-secondary btn-sm" id="logout-btn" style="border-color: rgba(255,255,255,.15); background: rgba(255,255,255,.02);">🔒 Déconnexion</button>
+      <div style="display: flex; gap: 1rem; align-items: center; flex-wrap: wrap;">
+        <div class="form-group" style="margin-bottom: 0; flex-direction: row; align-items: center; gap: 0.5rem;">
+          <label for="admin-lang-select" style="margin-bottom: 0; white-space: nowrap;">Langue d'édition :</label>
+          <select id="admin-lang-select" style="width: auto; padding: 0.4rem 2rem 0.4rem 0.8rem; background: rgba(255,255,255,.05); border: 1px solid rgba(255,255,255,.15); border-radius: 6px; color: #fff; cursor: pointer;">
+            <option value="fr">Français 🇫🇷</option>
+            <option value="en">English 🇬🇧</option>
+            <option value="ar">العربية 🇸🇦</option>
+          </select>
+        </div>
+        <button class="btn btn-secondary btn-sm" id="logout-btn" style="border-color: rgba(255,255,255,.15); background: rgba(255,255,255,.02);">🔒 Déconnexion</button>
+      </div>
     </div>
 
     <div class="tabs">

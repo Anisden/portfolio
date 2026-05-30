@@ -1,0 +1,825 @@
+[
+  {
+    "id": "piscine-colline-saguenay",
+    "title": "La Colline Aquatic Center - Chicoutimi",
+    "region": "quebec",
+    "meta": "Aquatic Center Renovation & Arena Expansion | City of Saguenay (2025)",
+    "description": "New outdoor aquatic facility and expansion of the municipal arena.",
+    "longDescription": "Complex demolition and reconstruction project of a state-of-the-art outdoor aquatic basin for the City of Saguenay, integrated with a major structural expansion of the existing sports arena to house modern athletic changing facilities.\nDesign Phase: 2023\nConstruction Phase: 2025",
+    "image": "/uploads/1779107488696_2023-690_VS_piscine_perspective_2_19-03-25.png",
+    "video": "",
+    "budget": "5,777,000",
+    "currency": "CAD",
+    "tasks": [
+      "Technical Drafting & Detailing",
+      "3D Volumetric Modeling",
+      "High-Fidelity 3D Renderings"
+    ],
+    "gallery": [
+      "/uploads/1779109149788_19_4_-_Photo_Pshop.png",
+      "/uploads/1779109149788_29_7_-_Photo_pshop.png",
+      "/uploads/1779109177301_14-12-2023_13_-_Photo_-_Modifié.jpg",
+      "/uploads/1779109177301_14-12-2023_15_-_Photo.jpg",
+      "/uploads/1779109177302_20_2_-_Photo-2.jpg",
+      "/uploads/1779109202604_2_1_-_Photo_Modifiée.jpg",
+      "/uploads/1779109202605_2_4_-_Photo_modifiée.jpg",
+      "/uploads/1779109202605_2_8_-_Photo_Modifiée.jpg",
+      "/uploads/1779109202605_2_10_-_Photo."
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": true,
+    "year": 2025
+  },
+  {
+    "id": "pavillon-duchesnay",
+    "title": "Duchesnay Resort Main Welcome Pavilion",
+    "region": "quebec",
+    "meta": "Major Rehabilitation | SEPAQ (2025)",
+    "description": "Major structural rehabilitation and complete spatial redesign of the primary hospitality pavilion.",
+    "longDescription": "Mandate for a major rehabilitation, structural overhaul, and comprehensive spatial redesign of the primary welcome pavilion at the prestigious Duchesnay Tourist Resort managed by the SEPAQ. The project focus lies on optimizing spatial flow and elevating the high-end guest arrival experience.",
+    "image": "/uploads/1779110460960_1_Photo_1_-_Day_time.jpg",
+    "video": "",
+    "budget": "3,500,000",
+    "currency": "CAD",
+    "tasks": [
+      "Site Surveys & Documentation",
+      "CAD Technical Drafting",
+      "Architectural Concept Design",
+      "3D Modeling & Visualization",
+      "Multidisciplinary Coordination",
+      "Schematic Design Packages"
+    ],
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/1779112237783_DUC_Pavillon_l'Horizon_Présentation_préliminaires_40%_17-04-2025.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": true,
+    "year": 2025
+  },
+  {
+    "id": "ecole-pointe-levy",
+    "title": "Athletic Complex at Pointe-Lévy High School",
+    "region": "quebec",
+    "meta": "Expansion Mandate | CSSDN & City of Lévis (2024)",
+    "description": "Redevelopment of Pointe-Lévy school facilities and construction of a new double gymnasium and gymnastics center.",
+    "longDescription": "Comprehensive feasibility study and design development for the extension of Pointe-Lévy educational facilities, featuring the construction of a major regional gymnastics center and a state-of-the-art double gymnasium, executed in partnership between the school board and the municipality of Lévis.",
+    "image": "/uploads/1779765247085_1_38_-_Photo.jpg",
+    "video": "",
+    "budget": "29,400,000",
+    "currency": "CAD",
+    "tasks": [
+      "Field Surveys & Laser Scanning",
+      "Concept Development & Feasibility Studies",
+      "Multidisciplinary Engineering Coordination",
+      "Construction Document Drafting",
+      "3D BIM Modeling & High-End Visualization"
+    ],
+    "gallery": [
+      "/uploads/1779765275354_1_5_-_Photo.jpg",
+      "/uploads/1779765275354_1_6_-_Photo.jpg",
+      "/uploads/1779765275354_1_8_-_Photo.jpg",
+      "/uploads/1779765275355_1_10_-_Photo.jpg",
+      "/uploads/1779765275355_1_12_-_Photo.jpg",
+      "/uploads/1779765275355_1_22_-_Photo.jpg",
+      "/uploads/1779765275355_1_23_-_Photo.jpg",
+      "/uploads/1779765275356_1_38_-_Photo.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2024
+  },
+  {
+    "id": "complexe-huronne-wendat",
+    "title": "Huronne-Wendat Recreational Complex",
+    "region": "quebec",
+    "meta": "New Construction | Huronne-Wendat First Nation (2024)",
+    "description": "Multi-service community center, recreational facility, and covered ice rink structure.",
+    "longDescription": "Major new construction project for the Huronne-Wendat First Nation, encompassing a state-of-the-art multi-service community hub, a premier recreational facility, and an engineered covered ice rink pavilion.",
+    "image": "/uploads/1779112358914_Ext_13_-_Photo.jpg",
+    "video": "",
+    "budget": "20,760,000",
+    "currency": "CAD",
+    "tasks": [
+      "Architectural Design & Space Planning",
+      "3D Modeling & Photorealistic Rendering",
+      "Consultant & MEP Engineering Coordination",
+      "Preliminary Design Packages"
+    ],
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/1779112449272_Wendat_bâtiment_et_patinoire_couverte_Présentation_préliminaires_66.pdf"
+    ],
+    "galleryRealisation": [
+      "/uploads/1779112499618_1_1_-_Préau_et_bâtiment_arrivé_stationnement_école.jpg",
+      "/uploads/1779112499618_1_2_-_Préau_et_bâtiment_entrée_CROL.jpg",
+      "/uploads/1779112499618_1_3_-_Préau_vue_espace_vert.jpg",
+      "/uploads/1779112499619_1_4_-_Bâtiment_Maison_de_la_famill.jpg",
+      "/uploads/1779112499619_1_7_-_Préau_patinoire.jpg",
+      "/uploads/1779112499619_1_9_-Intérieur_Maison_famille_3.jpg",
+      "/uploads/1779112499620_1_10_-_Bâtiment_arrivée.jpg",
+      "/uploads/1779112499620_1_15_-_Intérieur_Maison_famille_1.jpg",
+      "/uploads/1779112499620_1_19_-_Intérieur_Maison_famille_2.jpg"
+    ],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": true,
+    "year": 2024
+  },
+  {
+    "id": "centre-raymond-blais",
+    "title": "Raymond-Blais Community Hub",
+    "region": "quebec",
+    "meta": "Major Renovation & Extension | City of Lévis (2023)",
+    "description": "Modernization and revitalization of the Raymond-Blais community center and Saint-David Library.",
+    "longDescription": "Full envelope rehabilitation, structural retrofitting, and roof replacement. Architectural extension including a new main entrance atrium and elevator shaft for universal accessibility. Interior reconfiguration to optimize occupancy flow and programming. Complete modernization of multi-functional spaces, library facilities, and historical archives. Integration of contemporary furniture and designated early-childhood zones, creating a vibrant, light-filled hub for leisure, learning, and community well-being.",
+    "image": "/uploads/1779765405613_1_10_-_Photo_(pour_affiche_VL)_1408x628_px.jpg",
+    "video": "",
+    "budget": "4,340,000",
+    "currency": "CAD",
+    "tasks": [
+      "Lead Design Development",
+      "Interior Programming & Spatial Studies",
+      "Detailed Construction Drawings",
+      "3D BIM Modeling & Rendering",
+      "Site Supervision & Quality Control"
+    ],
+    "gallery": [
+      "/uploads/1779765742149_21.jpg",
+      "/uploads/1779765742150_1_1_-_Photo.jpg",
+      "/uploads/1779765742150_1_9_-_Photo.jpg",
+      "/uploads/1779765742151_1_10_-_Photo.jpg",
+      "/uploads/1779765742151_1_11_-_Photo.jpg",
+      "/uploads/1779765742152_2_13_-_Photo.jpg",
+      "/uploads/1779765742152_2_15_-_Photo.jpg",
+      "/uploads/1779767269629_20250904_105947-scaled.jpg",
+      "/uploads/1779767269630_20250904_110226-scaled.jpg",
+      "/uploads/1779767269630_20250904_110646-scaled.jpg",
+      "/uploads/1779767269630_IMG_2966_F.jpg",
+      "/uploads/1779767269631_IMG_2980-F.jpg",
+      "/uploads/1779767269631_IMG_3015-F.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2023
+  },
+  {
+    "id": "arena-saint-anselme",
+    "title": "Saint-Anselme Arena & City Hall Complex",
+    "region": "quebec",
+    "meta": "Institutional Expansion | Town of Saint-Anselme (2023)",
+    "description": "Structural expansion of the municipal arena and design of the new city hall pavilion.",
+    "longDescription": "Complex site planning and feasibility study for the structural expansion of the Saint-Anselme municipal arena, integrated with the construction of a new contemporary city hall pavilion, optimizing administrative and community recreational services.",
+    "image": "/uploads/1779766162404_Façade_arèna.jpg",
+    "video": "",
+    "budget": "22,755,000",
+    "currency": "CAD",
+    "tasks": [
+      "Conceptual & Spatial Design",
+      "Multidisciplinary Consultant Coordination",
+      "Execution Details & CAD Drafting",
+      "3D Visualizations & Renderings",
+      "Feasibility Study Report Writing"
+    ],
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/1779766366918_Annexe_1A-Cahier_des_plans.pdf",
+      "/uploads/1779766366919_Annexe_1B-vues_3D.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2023
+  },
+  {
+    "id": "patinoires-quebec",
+    "title": "Covered Refrigerated Ice Rink Structures",
+    "region": "quebec",
+    "meta": "Municipal Service Pavilions | City of Quebec (2023)",
+    "description": "Site integration of covered rink structures and prototype design for six municipal parks.",
+    "longDescription": "Comprehensive technical feasibility study and space program for the construction of covered, refrigerated ice rink pavilions across six (6) parks in the City of Quebec, including the custom architectural design of a prototype service building.",
+    "image": "/uploads/1779112613712_15-06-2023Hiver_7_-_Int_préau_3.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Prototype Design Development",
+      "Site Coordination & Integration Studies",
+      "Technical Drawings & Construction Details",
+      "3D Modeling & Photorealistic Renderings"
+    ],
+    "gallery": [
+      "/uploads/1779112641443_13-06-2023_1_-_Extérieur1.jpg",
+      "/uploads/1779112641444_13-06-2023_5_-_Intérieur1.jpg",
+      "/uploads/1779112641444_13-06-2023_13_-_Ext_pavillon_2.jpg",
+      "/uploads/1779112641444_13-06-2023_14_-_Int_pavillon_1.jpg",
+      "/uploads/1779112641445_13-06-2023_16_-_ext_pavillon_1.jpg",
+      "/uploads/1779112641445_15-06-2023ÉTÉ_10_-_Int_préau_2.jpg",
+      "/uploads/1779112641445_15-06-2023Hiver_7_-_Int_préau_3.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/1779113499785_Étude_de_faisabilité_6_parcs_Remise_90%.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": true,
+    "year": 2023
+  },
+  {
+    "id": "centre-ferland",
+    "title": "Ferland Community Center",
+    "region": "quebec",
+    "meta": "Major Rehabilitation | City of Quebec (2022)",
+    "description": "Feasibility study for a major rehabilitation of the community center, aquatic basin, and change rooms.",
+    "longDescription": "Detailed structural and architectural feasibility study targeting the full modernization of the Ferland Community Center in Quebec, incorporating aquatic pool compliance and spatial restructuring of athletic changing facilities.",
+    "image": "",
+    "video": "",
+    "gallery": [],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "budget": "21,400,000",
+    "currency": "CAD",
+    "tasks": [
+      "Lead Design Specialist",
+      "Space Reconfiguration Studies",
+      "Production of Master Plan CAD drawings"
+    ],
+    "subcontract": false,
+    "year": 2022
+  },
+  {
+    "id": "cegep-shawinigan",
+    "title": "Cégep de Shawinigan Sports Complex",
+    "region": "quebec",
+    "meta": "Three-Phase Rehabilitation | Cégep de Shawinigan (2022)",
+    "description": "Modernization of aquatic facilities, universal accessibility upgrades, and locker room renovation.",
+    "longDescription": "Comprehensive redesign of the institutional swimming pool facility at Cégep de Shawinigan, originally built in 1972. The mandate focused on bringing the aquatic basin to modern safety standards, building code compliance, restructuring locker rooms into flexible gender-neutral layouts, and integrating specialized pool entry systems for universal accessibility and family use.",
+    "image": "/uploads/1779767424890_6-1.jpg",
+    "video": "",
+    "budget": "5,042,000",
+    "currency": "CAD",
+    "tasks": [
+      "Architectural Designer",
+      "Spatial Programming & Feasibility",
+      "Execution Drawings & Detail Engineering"
+    ],
+    "gallery": [
+      "/uploads/1779767432692_1.jpg",
+      "/uploads/1779767432693_5-2.jpg",
+      "/uploads/1779767432693_6-1.jpg",
+      "/uploads/1779767432693_7-2.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2022
+  },
+  {
+    "id": "le-chamonix-rep-re-locatif",
+    "title": "\"Le Chamonix\" Architectural Lodge",
+    "region": "quebec",
+    "meta": "Luxury Cabin | Lac Beauport, Quebec (2022)",
+    "description": "High-end contemporary cabin design in Mont Tourbillon.",
+    "longDescription": "Design and construction of \"Le Chamonix\" micro-cabin, situated on the slopes of Mont Tourbillon in Lac-Beauport. The primary architectural objective was to maximize panoramic forest vistas by inverting the traditional layout: placing light-filled living areas on the upper level and private bedrooms on the ground floor. Inspired by traditional Alpine chalets, the design features a warm timber facade centered around twin natural stone chimneys, accented by sleek black steel structural elements for a modern rustic aesthetic.",
+    "image": "/uploads/1779766722495_19-rendu.jpg",
+    "video": "",
+    "budget": "-",
+    "currency": "CAD",
+    "tasks": [],
+    "gallery": [
+      "/uploads/1779766782529_11-rendu.jpg",
+      "/uploads/1779766782530_12-rendu.jpg",
+      "/uploads/1779766782530_14-rendu.jpg",
+      "/uploads/1779766782530_19-rendu.jpg",
+      "/uploads/1779766782531_20-rendu.jpg",
+      "/uploads/1779766782531_22-rendu.jpg",
+      "/uploads/1779767093772_Drone-1.jpg",
+      "/uploads/1779767093772_Drone-2-1.jpg",
+      "/uploads/1779767093773_image.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2022
+  },
+  {
+    "id": "maracana",
+    "title": "Maracana Exhibition Center",
+    "region": "tunisia",
+    "meta": "Adaptive Reuse of Industrial Facility (Concept Phase)",
+    "description": "High-end design proposal converting an industrial site into a premium cultural exhibition hub.",
+    "longDescription": "Comprehensive interior architecture proposal converting a large-scale existing structure into a premium exposition center, incorporating architectural lighting design, visitor flow planning, custom scenography, and luxury event detailing.",
+    "image": "/uploads/1779022587635_5.jpg",
+    "video": "<iframe width=\"1920\" height=\"1080\" src=\"https://www.youtube.com/embed/HIy05PKwSYg?si=ZsmZe-R1852B87pv\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "budget": "1,400,000",
+    "currency": "EUR",
+    "tasks": [
+      "Scenography & Interior Layout",
+      "Event Programming & Spatial Logistics",
+      "Architectural Lighting Design",
+      "Environmental Signage & Wayfinding"
+    ],
+    "gallery": [
+      "/uploads/1779021407337_9.jpg",
+      "/uploads/1779021407338_11.jpg",
+      "/uploads/1779021407338_14.jpg",
+      "/uploads/1779021407339_15.jpg",
+      "/uploads/1779021407339_16.jpg",
+      "/uploads/1779021459913_int21.jpg",
+      "/uploads/1779021459913_int22bis.jpg",
+      "/uploads/1779021459913_int25.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [
+      "/uploads/1779021278338_7.PNG"
+    ],
+    "galleryAfter": [
+      "/uploads/1779021363864_int23.jpg"
+    ],
+    "showDistinctionBtn": false,
+    "subcontract": false,
+    "year": 2019
+  },
+  {
+    "id": "issat",
+    "title": "ISSAT Higher Institute of Applied Sciences",
+    "region": "concours",
+    "meta": "National Architectural Competition - 1st Prize Winner | Built: 2016-2019",
+    "description": "Awarded Carthage Architectural Days (JAC) Best Project for Institutional/Civil Buildings.",
+    "longDescription": "Award-winning project selected as 1st Prize in a national design competition. Led the architectural development and site execution of a multi-disciplinary higher education campus. The design implements passive solar strategies, bioclimatic ventilation, optimized student flow control, and contemporary educational layouts. Recognized with the JAC 2019 Best Civil Building Award.",
+    "image": "/uploads/1779016238476_IMG_20181025_115601_bisbis.jpg",
+    "video": "",
+    "budget": "17,190,000",
+    "currency": "EUR",
+    "tasks": [
+      "Lead Project Architect",
+      "Conceptual Architectural Development",
+      "Detailed Construction Drawings",
+      "Multidisciplinary Engineering Coordination",
+      "Construction Site Supervision",
+      "Final Project Handover & Acceptance"
+    ],
+    "gallery": [
+      "/uploads/1779016324606_afpnu-djjb5.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/1779019491308_Planche_3D.pdf",
+      "/uploads/1779019491309_Planche_ELEVATIONS.pdf",
+      "/uploads/1779019491309_Planche_plan_ETAGE.pdf",
+      "/uploads/1779019491310_Planche_plan_RDC.pdf"
+    ],
+    "galleryRealisation": [
+      "/uploads/1779016324606_afpnu-djjb5.jpg",
+      "/uploads/1779016324607_amphi_300.jpg",
+      "/uploads/1779016324607_DSCN6281.JPG",
+      "/uploads/1779016324607_DSCN6289.jpg",
+      "/uploads/1779016324607_DSCN6304bis.jpg",
+      "/uploads/1779016324608_DSCN6318.jpg",
+      "/uploads/1779016324608_IMG_20190502_103805bis.jpg",
+      "/uploads/1779016324608_IMG_20190502_104718.jpg",
+      "/uploads/1779016324608_IMG_20191009_132232.jpg",
+      "/uploads/1779016324611_IMG_20191009_132304_BURST002.jpg",
+      "/uploads/1779016324613_IMG_20191009_132311bis.jpg",
+      "/uploads/1779016324614_IMG_20191009_132320.jpg",
+      "/uploads/1779016324614_IMG_20191009_132339.jpg",
+      "/uploads/1779016324614_IMG_20191009_132510.jpg",
+      "/uploads/1779016324614_IMG_20191009_132619bis.jpg",
+      "/uploads/1779016324615_IMG_20191009_132743bis."
+    ],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": true,
+    "subcontract": false,
+    "year": 2019
+  },
+  {
+    "id": "residence",
+    "title": "Luxury Waterfront Villa Complex",
+    "region": "tunisia",
+    "meta": "Multi-Residential Architectural Concept",
+    "description": "Private family resort featuring seaside villas.",
+    "longDescription": "Architectural design for a private family compound consisting of 5 luxury villas situated on a prime waterfront site. Optimized for sea views and privacy. (Concept Phase)",
+    "image": "/residence.png",
+    "video": "<iframe width=\"1920\" height=\"1080\" src=\"https://www.youtube.com/embed/LKrNnfumLS4?si=qkmr2nx7FPY3FKB1\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+    "budget": "8,000,000",
+    "currency": "EUR",
+    "tasks": [
+      "Lead Design Architect",
+      "Topographical & Site Layout Studies",
+      "Local Code Analysis",
+      "Conceptual Spatial Layouts",
+      "Preliminary Cost Estimations"
+    ],
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/1779025633875_Résidence_balnéaire_privée.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": false,
+    "year": 2018
+  },
+  {
+    "id": "coke-studio",
+    "title": "Coke Studio Algeria",
+    "region": "tunisie",
+    "meta": "Set Design & Commercial Interior Architecture",
+    "description": "High-profile broadcast interior architecture and set design.",
+    "longDescription": "Full interior set design and space planning for the televised musical show Coke Studio Algeria. Successfully built a high-tech broadcast environment combining contemporary aesthetics with traditional North African motifs, satisfying complex acoustics and technical staging requirements.",
+    "image": "/uploads/1779023682571_DIA-COCA-STUDIO.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Interior Set Design",
+      "Acoustic & Tech Spatial Planning",
+      "Subcontractor Coordination",
+      "Site Supervision & Quality Delivery"
+    ],
+    "gallery": [
+      "/uploads/1779023922977_2_(2).jpg",
+      "/uploads/1779023922978_4_(2).jpg",
+      "/uploads/1779023922978_4.jpg",
+      "/uploads/1779023922978_5.jpg",
+      "/uploads/1779023922978_6_(2).jpg",
+      "/uploads/1779023922979_6.jpg",
+      "/uploads/1779023922979_7.jpg",
+      "/uploads/1779023922979_8_(2).jpg",
+      "/uploads/1779023922979_18297096_1675260239443195_1994295655_o.jpg",
+      "/uploads/1779023922980_22860065_1911463495842571_243453468462677590_o.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [
+      "/uploads/1779023799276_IMG_20170413_122927.jpg"
+    ],
+    "galleryAfter": [
+      "/uploads/1779023843645_4.jpg"
+    ],
+    "showDistinctionBtn": false,
+    "subcontract": false,
+    "year": 2017
+  },
+  {
+    "id": "h-tel-spa-yakouren-alg-rie",
+    "title": "Yakouren Spa Resort",
+    "region": "tunisia",
+    "meta": "Hotel & Wellness Architecture",
+    "description": "Design concept for a mountain spa resort.",
+    "longDescription": "Comprehensive schematic architectural design for a high-end luxury wellness resort nestled in the forest of Yakouren, focusing on eco-friendly materials and thermal facility layout.",
+    "image": "",
+    "video": "",
+    "budget": "",
+    "currency": "TND",
+    "tasks": [
+      "Conceptual Architectural Design",
+      "Sustainable Material Selection",
+      "BIM Modeling"
+    ],
+    "gallery": [],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2017
+  },
+  {
+    "id": "hopital-mareth",
+    "title": "Mareth Regional Hospital (100 Beds)",
+    "region": "concours",
+    "meta": "National Architectural Design Competition",
+    "description": "Regional hospital complex with integrated bioclimatic systems.",
+    "longDescription": "Detailed architectural proposal developed for the National Competition of the Mareth Regional Hospital. Design of a modern 100-bed healthcare facility with highly optimized medical ergonomics, specialized sanitary zones, and passive solar control to optimize energy efficiency and patient thermal comfort.",
+    "image": "/uploads/1779028815058_r1.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Lead Design Architect (Consortium Member)",
+      "Bioclimatic Analysis & Building Envelope Design",
+      "3D Volumetric Studies & Rendering",
+      "Competition Presentation Boards layout",
+      "Technical Design Report Writing"
+    ],
+    "gallery": [
+      "/uploads/1779028825819_big_one.jpg",
+      "/uploads/1779028825820_r1.jpg",
+      "/uploads/1779028825820_r2.jpg",
+      "/uploads/1779028825820_r3.jpg",
+      "/uploads/1779028825820_r4.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/PLANCHE_001_MARETH.pdf",
+      "/uploads/PLANCHE_002_MARETH.pdf",
+      "/uploads/Rapport_Mareth.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": false,
+    "year": 2015
+  },
+  {
+    "id": "hotel-finances-gabes",
+    "title": "Gabès Financial Administration HQ",
+    "region": "concours",
+    "meta": "National Architectural Design Competition",
+    "description": "Public administrative complex featuring a high-security GRC custom envelope.",
+    "longDescription": "Architectural design for the National Competition of the Gabès Finance Ministry Headquarters. The scheme balances high-security banking logistics (vaults and asset management) with a light-filled double-height public atrium, sheltered by a custom-designed perforated GRC external screen.",
+    "image": "/uploads/1779028652163_02.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Lead Design Architect (Consortium Member)",
+      "GRC Architectural Screen Concept Development",
+      "Spatial Zoning & High-Security Circulation",
+      "3D Modeling & Vray Renderings",
+      "Development of Tender Design Drawings"
+    ],
+    "gallery": [
+      "/uploads/1779028663591_01.jpg",
+      "/uploads/1779028663592_02.jpg",
+      "/uploads/1779028663592_03.jpg",
+      "/uploads/1779028663592_04.jpg",
+      "/uploads/1779028663593_05.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/1779028727506_PLANCHE_1_HOTEL_DES_FINANCES_DE_GABES.pdf",
+      "/uploads/1779028727506_PLANCHE_2_HOTEL_DES_FINANCES_DE_GABES.pdf",
+      "/uploads/1779028727507_Rapport_HOTEL_DES_FINANCES_DE_GABES.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": false,
+    "year": 2015
+  },
+  {
+    "id": "hopital-sbeitla",
+    "title": "Sbeitla Regional Hospital (120 Beds)",
+    "region": "concours",
+    "meta": "National Architectural Design Competition",
+    "description": "Feasibility and design of a regional healthcare facility.",
+    "longDescription": "Detailed design entry for the National Competition of the Sbeitla Regional Hospital. The architectural layout coordinates emergency rooms, diagnostics, surgery suites, and 120-bed wards along an engineered circulation spine that strictly separates sterile and general traffic flows.",
+    "image": "/uploads/1779028891643_FACADE_1.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Lead Design Architect (Consortium Member)",
+      "Architectural Programming & Spatial Flow Engineering",
+      "3D Visualization & Schematic Drafting",
+      "Presentation Board Assembly",
+      "Technical Proposal Compilation"
+    ],
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/PLANCHE_1_SBEITLA.pdf",
+      "/uploads/PLANCHE_2_SBEITLA.pdf",
+      "/uploads/PLANCHE_3_SBEITLA.pdf",
+      "/uploads/Rapport_Sbeitla.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": false,
+    "year": 2014
+  },
+  {
+    "id": "restaurant-universitaire-sabra",
+    "title": "Sabra Campus Dining Facility",
+    "region": "concours",
+    "meta": "National Architectural Design Competition",
+    "description": "Industrial-scale campus dining hall serving 800 students in Kairouan.",
+    "longDescription": "Design proposal for the National Competition of the Sabra University Restaurant in Kairouan. The building design integrates a double-height dining hall seating 800, a professional HACCP-compliant food processing facility, and optimized entrances to handle high-density student flows.",
+    "image": "",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Lead Design Architect (Consortium Member)",
+      "HACCP-Compliant Kitchen Spatial Planning",
+      "Supply Chain & Egress Flow Analysis",
+      "3D Modeling & Volumetric Studies",
+      "Detailed Competition Documentation"
+    ],
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/PLANCHE_1_SABRA.pdf",
+      "/uploads/PLANCHE_2_SABRA.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": false,
+    "year": 2014
+  },
+  {
+    "id": "maison-culture-el-battan",
+    "title": "El Battan Cultural Center",
+    "region": "concours",
+    "meta": "National Architectural Design Competition",
+    "description": "Multi-use cultural hub with a 300-seat theater and creative studios.",
+    "longDescription": "Architectural competition design for the El Battan Cultural Center. A contemporary structure inspired by local regional architecture, housing a 300-seat theater, production backstage facilities, artist studios, and a flexible gallery hall.",
+    "image": "/uploads/1779028491907_44.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Lead Design Architect (Consortium Member)",
+      "Theater Design & Acoustic Layout",
+      "Vernacular Facade Design & Detailing",
+      "3D Visualization & Environmental Integration",
+      "Presentation Board Graphic Design"
+    ],
+    "gallery": [
+      "/uploads/1779028558123_1.jpg",
+      "/uploads/1779028558124_2.jpg",
+      "/uploads/1779028558124_22.jpg",
+      "/uploads/1779028558124_44.jpg",
+      "/uploads/1779028558125_55.jpg",
+      "/uploads/1779028558125_FACADE_1_NB.jpg",
+      "/uploads/1779028558125_FACADE_22_NB.jpg",
+      "/uploads/1779028558125_Vue_générale.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/PLANCHE_2_EL_BATTAN.pdf",
+      "/uploads/1779028573316_PLANCHE_1_EL_BATTAN.pdf",
+      "/uploads/1779028573317_PLANCHE_2_EL_BATTAN.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": false,
+    "year": 2013
+  },
+  {
+    "id": "maison-culture-sidi-bouzid-est",
+    "title": "Sidi Bouzid East Cultural Center",
+    "region": "concours",
+    "meta": "National Architectural Design Competition",
+    "description": "Multi-disciplinary arts center for community education.",
+    "longDescription": "Design entry for the Sidi Bouzid East Cultural Center National Competition. Planned as a local cultural catalyst, it features professional soundproofed music studios, art galleries, a public library, and a modular performance auditorium.",
+    "image": "/uploads/sidi_bouzid_planche1.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Lead Design Architect (Consortium Member)",
+      "Program & Spatial Flow Management",
+      "Structural Layout Coordination",
+      "3D Modeling & Board Assembly",
+      "BOQ Development & Estimating"
+    ],
+    "gallery": [
+      "/uploads/sidi_bouzid_planche1.jpg",
+      "/uploads/sidi_bouzid_planche2.jpg",
+      "/uploads/1779028462216_PLANCHE_1_FINALE-page-001.jpg",
+      "/uploads/1779028462217_PLANCHE_2_FINALE-page-001.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/PLANCHE_1_SIDI_BOUZID.pdf",
+      "/uploads/PLANCHE_2_SIDI_BOUZID.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": false,
+    "year": 2013
+  },
+  {
+    "id": "complexe-thermal-zriba",
+    "title": "Zriba Thermal Spa Resort",
+    "region": "concours",
+    "meta": "Commercial Spa & Wellness Complex Competition",
+    "description": "Modern thermal wellness and spa complex integrated into the mountains.",
+    "longDescription": "Concept proposal for the Zriba Thermal SPA Resort in Zaghouan. Designed to harmoniously blend with the mountain site, the complex organizes private therapy clinics, mud bath chambers, and a massive glass-covered thermal pool.",
+    "image": "/uploads/1779029532664_coupe.jpg",
+    "video": "/uploads/zriba_spa.mp4",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Lead Design Architect (Consortium Member)",
+      "SPA Architectural Concept Development",
+      "3D Interior Modeling & Treatment Room Design",
+      "Technical Bid Proposal Assembly",
+      "3D Flythrough Video Production"
+    ],
+    "gallery": [
+      "/uploads/zriba_coupe.jpg",
+      "/uploads/zriba_masse.jpg",
+      "/uploads/1779029669922_2.bmp",
+      "/uploads/1779029669923_4.bmp",
+      "/uploads/1779029669923_5.bmp",
+      "/uploads/1779029669923_6.bmp",
+      "/uploads/1779029669924_7.bmp",
+      "/uploads/1779029669924_8.bmp",
+      "/uploads/1779029669924_9.bmp",
+      "/uploads/1779029669924_10.bmp",
+      "/uploads/1779029669925_11.bmp",
+      "/uploads/1779029669925_12.bmp",
+      "/uploads/1779029669925_13.bmp",
+      "/uploads/1779029669926_A_(2).jpg",
+      "/uploads/1779029669926_COUPE01.jpg",
+      "/uploads/1779029669926_COUPE02.jpg",
+      "/uploads/1779029669927_D_(2).jpg",
+      "/uploads/1779029669927_Façade_1.bmp"
+    ],
+    "galleryDocs": [
+      "/uploads/1779029683162_Présentation_Concours_Zriba_Spa.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": false,
+    "year": 2013
+  },
+  {
+    "id": "foyer-borj-cedria",
+    "title": "Borj Cedria Student Housing Tower",
+    "region": "concours",
+    "meta": "National Architectural Design Competition",
+    "description": "Innovative biophilic and circular student residential development.",
+    "longDescription": "Concept design entry for the Borj Cedria Student Housing. The master plan balances high-density high-rise residential towers with circular structures, designed to optimize natural daylighting, natural cross-ventilation, and community integration.",
+    "image": "",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Lead Design Architect (Consortium Member)",
+      "Residential Typology Analysis",
+      "Parametric Circular Layout Design",
+      "3D Modeling",
+      "Technical Drawings"
+    ],
+    "gallery": [],
+    "galleryDocs": [
+      "/uploads/foyer_essai_1.pdf"
+    ],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": false,
+    "year": 2012
+  },
+  {
+    "id": "village-langues-mahdia",
+    "title": "Mahdia Maritime Language Campus",
+    "region": "concours",
+    "meta": "National Architectural Design Competition",
+    "description": "Seaside educational and residential language village.",
+    "longDescription": "Comprehensive architectural layout for the National Competition of the Mahdia Language Village. Designed a coastal learning retreat merging classrooms, lecture halls, campus residences, and waterfront amenities configured to withstand marine environmental conditions.",
+    "image": "",
+    "video": "",
+    "budget": "",
+    "currency": "EUR",
+    "tasks": [
+      "Lead Design Architect (Consortium Member)",
+      "Mixed-Use Educational Master Planning",
+      "Marine Envelope & Material Integration",
+      "Technical Design Report Compilation"
+    ],
+    "gallery": [],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "subcontract": false,
+    "year": 2011
+  }
+]

@@ -4,6 +4,93 @@ import { initBlueprintCanvas } from './blueprint.js';
 // Base path for GitHub Pages compatibility
 const BASE = import.meta.env.BASE_URL;
 
+// Language handling
+const SUPPORTED_LANGS = ['fr', 'en', 'ar'];
+let currentLang = localStorage.getItem('portfolio_lang') || 'fr';
+if (!SUPPORTED_LANGS.includes(currentLang)) currentLang = 'fr';
+
+let uiTranslations = {};
+
+async function initLanguageSelector() {
+  const langBtn = document.getElementById('lang-btn');
+  const langDropdown = document.getElementById('lang-dropdown');
+  
+  if (langBtn && langDropdown) {
+    // Prevent duplicated listener bindings by cloning or checking
+    const newBtn = langBtn.cloneNode(true);
+    langBtn.parentNode.replaceChild(newBtn, langBtn);
+    
+    newBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('active');
+    });
+    
+    document.addEventListener('click', () => {
+      langDropdown.classList.remove('active');
+    });
+    
+    langDropdown.querySelectorAll('.lang-opt').forEach(opt => {
+      opt.addEventListener('click', async () => {
+        const lang = opt.dataset.lang;
+        await switchLanguage(lang);
+      });
+    });
+  }
+  
+  // Set initial language properties
+  await switchLanguage(currentLang);
+}
+
+async function switchLanguage(lang) {
+  if (!SUPPORTED_LANGS.includes(lang)) return;
+  currentLang = lang;
+  localStorage.setItem('portfolio_lang', lang);
+  
+  // Set properties on documentElement
+  document.documentElement.lang = lang;
+  document.documentElement.dir = lang === 'ar' ? 'rtl' : 'ltr';
+  
+  // Load UI translations
+  try {
+    const res = await fetch(`${BASE}ui_translations.json`);
+    if (res.ok) {
+      uiTranslations = await res.json();
+      translateUI();
+    }
+  } catch (e) { console.error('UI translation load error', e); }
+
+  // Update navbar indicator
+  const langIndicator = document.getElementById('current-lang');
+  if (langIndicator) langIndicator.textContent = lang.toUpperCase();
+  
+  document.querySelectorAll('.lang-opt').forEach(opt => {
+    opt.classList.toggle('active', opt.dataset.lang === lang);
+  });
+
+  // Reload content and projects databases
+  await loadContent();
+  await loadProjects();
+}
+
+function translateUI() {
+  const dict = uiTranslations[currentLang];
+  if (!dict) return;
+  
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (dict[key]) {
+      el.textContent = dict[key];
+    }
+  });
+  
+  document.querySelectorAll('[data-i18n-html]').forEach(el => {
+    const key = el.dataset.i18nHtml;
+    if (dict[key]) {
+      el.innerHTML = dict[key];
+    }
+  });
+}
+
 function resolveUrl(url) {
   if (!url) return '';
   if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
@@ -271,7 +358,8 @@ function createProjectCard(project) {
 
 async function loadProjects() {
   try {
-    const res = await fetch(`${BASE}projects.json`);
+    let res = await fetch(`${BASE}projects_${currentLang}.json`);
+    if (!res.ok) res = await fetch(`${BASE}projects.json`);
     if (!res.ok) return;
     allProjects = await res.json();
     
@@ -382,7 +470,8 @@ function setupFilters() {
 // Load General Content
 async function loadContent() {
   try {
-    const res = await fetch(`${BASE}content.json`);
+    let res = await fetch(`${BASE}content_${currentLang}.json`);
+    if (!res.ok) res = await fetch(`${BASE}content.json`);
     if (!res.ok) return;
     const c = await res.json();
 
@@ -467,9 +556,8 @@ function initProjectMarquee(projects) {
   }).join('');
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+document.addEventListener('DOMContentLoaded', async () => {
   initBlueprintCanvas();
-  loadContent();
-  loadProjects();
+  await initLanguageSelector();
   initAnimations();
 });

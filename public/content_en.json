@@ -1,0 +1,102 @@
+{
+  "heroSubtitle": "Senior Architect & CAD Manager",
+  "heroTitleHtml": "Anis BOUDEN",
+  "heroDescription": "Over 16 years of experience in architectural design, spatial planning, and construction project management, including 6 years in Canada. Open to global relocation.",
+  "aboutText": "With 16 years of professional experience blending design excellence with rigorous technical execution, I offer architectural firms a highly specialized double expertise. My career is built on two core pillars: 10 years of private practice in Tunisia as a Lead Architect (focused on conceptual design, schematic planning, and project coordination) and 6 years of technical engineering expertise in Canada (focused on the production of detailed construction documents, construction detailing, and strict building code compliance). Expert in AutoCAD, SketchUp, and Lumion, I master the entire project lifecycle, from initial high-end 3D renderings to precise technical delivery. Currently based in Canada, I am fully available for international relocation.",
+  "contactEmail": "boudenanis@gmail.com",
+  "contactPhone": "+1 581 980 9131",
+  "contactLinkedin": "linkedin.com/in/anis-bouden",
+  "contactAddress": "Quebec. Available for relocation.",
+  "cvLink": "/cv_anis_bouden.pdf",
+  "heroImages": [],
+  "experiences": [
+    {
+      "company": "CSSDN - Centre de Services Scolaires des Navigateurs",
+      "region": "quebec",
+      "location": "🇨🇦 Canada",
+      "date": "2025 — Present",
+      "role": "Architectural Graduate - Building & Infrastructure Technical Specialist",
+      "description": "The Material Resources Department manages a real estate portfolio of 78 educational and administrative facilities: maintenance, asset preservation, and strategic expansion.\n\nLead the development and continuous updating of Emergency Measures Plans (EMP) for all facilities, including CAD egress mapping, fire safety protocols, accessibility compliance, and risk management strategies.\n\nManage redevelopment and expansion projects across educational facilities: site surveys, drafting detailed drawings, and coordinating project deliverables with school boards, architects, engineers, and general contractors.\n\nDevelop collaborative digital tools (AI Power Apps) for data centralization, database updates, compliance tracking, and multidisciplinary coordination."
+    },
+    {
+      "company": "LDA - Larochelle et Desmeules, architectes",
+      "region": "quebec",
+      "location": "🇨🇦 Canada",
+      "date": "2021–2025",
+      "role": "M.Arch. Architectural Graduate",
+      "description": "LDA is a prominent architectural firm specializing in recreational, commercial, and institutional sectors, with a strong focus on functional community spaces.\n\nCollaborate closely with the Project Manager to execute institutional mandates (schools, colleges, aquatic centers, and arenas).\n\nRole encompasses the full project lifecycle: initial site surveys, high-fidelity 3D modeling, multidisciplinary coordination, and the production of construction documentation and tender packages.\n\nSpecific responsibilities for each project are detailed in the projects section."
+    },
+    {
+      "company": "B.D Architectes / BAK",
+      "region": "tunisie",
+      "location": "🇹🇳 Tunisia",
+      "date": "2010–2020",
+      "role": "Co-founder & Principal Architect",
+      "description": "Designed and managed major public and private institutional projects (regional hospitals, higher education institutes, administrative headquarters). Formed international partnerships with French design firms. Partnered with the televised design show DARI DECO."
+    },
+    {
+      "company": "TBM International",
+      "region": "tunisie",
+      "location": "🇹🇳 Tunisia",
+      "date": "2008–2010",
+      "role": "Project Design Coordinator",
+      "description": "Managed technical coordination and international competitions (Mauritania, Algeria) for mixed-use business districts and corporate headquarters."
+    }
+  ],
+  "distinctions": [
+    {
+      "year": "2019",
+      "type": "award",
+      "title": "Carthage Architectural Days Award (JAC)",
+      "description": "Best Project Award, Category: Institutional & Public Buildings\nWinning Project: Higher Institute of Applied Sciences and Technology (ISSAT)",
+      "image": "/uploads/1779328823971_1779325741728_1779116561582_bouden_et_jalel.avif",
+      "video": "<iframe width=\"1920\" height=\"1080\" src=\"https://www.youtube.com/embed/bgxNFEVG6Ds?si=L1D4I4mB6wrCANYy\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+      "gallery": [],
+      "eventPhoto": "/uploads/1779329723141_1779160227193_75446727_1378021255709514_25495716873182.avif",
+      "eventLink": "https://www.mramma.tn/actualites/projets-laur%C3%A9ats-lors-des-journ%C3%A9es-architecturales-de-carthage"
+    },
+    {
+      "year": "2018",
+      "type": "media",
+      "title": "Built Heritage & Conservation — Radio Culturelle",
+      "description": "Featured representing the Built Heritage & Memorials Association alongside the President of the Order of Tunisian Architects, discussing architectural preservation policies, safety codes for historical buildings, and governmental infrastructure regulations.",
+      "image": "",
+      "video": "<iframe width=\"560\" height=\"315\" src=\"https://www.youtube.com/embed/nrzwkrfXAPE?si=Mx8gkmNTTe6lylOc\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
+      "gallery": []
+    },
+    {
+      "year": "2017",
+      "type": "media",
+      "title": "Media Partnership — DARI DECO (Television)",
+      "description": "Lead design partner for the televised interior design and remodeling show DARI DECO (Season 3), delivering full property transformations under tight 7-day turnarounds.",
+      "image": "",
+      "video": "",
+      "gallery": [],
+      "eventPhoto": "",
+      "eventLink": ""
+    },
+    {
+      "year": "2016",
+      "type": "press",
+      "title": "Architecture Méditerranéenne (2016 Edition)",
+      "description": "International Architecture Review publication.",
+      "image": "",
+      "pdfLink": "/architecture_mediterraneenne.pdf"
+    },
+    {
+      "year": "2014",
+      "title": "National Architectural Competition Winner",
+      "description": "Awarded 1st Prize in the national architectural competition for the design of the ISSAT Higher Education Campus in January 2014. Execution phases completed from 2016 to 2019.",
+      "type": "competition"
+    },
+    {
+      "year": "2011",
+      "type": "press",
+      "title": "Archibat (June 2011)",
+      "description": "Maghreb review of spatial planning, architecture, and urban construction.",
+      "image": "",
+      "pdfLink": "/article_archibat.pdf"
+    }
+  ],
+  "logoText": ""
+}

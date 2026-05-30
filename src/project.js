@@ -2,6 +2,13 @@
 import { initBlueprintCanvas } from './blueprint.js';
 const BASE = import.meta.env.BASE_URL;
 
+// Language handling
+const SUPPORTED_LANGS = ['fr', 'en', 'ar'];
+let currentLang = localStorage.getItem('portfolio_lang') || 'fr';
+if (!SUPPORTED_LANGS.includes(currentLang)) currentLang = 'fr';
+
+let uiTranslations = {};
+
 function resolveUrl(url) {
   if (!url) return '';
   if (url.startsWith('http://') || url.startsWith('https://') || url.startsWith('data:')) {
@@ -12,8 +19,72 @@ function resolveUrl(url) {
   return `${BASE}${cleanUrl}`;
 }
 
+async function initLanguageSelector() {
+  const langBtn = document.getElementById('lang-btn');
+  const langDropdown = document.getElementById('lang-dropdown');
+  
+  if (langBtn && langDropdown) {
+    // Prevent duplicated listener bindings
+    const newBtn = langBtn.cloneNode(true);
+    langBtn.parentNode.replaceChild(newBtn, langBtn);
+    
+    newBtn.addEventListener('click', (e) => {
+      e.stopPropagation();
+      langDropdown.classList.toggle('active');
+    });
+    
+    document.addEventListener('click', () => {
+      langDropdown.classList.remove('active');
+    });
+    
+    langDropdown.querySelectorAll('.lang-opt').forEach(opt => {
+      opt.addEventListener('click', async () => {
+        const lang = opt.dataset.lang;
+        localStorage.setItem('portfolio_lang', lang);
+        // Refresh to reload project in the chosen language
+        window.location.reload();
+      });
+    });
+  }
+  
+  // Set properties on documentElement
+  document.documentElement.lang = currentLang;
+  document.documentElement.dir = currentLang === 'ar' ? 'rtl' : 'ltr';
+  
+  // Load UI translations
+  try {
+    const res = await fetch(`${BASE}ui_translations.json`);
+    if (res.ok) {
+      uiTranslations = await res.json();
+      translateUI();
+    }
+  } catch (e) { console.error('UI translation load error', e); }
+
+  // Update navbar indicator
+  const langIndicator = document.getElementById('current-lang');
+  if (langIndicator) langIndicator.textContent = currentLang.toUpperCase();
+  
+  document.querySelectorAll('.lang-opt').forEach(opt => {
+    opt.classList.toggle('active', opt.dataset.lang === currentLang);
+  });
+}
+
+function translateUI() {
+  const dict = uiTranslations[currentLang];
+  if (!dict) return;
+  
+  document.querySelectorAll('[data-i18n]').forEach(el => {
+    const key = el.dataset.i18n;
+    if (dict[key]) {
+      el.textContent = dict[key];
+    }
+  });
+}
+
 async function init() {
   initBlueprintCanvas();
+  await initLanguageSelector();
+  
   const params = new URLSearchParams(window.location.search);
   const projectId = params.get('id');
 
@@ -22,7 +93,8 @@ async function init() {
     return;
   }
 
-  const res = await fetch(`${BASE}projects.json`);
+  let res = await fetch(`${BASE}projects_${currentLang}.json`);
+  if (!res.ok) res = await fetch(`${BASE}projects.json`);
   if (!res.ok) return;
   const projects = await res.json();
 
@@ -46,7 +118,7 @@ async function init() {
   }
 
   const project = projects[currentIndex];
-  document.title = `${project.title} | Anis BOUDEN - Architecte`;
+  document.title = `${project.title} | Anis BOUDEN`;
 
   // Hero Image
   const heroBg = document.getElementById('hero-bg');
@@ -56,7 +128,16 @@ async function init() {
 
   // Titles & Info Banner
   document.getElementById('project-title').textContent = project.title;
-  document.getElementById('info-region').textContent = project.region === 'quebec' ? '🇨🇦 Québec, Canada' : (project.region === 'concours' ? '🏆 Concours d\'Architecture, Tunisie' : '🇹🇳 Tunisie');
+  
+  let regionStr = '';
+  if (project.region === 'quebec') {
+    regionStr = currentLang === 'ar' ? '🇨🇦 كيبك، كندا' : (currentLang === 'en' ? '🇨🇦 Quebec, Canada' : '🇨🇦 Québec, Canada');
+  } else if (project.region === 'concours') {
+    regionStr = currentLang === 'ar' ? '🏆 مسابقة معمارية وطنية' : (currentLang === 'en' ? '🏆 National Design Competition' : '🏆 Concours National d\'Architecture');
+  } else {
+    regionStr = currentLang === 'ar' ? '🇹🇳 تونس' : (currentLang === 'en' ? '🇹🇳 Tunisia' : '🇹🇳 Tunisie');
+  }
+  document.getElementById('info-region').textContent = regionStr;
   document.getElementById('info-meta').textContent = project.meta;
 
   if (project.budget) {
@@ -67,20 +148,24 @@ async function init() {
 
   // Description
   const desc = project.longDescription || project.description;
-  document.getElementById('project-long-desc').innerHTML = desc ? desc.replace(/\n/g, '<br>') : 'Description non disponible.';
+  document.getElementById('project-long-desc').innerHTML = desc ? desc.replace(/\n/g, '<br>') : (currentLang === 'ar' ? 'التفاصيل غير متوفرة حالياً.' : (currentLang === 'en' ? 'Description not available.' : 'Description non disponible.'));
 
   // Award Badge
   if (project.showDistinctionBtn) {
     const descCol = document.querySelector('.project-desc');
     if (descCol) {
       const badge = document.createElement('a');
-      badge.href = '/#distinctions';
+      badge.href = `${BASE}#distinctions`;
       badge.className = 'distinction-award-badge fade-up';
+      
+      const badgeTitle = currentLang === 'ar' ? 'مشروع فائز وجائزة مرموقة' : (currentLang === 'en' ? 'Award-Winning Featured Project' : 'Projet Lauréat & Primé');
+      const badgeText = currentLang === 'ar' ? 'حائز على الجائزة الأولى في المسابقة الوطنية وأيام قرطاج المعمارية · عرض الجوائز ←' : (currentLang === 'en' ? 'Recipient of the National 1st Prize & Carthage Architectural Days Award · View Awards →' : 'Lauréat du Concours National & Prix des Journées Architecturales de Carthage · Voir les distinctions →');
+      
       badge.innerHTML = `
         <div class="badge-icon">🏆</div>
         <div class="badge-content">
-          <strong>Projet Lauréat & Primé</strong>
-          <span>Lauréat du Concours National & Prix des Journées Architecturales de Carthage · Voir les distinctions →</span>
+          <strong>${badgeTitle}</strong>
+          <span>${badgeText}</span>
         </div>
       `;
       descCol.insertBefore(badge, descCol.firstChild);
@@ -134,10 +219,12 @@ async function init() {
   const hasBeforeAfter = (project.galleryBefore && project.galleryBefore.length > 0) || (project.galleryAfter && project.galleryAfter.length > 0);
 
   if (hasDocsRealisation) {
-    let html = `<h2 style="margin-bottom: 1.5rem;">Visualisation & Documents</h2>`;
+    let html = `<h2 style="margin-bottom: 1.5rem;">${currentLang === 'ar' ? 'المخططات والمستندات الفنية' : (currentLang === 'en' ? 'Technical Drawings & Documentation' : 'Visualisation & Documents')}</h2>`;
     
     if (project.galleryDocs && project.galleryDocs.length > 0) {
-      const docTitle = project.region === 'concours' || project.id === 'issat' ? '📂 Documents du Concours' : '📂 Documents du Projet';
+      const docTitle = project.region === 'concours' || project.id === 'issat' 
+        ? (currentLang === 'ar' ? '📂 مستندات المسابقة المعمارية' : (currentLang === 'en' ? '📂 Competition Design Documents' : '📂 Documents du Concours'))
+        : (currentLang === 'ar' ? '📂 مخططات ومستندات المشروع' : (currentLang === 'en' ? '📂 Detailed Project Documentation' : '📂 Documents du Projet'));
       html += `
         <h3 style="margin-bottom: 1.5rem; color: #fff; font-family: var(--font-heading); font-size: 1.4rem;">${docTitle}</h3>
         <div id="pdf-direct-viewer-container" style="margin-bottom: 2rem; display: none;"></div>
@@ -148,7 +235,7 @@ async function init() {
     const allImages = [...(project.galleryRealisation || []), ...(project.gallery || [])];
     if (allImages.length > 0) {
       html += `
-        <h3 style="margin-bottom: 1.5rem; color: #fff; font-family: var(--font-heading); font-size: 1.4rem;">🖼️ Images du projet</h3>
+        <h3 style="margin-bottom: 1.5rem; color: #fff; font-family: var(--font-heading); font-size: 1.4rem;">${currentLang === 'ar' ? '🖼️ صور ومناظر المشروع' : (currentLang === 'en' ? '🖼️ Project Renderings & Views' : '🖼️ Images du projet')}</h3>
         <div class="gallery-grid" id="grid-realisation" style="margin-bottom: 3rem;"></div>
       `;
     }
@@ -185,7 +272,7 @@ async function init() {
           return `
             <div class="secure-pdf-direct-wrap" style="margin-bottom: 3rem; text-align: left;">
               <h4 style="color: var(--accent); margin-bottom: 1.2rem; font-family: var(--font-heading); font-size: 1.25rem; display: flex; align-items: center; gap: 0.6rem; font-weight: 600;">
-                📄 Document : ${filename}
+                📄 ${currentLang === 'ar' ? 'مستند' : (currentLang === 'en' ? 'Document' : 'Document')} : ${filename}
               </h4>
               <div class="secure-pdf-viewer-wrapper" id="pdf-wrapper-${idx}" oncontextmenu="return false;">
                 <div class="cad-toolbar">
@@ -197,7 +284,7 @@ async function init() {
                 </div>
                 <div class="secure-pdf-canvas-viewer" id="pdf-viewer-${idx}" style="position: relative; width: 100%; max-height: 85vh; overflow-y: auto; background: #090c12; border-radius: 12px; border: 1px solid rgba(255,255,255,0.08); box-shadow: 0 10px 30px rgba(0,0,0,0.5); padding: 5rem 0 2rem 0; display: flex; flex-direction: column; align-items: center; gap: 2rem; user-select: none; -webkit-user-select: none;">
                   <div class="pdf-loading" style="color: #888; font-size: 1rem; display: flex; align-items: center; gap: 0.5rem; padding: 3rem 0;">
-                    Chargement sécurisé du document...
+                    ${currentLang === 'ar' ? 'جاري تحميل المستند بأمان...' : (currentLang === 'en' ? 'Loading secure document...' : 'Chargement sécurisé du document...')}
                   </div>
                 </div>
               </div>
@@ -216,7 +303,7 @@ async function init() {
       if (images.length > 0) {
         if (pdfs.length > 0) {
           const subTitle = document.createElement('h4');
-          subTitle.textContent = "🖼️ Dessins & Rendu 3D";
+          subTitle.textContent = currentLang === 'ar' ? '🖼️ المخططات الفنية والرندرة 3D' : (currentLang === 'en' ? '🖼️ Technical Drawings & 3D Renderings' : '🖼️ Dessins & Rendu 3D');
           subTitle.style.cssText = "color: #fff; font-family: var(--font-heading); margin-bottom: 1.5rem; font-size: 1.3rem; font-weight: 600; border-bottom: 1px solid rgba(255,255,255,0.08); padding-bottom: 0.6rem; margin-top: 3rem; text-align: left;";
           gridConc.parentNode.insertBefore(subTitle, gridConc);
         }
@@ -232,32 +319,39 @@ async function init() {
     const mainAfter = project.galleryAfter ? project.galleryAfter[0] : null;
     
     if (mainBefore && mainAfter) {
+      const beforeLabel = currentLang === 'ar' ? 'قبل - المبنى القائم' : (currentLang === 'en' ? 'Before - Existing Building' : 'Avant - Bâtiment existant');
+      const afterLabel = currentLang === 'ar' ? 'بعد - المقترح المعماري' : (currentLang === 'en' ? 'After - Proposed Design' : 'Après - Aménagement proposé');
+      const sliderTitle = currentLang === 'ar' ? '↔️ مقارنة تفاعلية قبل / بعد' : (currentLang === 'en' ? 'Interactive Before / After Comparison' : 'Comparaison Avant / Après (Glisseur Interactif)');
       sliderHtml = `
         <div class="before-after-container">
-          <h3>↔️ Comparaison Avant / Après (Glisseur Interactif)</h3>
+          <h3>${sliderTitle}</h3>
           <div class="before-after-slider">
             <div class="ba-image-after">
-              <img src="${mainAfter}" alt="Après - Aménagement proposé">
+              <img src="${mainAfter}" alt="${afterLabel}">
             </div>
             <div class="ba-image-before">
-              <img src="${mainBefore}" alt="Avant - Bâtiment existant">
+              <img src="${mainBefore}" alt="${beforeLabel}">
             </div>
             <div class="ba-slider-handle">
               <div class="ba-handle-button">↔</div>
             </div>
-            <div class="ba-label ba-label-before">Avant - Bâtiment existant</div>
-            <div class="ba-label ba-label-after">Après - Aménagement proposé</div>
+            <div class="ba-label ba-label-before">${beforeLabel}</div>
+            <div class="ba-label ba-label-after">${afterLabel}</div>
           </div>
         </div>
       `;
     }
     
+    const comparativeTitle = currentLang === 'ar' ? 'المقارنات المرئية' : (currentLang === 'en' ? 'Comparative Galleries' : 'Galeries Comparatives');
+    const afterTab = currentLang === 'ar' ? '✨ بعد (المقترح المعماري)' : (currentLang === 'en' ? '✨ After (Proposed Design)' : '✨ Après (Aménagement proposé)');
+    const beforeTab = currentLang === 'ar' ? '🏚️ قبل (المبنى القائم)' : (currentLang === 'en' ? '🏚️ Before (Existing Building)' : '🏚️ Avant (Bâtiment existant)');
+    
     gallerySection.innerHTML = `
       ${sliderHtml}
-      <h2 style="margin-bottom: 1.5rem;">Galeries Comparatives</h2>
+      <h2 style="margin-bottom: 1.5rem;">${comparativeTitle}</h2>
       <div class="gallery-tabs">
-        <button class="gallery-tab-btn active" data-tab="after-gallery">✨ Après (Aménagement proposé)</button>
-        <button class="gallery-tab-btn" data-tab="before-gallery">🏚️ Avant (Bâtiment existant)</button>
+        <button class="gallery-tab-btn active" data-tab="after-gallery">${afterTab}</button>
+        <button class="gallery-tab-btn" data-tab="before-gallery">${beforeTab}</button>
       </div>
       
       <div class="tab-content active" id="tab-after-gallery">
@@ -275,13 +369,13 @@ async function init() {
     if (project.galleryBefore && project.galleryBefore.length > 0) {
       populateGrid(gridBefore, project.galleryBefore);
     } else {
-      gridBefore.innerHTML = `<div class="gallery-empty">Aucun visuel existant.</div>`;
+      gridBefore.innerHTML = `<div class="gallery-empty">${currentLang === 'ar' ? 'لا تتوفر صور للموقع القائم حالياً.' : (currentLang === 'en' ? 'No existing visuals available.' : 'Aucun visuel existant.')}</div>`;
     }
     
     if (project.galleryAfter && project.galleryAfter.length > 0) {
       populateGrid(gridAfter, project.galleryAfter);
     } else {
-      gridAfter.innerHTML = `<div class="gallery-empty">Aucune proposition disponible.</div>`;
+      gridAfter.innerHTML = `<div class="gallery-empty">${currentLang === 'ar' ? 'لا تتوفر مقترحات تصميمية حالياً.' : (currentLang === 'en' ? 'No proposed designs available.' : 'Aucune proposition disponible.')}</div>`;
     }
     
     setupTabListeners();
@@ -300,7 +394,7 @@ async function init() {
     }
     
     if (!hasGallery) {
-      grid.innerHTML = `<div class="gallery-empty">Aucune photo dans la galerie</div>`;
+      grid.innerHTML = `<div class="gallery-empty">${currentLang === 'ar' ? 'لا تتوفر صور في المعرض حالياً.' : (currentLang === 'en' ? 'No photos in the gallery.' : 'Aucune photo dans la galerie')}</div>`;
     }
   }
 
@@ -340,7 +434,7 @@ function populateGrid(gridElement, itemsArray) {
       div.innerHTML = `
         <span class="pdf-icon">📄</span>
         <span class="pdf-filename">${decodeURIComponent(filename)}</span>
-        <span class="pdf-action">Consulter le document</span>
+        <span class="pdf-action">${currentLang === 'ar' ? 'عرض المستند الفني' : (currentLang === 'en' ? 'View Document' : 'Consulter le document')}</span>
       `;
       div.addEventListener('click', () => {
         openPdfLightbox(src);

@@ -32,11 +32,17 @@ export default defineConfig({
 });
 
 function adminApiMiddleware(req, res, next) {
+  const lang = req.headers['x-lang'] || '';
+  const suffix = lang && lang !== 'fr' ? `_${lang}` : '';
+
   if (req.url === '/api/save-projects' && req.method === 'POST') {
     let body = '';
     req.on('data', chunk => body += chunk.toString());
     req.on('end', () => {
-      fs.writeFileSync(path.resolve('public/projects.json'), body);
+      fs.writeFileSync(path.resolve(`public/projects${suffix}.json`), body);
+      if (!suffix) {
+        fs.writeFileSync(path.resolve('public/projects_fr.json'), body);
+      }
       res.statusCode = 200;
       res.end('Saved');
     });
@@ -44,7 +50,10 @@ function adminApiMiddleware(req, res, next) {
     let body = '';
     req.on('data', chunk => body += chunk.toString());
     req.on('end', () => {
-      fs.writeFileSync(path.resolve('public/content.json'), body);
+      fs.writeFileSync(path.resolve(`public/content${suffix}.json`), body);
+      if (!suffix) {
+        fs.writeFileSync(path.resolve('public/content_fr.json'), body);
+      }
       res.statusCode = 200;
       res.end('Saved');
     });
