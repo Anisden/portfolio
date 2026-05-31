@@ -1609,30 +1609,33 @@ html[dir="rtl"] .contact-item:hover {
     left: auto !important;
     right: 50% !important;
     padding-left: 0 !important;
-    padding-right: 4rem !important;
+    padding-right: 3.5rem !important;
     text-align: right;
   }
   html[dir="rtl"] .timeline-item:nth-child(odd) {
     left: auto !important;
     right: 0 !important;
-    padding-left: 4rem !important;
+    padding-left: 3.5rem !important;
     padding-right: 0 !important;
     text-align: right;
   }
-  html[dir="rtl"] .timeline-marker {
+  html[dir="rtl"] .timeline-item:nth-child(even) .timeline-marker {
     left: auto !important;
-    right: 50% !important;
-    transform: translate(50%, -50%) !important;
+    right: -7px !important;
   }
-  html[dir="rtl"] .timeline-date-rect {
-    left: auto !important;
-    right: 50% !important;
+  html[dir="rtl"] .timeline-item:nth-child(odd) .timeline-marker {
+    right: auto !important;
+    left: -7px !important;
   }
   html[dir="rtl"] .timeline-item:nth-child(even) .timeline-date-rect {
-    transform: translate(50%, -50%) !important;
+    left: auto !important;
+    right: -14px !important;
+    transform: none !important;
   }
   html[dir="rtl"] .timeline-item:nth-child(odd) .timeline-date-rect {
-    transform: translate(50%, -50%) !important;
+    right: auto !important;
+    left: -14px !important;
+    transform: none !important;
   }
 }
 
