@@ -65,6 +65,37 @@
     "year": 2025
   },
   {
+    "id": "batiment-ferme-ul",
+    "title": "Bâtiment de ferme – Université Laval",
+    "region": "quebec",
+    "meta": "Nouvelle construction | Université Laval (2024)",
+    "description": "Construction d'un nouveau bâtiment de ferme pour l'Université Laval, intégrant les exigences fonctionnelles agricoles et les normes de construction modernes.",
+    "longDescription": "Mandat de conception et mise en plan pour la construction d'un nouveau bâtiment de ferme destiné à l'Université Laval. Le projet intègre les exigences fonctionnelles liées aux activités agricoles et de recherche, tout en respectant les normes de construction en vigueur au Québec.\n\nLe bâtiment a été conçu pour optimiser les flux de travail agricoles, avec une attention particulière portée à la ventilation naturelle, à la durabilité des matériaux et à l'intégration paysagère dans le contexte rural universitaire.",
+    "image": "/uploads/1780404906161_701_main.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Mise en plan des documents de construction",
+      "Modélisation 3D et rendu réaliste",
+      "Coordination avec les ingénieurs",
+      "Conception architecturale"
+    ],
+    "gallery": [
+      "/uploads/1780404907183_701_v2.jpg",
+      "/uploads/1780404907237_701_v3.jpg",
+      "/uploads/1780404907308_701_v4.jpg",
+      "/uploads/1780404907369_701_v5.jpg",
+      "/uploads/1780404907428_701_v6.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2024
+  },
+  {
     "id": "ecole-pointe-levy",
     "title": "Palestre et gymnase à l'école Pointe-Lévy",
     "region": "quebec",
@@ -136,6 +167,68 @@
     "showDistinctionBtn": false,
     "subcontract": true,
     "year": 2024
+  },
+  {
+    "id": "arena-levis-agrandissement",
+    "title": "Agrandissement de l'Aréna de Lévis",
+    "region": "quebec",
+    "meta": "Mise à jour du PFT – Ajout d'une glace | Ville de Lévis (2023)",
+    "description": "Mise à jour du Programme Fonctionnel et Technique (PFT) et conception architecturale de l'agrandissement de l'aréna de Lévis pour l'ajout d'une deuxième glace.",
+    "longDescription": "Mandat de mise à jour du Programme Fonctionnel et Technique (PFT) pour l'agrandissement de l'aréna de Lévis. Le projet consiste en l'ajout d'une deuxième surface de glace au complexe existant, avec les vestiaires, espaces techniques et zones d'accueil nécessaires.\n\nLa conception architecturale propose une intégration harmonieuse du nouvel agrandissement avec le bâtiment existant, en respectant les contraintes d'implantation et les besoins opérationnels de la Ville de Lévis. Le projet comprend également la révision des accès et stationnements.",
+    "image": "/uploads/1780405240926_689_main.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Mise à jour du Programme Fonctionnel et Technique (PFT)",
+      "Conception architecturale de l'agrandissement",
+      "Modélisation 3D et rendus réalistes",
+      "Mise en plan des documents préliminaires"
+    ],
+    "gallery": [
+      "/uploads/1780404907740_689_v2.jpg",
+      "/uploads/1780404907756_689_v3.jpg",
+      "/uploads/1780404907772_689_v4.jpg",
+      "/uploads/1780405240942_689_v5.jpg",
+      "/uploads/1780405240957_689_v6.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2023
+  },
+  {
+    "id": "centre-communautaire-ancienne-lorette",
+    "title": "Centre Communautaire – L'Ancienne-Lorette",
+    "region": "quebec",
+    "meta": "Nouvelle construction | Ville de L'Ancienne-Lorette (2023)",
+    "description": "Construction d'un nouveau centre communautaire multifonctionnel pour la Ville de L'Ancienne-Lorette, offrant des espaces de rassemblement, culturels et récréatifs.",
+    "longDescription": "Projet de nouvelle construction d'un centre communautaire pour la Ville de L'Ancienne-Lorette (VAL). Le bâtiment regroupe une grande salle polyvalente, des salles de réunion, des bureaux administratifs et des espaces de rassemblement communautaire.\n\nLa conception met de l'avant une architecture contemporaine adaptée au contexte urbain de la ville, avec une grande salle multifonctionnelle pouvant accueillir des événements culturels, sportifs et sociaux. Les matériaux ont été sélectionnés pour assurer durabilité et confort thermique.",
+    "image": "/uploads/1780404907486_684_main.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Mise en plan des documents de construction (plans, coupes, détails)",
+      "Modélisation 3D et rendus réalistes",
+      "Coordination avec les ingénieurs",
+      "Conception des espaces intérieurs"
+    ],
+    "gallery": [
+      "/uploads/1780404907544_684_v2.jpg",
+      "/uploads/1780405239995_684_v3.jpg",
+      "/uploads/1780405240880_684_v4.jpg",
+      "/uploads/1780405240895_684_v5.jpg",
+      "/uploads/1780405240911_684_v6.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2023
   },
   {
     "id": "centre-raymond-blais",
@@ -243,6 +336,39 @@
     "year": 2023
   },
   {
+    "id": "chalet-parc-marechal-joffre",
+    "title": "Chalet du Parc Maréchal-Joffre",
+    "region": "quebec",
+    "meta": "Reconstruction | Ville de Lévis (2022–2023)",
+    "description": "Reconstruction complète du chalet de parc Maréchal-Joffre à Lévis, intégrant des vestiaires sportifs, des espaces communautaires et une signalétique adaptée.",
+    "longDescription": "Projet de reconstruction complète du chalet du parc Maréchal-Joffre pour la Ville de Lévis. Le nouveau bâtiment remplace l'installation vétuste par un édifice contemporain comprenant des vestiaires sportifs modernes, une grande salle communautaire polyvalente, des espaces sanitaires accessibles et un corridor de liaison.\n\nLa conception architecturale s'inspire des chalets de parcs traditionnels québécois tout en intégrant des standards modernes d'accessibilité universelle et d'efficacité énergétique. Le bâtiment a été réalisé et livré à la Ville de Lévis suite à un suivi de chantier rigoureux.",
+    "image": "/uploads/1780405240973_661_main.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Conception architecturale",
+      "Mise en plan des documents de construction",
+      "Modélisation 3D et rendus réalistes (Lumion)",
+      "Coordination avec les ingénieurs",
+      "Suivi de chantier"
+    ],
+    "gallery": [
+      "/uploads/1780405240988_661_v2.jpg",
+      "/uploads/1780404907864_661_v3.jpg",
+      "/uploads/1780404907880_661_v4.jpg",
+      "/uploads/1780404907896_661_v5.jpg",
+      "/uploads/1780405241003_661_v6.png",
+      "/uploads/1780405241019_661_v7.png"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2022
+  },
+  {
     "id": "centre-ferland",
     "region": "quebec",
     "title": "Centre Communautaire Ferland",
@@ -322,6 +448,65 @@
     "galleryAfter": [],
     "showDistinctionBtn": false,
     "year": 2022
+  },
+  {
+    "id": "piscine-saint-yves",
+    "title": "Réfection de la Piscine Saint-Yves",
+    "region": "quebec",
+    "year": 2021,
+    "meta": "Réfection majeure | Ville de Québec (2021–2023)",
+    "description": "Réfection complète du bassin aquatique de 25 mètres et des installations de la piscine Saint-Yves à Québec.",
+    "longDescription": "Projet de réfection majeure de la piscine extérieure Saint-Yves pour la Ville de Québec. Le mandat comprend la démolition du bassin existant et sa reconstruction avec un bassin de 25 mètres, une zone d'éclaboussures pour les enfants (playsplash), et la modernisation des infrastructures annexes.\n\nParallèlement à la reconstruction du bassin, le projet inclut la mise aux normes de l'ensemble du site, incluant les accès, le stationnement, la signalisation et l'aménagement paysager. Le suivi de chantier s'est étendu sur deux saisons de construction, assurant la conformité des travaux aux documents de construction.",
+    "image": "/uploads/1780406755747_1780404908048_629B_main.JPG",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Mise en plan des documents de construction",
+      "Coordination avec les ingénieurs (mécanique, structure, civil)",
+      "Suivi de chantier",
+      "Rédaction de rapports de visite de chantier"
+    ],
+    "gallery": [
+      "/uploads/1780404908070_629B_v2.jpg",
+      "/uploads/1780404908087_629B_v3.jpg",
+      "/uploads/1780404908101_629B_v4.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
+  },
+  {
+    "id": "piscine-sainte-genevieve",
+    "title": "Réfection de la Piscine Sainte-Geneviève",
+    "region": "quebec",
+    "year": 2021,
+    "meta": "Réfection majeure | Ville de Québec (2021–2023)",
+    "description": "Réfection complète du bassin aquatique et du pavillon de la piscine Sainte-Geneviève à Québec, incluant la démolition et la reconstruction.",
+    "longDescription": "Projet de réfection majeure de la piscine extérieure Sainte-Geneviève pour la Ville de Québec. Le mandat comprend la démolition du bassin existant et sa reconstruction aux nouvelles normes aquatiques, ainsi que la réfection complète du pavillon de services.\n\nLa conception architecturale propose un bassin de 25 mètres avec des profondeurs variables, une zone peu profonde élargie pour les jeunes enfants, et des vestiaires modernisés favorisant l'accessibilité universelle. Le projet s'inscrit dans le programme de réfection des infrastructures aquatiques de la Ville de Québec.",
+    "image": "/uploads/1780406845725_Ste-Geneviève_rendu_11.png",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Mise en plan des documents de construction",
+      "Modélisation 3D et rendus réalistes",
+      "Coordination avec les ingénieurs (mécanique, structure, civil)",
+      "Suivi de chantier"
+    ],
+    "gallery": [
+      "/uploads/1780406936974_IMG_5256.JPG",
+      "/uploads/1780406967461_20230621_091452.jpg",
+      "/uploads/1780407430324_IMG_3220.JPG",
+      "/uploads/1780407534748_IMG_3559.JPG"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false
   },
   {
     "id": "maracana",

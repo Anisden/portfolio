@@ -65,6 +65,37 @@
     "year": 2025
   },
   {
+    "id": "batiment-ferme-ul",
+    "title": "Farm Building – Laval University",
+    "region": "quebec",
+    "meta": "New Construction | Université Laval (2024)",
+    "description": "Construction of a new farm building for Université Laval, integrating functional agricultural requirements and modern building standards.",
+    "longDescription": "Design and drafting mandate for the construction of a new farm building for Université Laval. The project integrates functional requirements related to agricultural and research activities, while complying with Quebec construction standards.\n\nThe building was designed to optimize agricultural workflows, with particular attention to natural ventilation, material durability, and landscape integration in the rural university context.",
+    "image": "/uploads/1780404906161_701_main.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Construction document drafting",
+      "3D modeling and realistic rendering",
+      "Engineering coordination",
+      "Architectural design"
+    ],
+    "gallery": [
+      "/uploads/1780404907183_701_v2.jpg",
+      "/uploads/1780404907237_701_v3.jpg",
+      "/uploads/1780404907308_701_v4.jpg",
+      "/uploads/1780404907369_701_v5.jpg",
+      "/uploads/1780404907428_701_v6.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2024
+  },
+  {
     "id": "ecole-pointe-levy",
     "title": "Athletic Complex at Pointe-Lévy High School",
     "region": "quebec",
@@ -136,6 +167,68 @@
     "showDistinctionBtn": false,
     "subcontract": true,
     "year": 2024
+  },
+  {
+    "id": "arena-levis-agrandissement",
+    "title": "Lévis Arena – Second Ice Rink Addition",
+    "region": "quebec",
+    "meta": "PFT Update – Second Ice Rink | City of Lévis (2023)",
+    "description": "Update of the Functional and Technical Program (PFT) and architectural design for the expansion of the Lévis arena to add a second ice surface.",
+    "longDescription": "Mandate to update the Functional and Technical Program (PFT) for the expansion of the Lévis arena. The project consists of adding a second ice surface to the existing complex, with the required locker rooms, technical spaces and welcome areas.\n\nThe architectural design proposes a harmonious integration of the new expansion with the existing building, while respecting site constraints and the City of Lévis's operational needs.",
+    "image": "/uploads/1780405240926_689_main.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Update of the Functional and Technical Program (PFT)",
+      "Architectural design of the expansion",
+      "3D modeling and realistic rendering",
+      "Preliminary drawing production"
+    ],
+    "gallery": [
+      "/uploads/1780404907740_689_v2.jpg",
+      "/uploads/1780404907756_689_v3.jpg",
+      "/uploads/1780404907772_689_v4.jpg",
+      "/uploads/1780405240942_689_v5.jpg",
+      "/uploads/1780405240957_689_v6.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2023
+  },
+  {
+    "id": "centre-communautaire-ancienne-lorette",
+    "title": "Community Centre – L'Ancienne-Lorette",
+    "region": "quebec",
+    "meta": "New Construction | City of L'Ancienne-Lorette (2023)",
+    "description": "Construction of a new multifunctional community centre for the City of L'Ancienne-Lorette, offering gathering, cultural and recreational spaces.",
+    "longDescription": "New construction project for a community centre for the City of L'Ancienne-Lorette (VAL). The building includes a large multipurpose hall, meeting rooms, administrative offices and community gathering spaces.\n\nThe design features contemporary architecture adapted to the urban context, with a multifunctional hall capable of hosting cultural, sporting and social events.",
+    "image": "/uploads/1780404907486_684_main.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Construction document drafting (plans, sections, details)",
+      "3D modeling and realistic rendering",
+      "Engineering coordination",
+      "Interior space design"
+    ],
+    "gallery": [
+      "/uploads/1780404907544_684_v2.jpg",
+      "/uploads/1780405239995_684_v3.jpg",
+      "/uploads/1780405240880_684_v4.jpg",
+      "/uploads/1780405240895_684_v5.jpg",
+      "/uploads/1780405240911_684_v6.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2023
   },
   {
     "id": "centre-raymond-blais",
@@ -243,6 +336,39 @@
     "year": 2023
   },
   {
+    "id": "chalet-parc-marechal-joffre",
+    "title": "Maréchal-Joffre Park Chalet",
+    "region": "quebec",
+    "meta": "Reconstruction | City of Lévis (2022–2023)",
+    "description": "Complete reconstruction of the Maréchal-Joffre park chalet in Lévis, integrating sports locker rooms, community spaces and adapted signage.",
+    "longDescription": "Complete reconstruction project for the Maréchal-Joffre park chalet for the City of Lévis. The new building replaces the outdated facility with a contemporary structure including modern sports locker rooms, a large multipurpose community hall, accessible washrooms and a connecting corridor.\n\nThe architectural design draws inspiration from traditional Quebec park chalets while integrating modern standards of universal accessibility and energy efficiency.",
+    "image": "/uploads/1780405240973_661_main.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Architectural design",
+      "Construction document drafting",
+      "3D modeling and realistic rendering (Lumion)",
+      "Engineering coordination",
+      "Construction site supervision"
+    ],
+    "gallery": [
+      "/uploads/1780405240988_661_v2.jpg",
+      "/uploads/1780404907864_661_v3.jpg",
+      "/uploads/1780404907880_661_v4.jpg",
+      "/uploads/1780404907896_661_v5.jpg",
+      "/uploads/1780405241003_661_v6.png",
+      "/uploads/1780405241019_661_v7.png"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2022
+  },
+  {
     "id": "centre-ferland",
     "title": "Ferland Community Center",
     "region": "quebec",
@@ -322,6 +448,71 @@
     "galleryAfter": [],
     "showDistinctionBtn": false,
     "year": 2022
+  },
+  {
+    "id": "piscine-saint-yves",
+    "title": "Saint-Yves Pool Renovation",
+    "region": "quebec",
+    "meta": "Major Renovation | City of Québec (2021–2023)",
+    "description": "Complete renovation of the 25-meter aquatic basin and facilities of the Saint-Yves outdoor pool in Québec City.",
+    "longDescription": "Major renovation project for the Saint-Yves outdoor pool for the City of Québec. The mandate includes demolition of the existing pool and reconstruction with a 25-meter basin, a splash pad for children, and modernization of ancillary infrastructure.\n\nAlongside the pool reconstruction, the project includes upgrading the entire site including access routes, parking, signage and landscaping. Construction site supervision spanned two construction seasons.",
+    "image": "/uploads/1780404908048_629B_main.jpg",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Construction document drafting",
+      "Engineering coordination (mechanical, structural, civil)",
+      "Construction site supervision",
+      "Site visit report writing"
+    ],
+    "gallery": [
+      "/uploads/1780404908070_629B_v2.jpg",
+      "/uploads/1780404908087_629B_v3.jpg",
+      "/uploads/1780404908101_629B_v4.jpg",
+      "/uploads/1780404908118_629B_v5.jpg",
+      "/uploads/1780404908132_629B_v6.jpg"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2021
+  },
+  {
+    "id": "piscine-sainte-genevieve",
+    "title": "Sainte-Geneviève Pool Renovation",
+    "region": "quebec",
+    "meta": "Major Renovation | City of Québec (2021–2023)",
+    "description": "Complete renovation of the aquatic basin and pavilion of the Sainte-Geneviève outdoor pool in Québec City.",
+    "longDescription": "Major renovation project for the Sainte-Geneviève outdoor pool for the City of Québec. The mandate includes demolition of the existing basin and its reconstruction to new aquatic standards, as well as complete renovation of the service pavilion.\n\nThe architectural design features a 25-meter pool with variable depths, an enlarged shallow area for young children, and modernized changerooms promoting universal accessibility.",
+    "image": "/uploads/1780405241034_629A_v2.png",
+    "video": "",
+    "budget": "",
+    "currency": "CAD",
+    "tasks": [
+      "Construction document drafting",
+      "3D modeling and realistic rendering",
+      "Engineering coordination (mechanical, structural, civil)",
+      "Construction site supervision"
+    ],
+    "gallery": [
+      "/uploads/1780405241050_629A_v3.png",
+      "/uploads/1780405241065_629A_v4.png",
+      "/uploads/1780405241080_629A_v5.png",
+      "/uploads/1780405241096_629A_v6.png",
+      "/uploads/1780405241111_629A_v7.png",
+      "/uploads/1780405241188_629A_bleu.png",
+      "/uploads/1780405241157_629A_v10.png",
+      "/uploads/1780405241172_629A_v11.png"
+    ],
+    "galleryDocs": [],
+    "galleryRealisation": [],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": false,
+    "year": 2021
   },
   {
     "id": "maracana",
