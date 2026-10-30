@@ -224,21 +224,21 @@
           </div>
 
           <div class="form-group">
-            <label for="gallery">Galerie photos (Drag & Drop ou URLs)</label>
+            <label for="gallery">Galerie photos & PDF (Drag & Drop ou URLs)</label>
             <div class="upload-area" id="gallery-upload-area" style="margin-bottom: 1rem;">
-              <input type="file" id="gallery-file" accept="image/*" multiple>
-              <p class="upload-label">📸 <strong>Glisser plusieurs photos ici</strong> pour les ajouter à la galerie</p>
+              <input type="file" id="gallery-file" accept="image/*,application/pdf" multiple>
+              <p class="upload-label">📸 <strong>Cliquer ou glisser plusieurs photos / fichiers PDF ici</strong></p>
             </div>
-            <textarea id="gallery" rows="3" placeholder="/photo1.jpg&#10;/photo2.jpg"></textarea>
+            <textarea id="gallery" rows="3" placeholder="/photo1.jpg&#10;/document.pdf"></textarea>
             <div class="gallery-preview" id="gallery-preview"></div>
           </div>
           <!-- Special Rubrics Card -->
-          <div class="form-card" id="special-rubrics-card" style="margin-top: 2rem; background: rgba(212,175,55,0.03); border: 1px dashed rgba(212,175,55,0.2); display: none;">
-            <h3>✨ Rubriques Spéciales</h3>
-            <p class="hint" style="margin-bottom:1.5rem">Options de mise en page premium activées pour ce projet.</p>
+          <div class="form-card" id="special-rubrics-card" style="margin-top: 2rem; background: rgba(212,175,55,0.03); border: 1px dashed rgba(212,175,55,0.2);">
+            <h3>✨ Documents PDF & Rubriques Spéciales</h3>
+            <p class="hint" style="margin-bottom:1.5rem">Ajoutez ici des plans/documents PDF (lecteur CAO interactif) ou des photos de réalisation.</p>
             
-            <!-- ISSAT Specific Group -->
-            <div id="group-issat" style="display: none;">
+            <!-- ISSAT / General Docs Specific Group -->
+            <div id="group-issat">
               <div class="form-group">
                 <label for="showDistinctionBtn">🏆 Lier aux Prix & Distinctions</label>
                 <div style="display:flex; align-items:center; gap: 0.5rem;">

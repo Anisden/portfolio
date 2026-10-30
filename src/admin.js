@@ -312,15 +312,23 @@ function updateGalleryPreview(idPrefix = '') {
 
   if (!galleryInput || !previewEl) return;
   const urls = galleryInput.value.split('\n').map(s => s.trim()).filter(Boolean);
-  previewEl.innerHTML = urls.map((url, i) => `
+  previewEl.innerHTML = urls.map((url, i) => {
+    const isPdf = url.toLowerCase().endsWith('.pdf');
+    const resolved = url.startsWith('/') ? `${BASE}${url.slice(1)}` : url;
+    const shortName = decodeURIComponent(url.split('/').pop().replace(/^\d+_/, ''));
+    const mediaHtml = isPdf
+      ? `<div style="width:100%;height:62px;display:flex;flex-direction:column;align-items:center;justify-content:center;background:rgba(212,175,55,0.12);color:var(--accent);font-size:0.65rem;padding:2px;text-align:center;overflow:hidden;" title="${shortName}"><span style="font-size:1.3rem;line-height:1;">📄</span><span style="max-width:100%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">${shortName}</span></div>`
+      : `<img src="${resolved}" alt="Photo ${i+1}" title="${shortName}" onerror="this.outerHTML='<div style=\\'width:100%;height:62px;display:flex;align-items:center;justify-content:center;font-size:0.65rem;color:#aaa;text-align:center;padding:2px;\\'>🖼️ Fichier</div>'">`;
+    return `
     <div class="gallery-thumb">
-      <img src="${url}" alt="Photo ${i+1}" onerror="this.parentElement.style.display='none'">
+      ${mediaHtml}
       <div class="thumb-controls">
-        <button class="thumb-btn btn-move" onclick="moveGalleryItem(${i}, -1, '${idPrefix}')" title="Reculer" ${i === 0 ? 'disabled style="opacity:0.3;cursor:default;"' : ''}>◀</button>
-        <button class="thumb-btn btn-move" onclick="moveGalleryItem(${i}, 1, '${idPrefix}')" title="Avancer" ${i === urls.length - 1 ? 'disabled style="opacity:0.3;cursor:default;"' : ''}>▶</button>
-        <button class="thumb-btn btn-remove" onclick="removeGalleryItem(${i}, '${idPrefix}')" title="Supprimer">✕</button>
+        <button type="button" class="thumb-btn btn-move" onclick="moveGalleryItem(${i}, -1, '${idPrefix}')" title="Reculer" ${i === 0 ? 'disabled style="opacity:0.3;cursor:default;"' : ''}>◀</button>
+        <button type="button" class="thumb-btn btn-move" onclick="moveGalleryItem(${i}, 1, '${idPrefix}')" title="Avancer" ${i === urls.length - 1 ? 'disabled style="opacity:0.3;cursor:default;"' : ''}>▶</button>
+        <button type="button" class="thumb-btn btn-remove" onclick="removeGalleryItem(${i}, '${idPrefix}')" title="Supprimer">✕</button>
       </div>
-    </div>`).join('');
+    </div>`;
+  }).join('');
 }
 
 window.moveGalleryItem = (index, direction, idPrefix = '') => {
@@ -456,12 +464,12 @@ function resetProjectForm() {
     if (el) el.value = '';
   });
   
-  // Hide special sections
+  // Keep PDF / Docs section visible by default
   const specialCard = document.getElementById('special-rubrics-card');
   const groupIssat = document.getElementById('group-issat');
   const groupBeforeAfter = document.getElementById('group-before-after');
-  if (specialCard) specialCard.style.display = 'none';
-  if (groupIssat) groupIssat.style.display = 'none';
+  if (specialCard) specialCard.style.display = 'block';
+  if (groupIssat) groupIssat.style.display = 'block';
   if (groupBeforeAfter) groupBeforeAfter.style.display = 'none';
 
   document.getElementById('showDistinctionBtn').checked = false;
