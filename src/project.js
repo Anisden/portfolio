@@ -93,8 +93,8 @@ async function init() {
     return;
   }
 
-  let res = await fetch(`${BASE}projects_${currentLang}.json`);
-  if (!res.ok) res = await fetch(`${BASE}projects.json`);
+  let res = await fetch(`${BASE}projects_${currentLang}.json?t=${Date.now()}`, { cache: 'no-store' });
+  if (!res.ok) res = await fetch(`${BASE}projects.json?t=${Date.now()}`, { cache: 'no-store' });
   if (!res.ok) return;
   const projects = await res.json();
 

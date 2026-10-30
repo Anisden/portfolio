@@ -94,8 +94,8 @@ async function init() {
   const yearEl = document.getElementById('year');
   if (yearEl) yearEl.textContent = new Date().getFullYear();
 
-  let res = await fetch(`${BASE}content_${currentLang}.json`);
-  if (!res.ok) res = await fetch(`${BASE}content.json`);
+  let res = await fetch(`${BASE}content_${currentLang}.json?t=${Date.now()}`, { cache: 'no-store' });
+  if (!res.ok) res = await fetch(`${BASE}content.json?t=${Date.now()}`, { cache: 'no-store' });
   if (!res.ok) return;
   const content = await res.json();
 

@@ -52,7 +52,7 @@ async function switchLanguage(lang) {
   
   // Load UI translations
   try {
-    const res = await fetch(`${BASE}ui_translations.json`);
+    const res = await fetch(`${BASE}ui_translations.json?t=${Date.now()}`, { cache: 'no-store' });
     if (res.ok) {
       uiTranslations = await res.json();
       translateUI();
@@ -358,8 +358,9 @@ function createProjectCard(project) {
 
 async function loadProjects() {
   try {
-    let res = await fetch(`${BASE}projects_${currentLang}.json`);
-    if (!res.ok) res = await fetch(`${BASE}projects.json`);
+    const cb = `?t=${Date.now()}`;
+    let res = await fetch(`${BASE}projects_${currentLang}.json${cb}`, { cache: 'no-store' });
+    if (!res.ok) res = await fetch(`${BASE}projects.json${cb}`, { cache: 'no-store' });
     if (!res.ok) return;
     allProjects = await res.json();
     
@@ -470,8 +471,9 @@ function setupFilters() {
 // Load General Content
 async function loadContent() {
   try {
-    let res = await fetch(`${BASE}content_${currentLang}.json`);
-    if (!res.ok) res = await fetch(`${BASE}content.json`);
+    const cb = `?t=${Date.now()}`;
+    let res = await fetch(`${BASE}content_${currentLang}.json${cb}`, { cache: 'no-store' });
+    if (!res.ok) res = await fetch(`${BASE}content.json${cb}`, { cache: 'no-store' });
     if (!res.ok) return;
     const c = await res.json();
 
