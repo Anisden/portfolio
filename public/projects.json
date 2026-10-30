@@ -682,7 +682,9 @@
     "currency": "TND",
     "tasks": [],
     "gallery": [],
-    "galleryDocs": [],
+    "galleryDocs": [
+      "/uploads/Rapport Hôtel Yakouren taille réduite.pdf"
+    ],
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
