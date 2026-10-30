@@ -32,44 +32,74 @@ export default defineConfig({
 });
 
 function adminApiMiddleware(req, res, next) {
+  // Allow CORS for local admin requests from any origin/port
+  res.setHeader('Access-Control-Allow-Origin', '*');
+  res.setHeader('Access-Control-Allow-Methods', 'GET, POST, OPTIONS');
+  res.setHeader('Access-Control-Allow-Headers', 'Content-Type, x-lang, x-filename');
+
+  if (req.method === 'OPTIONS') {
+    res.statusCode = 204;
+    res.end();
+    return;
+  }
+
+  const urlPath = (req.url || '').split('?')[0].replace(/^\/portfolio/, '');
   const lang = req.headers['x-lang'] || '';
   const suffix = lang && lang !== 'fr' ? `_${lang}` : '';
 
-  if (req.url === '/api/save-projects' && req.method === 'POST') {
+  if (urlPath === '/api/save-projects' && req.method === 'POST') {
     let body = '';
     req.on('data', chunk => body += chunk.toString());
     req.on('end', () => {
-      fs.writeFileSync(path.resolve(`public/projects${suffix}.json`), body);
-      if (!suffix) {
-        fs.writeFileSync(path.resolve('public/projects_fr.json'), body);
+      try {
+        fs.writeFileSync(path.resolve(__dirname, `public/projects${suffix}.json`), body, 'utf8');
+        if (!suffix) {
+          fs.writeFileSync(path.resolve(__dirname, 'public/projects_fr.json'), body, 'utf8');
+        }
+        res.statusCode = 200;
+        res.end('Saved');
+      } catch (err) {
+        console.error('Error saving projects:', err);
+        res.statusCode = 500;
+        res.end(err.message);
       }
-      res.statusCode = 200;
-      res.end('Saved');
     });
-  } else if (req.url === '/api/save-content' && req.method === 'POST') {
+  } else if (urlPath === '/api/save-content' && req.method === 'POST') {
     let body = '';
     req.on('data', chunk => body += chunk.toString());
     req.on('end', () => {
-      fs.writeFileSync(path.resolve(`public/content${suffix}.json`), body);
-      if (!suffix) {
-        fs.writeFileSync(path.resolve('public/content_fr.json'), body);
+      try {
+        fs.writeFileSync(path.resolve(__dirname, `public/content${suffix}.json`), body, 'utf8');
+        if (!suffix) {
+          fs.writeFileSync(path.resolve(__dirname, 'public/content_fr.json'), body, 'utf8');
+        }
+        res.statusCode = 200;
+        res.end('Saved');
+      } catch (err) {
+        console.error('Error saving content:', err);
+        res.statusCode = 500;
+        res.end(err.message);
       }
-      res.statusCode = 200;
-      res.end('Saved');
     });
-  } else if (req.url === '/api/upload-image' && req.method === 'POST') {
-    const rawHeader = req.headers['x-filename'] || '';
-    const filename = rawHeader ? decodeURIComponent(rawHeader) : `upload_${Date.now()}.jpg`;
-    const uploadDir = path.resolve('public/uploads');
-    if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
-    
-    const filePath = path.join(uploadDir, filename);
-    const fileStream = fs.createWriteStream(filePath);
-    req.pipe(fileStream);
-    req.on('end', () => {
-      res.statusCode = 200;
-      res.end(`/uploads/${filename}`);
-    });
+  } else if (urlPath === '/api/upload-image' && req.method === 'POST') {
+    try {
+      const rawHeader = req.headers['x-filename'] || '';
+      const filename = rawHeader ? decodeURIComponent(rawHeader) : `upload_${Date.now()}.jpg`;
+      const uploadDir = path.resolve(__dirname, 'public/uploads');
+      if (!fs.existsSync(uploadDir)) fs.mkdirSync(uploadDir, { recursive: true });
+      
+      const filePath = path.join(uploadDir, filename);
+      const fileStream = fs.createWriteStream(filePath);
+      req.pipe(fileStream);
+      req.on('end', () => {
+        res.statusCode = 200;
+        res.end(`/uploads/${filename}`);
+      });
+    } catch (err) {
+      console.error('Error uploading image:', err);
+      res.statusCode = 500;
+      res.end(err.message);
+    }
   } else {
     next();
   }

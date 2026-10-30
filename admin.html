@@ -116,7 +116,31 @@
             <option value="ar">العربية 🇸🇦</option>
           </select>
         </div>
+        <button class="btn btn-secondary btn-sm" id="gh-token-btn" style="border-color: rgba(212,175,55,.4); background: rgba(212,175,55,.08); color: var(--accent);">🔑 Token GitHub</button>
         <button class="btn btn-secondary btn-sm" id="logout-btn" style="border-color: rgba(255,255,255,.15); background: rgba(255,255,255,.02);">🔒 Déconnexion</button>
+      </div>
+    </div>
+
+    <!-- GitHub Token Modal -->
+    <div id="gh-modal" style="display:none; position:fixed; inset:0; background:rgba(0,0,0,0.85); z-index:10001; align-items:center; justify-content:center; padding:1.5rem;">
+      <div class="form-card" style="max-width:500px; width:100%; margin:0; background:#111; border:1px solid rgba(212,175,55,0.35);">
+        <h3>🔑 Connexion directe à GitHub</h3>
+        <p style="color:#bbb; font-size:0.88rem; line-height:1.5; margin-bottom:1rem;">
+          Pour enregistrer vos modifications directement sur GitHub (sans serveur local), entrez une seule fois votre <strong>Personal Access Token (PAT)</strong> GitHub :
+        </p>
+        <ol style="color:#aaa; font-size:0.82rem; line-height:1.6; margin:0 0 1rem 1.2rem;">
+          <li><a href="https://github.com/settings/tokens/new?description=Portfolio+Admin&scopes=repo" target="_blank" style="color:var(--accent); text-decoration:underline;">Cliquez ici pour générer un token sur GitHub</a> (la case <code>repo</code> est déjà cochée).</li>
+          <li>Tout en bas de la page GitHub, cliquez sur <strong>Generate token</strong>.</li>
+          <li>Copiez le token (commençant par <code>ghp_...</code>) et collez-le ci-dessous :</li>
+        </ol>
+        <div class="form-group">
+          <label for="gh-token-input">Token GitHub</label>
+          <input type="password" id="gh-token-input" placeholder="ghp_xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx" />
+        </div>
+        <div class="form-actions" style="justify-content:flex-end; margin-top:1.2rem;">
+          <button class="btn btn-secondary btn-sm" id="gh-modal-cancel">Annuler</button>
+          <button class="btn btn-primary btn-sm" id="gh-modal-save">✅ Enregistrer le token</button>
+        </div>
       </div>
     </div>
 

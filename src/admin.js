@@ -20,17 +20,205 @@ document.querySelectorAll('.tab-btn').forEach(btn => {
   });
 });
 
+// ===== GitHub Direct API Configuration =====
+const GH_OWNER = 'Anisden';
+const GH_REPO = 'portfolio';
+const GH_BRANCH = 'main';
+const GH_TOKEN_KEY = 'portfolio_gh_token';
+
+function getGhToken() {
+  return (localStorage.getItem(GH_TOKEN_KEY) || '').trim();
+}
+
+function updateGhTokenButtonUI() {
+  const btn = document.getElementById('gh-token-btn');
+  if (!btn) return;
+  if (getGhToken()) {
+    btn.textContent = '🟢 GitHub connecté';
+    btn.style.borderColor = 'rgba(46, 204, 113, 0.5)';
+    btn.style.color = '#2ecc71';
+  } else {
+    btn.textContent = '🔑 Connecter GitHub';
+    btn.style.borderColor = 'rgba(212, 175, 55, 0.4)';
+    btn.style.color = 'var(--accent)';
+  }
+}
+
+function promptGhToken() {
+  return new Promise((resolve) => {
+    const modal = document.getElementById('gh-modal');
+    const input = document.getElementById('gh-token-input');
+    const saveBtn = document.getElementById('gh-modal-save');
+    const cancelBtn = document.getElementById('gh-modal-cancel');
+    if (!modal || !input || !saveBtn || !cancelBtn) {
+      resolve('');
+      return;
+    }
+    input.value = getGhToken();
+    modal.style.display = 'flex';
+    input.focus();
+
+    const cleanup = () => {
+      modal.style.display = 'none';
+      saveBtn.removeEventListener('click', onSave);
+      cancelBtn.removeEventListener('click', onCancel);
+    };
+    const onSave = () => {
+      const val = input.value.trim();
+      if (val) {
+        localStorage.setItem(GH_TOKEN_KEY, val);
+      } else {
+        localStorage.removeItem(GH_TOKEN_KEY);
+      }
+      updateGhTokenButtonUI();
+      cleanup();
+      resolve(val);
+    };
+    const onCancel = () => {
+      cleanup();
+      resolve('');
+    };
+    saveBtn.addEventListener('click', onSave);
+    cancelBtn.addEventListener('click', onCancel);
+  });
+}
+
+function utf8ToBase64(str) {
+  const bytes = new TextEncoder().encode(str);
+  let binary = '';
+  const chunkSize = 0x8000;
+  for (let i = 0; i < bytes.length; i += chunkSize) {
+    binary += String.fromCharCode(...bytes.subarray(i, i + chunkSize));
+  }
+  return btoa(binary);
+}
+
+function base64ToUtf8(b64) {
+  const binary = atob(b64.replace(/\s/g, ''));
+  const bytes = new Uint8Array(binary.length);
+  for (let i = 0; i < binary.length; i++) {
+    bytes[i] = binary.charCodeAt(i);
+  }
+  return new TextDecoder().decode(bytes);
+}
+
+function fileToBase64(file) {
+  return new Promise((resolve, reject) => {
+    const reader = new FileReader();
+    reader.onload = () => {
+      const result = String(reader.result || '');
+      const commaIdx = result.indexOf(',');
+      resolve(commaIdx >= 0 ? result.slice(commaIdx + 1) : result);
+    };
+    reader.onerror = reject;
+    reader.readAsDataURL(file);
+  });
+}
+
+async function ghGetFileJson(repoPath) {
+  const token = getGhToken();
+  if (!token) return null;
+  try {
+    const res = await fetch(`https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${repoPath}?ref=${GH_BRANCH}`, {
+      headers: {
+        'Authorization': `Bearer ${token}`,
+        'Accept': 'application/vnd.github+json'
+      },
+      cache: 'no-store'
+    });
+    if (!res.ok) return null;
+    const data = await res.json();
+    if (data && data.content) {
+      return JSON.parse(base64ToUtf8(data.content));
+    }
+  } catch (e) {
+    console.warn('GitHub read fallback:', e);
+  }
+  return null;
+}
+
+async function ghPutFile(repoPath, base64Content, commitMessage) {
+  let token = getGhToken();
+  if (!token) {
+    token = await promptGhToken();
+    if (!token) return false;
+  }
+
+  const apiUrl = `https://api.github.com/repos/${GH_OWNER}/${GH_REPO}/contents/${repoPath}`;
+  const headers = {
+    'Authorization': `Bearer ${token}`,
+    'Accept': 'application/vnd.github+json',
+    'Content-Type': 'application/json'
+  };
+
+  // Get current file SHA if it exists
+  let sha = undefined;
+  const getRes = await fetch(`${apiUrl}?ref=${GH_BRANCH}`, { headers, cache: 'no-store' });
+  if (getRes.status === 401 || getRes.status === 403) {
+    toast('❌ Token GitHub invalide ou expiré. Veuillez le reconfigurer.');
+    localStorage.removeItem(GH_TOKEN_KEY);
+    updateGhTokenButtonUI();
+    return false;
+  }
+  if (getRes.ok) {
+    const existing = await getRes.json();
+    sha = existing.sha;
+  }
+
+  const putRes = await fetch(apiUrl, {
+    method: 'PUT',
+    headers,
+    body: JSON.stringify({
+      message: commitMessage,
+      content: base64Content,
+      ...(sha ? { sha } : {}),
+      branch: GH_BRANCH
+    })
+  });
+
+  if (!putRes.ok) {
+    const errText = await putRes.text();
+    console.error('GitHub PUT error:', errText);
+    return false;
+  }
+  return true;
+}
+
+// ===== API Helper (local Vite dev server if running on localhost) =====
+async function apiFetch(endpoint, options) {
+  if (window.location.hostname !== 'localhost' && window.location.hostname !== '127.0.0.1') {
+    return null;
+  }
+  const cleanEndpoint = endpoint.startsWith('/') ? endpoint.slice(1) : endpoint;
+  const candidates = [`/${cleanEndpoint}`, `${BASE}${cleanEndpoint}`];
+  for (const url of [...new Set(candidates)]) {
+    try {
+      const res = await fetch(url, options);
+      if (res.ok) return res;
+    } catch (_) {}
+  }
+  return null;
+}
+
 // ===== Image Upload Preview =====
 async function uploadFile(file) {
   const filename = `${Date.now()}_${file.name.replace(/\s+/g, '_')}`;
   try {
-    const res = await fetch('/api/upload-image', {
+    // 1. Try local server if on localhost
+    const res = await apiFetch('/api/upload-image', {
       method: 'POST',
       headers: { 'x-filename': encodeURIComponent(filename) },
       body: file
     });
-    if (res.ok) {
+    if (res && res.ok) {
       return await res.text();
+    }
+
+    // 2. Otherwise upload directly to GitHub repository
+    const base64 = await fileToBase64(file);
+    const ok = await ghPutFile(`public/uploads/${filename}`, base64, `Upload ${filename} via Admin`);
+    if (ok) {
+      return `/uploads/${filename}`;
     }
   } catch (e) {
     console.error('Upload error:', e);
@@ -169,12 +357,17 @@ let projects = [];
 async function initProjects() {
   try {
     const filename = editingLang === 'fr' ? 'projects.json' : `projects_${editingLang}.json`;
-    const res = await fetch(`${BASE}${filename}`);
-    if (res.ok) {
-      projects = await res.json();
+    const ghData = await ghGetFileJson(`public/${filename}`);
+    if (ghData) {
+      projects = ghData;
     } else {
-      const fallbackRes = await fetch(`${BASE}projects.json`);
-      if (fallbackRes.ok) projects = await fallbackRes.json();
+      const res = await fetch(`${BASE}${filename}?t=${Date.now()}`, { cache: 'no-store' });
+      if (res.ok) {
+        projects = await res.json();
+      } else {
+        const fallbackRes = await fetch(`${BASE}projects.json?t=${Date.now()}`, { cache: 'no-store' });
+        if (fallbackRes.ok) projects = await fallbackRes.json();
+      }
     }
     renderProjectList();
   } catch (e) { console.error(e); }
@@ -335,32 +528,40 @@ document.getElementById('add-btn')?.addEventListener('click', () => {
 
 document.getElementById('new-btn')?.addEventListener('click', resetProjectForm);
 
-// Helper to save projects to disk
+// Helper to save projects to disk / GitHub
 async function saveProjectsToServer() {
   const data = JSON.stringify(projects, null, 2);
+  const suffix = editingLang && editingLang !== 'fr' ? `_${editingLang}` : '';
   try {
-    const res = await fetch('/api/save-projects', {
+    // 1. Local Vite dev server if running on localhost
+    const res = await apiFetch('/api/save-projects', {
       method: 'POST',
       headers: { 'x-lang': editingLang },
       body: data
     });
-    if (res.ok) { 
+    if (res && res.ok) { 
       toast('✅ Projets enregistrés et sauvegardés !'); 
+      return true;
+    }
+
+    // 2. Direct commit to GitHub repository
+    toast('⏳ Enregistrement sur GitHub en cours...');
+    const base64 = utf8ToBase64(data);
+    const ok = await ghPutFile(`public/projects${suffix}.json`, base64, `Update projects${suffix}.json via Admin`);
+    if (ok) {
+      if (!suffix) {
+        await ghPutFile('public/projects_fr.json', base64, 'Sync projects_fr.json via Admin');
+      }
+      toast('✅ Enregistré directement sur GitHub ! (Site mis à jour dans ~45s)', 5000);
       return true;
     }
   } catch (e) { console.error('Save error:', e); }
   
-  // Fallback if API fails
-  const a = document.createElement('a');
-  a.href = 'data:application/json;charset=utf-8,' + encodeURIComponent(data);
-  const suffix = editingLang && editingLang !== 'fr' ? `_${editingLang}` : '';
-  a.download = `projects${suffix}.json`;
-  a.click();
-  toast('📥 Serveur indisponible. Fichier téléchargé, remplacez-le dans /public/.');
+  toast('❌ Enregistrement annulé ou échoué. Vérifiez votre Token GitHub.');
   return false;
 }
 
-// Helper to save content to disk
+// Helper to save content to disk / GitHub
 async function saveContentToServer() {
   // Update generalContent object from form fields
   generalContent = {
@@ -378,30 +579,37 @@ async function saveContentToServer() {
   };
 
   const data = JSON.stringify(generalContent, null, 2);
+  const suffix = editingLang && editingLang !== 'fr' ? `_${editingLang}` : '';
   try {
-    const res = await fetch('/api/save-content', {
+    // 1. Local Vite dev server if running on localhost
+    const res = await apiFetch('/api/save-content', {
       method: 'POST',
       headers: { 'x-lang': editingLang },
       body: data
     });
-    if (res.ok) { 
+    if (res && res.ok) { 
       toast('✅ Contenu enregistré et sauvegardé !'); 
+      return true;
+    }
+
+    // 2. Direct commit to GitHub repository
+    toast('⏳ Enregistrement sur GitHub en cours...');
+    const base64 = utf8ToBase64(data);
+    const ok = await ghPutFile(`public/content${suffix}.json`, base64, `Update content${suffix}.json via Admin`);
+    if (ok) {
+      if (!suffix) {
+        await ghPutFile('public/content_fr.json', base64, 'Sync content_fr.json via Admin');
+      }
+      toast('✅ Enregistré directement sur GitHub ! (Site mis à jour dans ~45s)', 5000);
       return true;
     }
   } catch (e) { console.error('Save error:', e); }
   
-  // Fallback
-  const a = document.createElement('a');
-  a.href = 'data:application/json;charset=utf-8,' + encodeURIComponent(data);
-  const suffix = editingLang && editingLang !== 'fr' ? `_${editingLang}` : '';
-  a.download = `content${suffix}.json`;
-  a.click();
-  toast('📥 Serveur indisponible. Fichier téléchargé, remplacez-le dans /public/.');
+  toast('❌ Enregistrement annulé ou échoué. Vérifiez votre Token GitHub.');
   return false;
 }
 
 document.getElementById('export-btn')?.addEventListener('click', saveProjectsToServer);
-document.getElementById('export-content-btn')?.addEventListener('click', saveContentToServer);
 document.getElementById('save-distinctions-btn')?.addEventListener('click', saveContentToServer);
 
 // Gallery & Video live preview
@@ -416,12 +624,17 @@ let generalContent = {};
 async function initContent() {
   try {
     const filename = editingLang === 'fr' ? 'content.json' : `content_${editingLang}.json`;
-    const res = await fetch(`${BASE}${filename}`);
-    if (res.ok) {
-      generalContent = await res.json();
+    const ghData = await ghGetFileJson(`public/${filename}`);
+    if (ghData) {
+      generalContent = ghData;
     } else {
-      const fallbackRes = await fetch(`${BASE}content.json`);
-      if (fallbackRes.ok) generalContent = await fallbackRes.json();
+      const res = await fetch(`${BASE}${filename}?t=${Date.now()}`, { cache: 'no-store' });
+      if (res.ok) {
+        generalContent = await res.json();
+      } else {
+        const fallbackRes = await fetch(`${BASE}content.json?t=${Date.now()}`, { cache: 'no-store' });
+        if (fallbackRes.ok) generalContent = await fallbackRes.json();
+      }
     }
     
     document.getElementById('c-heroSubtitle').value = generalContent.heroSubtitle || '';
@@ -805,6 +1018,16 @@ async function init() {
     });
   }
   
+  // Bind GitHub token button
+  updateGhTokenButtonUI();
+  document.getElementById('gh-token-btn')?.addEventListener('click', async () => {
+    const saved = await promptGhToken();
+    if (saved) {
+      toast('🔑 Token GitHub enregistré !');
+      await completeInit();
+    }
+  });
+
   // Bind logout button
   document.getElementById('logout-btn')?.addEventListener('click', () => {
     localStorage.removeItem(AUTH_KEY);
