@@ -18,12 +18,12 @@
     "gallery": [
       "/uploads/1779109149788_19_4_-_Photo_Pshop.png",
       "/uploads/1779109149788_29_7_-_Photo_pshop.png",
-      "/uploads/1779109177301_14-12-2023_13_-_Photo_-_Modifié.jpg",
+      "/uploads/1779109177301_14-12-2023_13_-_Photo_-_Modifie.jpg",
       "/uploads/1779109177301_14-12-2023_15_-_Photo.jpg",
       "/uploads/1779109177302_20_2_-_Photo-2.jpg",
-      "/uploads/1779109202604_2_1_-_Photo_Modifiée.jpg",
-      "/uploads/1779109202605_2_4_-_Photo_modifiée.jpg",
-      "/uploads/1779109202605_2_8_-_Photo_Modifiée.jpg",
+      "/uploads/1779109202604_2_1_-_Photo_Modifiee.jpg",
+      "/uploads/1779109202605_2_4_-_Photo_modifiee.jpg",
+      "/uploads/1779109202605_2_8_-_Photo_Modifiee.jpg",
       "/uploads/1779109202605_2_10_-_Photo.jpg"
     ],
     "galleryDocs": [],
@@ -53,9 +53,16 @@
       "Coordination",
       "Plans préliminaires"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/1779110460960_1_Photo_1_-_Day_time.jpg",
+      "/uploads/duchesnay_vue_p2.jpg",
+      "/uploads/duchesnay_vue_p3.jpg",
+      "/uploads/duchesnay_vue_p4.jpg",
+      "/uploads/duchesnay_vue_p5.jpg",
+      "/uploads/duchesnay_vue_p6.jpg"
+    ],
     "galleryDocs": [
-      "/uploads/1779112237783_DUC_Pavillon_l'Horizon_Présentation_préliminaires_40%_17-04-2025.pdf"
+      "/uploads/1779112237783_DUC_Pavillon_l_Horizon_Presentation_preliminaires_40_17-04-2025.pdf"
     ],
     "galleryRealisation": [],
     "galleryBefore": [],
@@ -147,20 +154,32 @@
       "Coordination",
       "Plans préliminaires"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/1779112358914_Ext_13_-_Photo.jpg",
+      "/uploads/1779112352856_Ext_12_-_Photo.jpg",
+      "/uploads/1779112499618_1_1_-_Preau_et_batiment_arrive_stationnement_ecole.jpg",
+      "/uploads/1779112499618_1_2_-_Preau_et_batiment_entree_CROL.jpg",
+      "/uploads/1779112499618_1_3_-_Preau_vue_espace_vert.jpg",
+      "/uploads/1779112499619_1_4_-_Batiment_Maison_de_la_famill.jpg",
+      "/uploads/1779112499619_1_7_-_Preau_patinoire.jpg",
+      "/uploads/1779112499619_1_9_-Interieur_Maison_famille_3.jpg",
+      "/uploads/1779112499620_1_10_-_Batiment_arrivee.jpg",
+      "/uploads/1779112499620_1_15_-_Interieur_Maison_famille_1.jpg",
+      "/uploads/1779112499620_1_19_-_Interieur_Maison_famille_2.jpg"
+    ],
     "galleryDocs": [
-      "/uploads/1779112449272_Wendat_bâtiment_et_patinoire_couverte_Présentation_préliminaires_66.pdf"
+      "/uploads/1779112449272_Wendat_batiment_et_patinoire_couverte_Presentation_preliminaires_66.pdf"
     ],
     "galleryRealisation": [
-      "/uploads/1779112499618_1_1_-_Préau_et_bâtiment_arrivé_stationnement_école.jpg",
-      "/uploads/1779112499618_1_2_-_Préau_et_bâtiment_entrée_CROL.jpg",
-      "/uploads/1779112499618_1_3_-_Préau_vue_espace_vert.jpg",
-      "/uploads/1779112499619_1_4_-_Bâtiment_Maison_de_la_famill.jpg",
-      "/uploads/1779112499619_1_7_-_Préau_patinoire.jpg",
-      "/uploads/1779112499619_1_9_-Intérieur_Maison_famille_3.jpg",
-      "/uploads/1779112499620_1_10_-_Bâtiment_arrivée.jpg",
-      "/uploads/1779112499620_1_15_-_Intérieur_Maison_famille_1.jpg",
-      "/uploads/1779112499620_1_19_-_Intérieur_Maison_famille_2.jpg"
+      "/uploads/1779112499618_1_1_-_Preau_et_batiment_arrive_stationnement_ecole.jpg",
+      "/uploads/1779112499618_1_2_-_Preau_et_batiment_entree_CROL.jpg",
+      "/uploads/1779112499618_1_3_-_Preau_vue_espace_vert.jpg",
+      "/uploads/1779112499619_1_4_-_Batiment_Maison_de_la_famill.jpg",
+      "/uploads/1779112499619_1_7_-_Preau_patinoire.jpg",
+      "/uploads/1779112499619_1_9_-Interieur_Maison_famille_3.jpg",
+      "/uploads/1779112499620_1_10_-_Batiment_arrivee.jpg",
+      "/uploads/1779112499620_1_15_-_Interieur_Maison_famille_1.jpg",
+      "/uploads/1779112499620_1_19_-_Interieur_Maison_famille_2.jpg"
     ],
     "galleryBefore": [],
     "galleryAfter": [],
@@ -237,7 +256,7 @@
     "meta": "Réfection Majeure | Ville de Lévis (2023)",
     "description": "La rénovation du Centre Raymond-Blais et de la bibliothèque Saint-David a permis de moderniser et de dynamiser ces lieux centraux pour la communauté de Lévis.",
     "longDescription": "Réfection complète de l’enveloppe extérieure et de la toiture.\nAgrandissement avec hall d’entrée et ascenseur favorisant l’accessibilité universelle.\nReconfiguration des circulations intérieures pour une meilleure fluidité.\nMise à neuf des salles multifonctionnelles, de la bibliothèque et du centre d’archives.\nAjout d’un mobilier contemporain et d’espaces adaptés aux tout-petits dans la bibliothèque.\nCe réaménagement offre désormais des espaces lumineux, accueillants et polyvalents, propices aux loisirs, à la culture et au bien-être de la collectivité.",
-    "image": "/uploads/1779765405613_1_10_-_Photo_(pour_affiche_VL)_1408x628_px.jpg",
+    "image": "/uploads/1779765405613_1_10_-_Photo_pour_affiche_VL_1408x628_px.jpg",
     "video": "",
     "budget": "4 340 000",
     "currency": "CAD",
@@ -277,7 +296,7 @@
     "meta": "Agrandissement | Ville de Saint-Anselme (2023)",
     "description": "Agrandissement de l'aréna municipal et ajout d'un nouvel hôtel de ville.",
     "longDescription": "Étude d'implantation et de faisabilité complexe pour l'agrandissement de l'aréna municipal de Saint-Anselme combiné à la construction d'un nouvel hôtel de ville, optimisant les services municipaux et sportifs.",
-    "image": "/uploads/1779766162404_Façade_arèna.jpg",
+    "image": "/uploads/arena_st_anselme_realiste.jpg",
     "video": "",
     "budget": "22 755 000",
     "currency": "CAD",
@@ -288,7 +307,13 @@
       "Modélisation et rendu 3D",
       "Rédaction de l'étude"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/arena_st_anselme_realiste.jpg",
+      "/uploads/arena_st_anselme_3d_p1.jpg",
+      "/uploads/arena_st_anselme_3d_p2.jpg",
+      "/uploads/arena_st_anselme_3d_p3.jpg",
+      "/uploads/1779766162404_Facade_arena.jpg"
+    ],
     "galleryDocs": [
       "/uploads/1779766366918_Annexe_1A-Cahier_des_plans.pdf",
       "/uploads/1779766366919_Annexe_1B-vues_3D.pdf"
@@ -306,7 +331,7 @@
     "meta": "Pavillons de Services | Ville de Québec (2023)",
     "description": "Implantation de patinoires couvertes et conception d'un pavillon de services type pour six parcs.",
     "longDescription": "Étude de faisabilité et programme fonctionnel et technique pour l'implantation de patinoires réfrigérées couvertes réparties dans six (6) parcs de la Ville de Québec, incluant la conception architecturale d'un pavillon de services type.",
-    "image": "/uploads/1779112613712_15-06-2023Hiver_7_-_Int_préau_3.jpg",
+    "image": "/uploads/1779112613712_15-06-2023Hiver_7_-_Int_preau_3.jpg",
     "video": "",
     "budget": "",
     "currency": "CAD",
@@ -317,16 +342,16 @@
       "Modélisation et rendu 3D"
     ],
     "gallery": [
-      "/uploads/1779112641443_13-06-2023_1_-_Extérieur1.jpg",
-      "/uploads/1779112641444_13-06-2023_5_-_Intérieur1.jpg",
+      "/uploads/1779112641443_13-06-2023_1_-_Exterieur1.jpg",
+      "/uploads/1779112641444_13-06-2023_5_-_Interieur1.jpg",
       "/uploads/1779112641444_13-06-2023_13_-_Ext_pavillon_2.jpg",
       "/uploads/1779112641444_13-06-2023_14_-_Int_pavillon_1.jpg",
       "/uploads/1779112641445_13-06-2023_16_-_ext_pavillon_1.jpg",
-      "/uploads/1779112641445_15-06-2023ÉTÉ_10_-_Int_préau_2.jpg",
-      "/uploads/1779112641445_15-06-2023Hiver_7_-_Int_préau_3.jpg"
+      "/uploads/1779112641445_15-06-2023ETE_10_-_Int_preau_2.jpg",
+      "/uploads/1779112641445_15-06-2023Hiver_7_-_Int_preau_3.jpg"
     ],
     "galleryDocs": [
-      "/uploads/1779113499785_Étude_de_faisabilité_6_parcs_Remise_90%.pdf"
+      "/uploads/1779113499785_Etude_de_faisabilite_6_parcs_Remise_90.pdf"
     ],
     "galleryRealisation": [],
     "galleryBefore": [],
@@ -375,9 +400,18 @@
     "meta": "Réfection Majeure | Ville de Québec (2022)",
     "description": "Étude de faisabilité pour la réfection majeure du centre communautaire, du bassin aquatique et des vestiaires.",
     "longDescription": "Étude de faisabilité complète visant la réfection et la modernisation du Centre Communautaire Ferland à Québec, intégrant la mise aux normes du bassin aquatique et la restructuration des vestiaires.",
-    "image": "",
+    "image": "/uploads/ferland_entree_realiste.jpg",
     "video": "",
-    "gallery": [],
+    "gallery": [
+      "/uploads/ferland_entree_realiste.jpg",
+      "/uploads/ferland_piscine_realiste.jpg",
+      "/uploads/ferland_bassin_1.jpg",
+      "/uploads/ferland_bassin_2.jpg",
+      "/uploads/ferland_murale.jpg",
+      "/uploads/ferland_facade_se.jpg",
+      "/uploads/ferland_entree_orig.jpg",
+      "/uploads/ferland_piscine_orig.jpg"
+    ],
     "galleryDocs": [],
     "galleryRealisation": [],
     "budget": "21 400 000",
@@ -486,7 +520,7 @@
     "meta": "Réfection majeure | Ville de Québec (2021–2023)",
     "description": "Réfection complète du bassin aquatique et du pavillon de la piscine Sainte-Geneviève à Québec, incluant la démolition et la reconstruction.",
     "longDescription": "Projet de réfection majeure de la piscine extérieure Sainte-Geneviève pour la Ville de Québec. Le mandat comprend la démolition du bassin existant et sa reconstruction aux nouvelles normes aquatiques, ainsi que la réfection complète du pavillon de services.\n\nLa conception architecturale propose un bassin de 25 mètres avec des profondeurs variables, une zone peu profonde élargie pour les jeunes enfants, et des vestiaires modernisés favorisant l'accessibilité universelle. Le projet s'inscrit dans le programme de réfection des infrastructures aquatiques de la Ville de Québec.",
-    "image": "/uploads/1780406845725_Ste-Geneviève_rendu_11.png",
+    "image": "/uploads/1780406845725_Ste-Genevieve_rendu_11.png",
     "video": "",
     "budget": "",
     "currency": "CAD",
@@ -617,9 +651,16 @@
       "Propositions d'aménagement.",
       "Avant-projet et estimation sommaire."
     ],
-    "gallery": [],
+    "gallery": [
+      "/residence.png",
+      "/uploads/residence_planche_p2.jpg",
+      "/uploads/residence_planche_p3.jpg",
+      "/uploads/residence_planche_p4.jpg",
+      "/uploads/residence_planche_p5.jpg",
+      "/uploads/residence_planche_p6.jpg"
+    ],
     "galleryDocs": [
-      "/uploads/1779025633875_Résidence_balnéaire_privée.pdf"
+      "/uploads/1779025633875_Residence_balneaire_privee.pdf"
     ],
     "galleryRealisation": [],
     "galleryBefore": [],
@@ -646,14 +687,14 @@
       "Suivi de réalisation"
     ],
     "gallery": [
-      "/uploads/1779023922977_2_(2).jpg",
-      "/uploads/1779023922978_4_(2).jpg",
+      "/uploads/1779023922977_2_2.jpg",
+      "/uploads/1779023922978_4_2.jpg",
       "/uploads/1779023922978_4.jpg",
       "/uploads/1779023922978_5.jpg",
-      "/uploads/1779023922978_6_(2).jpg",
+      "/uploads/1779023922978_6_2.jpg",
       "/uploads/1779023922979_6.jpg",
       "/uploads/1779023922979_7.jpg",
-      "/uploads/1779023922979_8_(2).jpg",
+      "/uploads/1779023922979_8_2.jpg",
       "/uploads/1779023922979_18297096_1675260239443195_1994295655_o.jpg",
       "/uploads/1779023922980_22860065_1911463495842571_243453468462677590_o.jpg"
     ],
@@ -676,7 +717,7 @@
     "meta": "2017",
     "description": "Conception architecturale d'un complexe hôtelier et spa thermal niché au cœur de la forêt de Yakouren.",
     "longDescription": "Étude architecturale et conception préliminaire d'un complexe hôtelier et centre de bien-être haut de gamme situé au cœur du massif forestier de Yakouren en Algérie, mettant l'accent sur l'intégration paysagère, les matériaux durables et l'organisation fonctionnelle des espaces thermaux.",
-    "image": "",
+    "image": "/uploads/yakouren_main_realiste.jpg",
     "video": "",
     "budget": "",
     "currency": "TND",
@@ -685,9 +726,18 @@
       "Intégration paysagère et choix de matériaux durables",
       "Modélisation 3D et dossier de présentation"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/yakouren_main_realiste.jpg",
+      "/uploads/yakouren_facade_realiste.jpg",
+      "/uploads/yakouren_aerial.jpg",
+      "/uploads/yakouren_facade2.jpg",
+      "/uploads/yakouren_entry.jpg",
+      "/uploads/yakouren_view1.jpg",
+      "/uploads/yakouren_facade1.jpg",
+      "/uploads/yakouren_view2.jpg"
+    ],
     "galleryDocs": [
-      "/uploads/Rapport Hôtel Yakouren taille réduite.pdf"
+      "/uploads/Rapport_Hotel_Yakouren_taille_reduite.pdf"
     ],
     "galleryRealisation": [],
     "galleryBefore": [],
@@ -787,7 +837,13 @@
       "Élaboration des planches de rendu",
       "Rédaction du rapport de présentation technique"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/1779028891643_FACADE_1.jpg",
+      "/uploads/sbeitla_3d.jpg",
+      "/uploads/sbeitla_planche1_p1.jpg",
+      "/uploads/sbeitla_planche2_p1.jpg",
+      "/uploads/sbeitla_planche3_p1.jpg"
+    ],
     "galleryDocs": [
       "/uploads/PLANCHE_1_SBEITLA.pdf",
       "/uploads/PLANCHE_2_SBEITLA.pdf",
@@ -808,7 +864,7 @@
     "meta": "Concours National d'Architecture | 2013",
     "description": "Édifice de restauration collective pour 800 étudiants à Kairouan.",
     "longDescription": "Projet conçu pour le Concours National du Restaurant Universitaire Sabra à Kairouan. Le bâtiment intègre une double hauteur majestueuse pour la salle à manger de 800 places, une cuisine de type industriel avec circuits d'approvisionnement en flux tendu séparés, et des circulations fluides adaptées à une forte affluence estudiantine.",
-    "image": "",
+    "image": "/uploads/sabra_main_realiste.jpg",
     "video": "",
     "budget": "",
     "currency": "EUR",
@@ -819,7 +875,15 @@
       "Modélisation SketchUp et intégration volumétrique",
       "Mise en plan de concours"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/sabra_main_realiste.jpg",
+      "/uploads/sabra_ext_realiste.jpg",
+      "/uploads/sabra_cam2.jpg",
+      "/uploads/sabra_cam3.jpg",
+      "/uploads/sabra_cam4.jpg",
+      "/uploads/sabra_cam5.jpg",
+      "/uploads/1779027752300_PERS_3.jpg"
+    ],
     "galleryDocs": [
       "/uploads/PLANCHE_1_SABRA.pdf",
       "/uploads/PLANCHE_2_SABRA.pdf"
@@ -857,7 +921,7 @@
       "/uploads/1779028558125_55.jpg",
       "/uploads/1779028558125_FACADE_1_NB.jpg",
       "/uploads/1779028558125_FACADE_22_NB.jpg",
-      "/uploads/1779028558125_Vue_générale.jpg"
+      "/uploads/1779028558125_Vue_generale.jpg"
     ],
     "galleryDocs": [
       "/uploads/PLANCHE_2_EL_BATTAN.pdf",
@@ -878,7 +942,7 @@
     "meta": "Concours National d'Architecture (non réalisé)",
     "description": "Conception d'un pôle d'apprentissage et de diffusion culturelle à Sidi Bouzid.",
     "longDescription": "Proposition élaborée pour le concours de la Maison de Culture Sidi Bouzid Est. Un pôle d'attraction culturel conçu pour stimuler la créativité locale grâce à des ateliers polyvalents de musique et de peinture, une bibliothèque, et une salle polyvalente de représentation.",
-    "image": "/uploads/sidi_bouzid_planche1.jpg",
+    "image": "/uploads/sidi_bouzid_main_realiste.jpg",
     "video": "",
     "budget": "",
     "currency": "EUR",
@@ -890,10 +954,14 @@
       "Calcul des surfaces et estimations budgétaires"
     ],
     "gallery": [
+      "/uploads/sidi_bouzid_main_realiste.jpg",
+      "/uploads/sidi_bouzid_persp_orig.jpg",
+      "/uploads/1779028400587_PATIO_FINAL.jpg",
+      "/uploads/1779028400588_PATION_25556558.jpg",
+      "/uploads/1779028400586_f1_sidi_bouzid.jpg",
+      "/uploads/1779028400587_f2_sidi_bouzid.jpg",
       "/uploads/sidi_bouzid_planche1.jpg",
-      "/uploads/sidi_bouzid_planche2.jpg",
-      "/uploads/1779028462216_PLANCHE_1_FINALE-page-001.jpg",
-      "/uploads/1779028462217_PLANCHE_2_FINALE-page-001.jpg"
+      "/uploads/sidi_bouzid_planche2.jpg"
     ],
     "galleryDocs": [
       "/uploads/PLANCHE_1_SIDI_BOUZID.pdf",
@@ -913,7 +981,7 @@
     "meta": "Concours de Maîtrise d'Œuvre | 2013",
     "description": "Conception d'un centre thermal et de soins (SPA) moderne à Zriba, Zaghouan.",
     "longDescription": "Proposition d'esquisse pour le Concours de Maîtrise d'Œuvre du Complexe Thermal et de Soins (SPA) de Zriba, Zaghouan. Le projet s'organise autour d'un grand bassin central, de hammams traditionnels réinterprétés et de locaux de physiothérapie, le tout magnifiquement intégré au site montagneux.",
-    "image": "/uploads/1779029532664_coupe.jpg",
+    "image": "/uploads/zriba_main_realiste.jpg",
     "video": "",
     "budget": "",
     "currency": "EUR",
@@ -925,6 +993,8 @@
       "Montage de la vidéo de présentation 3D"
     ],
     "gallery": [
+      "/uploads/zriba_main_realiste.jpg",
+      "/uploads/1779027530687_1.jpg",
       "/uploads/zriba_coupe.jpg",
       "/uploads/zriba_masse.jpg",
       "/uploads/1779029669922_2.jpg",
@@ -938,14 +1008,14 @@
       "/uploads/1779029669925_11.jpg",
       "/uploads/1779029669925_12.jpg",
       "/uploads/1779029669925_13.jpg",
-      "/uploads/1779029669925_A_(2).jpg",
+      "/uploads/1779029669925_A_2.jpg",
       "/uploads/1779029669926_COUPE01.jpg",
       "/uploads/1779029669926_COUPE02.jpg",
-      "/uploads/1779029669926_D_(2).jpg",
-      "/uploads/1779029669927_Façade_1.jpg"
+      "/uploads/1779029669926_D_2.jpg",
+      "/uploads/1779029669927_Facade_1.jpg"
     ],
     "galleryDocs": [
-      "/uploads/1779029683162_Présentation_Concours_Zriba_Spa.pdf"
+      "/uploads/1779029683162_Presentation_Concours_Zriba_Spa.pdf"
     ],
     "galleryRealisation": [],
     "galleryBefore": [],
@@ -961,7 +1031,7 @@
     "meta": "Concours National d'Architecture",
     "description": "Conception d'un hébergement collectif étudiant innovant et bioclimatique.",
     "longDescription": "Proposition d'esquisse pour le Foyer Universitaire de Borj Cedria. Conception d'une tour d'allogements collectifs et de structures circulaires favorisant la convivialité estudiantine et l'apport thermique naturel.",
-    "image": "",
+    "image": "/uploads/borj_cedria_main_realiste.jpg",
     "video": "",
     "budget": "",
     "currency": "EUR",
@@ -972,7 +1042,10 @@
       "Modélisation 3D",
       "Mise en plan"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/borj_cedria_main_realiste.jpg",
+      "/uploads/borj_cedria_plan.jpg"
+    ],
     "galleryDocs": [
       "/uploads/foyer_essai_1.pdf"
     ],
@@ -990,7 +1063,7 @@
     "meta": "Concours National d'Architecture | 2011",
     "description": "Complexe éducatif et résidentiel d'apprentissage linguistique côtier.",
     "longDescription": "Conception d'un complexe éducatif d'apprentissage linguistique intensif pour le concours national du Village des Langues de Mahdia. Intègre des locaux d'enseignement, une résidence étudiante et des espaces de loisirs adaptés au climat maritime.",
-    "image": "",
+    "image": "/uploads/mahdia_main_realiste.jpg",
     "video": "",
     "budget": "",
     "currency": "EUR",
@@ -1000,8 +1073,18 @@
       "Intégration architecturale côtière",
       "Rédaction du rapport de présentation technique"
     ],
-    "gallery": [],
-    "galleryDocs": [],
+    "gallery": [
+      "/uploads/mahdia_main_realiste.jpg",
+      "/uploads/mahdia_cour_realiste.jpg",
+      "/uploads/mahdia_rendu_aerien.jpg",
+      "/uploads/mahdia_masses.jpg",
+      "/uploads/mahdia_salles_cours.jpg",
+      "/uploads/mahdia_entree_orig.jpg",
+      "/uploads/mahdia_cour_orig.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/Rapport_Mahdia.pdf"
+    ],
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],

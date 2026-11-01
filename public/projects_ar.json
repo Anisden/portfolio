@@ -18,12 +18,12 @@
     "gallery": [
       "/uploads/1779109149788_19_4_-_Photo_Pshop.png",
       "/uploads/1779109149788_29_7_-_Photo_pshop.png",
-      "/uploads/1779109177301_14-12-2023_13_-_Photo_-_Modifié.jpg",
+      "/uploads/1779109177301_14-12-2023_13_-_Photo_-_Modifie.jpg",
       "/uploads/1779109177301_14-12-2023_15_-_Photo.jpg",
       "/uploads/1779109177302_20_2_-_Photo-2.jpg",
-      "/uploads/1779109202604_2_1_-_Photo_Modifiée.jpg",
-      "/uploads/1779109202605_2_4_-_Photo_modifiée.jpg",
-      "/uploads/1779109202605_2_8_-_Photo_Modifiée.jpg",
+      "/uploads/1779109202604_2_1_-_Photo_Modifiee.jpg",
+      "/uploads/1779109202605_2_4_-_Photo_modifiee.jpg",
+      "/uploads/1779109202605_2_8_-_Photo_Modifiee.jpg",
       "/uploads/1779109202605_2_10_-_Photo.jpg"
     ],
     "galleryDocs": [],
@@ -53,9 +53,16 @@
       "التنسيق الهندسي متعدد التخصصات",
       "إعداد حزم التصاميم والمخططات الأولية"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/1779110460960_1_Photo_1_-_Day_time.jpg",
+      "/uploads/duchesnay_vue_p2.jpg",
+      "/uploads/duchesnay_vue_p3.jpg",
+      "/uploads/duchesnay_vue_p4.jpg",
+      "/uploads/duchesnay_vue_p5.jpg",
+      "/uploads/duchesnay_vue_p6.jpg"
+    ],
     "galleryDocs": [
-      "/uploads/1779112237783_DUC_Pavillon_l'Horizon_Présentation_préliminaires_40%_17-04-2025.pdf"
+      "/uploads/1779112237783_DUC_Pavillon_l_Horizon_Presentation_preliminaires_40_17-04-2025.pdf"
     ],
     "galleryRealisation": [],
     "galleryBefore": [],
@@ -147,20 +154,32 @@
       "التنسيق الهندسي الكامل وإدارة استشاريي المشروع",
       "إعداد حزم مستندات ومخططات التصميم الأولي"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/1779112358914_Ext_13_-_Photo.jpg",
+      "/uploads/1779112352856_Ext_12_-_Photo.jpg",
+      "/uploads/1779112499618_1_1_-_Preau_et_batiment_arrive_stationnement_ecole.jpg",
+      "/uploads/1779112499618_1_2_-_Preau_et_batiment_entree_CROL.jpg",
+      "/uploads/1779112499618_1_3_-_Preau_vue_espace_vert.jpg",
+      "/uploads/1779112499619_1_4_-_Batiment_Maison_de_la_famill.jpg",
+      "/uploads/1779112499619_1_7_-_Preau_patinoire.jpg",
+      "/uploads/1779112499619_1_9_-Interieur_Maison_famille_3.jpg",
+      "/uploads/1779112499620_1_10_-_Batiment_arrivee.jpg",
+      "/uploads/1779112499620_1_15_-_Interieur_Maison_famille_1.jpg",
+      "/uploads/1779112499620_1_19_-_Interieur_Maison_famille_2.jpg"
+    ],
     "galleryDocs": [
-      "/uploads/1779112449272_Wendat_bâtiment_et_patinoire_couverte_Présentation_préliminaires_66.pdf"
+      "/uploads/1779112449272_Wendat_batiment_et_patinoire_couverte_Presentation_preliminaires_66.pdf"
     ],
     "galleryRealisation": [
-      "/uploads/1779112499618_1_1_-_Préau_et_bâtiment_arrivé_stationnement_école.jpg",
-      "/uploads/1779112499618_1_2_-_Préau_et_bâtiment_entrée_CROL.jpg",
-      "/uploads/1779112499618_1_3_-_Préau_vue_espace_vert.jpg",
-      "/uploads/1779112499619_1_4_-_Bâtiment_Maison_de_la_famill.jpg",
-      "/uploads/1779112499619_1_7_-_Préau_patinoire.jpg",
-      "/uploads/1779112499619_1_9_-Intérieur_Maison_famille_3.jpg",
-      "/uploads/1779112499620_1_10_-_Bâtiment_arrivée.jpg",
-      "/uploads/1779112499620_1_15_-_Intérieur_Maison_famille_1.jpg",
-      "/uploads/1779112499620_1_19_-_Intérieur_Maison_famille_2.jpg"
+      "/uploads/1779112499618_1_1_-_Preau_et_batiment_arrive_stationnement_ecole.jpg",
+      "/uploads/1779112499618_1_2_-_Preau_et_batiment_entree_CROL.jpg",
+      "/uploads/1779112499618_1_3_-_Preau_vue_espace_vert.jpg",
+      "/uploads/1779112499619_1_4_-_Batiment_Maison_de_la_famill.jpg",
+      "/uploads/1779112499619_1_7_-_Preau_patinoire.jpg",
+      "/uploads/1779112499619_1_9_-Interieur_Maison_famille_3.jpg",
+      "/uploads/1779112499620_1_10_-_Batiment_arrivee.jpg",
+      "/uploads/1779112499620_1_15_-_Interieur_Maison_famille_1.jpg",
+      "/uploads/1779112499620_1_19_-_Interieur_Maison_famille_2.jpg"
     ],
     "galleryBefore": [],
     "galleryAfter": [],
@@ -237,7 +256,7 @@
     "meta": "إعادة تأهيل كلي وتوسعة | بلدية ليفي (2023)",
     "description": "تحديث وتطوير مركز ريمون بليه الاجتماعي ومكتبة سان دافيد وتنشيط دورها المجتمعي.",
     "longDescription": "مشروع شامل لإعادة تأهيل الواجهات الخارجية والأسقف، وإنشاء مبنى توسعة جديد يشمل بهواً رئيسياً زجاجياً ومصعداً لتسهيل الوصول الشامل. تم إعادة تخطيط المساحات الداخلية لتحسين الحركة وتدفق الزوار، مع تجديد شامل للقاعات متعددة الاستخدامات والمكتبة والأرشيف التاريخي، وإدخال أثاث معاصر ومناطق مخصصة للأطفال، ليتحول المركز إلى واحة مجتمعية مضيئة تخدم الأنشطة الثقافية والترفيهية.",
-    "image": "/uploads/1779765405613_1_10_-_Photo_(pour_affiche_VL)_1408x628_px.jpg",
+    "image": "/uploads/1779765405613_1_10_-_Photo_pour_affiche_VL_1408x628_px.jpg",
     "video": "",
     "budget": "4,340,000",
     "currency": "CAD",
@@ -277,7 +296,7 @@
     "meta": "توسعة المنشآت البلدية | بلدية سانت أنسيلم (2023)",
     "description": "توسعة صالة الألعاب الرياضية وتصميم مبنى البلدية الجديد.",
     "longDescription": "إعداد دراسات الموقع الميدانية والجدوى الفنية لمشروع توسعة صالة التزلج الحالية لبلدية سانت أنسيلم وتكاملها مع تصميم مبنى إداري عصري جديد لبلدية سانت أنسيلم بهدف تحسين جودة الخدمات العامة والرياضية.",
-    "image": "/uploads/1779766162404_Façade_arèna.jpg",
+    "image": "/uploads/arena_st_anselme_realiste.jpg",
     "video": "",
     "budget": "22,755,000",
     "currency": "CAD",
@@ -288,7 +307,13 @@
       "النمذجة ثلاثية الأبعاد وإنتاج الرندرة التوضيحية",
       "إعداد وكتابة تقارير دراسة الجدوى المتكاملة"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/arena_st_anselme_realiste.jpg",
+      "/uploads/arena_st_anselme_3d_p1.jpg",
+      "/uploads/arena_st_anselme_3d_p2.jpg",
+      "/uploads/arena_st_anselme_3d_p3.jpg",
+      "/uploads/1779766162404_Facade_arena.jpg"
+    ],
     "galleryDocs": [
       "/uploads/1779766366918_Annexe_1A-Cahier_des_plans.pdf",
       "/uploads/1779766366919_Annexe_1B-vues_3D.pdf"
@@ -306,7 +331,7 @@
     "meta": "أجنحة الخدمات البلدية | بلدية كيبك (2023)",
     "description": "تخطيط وتنسيق دمج صالات التزلج المغطاة وتصميم مبنى خدمات نموذجي لستة حدائق عامة.",
     "longDescription": "إعداد دراسة جدوى فنية وبرنامج وظيفي ومعماري لإنشاء وتطوير هياكل حديدية مظللة ومبردة مخصصة للتزلج موزعة على ستة (6) حدائق رئيسية تابعة لبلدية كيبك، ويشمل ذلك التصميم النموذجي لمبنى خدمات وتغيير ملابس ملحق.",
-    "image": "/uploads/1779112613712_15-06-2023Hiver_7_-_Int_préau_3.jpg",
+    "image": "/uploads/1779112613712_15-06-2023Hiver_7_-_Int_preau_3.jpg",
     "video": "",
     "budget": "",
     "currency": "CAD",
@@ -317,16 +342,16 @@
       "النمذجة ثلاثية الأبعاد والرندرة التوضيحية"
     ],
     "gallery": [
-      "/uploads/1779112641443_13-06-2023_1_-_Extérieur1.jpg",
-      "/uploads/1779112641444_13-06-2023_5_-_Intérieur1.jpg",
+      "/uploads/1779112641443_13-06-2023_1_-_Exterieur1.jpg",
+      "/uploads/1779112641444_13-06-2023_5_-_Interieur1.jpg",
       "/uploads/1779112641444_13-06-2023_13_-_Ext_pavillon_2.jpg",
       "/uploads/1779112641444_13-06-2023_14_-_Int_pavillon_1.jpg",
       "/uploads/1779112641445_13-06-2023_16_-_ext_pavillon_1.jpg",
-      "/uploads/1779112641445_15-06-2023ÉTÉ_10_-_Int_préau_2.jpg",
-      "/uploads/1779112641445_15-06-2023Hiver_7_-_Int_préau_3.jpg"
+      "/uploads/1779112641445_15-06-2023ETE_10_-_Int_preau_2.jpg",
+      "/uploads/1779112641445_15-06-2023Hiver_7_-_Int_preau_3.jpg"
     ],
     "galleryDocs": [
-      "/uploads/1779113499785_Étude_de_faisabilité_6_parcs_Remise_90%.pdf"
+      "/uploads/1779113499785_Etude_de_faisabilite_6_parcs_Remise_90.pdf"
     ],
     "galleryRealisation": [],
     "galleryBefore": [],
@@ -375,9 +400,18 @@
     "meta": "إعادة تأهيل جذرية | بلدية كيبك (2022)",
     "description": "إعداد دراسة جدوى لتأهيل وتطوير المركز الاجتماعي والمجمع المائي وغرف تغيير الملابس.",
     "longDescription": "إعداد دراسة جدوى هندسية معمارية شاملة تهدف إلى تحديث مركز فيرلاند الاجتماعي في مدينة كيبك، بما في ذلك تحقيق امتثال الحوض المائي للمعايير الفنية وتطوير غرف تغيير الملابس الرياضية.",
-    "image": "",
+    "image": "/uploads/ferland_entree_realiste.jpg",
     "video": "",
-    "gallery": [],
+    "gallery": [
+      "/uploads/ferland_entree_realiste.jpg",
+      "/uploads/ferland_piscine_realiste.jpg",
+      "/uploads/ferland_bassin_1.jpg",
+      "/uploads/ferland_bassin_2.jpg",
+      "/uploads/ferland_murale.jpg",
+      "/uploads/ferland_facade_se.jpg",
+      "/uploads/ferland_entree_orig.jpg",
+      "/uploads/ferland_piscine_orig.jpg"
+    ],
     "galleryDocs": [],
     "galleryRealisation": [],
     "budget": "21,400,000",
@@ -485,7 +519,7 @@
     "meta": "ترميم شامل | مدينة كيبك (2021–2023)",
     "description": "ترميم كامل لحوض المسبح وجناح الخدمات في مسبح سانت جينيفيف الخارجي بمدينة كيبك.",
     "longDescription": "مشروع ترميم شامل لمسبح سانت جينيفيف الخارجي لمدينة كيبك. يتضمن المهمة هدم الحوض القائم وإعادة بنائه وفق معايير المسابح الجديدة، فضلاً عن الترميم الكامل لجناح الخدمات.",
-    "image": "/uploads/1780406845725_Ste-Geneviève_rendu_11.png",
+    "image": "/uploads/1780406845725_Ste-Genevieve_rendu_11.png",
     "video": "",
     "budget": "",
     "currency": "CAD",
@@ -617,9 +651,16 @@
       "إعداد مخططات التقسيم الداخلي والكتل",
       "إعداد التقديرات المالية المبدئية للمشروع"
     ],
-    "gallery": [],
+    "gallery": [
+      "/residence.png",
+      "/uploads/residence_planche_p2.jpg",
+      "/uploads/residence_planche_p3.jpg",
+      "/uploads/residence_planche_p4.jpg",
+      "/uploads/residence_planche_p5.jpg",
+      "/uploads/residence_planche_p6.jpg"
+    ],
     "galleryDocs": [
-      "/uploads/1779025633875_Résidence_balnéaire_privée.pdf"
+      "/uploads/1779025633875_Residence_balneaire_privee.pdf"
     ],
     "galleryRealisation": [],
     "galleryBefore": [],
@@ -646,14 +687,14 @@
       "الإشراف والمتابعة الميدانية للتنفيذ"
     ],
     "gallery": [
-      "/uploads/1779023922977_2_(2).jpg",
-      "/uploads/1779023922978_4_(2).jpg",
+      "/uploads/1779023922977_2_2.jpg",
+      "/uploads/1779023922978_4_2.jpg",
       "/uploads/1779023922978_4.jpg",
       "/uploads/1779023922978_5.jpg",
-      "/uploads/1779023922978_6_(2).jpg",
+      "/uploads/1779023922978_6_2.jpg",
       "/uploads/1779023922979_6.jpg",
       "/uploads/1779023922979_7.jpg",
-      "/uploads/1779023922979_8_(2).jpg",
+      "/uploads/1779023922979_8_2.jpg",
       "/uploads/1779023922979_18297096_1675260239443195_1994295655_o.jpg",
       "/uploads/1779023922980_22860065_1911463495842571_243453468462677590_o.jpg"
     ],
@@ -676,7 +717,7 @@
     "meta": "العمارة الفندقية ومرافق الاستجمام",
     "description": "مفهوم معماري لمنتجع استشفائي جبلي فاخر.",
     "longDescription": "إعداد دراسات التصميم الأولي والمفهوم المعماري لمنتجع علاجي متكامل يقع في أحضان غابات يعقوران، مع التركيز على دمج المواد البيئية المستدامة وتخطيط المسارات الحرارية والمائية.",
-    "image": "",
+    "image": "/uploads/yakouren_main_realiste.jpg",
     "video": "",
     "budget": "",
     "currency": "TND",
@@ -685,9 +726,18 @@
       "اختيار وتنسيق استخدام المواد البيئية المستدامة",
       "النمذجة ثلاثية الأبعاد للمشروع"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/yakouren_main_realiste.jpg",
+      "/uploads/yakouren_facade_realiste.jpg",
+      "/uploads/yakouren_aerial.jpg",
+      "/uploads/yakouren_facade2.jpg",
+      "/uploads/yakouren_entry.jpg",
+      "/uploads/yakouren_view1.jpg",
+      "/uploads/yakouren_facade1.jpg",
+      "/uploads/yakouren_view2.jpg"
+    ],
     "galleryDocs": [
-      "/uploads/Rapport Hôtel Yakouren taille réduite.pdf"
+      "/uploads/Rapport_Hotel_Yakouren_taille_reduite.pdf"
     ],
     "galleryRealisation": [],
     "galleryBefore": [],
@@ -787,7 +837,13 @@
       "تنسيق وتصميم لوحات العرض واللوحات التوضيحية",
       "إعداد وصياغة التقرير المعماري والهندسي للمشروع"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/1779028891643_FACADE_1.jpg",
+      "/uploads/sbeitla_3d.jpg",
+      "/uploads/sbeitla_planche1_p1.jpg",
+      "/uploads/sbeitla_planche2_p1.jpg",
+      "/uploads/sbeitla_planche3_p1.jpg"
+    ],
     "galleryDocs": [
       "/uploads/PLANCHE_1_SBEITLA.pdf",
       "/uploads/PLANCHE_2_SBEITLA.pdf",
@@ -808,7 +864,7 @@
     "meta": "المسابقة المعمارية الوطنية لتصميم مباني الخدمات الطلابية",
     "description": "صرح خدمي جماعي مصمم لتقديم خدمات التغذية لـ 800 طالب.",
     "longDescription": "التصميم المعماري المقترح للمسابقة الوطنية لتصميم مطعم صبرة الجامعي في القيروان. يدمج المشروع صالة طعام رئيسية شاهقة الارتفاع تتسع لـ 800 شخص، ومطبخاً صناعياً متكاملاً يتوافق مع معايير الجودة الصحية العالمية (HACCP)، وتصميماً انسيابياً للمداخل لتنظيم وتسهيل تدفق الطلاب في أوقات الذروة.",
-    "image": "",
+    "image": "/uploads/sabra_main_realiste.jpg",
     "video": "",
     "budget": "",
     "currency": "EUR",
@@ -819,7 +875,15 @@
       "النمذجة ثلاثية الأبعاد ودراسة كتل وتكامل المبنى",
       "إعداد وتطوير الرسومات والملفات الفنية التفصيلية للمسابقة"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/sabra_main_realiste.jpg",
+      "/uploads/sabra_ext_realiste.jpg",
+      "/uploads/sabra_cam2.jpg",
+      "/uploads/sabra_cam3.jpg",
+      "/uploads/sabra_cam4.jpg",
+      "/uploads/sabra_cam5.jpg",
+      "/uploads/1779027752300_PERS_3.jpg"
+    ],
     "galleryDocs": [
       "/uploads/PLANCHE_1_SABRA.pdf",
       "/uploads/PLANCHE_2_SABRA.pdf"
@@ -857,7 +921,7 @@
       "/uploads/1779028558125_55.jpg",
       "/uploads/1779028558125_FACADE_1_NB.jpg",
       "/uploads/1779028558125_FACADE_22_NB.jpg",
-      "/uploads/1779028558125_Vue_générale.jpg"
+      "/uploads/1779028558125_Vue_generale.jpg"
     ],
     "galleryDocs": [
       "/uploads/PLANCHE_2_EL_BATTAN.pdf",
@@ -878,7 +942,7 @@
     "meta": "المسابقة المعمارية الوطنية لتصميم المراكز الثقافية",
     "description": "تصميم مركز تعليمي وفني متطور لتنشيط الحراك الثقافي بسيدي بوزيد.",
     "longDescription": "المشروع المقترح للمسابقة المعمارية لدار الثقافة بسيدي بوزيد الشرقية. صُمم ليكون حاضنة ثقافية مميزة تشمل استوديوهات متطورة لتعليم الموسيقى والرسم، مكتبة عامة، صالات متعددة الاستخدامات، ومسرحاً تفاعلياً مصغراً.",
-    "image": "/uploads/sidi_bouzid_planche1.jpg",
+    "image": "/uploads/sidi_bouzid_main_realiste.jpg",
     "video": "",
     "budget": "",
     "currency": "EUR",
@@ -890,10 +954,14 @@
       "حساب الكميات وتطوير التقديرات المبدئية للتكلفة"
     ],
     "gallery": [
+      "/uploads/sidi_bouzid_main_realiste.jpg",
+      "/uploads/sidi_bouzid_persp_orig.jpg",
+      "/uploads/1779028400587_PATIO_FINAL.jpg",
+      "/uploads/1779028400588_PATION_25556558.jpg",
+      "/uploads/1779028400586_f1_sidi_bouzid.jpg",
+      "/uploads/1779028400587_f2_sidi_bouzid.jpg",
       "/uploads/sidi_bouzid_planche1.jpg",
-      "/uploads/sidi_bouzid_planche2.jpg",
-      "/uploads/1779028462216_PLANCHE_1_FINALE-page-001.jpg",
-      "/uploads/1779028462217_PLANCHE_2_FINALE-page-001.jpg"
+      "/uploads/sidi_bouzid_planche2.jpg"
     ],
     "galleryDocs": [
       "/uploads/PLANCHE_1_SIDI_BOUZID.pdf",
@@ -913,7 +981,7 @@
     "meta": "مسابقة تصميم منتجع علاجي ومصح سياحي فاخر",
     "description": "منتجع عصري متكامل لخدمات السبا والآبار الاستشفائية وسط الطبيعة الجبلية.",
     "longDescription": "مشروع مميز ومبتكر مقدم لمسابقة تصميم المجمع العلاجي والمنتجع السياحي الفاخر في زريبة بمدينة زغوان. يتكامل المشروع مع المحيط الجبلي الساحر، ويضم عيادات متطورة للعلاج الطبيعي، وحمامات بخار تقليدية بأسلوب معاصر، وحوضاً سباحة مركزياً مغطى بالزجاج بالكامل.",
-    "image": "/uploads/1779029532664_coupe.jpg",
+    "image": "/uploads/zriba_main_realiste.jpg",
     "video": "",
     "budget": "",
     "currency": "EUR",
@@ -925,6 +993,8 @@
       "إنتاج مقطع الفيديو التوضيحي ثلاثي الأبعاد والتحليق الافتراضي"
     ],
     "gallery": [
+      "/uploads/zriba_main_realiste.jpg",
+      "/uploads/1779027530687_1.jpg",
       "/uploads/zriba_coupe.jpg",
       "/uploads/zriba_masse.jpg",
       "/uploads/1779029669922_2.jpg",
@@ -938,14 +1008,14 @@
       "/uploads/1779029669925_11.jpg",
       "/uploads/1779029669925_12.jpg",
       "/uploads/1779029669925_13.jpg",
-      "/uploads/1779029669925_A_(2).jpg",
+      "/uploads/1779029669925_A_2.jpg",
       "/uploads/1779029669926_COUPE01.jpg",
       "/uploads/1779029669926_COUPE02.jpg",
-      "/uploads/1779029669926_D_(2).jpg",
-      "/uploads/1779029669927_Façade_1.jpg"
+      "/uploads/1779029669926_D_2.jpg",
+      "/uploads/1779029669927_Facade_1.jpg"
     ],
     "galleryDocs": [
-      "/uploads/1779029683162_Présentation_Concours_Zriba_Spa.pdf"
+      "/uploads/1779029683162_Presentation_Concours_Zriba_Spa.pdf"
     ],
     "galleryRealisation": [],
     "galleryBefore": [],
@@ -961,7 +1031,7 @@
     "meta": "المسابقة المعمارية الوطنية لتصميم المجمعات السكنية",
     "description": "تصميم مبتكر لوحدات سكنية جماعية وتطوير معايير التهوية الطبيعية والتكامل المناخي.",
     "longDescription": "المخطط المعماري المقترح لتصميم السكن الجامعي لبرج السدرية. يرتكز المشروع على دمج أبراج سكنية عالية الكثافة مع مبانٍ دائرية مبتكرة صممت لرفع كفاءة استغلال الإضاءة والتهوية الطبيعية وتوفير ساحات مميزة تعزز الاندماج والنشاط الطلابي.",
-    "image": "",
+    "image": "/uploads/borj_cedria_main_realiste.jpg",
     "video": "",
     "budget": "",
     "currency": "EUR",
@@ -972,7 +1042,10 @@
       "إعداد وتطوير الرسومات ثلاثية الأبعاد والنمذجة المعمارية",
       "إعداد الرسومات والمخططات التفصيلية للتنفيذ"
     ],
-    "gallery": [],
+    "gallery": [
+      "/uploads/borj_cedria_main_realiste.jpg",
+      "/uploads/borj_cedria_plan.jpg"
+    ],
     "galleryDocs": [
       "/uploads/foyer_essai_1.pdf"
     ],
@@ -990,7 +1063,7 @@
     "meta": "المسابقة المعمارية الوطنية لتصميم المجمعات الأكاديمية المختلطة",
     "description": "مجمع تعليمي وسكني متكامل لتعليم اللغات على الساحل البحري.",
     "longDescription": "المخطط الهيكلي والمعماري المتكامل للمسابقة الوطنية لتصميم قرية اللغات بمهدية. تم تصميم مجمع تعليمي وسكني يجمع بين الفصول الدراسية الحديثة والمدرجات، ووحدات سكن الطلاب، والمرافق الترفيهية بما يتناسب مع الطبيعة المناخية الساحلية للموقع.",
-    "image": "",
+    "image": "/uploads/mahdia_main_realiste.jpg",
     "video": "",
     "budget": "",
     "currency": "EUR",
@@ -1000,8 +1073,18 @@
       "تطوير التفاصيل الفنية لمواجهة الظروف المناخية البحرية الساحلية",
       "إعداد وكتابة التقارير والدراسات الفنية التفصيلية للمشروع"
     ],
-    "gallery": [],
-    "galleryDocs": [],
+    "gallery": [
+      "/uploads/mahdia_main_realiste.jpg",
+      "/uploads/mahdia_cour_realiste.jpg",
+      "/uploads/mahdia_rendu_aerien.jpg",
+      "/uploads/mahdia_masses.jpg",
+      "/uploads/mahdia_salles_cours.jpg",
+      "/uploads/mahdia_entree_orig.jpg",
+      "/uploads/mahdia_cour_orig.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/Rapport_Mahdia.pdf"
+    ],
     "galleryRealisation": [],
     "galleryBefore": [],
     "galleryAfter": [],
