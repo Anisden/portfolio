@@ -16,7 +16,7 @@
       "location": "🇨🇦 Québec",
       "date": "2025 — maintenant",
       "role": "Diplômé en architecture - Technicien en bâtiment - Services des Ressources Matérielles",
-      "description": "Les Services des Ressources Matérielles gérent le parc immobilier (78 établissements scolaires et administratifs) du CSSDN: entretien, maintien d'actifs et développement stratégique.\n\nResponsable du développement et de la mise à jour continue des plans de mesures d’urgence (PMU) pour l’ensemble des établissements scolaires, incluant les plans d’évacuation en CAO, les procédures de sécurité incendie, l’accessibilité et les mesures de gestion des risques.\n\nResponsable de projets de réaménagement et/ou agrandissement dans les établissements scolaires: relevés, mise en plans, coordinnation des projets avec les directions d'écoles, les architectes, les ingénieurs et les entrepreneurs.\n\nCréation d'outils collaboratifs (Power Apps IA) pour la centralisation des données: mise à jour de la base de données de plans, suivi de la conformité et coordination multidisciplinaire."
+      "description": "Les Services des Ressources Matérielles gérent le parc immobilier (78 établissements scolaires et administratifs) du CSSDN: entretien, maintien d'actifs et développement stratégique.\n\nDéveloppement et de la mise à jour continue des plans de mesures d’urgence (PMU) pour l’ensemble des établissements scolaires, incluant les plans d’évacuation en CAO et les procéduriers.\n\nRéaménagement et/ou agrandissement des établissements scolaires: relevés, mise en plans, coordinnation des projets avec les directions d'écoles, les architectes, les ingénieurs et les entrepreneurs.\n\nCréation d'outils collaboratifs (Power Apps IA) pour la centralisation des données: mise à jour de la base de données de plans, suivi de la conformité et coordination multidisciplinaire."
     },
     {
       "company": "LDA - Larochelle et Desmeules, architectes",
@@ -51,11 +51,7 @@
       "description": "Prix du meilleur projet, catégorie: Bâtiment civil / institutionnel\nProjet lauréat: Institut Supérieur des Sciences Appliquées et de la Technologie",
       "image": "/uploads/1779328823971_1779325741728_1779116561582_bouden_et_jalel.avif",
       "video": "<iframe width=\"1920\" height=\"1080\" src=\"https://www.youtube.com/embed/bgxNFEVG6Ds?si=L1D4I4mB6wrCANYy\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
-      "gallery": [
-        "/uploads/1779016324608_IMG_20191009_132232.jpg",
-        "/uploads/1779328823971_1779325741728_1779116561582_bouden_et_jalel.avif",
-        "/uploads/1779116561582_04_-_issat_kairouan_jalel_sakli.jpg"
-      ],
+      "gallery": [],
       "eventPhoto": "/uploads/1779329723141_1779160227193_75446727_1378021255709514_25495716873182.avif",
       "eventLink": "https://www.mramma.tn/actualites/projets-laur%C3%A9ats-lors-des-journ%C3%A9es-architecturales-de-carthage"
     },
@@ -91,8 +87,7 @@
       "year": "2014",
       "title": "Lauréat du Concours National d'Architecture",
       "description": "Conception de l'Institut ISSAT — sélectionné parmi toutes les candidatures nationales en janvier 2014. Réalisation du projet de 2016 à 2019.",
-      "type": "competition",
-      "image": "/uploads/1779116561582_04_-_issat_kairouan_jalel_sakli.jpg"
+      "type": "competition"
     },
     {
       "year": "2011",
