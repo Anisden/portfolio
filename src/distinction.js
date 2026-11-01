@@ -86,6 +86,158 @@ function translateUI() {
   });
 }
 
+// JAC 2019 Distinction Full Gallery Items with Category and Multilingual Captions
+const JAC_GALLERY = [
+  {
+    src: '/uploads/jac_remise_prix.jpg',
+    category: 'ceremony',
+    badge: { fr: 'Trophée JAC', en: 'JAC Trophy', ar: 'تتويج قرطاج' },
+    fr: 'Remise du Prix JAC 2019 — Architectes Anis Bouden & Jalel Sakli',
+    en: 'JAC 2019 Award Ceremony — Architects Anis Bouden & Jalel Sakli',
+    ar: 'تسليم جائزة أيام قرطاج 2019 — المهندسان أنيس بودن وجلال صكلي'
+  },
+  {
+    src: '/uploads/1779116465000_75446727_1378021255709514_25495716873182.avif',
+    category: 'ceremony',
+    badge: { fr: 'Cérémonie Officielle', en: 'Official Ceremony', ar: 'الحفل الرسمي' },
+    fr: 'Cérémonie officielle de clôture et proclamation du palmarès JAC 2019',
+    en: 'Official closing ceremony and awards proclamation of JAC 2019',
+    ar: 'الحفل الرسمي لاختتام أيام قرطاج المعمارية وتتويج الفائزين 2019'
+  },
+  {
+    src: '/uploads/1779116561582_04_-_issat_kairouan_jalel_sakli.jpg',
+    category: 'ceremony',
+    badge: { fr: 'Affiche Concours', en: 'Competition Poster', ar: 'ملصق المسابقة' },
+    fr: 'Affiche officielle du Projet Lauréat — Concours National & Équipe',
+    en: 'Official Winning Project Poster — National Competition & Consortium',
+    ar: 'الملصق الرسمي للمشروع الفائز — المسابقة الوطنية وفريق المهندسين'
+  },
+  {
+    src: '/uploads/1779016324608_IMG_20191009_132232.jpg',
+    category: 'facades',
+    badge: { fr: 'Façade Principale', en: 'Main Facade', ar: 'الواجهة الرئيسية' },
+    fr: 'Façade monumentale, tour signal et colonnade dorée',
+    en: 'Monumental facade, landmark tower and golden colonnade',
+    ar: 'الواجهة الرئيسية والبرج المعماري البارز مع كواسر الشمس'
+  },
+  {
+    src: '/uploads/1779016324606_afpnu-djjb5.jpg',
+    category: 'interiors',
+    badge: { fr: 'Ombrière & Préau', en: 'Shade Canopy', ar: 'المظلة الكبرى' },
+    fr: 'Grande ombrière bioclimatique et préau d\'accueil',
+    en: 'Bioclimatic shade canopy and covered entrance plaza',
+    ar: 'المظلة البيومناخية الكبرى وفضاء الاستقبال المظلل'
+  },
+  {
+    src: '/uploads/1779016324607_amphi_300.jpg',
+    category: 'interiors',
+    badge: { fr: 'Amphithéâtre', en: 'Auditorium', ar: 'المدرج الجامعي' },
+    fr: 'Grand amphithéâtre universitaire de 300 places',
+    en: '300-seat university lecture hall auditorium',
+    ar: 'المدرج الجامعي الرئيسي المتطور (300 مقعد)'
+  },
+  {
+    src: '/uploads/1779016324607_DSCN6289.jpg',
+    category: 'interiors',
+    badge: { fr: 'Patio Central', en: 'Central Patio', ar: 'الفناء الداخلي' },
+    fr: 'Patio central arboré et puits de lumière naturelle',
+    en: 'Central landscaped courtyard and natural skylight',
+    ar: 'الفناء الداخلي المشجر ومصدر الإضاءة الطبيعية'
+  },
+  {
+    src: '/uploads/1779016324607_DSCN6304bis.jpg',
+    category: 'facades',
+    badge: { fr: 'Brise-Soleil', en: 'Sun Louvers', ar: 'كواسر الشمس' },
+    fr: 'Colonnade brise-soleil en pierre dorée locale de Kairouan',
+    en: 'Vertical sunbreaker colonnade in local golden limestone',
+    ar: 'كواسر الشمس العمودية المنفذة بالحجر المحلي الأصيل'
+  },
+  {
+    src: '/uploads/1779016324607_DSCN6281.JPG',
+    category: 'interiors',
+    badge: { fr: 'Circulations', en: 'Circulations', ar: 'الأروقة والجسور' },
+    fr: 'Galeries de circulation et passerelles intérieures',
+    en: 'Circulation galleries and interior pedestrian bridges',
+    ar: 'أروقة التوزيع والجسور الداخلية المعلقة'
+  },
+  {
+    src: '/uploads/1779016324613_IMG_20191009_132311bis.jpg',
+    category: 'interiors',
+    badge: { fr: 'Moucharabieh', en: 'Mashrabiya', ar: 'المشربية' },
+    fr: 'Moucharabieh contemporain ajouré et jeux d\'ombres solaires',
+    en: 'Contemporary geometric mashrabiya screen with light patterns',
+    ar: 'المشربية المعاصرة وتداخل الضوء والظل في بهو الاستقبال'
+  },
+  {
+    src: '/uploads/1779016324614_IMG_20191009_132339.jpg',
+    category: 'facades',
+    badge: { fr: 'Parvis d\'Accès', en: 'Entrance Plaza', ar: 'الساحة الأمامية' },
+    fr: 'Parvis d\'accès piéton et perspective du bâtiment',
+    en: 'Pedestrian entrance esplanade and building perspective',
+    ar: 'الساحة الأمامية للمشاة ومدخل المعهد الرئيسي'
+  },
+  {
+    src: '/uploads/1779016324614_IMG_20191009_132320.jpg',
+    category: 'facades',
+    badge: { fr: 'Volumétrie', en: 'Volumetrics', ar: 'الكتل المعمارية' },
+    fr: 'Perspective d\'angle et articulation géométrique des volumes',
+    en: 'Corner perspective and geometric volumetric articulation',
+    ar: 'منظور زاوي وتناسق الكتل المعمارية الحديثة'
+  },
+  {
+    src: '/uploads/1779016324611_IMG_20191009_132304_BURST002.jpg',
+    category: 'facades',
+    badge: { fr: 'Tour Signal', en: 'Landmark Tower', ar: 'البرج البارز' },
+    fr: 'Cadrage vertical sur la tour signal et fenestration',
+    en: 'Vertical architectural framing of the landmark tower',
+    ar: 'تأطير عمودي للبرج المميز والنوافذ المعمارية'
+  },
+  {
+    src: '/uploads/1779016238476_IMG_20181025_115601_bisbis.jpg',
+    category: 'facades',
+    badge: { fr: 'Toiture Terrasse', en: 'Roof Terrace', ar: 'الشرفة العلوية' },
+    fr: 'Structure moucharabieh métallique en toiture terrasse',
+    en: 'Metal mashrabiya trellis structure on the upper terrace',
+    ar: 'هيكل المشربية المعدني على الشرفة العلوية المطلة'
+  },
+  {
+    src: '/uploads/1779016324614_IMG_20191009_132510.jpg',
+    category: 'interiors',
+    badge: { fr: 'Ombres & Lumières', en: 'Light & Shadow', ar: 'الظلال والضوء' },
+    fr: 'Ombres portées et dessin au sol sous l\'ombrière métallique',
+    en: 'Cast shadows and rhythmic floor patterns under the canopy',
+    ar: 'الظلال الهندسية المتغيرة المنعكسة على الأرضية'
+  },
+  {
+    src: '/uploads/1779016324614_IMG_20191009_132619bis.jpg',
+    category: 'interiors',
+    badge: { fr: 'Ateliers & Salles', en: 'Studios & Rooms', ar: 'قاعات التدريس' },
+    fr: 'Ateliers et espaces d\'apprentissage baignés de lumière',
+    en: 'Classrooms and sunlit flexible learning studios',
+    ar: 'قاعات التدريس وفضاءات التعليم المضيئة'
+  },
+  {
+    src: '/uploads/1779016324615_IMG_20191009_132743bis.jpg',
+    category: 'facades',
+    badge: { fr: 'Vue Panoramique', en: 'Panoramic View', ar: 'مشهد بانورامي' },
+    fr: 'Vue panoramique d\'ensemble du campus universitaire',
+    en: 'Panoramic overview of the university campus',
+    ar: 'إطلالة بانورامية شاملة على الحرم الجامعي والمرافق'
+  },
+  {
+    src: '/uploads/1779016324608_DSCN6318.jpg',
+    category: 'facades',
+    badge: { fr: 'Intégration', en: 'Integration', ar: 'الاندماج' },
+    fr: 'Composition des volumes et insertion paysagère',
+    en: 'Volumetric composition and landscape integration',
+    ar: 'التكوين المعماري والاندماج مع المحيط الطبيعي'
+  }
+];
+
+// Active lightbox state
+let activeLightboxGallery = [];
+let activeLightboxIndex = 0;
+
 async function init() {
   initBlueprintCanvas();
   await initLanguageSelector();
@@ -125,6 +277,9 @@ async function init() {
       d.video = resolveUrl(d.video);
     }
     if (d.gallery) d.gallery = d.gallery.map(resolveUrl);
+  });
+  JAC_GALLERY.forEach(item => {
+    item.src = resolveUrl(item.src);
   });
 
   const container = document.getElementById('distinctions-container');
@@ -171,7 +326,17 @@ async function init() {
       const aboutEventLabel = currentLang === 'ar' ? 'حول الفعالية المعمارية' : (currentLang === 'en' ? 'About the Event' : "A propos de l'événement");
       const viewEventLabel = currentLang === 'ar' ? '🔗 زيارة الصفحة الرسمية للفعالية' : (currentLang === 'en' ? '🔗 View Official Event Page' : "🔗 Voir la page de l'événement");
       const videoTitle = currentLang === 'ar' ? 'فيديو عرض المشروع التوضيحي أمام لجنة التحكيم' : (currentLang === 'en' ? 'Project presentation video to the jury' : 'Vidéo de présentation du projet au jury');
-      const galleryTitleText = currentLang === 'ar' ? 'معرض الصور' : (currentLang === 'en' ? 'Photo Gallery' : 'Galerie photos');
+      const galleryTitleText = currentLang === 'ar' ? 'معرض الصور المعمارية وحفل التتويج' : (currentLang === 'en' ? 'Architectural Photo Gallery & Award Ceremony' : 'Galerie Photographique — Projet & Cérémonie');
+      const gallerySubtitleText = currentLang === 'ar'
+        ? 'توثيق شامل لمراسم التتويج بجائزة أيام قرطاج المعمارية 2019 ومختلف فضاءات وواجهات معهد ISSAT القيروان المنفذ على أرض الواقع.'
+        : (currentLang === 'en'
+          ? 'Comprehensive photography of the official JAC 2019 ceremony and real-world architectural achievements of ISSAT Kairouan (facades, bioclimatic canopy, auditorium, circulation spaces).'
+          : 'Reportage photographique complet de la remise des prix JAC 2019 et des réalisations architecturales de l\'institut ISSAT Kairouan (façades, ombrière bioclimatique, amphithéâtre, circulations et détails).');
+
+      const filterAllText = currentLang === 'ar' ? `الكل (${JAC_GALLERY.length})` : (currentLang === 'en' ? `All (${JAC_GALLERY.length})` : `Tous (${JAC_GALLERY.length})`);
+      const filterCeremonyText = currentLang === 'ar' ? '🏆 حفل التتويج والملصق' : (currentLang === 'en' ? '🏆 Ceremony & Trophy' : '🏆 Cérémonie & Trophée');
+      const filterFacadesText = currentLang === 'ar' ? '🏛️ الواجهات والبرج' : (currentLang === 'en' ? '🏛️ Facades & Tower' : '🏛️ Façades & Extérieurs');
+      const filterInteriorsText = currentLang === 'ar' ? '📐 الفضاءات والمظلة' : (currentLang === 'en' ? '📐 Interiors & Canopy' : '📐 Intérieurs & Ombrière');
 
       block.className = 'dist-block jac-custom-block';
       block.innerHTML = `
@@ -231,23 +396,42 @@ async function init() {
         </div>
         ` : ''}
         
-        <!-- Small photo gallery if there are extra photos -->
-        ${otherPhoto ? `
-        <div class="dist-gallery-section" style="margin-top: 3.5rem;">
-          <h4 class="dist-gallery-title">${galleryTitleText}</h4>
-          <div class="dist-gallery-grid">
-            <div class="dist-gallery-thumb" data-src="${otherPhoto}">
-              <img src="${otherPhoto}" alt="Visuel" loading="lazy">
+        <!-- Full Enhanced Architectural Photo Gallery -->
+        <div class="jac-gallery-section" id="jac-gallery-section">
+          <div class="jac-gallery-header">
+            <div class="jac-gallery-title-box">
+              <h3 class="jac-gallery-main-title">${galleryTitleText}</h3>
+              <p class="jac-gallery-desc">${gallerySubtitleText}</p>
             </div>
-            <div class="dist-gallery-thumb" data-src="${groupPhoto}">
-              <img src="${groupPhoto}" alt="Visuel" loading="lazy">
-            </div>
-            <div class="dist-gallery-thumb" data-src="${d.image}">
-              <img src="${d.image}" alt="Visuel" loading="lazy">
+            <div class="jac-gallery-filter-tabs">
+              <button class="jac-filter-btn active" data-filter="all">${filterAllText}</button>
+              <button class="jac-filter-btn" data-filter="ceremony">${filterCeremonyText}</button>
+              <button class="jac-filter-btn" data-filter="facades">${filterFacadesText}</button>
+              <button class="jac-filter-btn" data-filter="interiors">${filterInteriorsText}</button>
             </div>
           </div>
+          
+          <div class="jac-gallery-grid" id="jac-gallery-grid">
+            ${JAC_GALLERY.map((item, gIdx) => {
+              const caption = item[currentLang] || item.fr;
+              const badgeTxt = (item.badge && item.badge[currentLang]) || item.badge?.fr || '';
+              return `
+                <div class="jac-gallery-card" data-category="${item.category}" data-gallery-index="${gIdx}">
+                  <div class="jac-gallery-media">
+                    <img src="${item.src}" alt="${caption}" loading="lazy">
+                    <div class="jac-gallery-overlay">
+                      <span class="jac-gallery-badge">${badgeTxt}</span>
+                      <span class="jac-gallery-zoom-icon">🔍</span>
+                    </div>
+                  </div>
+                  <div class="jac-gallery-caption">
+                    <p class="jac-gallery-caption-title">${caption}</p>
+                  </div>
+                </div>
+              `;
+            }).join('')}
+          </div>
         </div>
-        ` : ''}
       `;
 
     } else if (d.type === 'press') {
@@ -374,7 +558,17 @@ async function init() {
       }
 
       let galleryHtml = '';
-      const galleryTitleText = currentLang === 'ar' ? 'معرض الصور' : (currentLang === 'en' ? 'Photo Gallery' : 'Galerie photos');
+      const galleryTitleText = currentLang === 'ar' ? 'معرض الصور المعمارية وحفل التتويج' : (currentLang === 'en' ? 'Architectural Photo Gallery & Award Ceremony' : 'Galerie Photographique — Projet & Cérémonie');
+      const gallerySubtitleText = currentLang === 'ar'
+        ? 'توثيق شامل لمراسم التتويج بجائزة أيام قرطاج المعمارية 2019 ومختلف فضاءات وواجهات معهد ISSAT القيروان المنفذ على أرض الواقع.'
+        : (currentLang === 'en'
+          ? 'Comprehensive photography of the official JAC 2019 ceremony and real-world architectural achievements of ISSAT Kairouan (facades, bioclimatic canopy, auditorium, circulation spaces).'
+          : 'Reportage photographique complet de la remise des prix JAC 2019 et des réalisations architecturales de l\'institut ISSAT Kairouan (façades, ombrière bioclimatique, amphithéâtre, circulations et détails).');
+
+      const filterAllText = currentLang === 'ar' ? `الكل (${JAC_GALLERY.length})` : (currentLang === 'en' ? `All (${JAC_GALLERY.length})` : `Tous (${JAC_GALLERY.length})`);
+      const filterCeremonyText = currentLang === 'ar' ? '🏆 حفل التتويج والملصق' : (currentLang === 'en' ? '🏆 Ceremony & Trophy' : '🏆 Cérémonie & Trophée');
+      const filterFacadesText = currentLang === 'ar' ? '🏛️ الواجهات والبرج' : (currentLang === 'en' ? '🏛️ Facades & Tower' : '🏛️ Façades & Extérieurs');
+      const filterInteriorsText = currentLang === 'ar' ? '📐 الفضاءات والمظلة' : (currentLang === 'en' ? '📐 Interiors & Canopy' : '📐 Intérieurs & Ombrière');
       if (d.gallery && d.gallery.length > 0) {
         galleryHtml = `
           <div class="dist-gallery-section">
@@ -481,11 +675,55 @@ async function init() {
     if (s) s.style.display = 'none';
   }
 
-  // Lightbox click handlers
-  container.querySelectorAll('.dist-image-wrapper, .dist-gallery-thumb').forEach(el => {
+  // JAC Gallery Interactive Filter Tabs
+  const filterBtns = container.querySelectorAll('.jac-filter-btn');
+  const galleryCards = container.querySelectorAll('.jac-gallery-card');
+
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => b.classList.remove('active'));
+      btn.classList.add('active');
+      const filter = btn.dataset.filter;
+
+      galleryCards.forEach(card => {
+        if (filter === 'all' || card.dataset.category === filter) {
+          card.style.display = 'flex';
+          card.classList.remove('card-hidden');
+        } else {
+          card.style.display = 'none';
+          card.classList.add('card-hidden');
+        }
+      });
+    });
+  });
+
+  // JAC Gallery Click Handlers -> Lightbox
+  galleryCards.forEach(card => {
+    card.addEventListener('click', () => {
+      const gIdx = parseInt(card.dataset.galleryIndex, 10);
+      openLightbox(JAC_GALLERY, isNaN(gIdx) ? 0 : gIdx);
+    });
+  });
+
+  // Standard Image wrappers and generic gallery thumbnails
+  container.querySelectorAll('.dist-image-wrapper').forEach(el => {
     el.addEventListener('click', () => {
       const src = el.dataset.src;
-      if (src) openLightbox(src);
+      if (src) {
+        const foundIdx = JAC_GALLERY.findIndex(item => item.src === src);
+        if (foundIdx !== -1) {
+          openLightbox(JAC_GALLERY, foundIdx);
+        } else {
+          openLightbox([{ src, fr: '' }], 0);
+        }
+      }
+    });
+  });
+
+  container.querySelectorAll('.dist-gallery-thumb').forEach(el => {
+    el.addEventListener('click', () => {
+      const src = el.dataset.src;
+      if (src) openLightbox([{ src, fr: '' }], 0);
     });
   });
 
@@ -510,25 +748,111 @@ async function init() {
   }
 }
 
-function openLightbox(src) {
-  const lb = document.createElement('div');
-  lb.className = 'lightbox';
-  lb.innerHTML = `<button class="lightbox-close">&times;</button><img src="${src}">`;
-  document.body.appendChild(lb);
-  requestAnimationFrame(() => lb.classList.add('active'));
+// State-of-the-Art Architectural Lightbox with Prev/Next, Counter & Keyboard Control
+function openLightbox(galleryList, startIndex = 0) {
+  if (!galleryList || galleryList.length === 0) return;
+  activeLightboxGallery = galleryList;
+  activeLightboxIndex = startIndex;
+
+  let lb = document.getElementById('dist-lightbox');
+  if (!lb) {
+    lb = document.createElement('div');
+    lb.id = 'dist-lightbox';
+    lb.className = 'lightbox';
+    document.body.appendChild(lb);
+  }
+
+  const renderCurrent = () => {
+    const item = activeLightboxGallery[activeLightboxIndex];
+    const src = typeof item === 'string' ? item : item.src;
+    const title = typeof item === 'string' ? '' : (item[currentLang] || item.fr || '');
+    const counterText = `${activeLightboxIndex + 1} / ${activeLightboxGallery.length}`;
+
+    lb.innerHTML = `
+      <div class="lightbox-dialog" role="dialog" aria-modal="true">
+        <div class="lightbox-header">
+          <span class="lightbox-counter">${counterText}</span>
+          <button class="lightbox-close" aria-label="Fermer">&times;</button>
+        </div>
+        
+        <div class="lightbox-body">
+          ${activeLightboxGallery.length > 1 ? `
+            <button class="lightbox-nav-btn lightbox-prev" aria-label="Précédent">&#10094;</button>
+          ` : ''}
+          
+          <div class="lightbox-img-wrapper">
+            <img src="${src}" alt="${title}" class="lightbox-image">
+          </div>
+          
+          ${activeLightboxGallery.length > 1 ? `
+            <button class="lightbox-nav-btn lightbox-next" aria-label="Suivant">&#10095;</button>
+          ` : ''}
+        </div>
+        
+        ${title ? `
+          <div class="lightbox-caption">
+            <p>${title}</p>
+          </div>
+        ` : ''}
+      </div>
+    `;
+
+    // Bind event handlers
+    const closeBtn = lb.querySelector('.lightbox-close');
+    if (closeBtn) closeBtn.onclick = closeLb;
+
+    const prevBtn = lb.querySelector('.lightbox-prev');
+    if (prevBtn) {
+      prevBtn.onclick = (e) => {
+        e.stopPropagation();
+        activeLightboxIndex = (activeLightboxIndex - 1 + activeLightboxGallery.length) % activeLightboxGallery.length;
+        renderCurrent();
+      };
+    }
+
+    const nextBtn = lb.querySelector('.lightbox-next');
+    if (nextBtn) {
+      nextBtn.onclick = (e) => {
+        e.stopPropagation();
+        activeLightboxIndex = (activeLightboxIndex + 1) % activeLightboxGallery.length;
+        renderCurrent();
+      };
+    }
+  };
 
   const closeLb = () => {
     lb.classList.remove('active');
-    setTimeout(() => lb.remove(), 300);
+    window.removeEventListener('keydown', handleKey);
+    setTimeout(() => { lb.style.display = 'none'; }, 300);
   };
 
-  lb.addEventListener('click', (e) => {
-    if (e.target === lb || e.target.classList.contains('lightbox-close')) closeLb();
-  });
+  const handleKey = (e) => {
+    if (e.key === 'Escape') {
+      closeLb();
+    } else if (e.key === 'ArrowLeft') {
+      if (activeLightboxGallery.length > 1) {
+        activeLightboxIndex = (activeLightboxIndex - 1 + activeLightboxGallery.length) % activeLightboxGallery.length;
+        renderCurrent();
+      }
+    } else if (e.key === 'ArrowRight') {
+      if (activeLightboxGallery.length > 1) {
+        activeLightboxIndex = (activeLightboxIndex + 1) % activeLightboxGallery.length;
+        renderCurrent();
+      }
+    }
+  };
 
-  document.addEventListener('keydown', function handler(e) {
-    if (e.key === 'Escape') { closeLb(); document.removeEventListener('keydown', handler); }
-  });
+  lb.onclick = (e) => {
+    if (e.target === lb || e.target.classList.contains('lightbox-body') || e.target.classList.contains('lightbox-img-wrapper')) {
+      closeLb();
+    }
+  };
+
+  window.addEventListener('keydown', handleKey);
+
+  renderCurrent();
+  lb.style.display = 'flex';
+  requestAnimationFrame(() => lb.classList.add('active'));
 }
 
 init();
