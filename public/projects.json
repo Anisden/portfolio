@@ -1,5 +1,60 @@
 [
   {
+    "id": "issat",
+    "title": "ISSAT Kairouan — Institut Supérieur des Sciences Appliquées",
+    "region": "concours",
+    "meta": "🏆 Lauréat 1er Prix Concours National & Prix JAC 2019 | Kairouan (2014–2019)",
+    "description": "Prix des JAC 2019 (Journées Architecturales de Carthage) : Meilleur projet, catégorie bâtiments civils.",
+    "longDescription": "Projet lauréat d'un concours national d'architecture en janvier 2014. Conception complète et suivi d'exécution d'un institut d'enseignement supérieur. Récompensé par le Prix des Journées Architecturales de Carthage (JAC) 2019 dans la catégorie « Meilleur projet – Bâtiments civils ». Le projet intègre des principes bioclimatiques, une gestion optimale des flux étudiants et des espaces pédagogiques modernes.",
+    "image": "/uploads/1779016324608_IMG_20191009_132232.jpg",
+    "video": "",
+    "budget": "17 190 000",
+    "currency": "EUR",
+    "tasks": [
+      "Architecte, membre du groupement participant au concours",
+      "Conception architecturale (concours)",
+      "Études techniques",
+      "Coordination des lots",
+      "Suivi d'exécution",
+      "Réception des travaux"
+    ],
+    "gallery": [
+      "/uploads/1779016324608_IMG_20191009_132232.jpg",
+      "/uploads/1779116561582_04_-_issat_kairouan_jalel_sakli.jpg",
+      "/uploads/1779016238476_IMG_20181025_115601_bisbis.jpg",
+      "/uploads/1779016324606_afpnu-djjb5.jpg"
+    ],
+    "galleryDocs": [
+      "/uploads/1779019491308_Planche_3D.pdf",
+      "/uploads/1779019491309_Planche_ELEVATIONS.pdf",
+      "/uploads/1779019491309_Planche_plan_ETAGE.pdf",
+      "/uploads/1779019491310_Planche_plan_RDC.pdf"
+    ],
+    "galleryRealisation": [
+      "/uploads/1779016324606_afpnu-djjb5.jpg",
+      "/uploads/1779016324607_amphi_300.jpg",
+      "/uploads/1779016324607_DSCN6281.JPG",
+      "/uploads/1779016324607_DSCN6289.jpg",
+      "/uploads/1779016324607_DSCN6304bis.jpg",
+      "/uploads/1779016324608_DSCN6318.jpg",
+      "/uploads/1779016324608_IMG_20190502_103805bis.jpg",
+      "/uploads/1779016324608_IMG_20190502_104718.jpg",
+      "/uploads/1779016324608_IMG_20191009_132232.jpg",
+      "/uploads/1779016324611_IMG_20191009_132304_BURST002.jpg",
+      "/uploads/1779016324613_IMG_20191009_132311bis.jpg",
+      "/uploads/1779016324614_IMG_20191009_132320.jpg",
+      "/uploads/1779016324614_IMG_20191009_132339.jpg",
+      "/uploads/1779016324614_IMG_20191009_132510.jpg",
+      "/uploads/1779016324614_IMG_20191009_132619bis.jpg",
+      "/uploads/1779016324615_IMG_20191009_132743bis.jpg"
+    ],
+    "galleryBefore": [],
+    "galleryAfter": [],
+    "showDistinctionBtn": true,
+    "subcontract": false,
+    "year": 2019
+  },
+  {
     "id": "piscine-colline-saguenay",
     "title": "Piscine de la Colline - Chicoutimi",
     "region": "quebec",
@@ -578,58 +633,6 @@
       "/uploads/1779021363864_int23.jpg"
     ],
     "showDistinctionBtn": false,
-    "subcontract": false,
-    "year": 2019
-  },
-  {
-    "id": "issat",
-    "title": "Institut Supérieur des Sciences Appliquées (ISSAT)",
-    "region": "concours",
-    "meta": "Concours National - Projet Lauréat (1er Prix) | Réalisation: 2016-2019",
-    "description": "Prix des JAC 2019 (Journées Architecturales de Carthage) : Meilleur projet, catégorie bâtiments civils.",
-    "longDescription": "Projet lauréat d'un concours national d'architecture en janvier 2014. Conception complète et suivi d'exécution d'un institut d'enseignement supérieur. Récompensé par le Prix des Journées Architecturales de Carthage (JAC) 2019 dans la catégorie « Meilleur projet – Bâtiments civils ». Le projet intègre des principes bioclimatiques, une gestion optimale des flux étudiants et des espaces pédagogiques modernes.",
-    "image": "/uploads/1779016238476_IMG_20181025_115601_bisbis.jpg",
-    "video": "",
-    "budget": "17 190 000",
-    "currency": "EUR",
-    "tasks": [
-      "Architecte, membre du groupement participant au concours",
-      "Conception architecturale (concours)",
-      "Études techniques",
-      "Coordination des lots",
-      "Suivi d'exécution",
-      "Réception des travaux"
-    ],
-    "gallery": [
-      "/uploads/1779016324606_afpnu-djjb5.jpg"
-    ],
-    "galleryDocs": [
-      "/uploads/1779019491308_Planche_3D.pdf",
-      "/uploads/1779019491309_Planche_ELEVATIONS.pdf",
-      "/uploads/1779019491309_Planche_plan_ETAGE.pdf",
-      "/uploads/1779019491310_Planche_plan_RDC.pdf"
-    ],
-    "galleryRealisation": [
-      "/uploads/1779016324606_afpnu-djjb5.jpg",
-      "/uploads/1779016324607_amphi_300.jpg",
-      "/uploads/1779016324607_DSCN6281.JPG",
-      "/uploads/1779016324607_DSCN6289.jpg",
-      "/uploads/1779016324607_DSCN6304bis.jpg",
-      "/uploads/1779016324608_DSCN6318.jpg",
-      "/uploads/1779016324608_IMG_20190502_103805bis.jpg",
-      "/uploads/1779016324608_IMG_20190502_104718.jpg",
-      "/uploads/1779016324608_IMG_20191009_132232.jpg",
-      "/uploads/1779016324611_IMG_20191009_132304_BURST002.jpg",
-      "/uploads/1779016324613_IMG_20191009_132311bis.jpg",
-      "/uploads/1779016324614_IMG_20191009_132320.jpg",
-      "/uploads/1779016324614_IMG_20191009_132339.jpg",
-      "/uploads/1779016324614_IMG_20191009_132510.jpg",
-      "/uploads/1779016324614_IMG_20191009_132619bis.jpg",
-      "/uploads/1779016324615_IMG_20191009_132743bis.jpg"
-    ],
-    "galleryBefore": [],
-    "galleryAfter": [],
-    "showDistinctionBtn": true,
     "subcontract": false,
     "year": 2019
   },

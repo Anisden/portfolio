@@ -51,7 +51,11 @@
       "description": "جائزة أفضل مشروع، فئة: المباني المدنية والمؤسسية\nالمشروع الفائز: المعهد العالي للعلوم التطبيقية والتكنولوجيا (ISSAT)",
       "image": "/uploads/1779328823971_1779325741728_1779116561582_bouden_et_jalel.avif",
       "video": "<iframe width=\"1920\" height=\"1080\" src=\"https://www.youtube.com/embed/bgxNFEVG6Ds?si=L1D4I4mB6wrCANYy\" title=\"YouTube video player\" frameborder=\"0\" allow=\"accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share\" referrerpolicy=\"strict-origin-when-cross-origin\" allowfullscreen></iframe>",
-      "gallery": [],
+      "gallery": [
+        "/uploads/1779016324608_IMG_20191009_132232.jpg",
+        "/uploads/1779328823971_1779325741728_1779116561582_bouden_et_jalel.avif",
+        "/uploads/1779116561582_04_-_issat_kairouan_jalel_sakli.jpg"
+      ],
       "eventPhoto": "/uploads/1779329723141_1779160227193_75446727_1378021255709514_25495716873182.avif",
       "eventLink": "https://www.mramma.tn/actualites/projets-laur%C3%A9ats-lors-des-journ%C3%A9es-architecturales-de-carthage"
     },
@@ -87,7 +91,8 @@
       "year": "2014",
       "title": "الفوز بالمسابقة المعمارية الوطنية",
       "description": "الحصول على المركز الأول في المسابقة المعمارية الوطنية لتصميم المعهد العالي للعلوم التطبيقية والتكنولوجيا (ISSAT) في يناير 2014، وتنفيذ المشروع بين عامي 2016 و2019.",
-      "type": "competition"
+      "type": "competition",
+      "image": "/uploads/1779116561582_04_-_issat_kairouan_jalel_sakli.jpg"
     },
     {
       "year": "2011",

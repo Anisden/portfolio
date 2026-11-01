@@ -166,7 +166,8 @@ async function init() {
       const jacSubtitleText = currentLang === 'ar' ? 'الدورة الأولى للمعرض مع تتويج المشاريع الكبرى' : (currentLang === 'en' ? 'Journées Architecturales de Carthage' : 'Journées Architecturales de Carthage');
       const bestProjectLabel = currentLang === 'ar' ? 'جائزة أفضل مشروع للمباني المدنية والمؤسسية' : (currentLang === 'en' ? 'Best Civil & Public Building Award' : 'Prix du meilleur projet de Bâtiment civil');
       const groupmentLabel = currentLang === 'ar' ? 'الائتلاف المعماري الفائز: م. جلال صكلي وم. محمد علي بن عافية وم. أنيس بودن' : (currentLang === 'en' ? 'Architectural Consortium: Mr. Jalel Sakli, Mr. Mohamed Ali Ben Afia, Mr. Anis Bouden' : "Groupement d'Architectes: M. JALEL SAKLI & M. MOHAMED ALI BEN AFIA & M. ANIS BOUDEN");
-      const laureatLabel = currentLang === 'ar' ? 'المشروع الفائز: المعهد العالي للعلوم التطبيقية والتكنولوجيا' : (currentLang === 'en' ? 'Winning Project: Higher Institute of Applied Sciences and Technology' : 'Projet lauréat: Institut Supérieur des Sciences Appliquées et de la Technologie');
+      const laureatLabel = currentLang === 'ar' ? 'المشروع الفائز: المعهد العالي للعلوم التطبيقية والتكنولوجيا بالقيروان (ISSAT Kairouan)' : (currentLang === 'en' ? 'Winning Project: Higher Institute of Applied Sciences and Technology of Kairouan (ISSAT Kairouan)' : 'Projet lauréat: Institut Supérieur des Sciences Appliquées et de la Technologie de Kairouan (ISSAT Kairouan)');
+      const viewIssatProjectLabel = currentLang === 'ar' ? '🏛️ عرض صفحة مشروع المعهد العالي بالقيروان (ISSAT Kairouan) ←' : (currentLang === 'en' ? '🏛️ View Full ISSAT Kairouan Project Page →' : '🏛️ Voir la fiche complète du projet ISSAT Kairouan →');
       const aboutEventLabel = currentLang === 'ar' ? 'حول الفعالية المعمارية' : (currentLang === 'en' ? 'About the Event' : "A propos de l'événement");
       const viewEventLabel = currentLang === 'ar' ? '🔗 زيارة الصفحة الرسمية للفعالية' : (currentLang === 'en' ? '🔗 View Official Event Page' : "🔗 Voir la page de l'événement");
       const videoTitle = currentLang === 'ar' ? 'فيديو عرض المشروع التوضيحي أمام لجنة التحكيم' : (currentLang === 'en' ? 'Project presentation video to the jury' : 'Vidéo de présentation du projet au jury');
@@ -192,6 +193,9 @@ async function init() {
                 <h3 class="jac-card-title">${bestProjectLabel}</h3>
                 <p class="jac-card-text groupment">${groupmentLabel}</p>
                 <p class="jac-card-text laureat">${laureatLabel}</p>
+                <div style="margin-top: 1.25rem;">
+                  <a href="${BASE}project.html?id=issat" class="jac-event-link" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(212, 175, 55, 0.14); border: 1px solid var(--accent); padding: 0.65rem 1.2rem; border-radius: 8px; color: var(--accent); font-weight: 700; text-decoration: none;">${viewIssatProjectLabel}</a>
+                </div>
               </div>
             </div>
           </div>
@@ -432,6 +436,13 @@ async function init() {
             <div class="dist-info-pane">
               ${specsHtml}
               ${paraHtml}
+              ${(d.title.includes('ISSAT') || (d.description && d.description.includes('ISSAT'))) ? `
+                <div style="margin-top: 1.25rem;">
+                  <a href="${BASE}project.html?id=issat" style="display: inline-flex; align-items: center; gap: 0.5rem; background: rgba(212, 175, 55, 0.14); border: 1px solid var(--accent); padding: 0.65rem 1.2rem; border-radius: 8px; color: var(--accent); font-weight: 700; text-decoration: none;">
+                    ${currentLang === 'ar' ? '🏛️ عرض صفحة مشروع المعهد العالي بالقيروان (ISSAT Kairouan) ←' : (currentLang === 'en' ? '🏛️ View Full ISSAT Kairouan Project Page →' : '🏛️ Voir la fiche complète du projet ISSAT Kairouan →')}
+                  </a>
+                </div>
+              ` : ''}
             </div>
             <div class="dist-media-pane">
               ${videoCardHtml}

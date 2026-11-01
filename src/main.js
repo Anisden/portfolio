@@ -334,23 +334,53 @@ let allProjects = [];
 
 function createProjectCard(project) {
   const div = document.createElement('div');
-  div.className = 'project-card fade-up';
+  div.className = `project-card fade-up${project.showDistinctionBtn ? ' project-card-award' : ''}`;
+
+  const awardRibbonLabel = currentLang === 'ar'
+    ? '🏆 الجائزة الأولى وجائزة قرطاج JAC 2019'
+    : (currentLang === 'en' ? '🏆 1st Prize & JAC 2019 Award' : '🏆 1er Prix & Prix JAC 2019');
+
+  const distinctionBtnLabel = currentLang === 'ar'
+    ? '🏆 صفحة جائزة ISSAT (أيام قرطاج) ←'
+    : (currentLang === 'en' ? '🏆 ISSAT Distinction Page (JAC 2019) →' : '🏆 Page Distinction ISSAT (Prix JAC) →');
+
+  const viewProjectLabel = currentLang === 'ar'
+    ? 'عرض المشروع ←'
+    : (currentLang === 'en' ? 'View Project →' : 'Voir le projet →');
 
   const media = project.image
     ? `<img src="${project.image}" alt="${project.title}" loading="lazy">`
     : `<div class="placeholder-img">📐 Visuel à venir</div>`;
 
+  const ribbonHtml = project.showDistinctionBtn
+    ? `<div class="project-award-ribbon">${awardRibbonLabel}</div>`
+    : '';
+
+  const distinctionBtnHtml = project.showDistinctionBtn
+    ? `<a href="${BASE}distinction.html?i=0" class="project-distinction-btn">${distinctionBtnLabel}</a>`
+    : '';
+
   div.innerHTML = `
-    <div class="project-image">${media}</div>
+    <div class="project-image">${media}${ribbonHtml}</div>
     <div class="project-info">
       <h4>${project.title}</h4>
       <p class="project-meta">${project.meta}</p>
       <p>${project.description}</p>
-      <span class="project-link">Voir le projet →</span>
+      <div class="project-card-actions">
+        <span class="project-link">${viewProjectLabel}</span>
+        ${distinctionBtnHtml}
+      </div>
     </div>`;
 
+  const distLink = div.querySelector('.project-distinction-btn');
+  if (distLink) {
+    distLink.addEventListener('click', (e) => {
+      e.stopPropagation();
+    });
+  }
+
   div.addEventListener('click', (e) => {
-    if (e.target.tagName === 'IFRAME') return;
+    if (e.target.tagName === 'IFRAME' || e.target.closest('.project-distinction-btn')) return;
     window.location.href = `${BASE}project.html?id=${project.id}`;
   });
   return div;
@@ -403,7 +433,7 @@ function renderFilteredProjects(filter) {
     } else if (filter === 'quebec') {
       filtered = allProjects.filter(p => p.region === 'quebec');
     } else if (filter === 'tunisie') {
-      filtered = allProjects.filter(p => p.region !== 'quebec' && p.region !== 'concours');
+      filtered = allProjects.filter(p => (p.region !== 'quebec' && p.region !== 'concours') || p.id === 'issat');
     } else if (filter === 'concours') {
       filtered = allProjects.filter(p => p.region === 'concours');
     } else if (filter === 'sous-traitance') {

@@ -155,11 +155,11 @@ async function init() {
     const descCol = document.querySelector('.project-desc');
     if (descCol) {
       const badge = document.createElement('a');
-      badge.href = `${BASE}#distinctions`;
+      badge.href = `${BASE}distinction.html?i=0`;
       badge.className = 'distinction-award-badge fade-up';
       
-      const badgeTitle = currentLang === 'ar' ? 'مشروع فائز وجائزة مرموقة' : (currentLang === 'en' ? 'Award-Winning Featured Project' : 'Projet Lauréat & Primé');
-      const badgeText = currentLang === 'ar' ? 'حائز على الجائزة الأولى في المسابقة الوطنية وأيام قرطاج المعمارية · عرض الجوائز ←' : (currentLang === 'en' ? 'Recipient of the National 1st Prize & Carthage Architectural Days Award · View Awards →' : 'Lauréat du Concours National & Prix des Journées Architecturales de Carthage · Voir les distinctions →');
+      const badgeTitle = currentLang === 'ar' ? 'مشروع فائز وجائزة مرموقة (ISSAT Kairouan)' : (currentLang === 'en' ? 'Award-Winning Featured Project (ISSAT Kairouan)' : 'Projet Lauréat & Primé — ISSAT Kairouan');
+      const badgeText = currentLang === 'ar' ? 'حائز على الجائزة الأولى في المسابقة الوطنية وجائزة أيام قرطاج المعمارية (JAC 2019) · عرض صفحة الجائزة ←' : (currentLang === 'en' ? 'Recipient of the National 1st Prize & Carthage Architectural Days Award (JAC 2019) · View Distinction Page →' : 'Lauréat du 1er Prix au Concours National & Prix des Journées Architecturales de Carthage (JAC 2019) · Voir la page Distinction ISSAT →');
       
       badge.innerHTML = `
         <div class="badge-icon">🏆</div>
