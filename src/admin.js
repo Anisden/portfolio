@@ -559,6 +559,32 @@ async function saveProjectsToServer() {
     if (ok) {
       if (!suffix) {
         await ghPutFile('public/projects_fr.json', base64, 'Sync projects_fr.json via Admin');
+        // Auto-sync media/structural fields to EN and AR so uploaded photos/PDFs appear in all languages
+        const mediaFields = ['image', 'video', 'gallery', 'galleryDocs', 'galleryRealisation', 'galleryBefore', 'galleryAfter', 'year', 'region', 'showDistinctionBtn'];
+        for (const lang of ['en', 'ar']) {
+          const langProjs = await ghGetFileJson(`public/projects_${lang}.json`);
+          if (Array.isArray(langProjs)) {
+            let changed = false;
+            for (const fp of projects) {
+              const match = langProjs.find(lp => lp.id === fp.id);
+              if (match) {
+                for (const mf of mediaFields) {
+                  if (JSON.stringify(match[mf]) !== JSON.stringify(fp[mf])) {
+                    match[mf] = fp[mf];
+                    changed = true;
+                  }
+                }
+              } else {
+                langProjs.push({ ...fp });
+                changed = true;
+              }
+            }
+            if (changed) {
+              langProjs.sort((a, b) => (b.year || 0) - (a.year || 0));
+              await ghPutFile(`public/projects_${lang}.json`, utf8ToBase64(JSON.stringify(langProjs, null, 2)), `Sync media to projects_${lang}.json via Admin`);
+            }
+          }
+        }
       }
       toast('✅ Enregistré directement sur GitHub ! (Site mis à jour dans ~45s)', 5000);
       return true;

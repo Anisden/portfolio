@@ -55,6 +55,24 @@ function adminApiMiddleware(req, res, next) {
         fs.writeFileSync(path.resolve(__dirname, `public/projects${suffix}.json`), body, 'utf8');
         if (!suffix) {
           fs.writeFileSync(path.resolve(__dirname, 'public/projects_fr.json'), body, 'utf8');
+          const frProjs = JSON.parse(body);
+          const mediaFields = ['image', 'video', 'gallery', 'galleryDocs', 'galleryRealisation', 'galleryBefore', 'galleryAfter', 'year', 'region', 'showDistinctionBtn'];
+          for (const l of ['en', 'ar']) {
+            const pPath = path.resolve(__dirname, `public/projects_${l}.json`);
+            if (fs.existsSync(pPath)) {
+              const lProjs = JSON.parse(fs.readFileSync(pPath, 'utf8'));
+              for (const fp of frProjs) {
+                const match = lProjs.find(lp => lp.id === fp.id);
+                if (match) {
+                  for (const mf of mediaFields) match[mf] = fp[mf];
+                } else {
+                  lProjs.push({ ...fp });
+                }
+              }
+              lProjs.sort((a, b) => (b.year || 0) - (a.year || 0));
+              fs.writeFileSync(pPath, JSON.stringify(lProjs, null, 2), 'utf8');
+            }
+          }
         }
         res.statusCode = 200;
         res.end('Saved');
