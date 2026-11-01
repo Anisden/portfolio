@@ -150,22 +150,37 @@ async function init() {
   const desc = project.longDescription || project.description;
   document.getElementById('project-long-desc').innerHTML = desc ? desc.replace(/\n/g, '<br>') : (currentLang === 'ar' ? 'التفاصيل غير متوفرة حالياً.' : (currentLang === 'en' ? 'Description not available.' : 'Description non disponible.'));
 
-  // Award Badge
+  // Award Badge & Hero CTA
   if (project.showDistinctionBtn) {
+    const heroContent = document.querySelector('.project-hero-content');
+    if (heroContent) {
+      const heroCta = document.createElement('a');
+      heroCta.href = `${BASE}distinction.html?i=0`;
+      heroCta.className = 'hero-distinction-cta';
+      heroCta.innerHTML = currentLang === 'ar'
+        ? '🏆 مشروع متوّج — عرض صفحة جائزة أيام قرطاج المعمارية (JAC 2019) وفيديو لجنة التحكيم ←'
+        : (currentLang === 'en'
+          ? '🏆 Award-Winning Project — View JAC 2019 Distinction Page & Jury Video →'
+          : '🏆 Projet Primé — Voir la page Distinction ISSAT (Prix JAC 2019 & Vidéo du Jury) →');
+      heroContent.appendChild(heroCta);
+    }
+
     const descCol = document.querySelector('.project-desc');
     if (descCol) {
       const badge = document.createElement('a');
       badge.href = `${BASE}distinction.html?i=0`;
-      badge.className = 'distinction-award-badge fade-up';
+      badge.className = 'distinction-award-badge';
       
       const badgeTitle = currentLang === 'ar' ? 'مشروع فائز وجائزة مرموقة (ISSAT Kairouan)' : (currentLang === 'en' ? 'Award-Winning Featured Project (ISSAT Kairouan)' : 'Projet Lauréat & Primé — ISSAT Kairouan');
-      const badgeText = currentLang === 'ar' ? 'حائز على الجائزة الأولى في المسابقة الوطنية وجائزة أيام قرطاج المعمارية (JAC 2019) · عرض صفحة الجائزة ←' : (currentLang === 'en' ? 'Recipient of the National 1st Prize & Carthage Architectural Days Award (JAC 2019) · View Distinction Page →' : 'Lauréat du 1er Prix au Concours National & Prix des Journées Architecturales de Carthage (JAC 2019) · Voir la page Distinction ISSAT →');
+      const badgeText = currentLang === 'ar' ? 'حائز على الجائزة الأولى في المسابقة الوطنية وجائزة أيام قرطاج المعمارية (JAC 2019) كأفضل مشروع للمباني المدنية' : (currentLang === 'en' ? 'Recipient of the National 1st Prize & Carthage Architectural Days Award (JAC 2019 — Best Civil Building)' : 'Lauréat du 1er Prix au Concours National & Prix des Journées Architecturales de Carthage (JAC 2019 — Meilleur Bâtiment Civil)');
+      const badgeBtn = currentLang === 'ar' ? '🏆 عرض صفحة الجائزة وفيديو العرض ←' : (currentLang === 'en' ? '🏆 View Distinction Page & Video →' : '🏆 Voir la page Distinction ISSAT & la vidéo →');
       
       badge.innerHTML = `
         <div class="badge-icon">🏆</div>
         <div class="badge-content">
           <strong>${badgeTitle}</strong>
           <span>${badgeText}</span>
+          <span class="badge-cta-btn">${badgeBtn}</span>
         </div>
       `;
       descCol.insertBefore(badge, descCol.firstChild);
