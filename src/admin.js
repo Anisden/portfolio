@@ -489,10 +489,11 @@ function resetProjectForm() {
   if (addBtn) addBtn.textContent = '➕ Ajouter à la liste';
 }
 
-document.getElementById('add-btn')?.addEventListener('click', () => {
-  const title = document.getElementById('title').value.trim();
-  if (!title) { alert('Le titre est requis.'); return; }
-  const id = document.getElementById('project-id').value;
+function applyPendingProjectForm() {
+  const title = document.getElementById('title')?.value.trim();
+  const id = document.getElementById('project-id')?.value ?? '';
+  if (!title) return false;
+
   const tasks = document.getElementById('tasks').value.split('\n').map(s => s.trim()).filter(Boolean);
   const gallery = document.getElementById('gallery').value.split('\n').map(s => s.trim()).filter(Boolean);
   
@@ -504,7 +505,6 @@ document.getElementById('add-btn')?.addEventListener('click', () => {
   const year = parseInt(document.getElementById('project-year').value) || 2010;
 
   const region = document.getElementById('region').value;
-  // If editing, preserve currency if not changing region, otherwise set default
   let currency = 'EUR';
   if (region === 'quebec') currency = 'CAD';
   else if (region === 'tunisia' || region === 'concours') currency = 'TND';
@@ -526,18 +526,25 @@ document.getElementById('add-btn')?.addEventListener('click', () => {
   if (id !== '') projects[parseInt(id)] = proj;
   else projects.push(proj);
 
-  // Sort projects chronologically descending (newest first)
   projects.sort((a, b) => (b.year || 0) - (a.year || 0));
-
   renderProjectList();
-  saveProjectsToServer(); // Auto-save
   resetProjectForm();
+  return true;
+}
+
+document.getElementById('add-btn')?.addEventListener('click', () => {
+  const title = document.getElementById('title').value.trim();
+  if (!title) { alert('Le titre est requis.'); return; }
+  applyPendingProjectForm();
+  saveProjectsToServer(); // Auto-save
 });
 
 document.getElementById('new-btn')?.addEventListener('click', resetProjectForm);
 
 // Helper to save projects to disk / GitHub
 async function saveProjectsToServer() {
+  // Automatically apply any pending project form changes if user clicked "Sauvegarder les projets" directly
+  applyPendingProjectForm();
   const data = JSON.stringify(projects, null, 2);
   const suffix = editingLang && editingLang !== 'fr' ? `_${editingLang}` : '';
   try {
@@ -555,10 +562,12 @@ async function saveProjectsToServer() {
     // 2. Direct commit to GitHub repository
     toast('⏳ Enregistrement sur GitHub en cours...');
     const base64 = utf8ToBase64(data);
+    if (!suffix) {
+      await ghPutFile('public/projects_fr.json', base64, 'Update projects_fr.json via Admin');
+    }
     const ok = await ghPutFile(`public/projects${suffix}.json`, base64, `Update projects${suffix}.json via Admin`);
     if (ok) {
       if (!suffix) {
-        await ghPutFile('public/projects_fr.json', base64, 'Sync projects_fr.json via Admin');
         // Auto-sync media/structural fields to EN and AR so uploaded photos/PDFs appear in all languages
         const mediaFields = ['image', 'video', 'gallery', 'galleryDocs', 'galleryRealisation', 'galleryBefore', 'galleryAfter', 'year', 'region', 'showDistinctionBtn'];
         for (const lang of ['en', 'ar']) {
@@ -597,9 +606,15 @@ async function saveProjectsToServer() {
 
 // Helper to save content to disk / GitHub
 async function saveContentToServer() {
+  // Automatically apply any pending experience or distinction form changes if user clicked "Sauvegarder..." directly
+  applyPendingExperienceForm();
+  applyPendingDistinctionForm();
+
   // Update generalContent object from form fields
   generalContent = {
     ...generalContent,
+    experiences,
+    distinctions,
     heroSubtitle: document.getElementById('c-heroSubtitle').value,
     heroTitleHtml: document.getElementById('c-heroTitleHtml').value,
     heroDescription: document.getElementById('c-heroDescription').value,
@@ -629,11 +644,11 @@ async function saveContentToServer() {
     // 2. Direct commit to GitHub repository
     toast('⏳ Enregistrement sur GitHub en cours...');
     const base64 = utf8ToBase64(data);
+    if (!suffix) {
+      await ghPutFile('public/content_fr.json', base64, 'Update content_fr.json via Admin');
+    }
     const ok = await ghPutFile(`public/content${suffix}.json`, base64, `Update content${suffix}.json via Admin`);
     if (ok) {
-      if (!suffix) {
-        await ghPutFile('public/content_fr.json', base64, 'Sync content_fr.json via Admin');
-      }
       toast('✅ Enregistré directement sur GitHub ! (Site mis à jour dans ~45s)', 5000);
       return true;
     }
@@ -757,10 +772,10 @@ function resetExperienceForm() {
   document.getElementById('exp-form-title').textContent = '➕ Ajouter une étape';
 }
 
-document.getElementById('exp-add-btn')?.addEventListener('click', async () => {
-  const company = document.getElementById('exp-company').value.trim();
-  if (!company) { alert('Le nom de l\'entreprise est requis.'); return; }
-  const id = document.getElementById('exp-id').value;
+function applyPendingExperienceForm() {
+  const company = document.getElementById('exp-company')?.value.trim();
+  const id = document.getElementById('exp-id')?.value ?? '';
+  if (!company) return false;
   const exp = {
     company,
     region: document.getElementById('exp-region').value,
@@ -773,13 +788,20 @@ document.getElementById('exp-add-btn')?.addEventListener('click', async () => {
   else experiences.push(exp);
   renderExperiencesList();
   generalContent.experiences = experiences;
-  await saveContentToServer();
   resetExperienceForm();
+  return true;
+}
+
+document.getElementById('exp-add-btn')?.addEventListener('click', async () => {
+  const company = document.getElementById('exp-company').value.trim();
+  if (!company) { alert('Le nom de l\'entreprise est requis.'); return; }
+  applyPendingExperienceForm();
+  await saveContentToServer();
 });
 
 document.getElementById('exp-new-btn')?.addEventListener('click', resetExperienceForm);
 document.getElementById('save-experiences-btn')?.addEventListener('click', () => {
-  generalContent.experiences = experiences;
+  applyPendingExperienceForm();
   saveContentToServer();
 });
 
@@ -860,10 +882,10 @@ function resetDistinctionForm() {
   document.getElementById('dist-form-title').textContent = '➕ Ajouter une distinction';
 }
 
-document.getElementById('dist-add-btn')?.addEventListener('click', async () => {
-  const title = document.getElementById('dist-title').value.trim();
-  if (!title) { alert('Le titre est requis.'); return; }
-  const id = document.getElementById('dist-id').value;
+function applyPendingDistinctionForm() {
+  const title = document.getElementById('dist-title')?.value.trim();
+  const id = document.getElementById('dist-id')?.value ?? '';
+  if (!title) return false;
   const d = {
     year: document.getElementById('dist-year').value,
     type: document.getElementById('dist-type').value,
@@ -879,8 +901,15 @@ document.getElementById('dist-add-btn')?.addEventListener('click', async () => {
   else distinctions.push(d);
   renderDistinctionsList();
   generalContent.distinctions = distinctions;
-  await saveContentToServer(); // Explicit auto-save to content.json on server
   resetDistinctionForm();
+  return true;
+}
+
+document.getElementById('dist-add-btn')?.addEventListener('click', async () => {
+  const title = document.getElementById('dist-title').value.trim();
+  if (!title) { alert('Le titre est requis.'); return; }
+  applyPendingDistinctionForm();
+  await saveContentToServer(); // Explicit auto-save to content.json on server
 });
 
 document.getElementById('dist-new-btn')?.addEventListener('click', resetDistinctionForm);
